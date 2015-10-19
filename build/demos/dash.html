@@ -16,7 +16,7 @@
 
 		
 		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
-			<a href="/" class="red">@includes</a>
+			<a href="/" class="red">Spice</a>
 		</h1>
 		
 
@@ -29,50 +29,13 @@
 				<li class="slide-in-down">
 					<a href="/examples"><i class="block-icon-lab-flask font20"></i> <span>Examples</span></a>
 				</li>
-				<li class="slide-in-down" id="theme-options">
-					<a href="#"><i class="block-icon-brush font20"></i> <span>Themes</span></a>
-					<ul class="subnav">
-						<li>
-							<a href="#" ng-click="switchTheme('light')">Light Theme</a>
-						</li>
-						<li>
-							<a href="#" ng-click="switchTheme('dark')">Dark Theme</a>
-						</li>
-						<li>
-							<a href="#" ng-click="switchTheme('slate')">Slate Theme</a>
-						</li>
-						<li>
-							<a href="#" ng-click="switchTheme('vanilla')">Vanilla Theme</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a ng-click="showdemos = !showdemos"><i class="block-icon-lab-flask font20"></i> <span>Demos</span></a>
-				</li>
 			</ul>
 
 		</nav>
 
 		
 
-		<p id="version" class="align-right slide-in-left"></p>
-
-
-	</div>
-
-	<div class="dropdown" ng-class="{open:showdemos}">
-		
-		<div class="container transition" ng-class="{stretch:shiftNav}">
-			<ul>
-				<li ng-repeat="demo in demos">
-					<a ng-href="/demo/">
-						<img src="http://placehold.it/55x55" ng-attr-alt=" demo">
-						<span class="demo-title" ng-bind="::demo.title"></span>
-						<span class="demo-desc" ng-bind="::demo.desc"></span>
-					</a>
-				</li>
-			</ul>
-		</div>
+		<p id="version" class="align-right slide-in-left">0.2.7</p>
 
 	</div>
 

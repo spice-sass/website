@@ -1,4 +1,3 @@
-import React from "../node_modules/react/react";
 import Docs from './components/docs/Docs';
 import Header from './components/header/header';
 
@@ -17,10 +16,10 @@ import Header from './components/header/header';
 
 
 
-React.render(
- 	<Header/>,
-    document.getElementById('search-docs')
-);
+// React.render(
+//  	<Header/>,
+//     document.getElementById('search-docs')
+// );
 
 React.render(
  	<Docs/>,

@@ -1,5 +1,3 @@
-import React from "../../../node_modules/react/react";
-
 // Ancestors - MixinGroup > List > Docs
 
 var MixinTabs = React.createClass({

@@ -1,4 +1,3 @@
-import React from "../../../node_modules/react/react";
 import apiService from '../../services/apiService';
 import Sidebar from './Sidebar';
 import List from './List';

@@ -1,5 +1,3 @@
-import React from "../../../node_modules/react/react";
-
 // Ancestors - Sidebar > Docs
 
 var SBLink = React.createClass({
