@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="css/themes/light.css" />
+</head>
+  <body>
+    <header class="sticky slide-in-down">
+	
+	<div class="container transition main stretch">
+
+		
+		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
+			<a href="/" class="red">@includes</a>
+		</h1>
+		
+
+		<nav class="horizontal main shift">
+
+			<ul>
+				<li class="slide-in-down">
+					<a href="/documentation"><i class="block-icon-open-book font20"></i> <span>Documentation</span></a>
+				</li>
+				<li class="slide-in-down">
+					<a href="/examples"><i class="block-icon-lab-flask font20"></i> <span>Examples</span></a>
+				</li>
+				<li class="slide-in-down" id="theme-options">
+					<a href="#"><i class="block-icon-brush font20"></i> <span>Themes</span></a>
+					<ul class="subnav">
+						<li>
+							<a href="#" ng-click="switchTheme('light')">Light Theme</a>
+						</li>
+						<li>
+							<a href="#" ng-click="switchTheme('dark')">Dark Theme</a>
+						</li>
+						<li>
+							<a href="#" ng-click="switchTheme('slate')">Slate Theme</a>
+						</li>
+						<li>
+							<a href="#" ng-click="switchTheme('vanilla')">Vanilla Theme</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a ng-click="showdemos = !showdemos"><i class="block-icon-lab-flask font20"></i> <span>Demos</span></a>
+				</li>
+			</ul>
+
+		</nav>
+
+		
+			<i class="line-icon-menu font20" ng-click="toggleDocs()"></i>
+
+			<form class="lined" id="search-docs">
+				<input class="text" placeholder="Search docs"/>
+			</form>
+		
+
+		<p id="version" class="align-right slide-in-left"></p>
+
+
+	</div>
+
+	<div class="dropdown" ng-class="{open:showdemos}">
+		
+		<div class="container transition" ng-class="{stretch:shiftNav}">
+			<ul>
+				<li ng-repeat="demo in demos">
+					<a ng-href="/demo/">
+						<img src="http://placehold.it/55x55" ng-attr-alt=" demo">
+						<span class="demo-title" ng-bind="::demo.title"></span>
+						<span class="demo-desc" ng-bind="::demo.desc"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+</header>
+    
+  	<section class="fullscreen" id="documentation">
+
+  		<div id="docs-wrapper">
+
+			<nav class="vertical page-nav scrollbar"  id="sidebar">
+				<ul>		
+					
+			  		<li>
+			  			<a href="#fonts">Fonts &amp; Typography</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#googleFont"><span>@include</span> googleFont;</a>
+								</li>
+							
+								<li>
+									<a href="#headerSizes"><span>@include</span> headerSizes;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#animations">Animations Core</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#animation"><span>@include</span> animation;</a>
+								</li>
+							
+								<li>
+									<a href="#keyframes"><span>@include</span> keyframes;</a>
+								</li>
+							
+								<li>
+									<a href="#transformKeyframes"><span>@include</span> transformKeyframes;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#animationPresets">Animation Presets</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#fadeIn"><span>@include</span> fadeIn;</a>
+								</li>
+							
+								<li>
+									<a href="#slideIn"><span>@include</span> slideIn;</a>
+								</li>
+							
+								<li>
+									<a href="#rotateIn"><span>@include</span> rotateIn;</a>
+								</li>
+							
+								<li>
+									<a href="#pulse"><span>@include</span> pulse;</a>
+								</li>
+							
+								<li>
+									<a href="#flipClass"><span>@include</span> flipClass;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#grid">Grid</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#gridClasses"><span>@include</span> gridClasses;</a>
+								</li>
+							
+								<li>
+									<a href="#gridColumns"><span>@include</span> gridColumns;</a>
+								</li>
+							
+								<li>
+									<a href="#gridIndent"><span>@include</span> gridIndent;</a>
+								</li>
+							
+								<li>
+									<a href="#gridOutdent"><span>@include</span> gridOutdent;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#icons">Icons</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#lineIcons"><span>@include</span> lineIcons;</a>
+								</li>
+							
+								<li>
+									<a href="#blockIcons"><span>@include</span> blockIcons;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#layout">Layout</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#masonryColumns"><span>@include</span> masonryColumns;</a>
+								</li>
+							
+								<li>
+									<a href="#masonryClasses"><span>@include</span> masonryClasses;</a>
+								</li>
+							
+								<li>
+									<a href="#breakPoint"><span>@include</span> breakPoint;</a>
+								</li>
+							
+								<li>
+									<a href="#containerClass"><span>@include</span> containerClass;</a>
+								</li>
+							
+								<li>
+									<a href="#fullScreen"><span>@include</span> fullScreen;</a>
+								</li>
+							
+								<li>
+									<a href="#centre"><span>@include</span> centre;</a>
+								</li>
+							
+								<li>
+									<a href="#centreClasses"><span>@include</span> centreClasses;</a>
+								</li>
+							
+								<li>
+									<a href="#stickyHeader"><span>@include</span> stickyHeader;</a>
+								</li>
+							
+								<li>
+									<a href="#fitContainer"><span>@include</span> fitContainer;</a>
+								</li>
+							
+								<li>
+									<a href="#sideBar"><span>@include</span> sideBar;</a>
+								</li>
+							
+								<li>
+									<a href="#sideBarAppend"><span>@include</span> sideBarAppend;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#navigation">navigation</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#tabsFlat"><span>@include</span> tabsFlat;</a>
+								</li>
+							
+								<li>
+									<a href="#paginationFlat"><span>@include</span> paginationFlat;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#forms">Forms</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#formLined"><span>@include</span> formLined;</a>
+								</li>
+							
+								<li>
+									<a href="#formRounded"><span>@include</span> formRounded;</a>
+								</li>
+							
+								<li>
+									<a href="#formsTheme"><span>@include</span> formsTheme;</a>
+								</li>
+							
+								<li>
+									<a href="#switch"><span>@include</span> switch;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#buttons">Buttons</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#flatButton"><span>@include</span> flatButton;</a>
+								</li>
+							
+								<li>
+									<a href="#gradientButton"><span>@include</span> gradientButton;</a>
+								</li>
+							
+								<li>
+									<a href="#roundedButton"><span>@include</span> roundedButton;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#svg">Svg</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#doughnut"><span>@include</span> doughnut;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+				</ul>
+			</nav>
+
+			<div class="scrollbar" id="docs">
+
+				<div id="docs-container">
+
+					
+					<div id="fonts" class="include-block">
+						<h1>Fonts &amp; Typography</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> googleFont;</h2>
+							<div><p>Google web fonts can be added to your styles without the need to import the google hosted stylesheets to your html</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> headerSizes;</h2>
+							<div><p>Programmatically calculate the sizes of your heading elements by passing in the ceiling(h1) and floor(h6) size values. These integers will be converted into px and rem values using the @include fontSize(); mixin.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="animations" class="include-block">
+						<h1>Animations Core</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> animation;</h2>
+							<div><p>Add animation attributes to a selector with this mixin. It allows for a staggering effect using <strong>nth-child</strong> selectors. Please note that you will also need to define the keyframes that match the animation name. See <a href="#keyframes">@include keyframes;</a> or <a href="#transformKeyframes">@include transformKeyframes;</a></p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> keyframes;</h2>
+							<div><p>Easlily generate animation keyframes with this mixin. The sass "@content" directive is used to wrap the mixin's content with the various vendor prefixes.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> transformKeyframes;</h2>
+							<div><p>Easlily generate transform based animation keyframes with this mixin. Sass maps are used to replicate the keframe syntax.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="animationPresets" class="include-block">
+						<h1>Animation Presets</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> fadeIn;</h2>
+							<div><p>Predefined class and keyframes for a fade in transform animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the easing, duration &amp; nth-child(n) stagger count.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> slideIn;</h2>
+							<div><p>Predefined class and keyframes for a slide in transform animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the direction, slide distance, easing, duration &amp; nth-child(n) stagger count.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> rotateIn;</h2>
+							<div><p>Predefined class and keyframes for a rotate in transform animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the rotate angle, easing, duration &amp; nth-child(n) stagger count.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> pulse;</h2>
+							<div><p>Predefined class and keyframes for a looping pulse animation. Can be used as a subtle attention grabber for buttons.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> flipClass;</h2>
+							<div><p>Add classes for a flipping card effect. Argumants allow you to control the flip axis and duration of the animation.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="grid" class="include-block">
+						<h1>Grid</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridClasses;</h2>
+							<div><p>This mixin genrates classes for a fluid grid system. You can specify the amount of columns you want, the guttering, the screen width at which you want elements to stack and optional outdent/indent classes.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridColumns;</h2>
+							<div><p>This mixin is used by @include gridClasses. But it can also be used nested in selectors in the same way that you might use the susy ruby gem. This is useful if you dont need all the grid classes or if you want to apply column widths to elements that are dynamicly added on to the page - e.g. iframes.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridIndent;</h2>
+							<div><p>This mixin is used by @include gridClasses to calculate the margin indents needed for the various push classes. as with @include grid-col this mixin can be used individually, nested in a selector to calculate the margin width of an element.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridOutdent;</h2>
+							<div><p>This mixin is used by @include gridClasses to calculate the margin outdents needed for the various pull classes. as with @include grid-push this mixin can be used individually, nested in a selector to calculate the margin width of an element.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="icons" class="include-block">
+						<h1>Icons</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> lineIcons;</h2>
+							<div><p>Adds icon classes generated with the icomoon app feather set.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> blockIcons;</h2>
+							<div><p>Adds icon classes generated with the icomoon app Entypo set.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="layout" class="include-block">
+						<h1>Layout</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> masonryColumns;</h2>
+							<div><p>Programmatically generate masonry style css layouts with breakpoints by using this mixin. It uses both the masonryClasses and breakPoint mixins to generate columns for various sizes using the column-count css3 property.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> masonryClasses;</h2>
+							<div><p>Modern masonry css layout. Uses *column-count to arange content This mixin can be used with the @include cardClass; mixin to create "Pinterest" style layouts. Html5 browser support only. See caniuse for more info on column-count browser support.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> breakPoint;</h2>
+							<div><p>A more semantic wrapper for handling breakpoints. It takes a single argument for the size. This can be "large" - 1420px, "medium" - 1200px, "small" - 760px or a pixel value of your choosing.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> containerClass;</h2>
+							<div><p>Adds a .container class</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> fullScreen;</h2>
+							<div><p>Nested include to apply full screen styles to a selector. Uses the vh css property see caniuse for more information</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> centre;</h2>
+							<div><p>Centralises a fluid container element to its nearest relatively posisiotned parent. Can be used within an element with the fullscreen class.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> centreClasses;</h2>
+							<div><p>This mixin genrates 4 classes for centering elements or text. Can be used within an element with the fullscreen class.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> stickyHeader;</h2>
+							<div><p>Apply sticky header styles to a selector with this mixin. Arguments allow you to specify the height of the header and css positioning.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> fitContainer;</h2>
+							<div><p>Absolutely position an element to the nearest releatively positioned ancestor with this mixin. It takes a single argument for the css box model - e.g. <strong>10px 20px 10px 20px</strong> would refer to <strong>top right bottom left</strong> in the same way as padding or magin shorthands. Accepted values are pixel values, em values, percentages or 'auto'.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> sideBar;</h2>
+							<div><p>Generates styles for an absolutely positioned sidebar scaling to the nearest relative parent's height. Arguments allow you to specify the width and position of the sidebar. Used in the <a href="/demo/dash">Dash demo.</a></p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> sideBarAppend;</h2>
+							<div><p>This mixin can be used to absolutely position an element to fit the remainder of the screen if a sidebar has been included. Best used with the sideBar mixin, see <a href="/demo/dash">Dash demo</a> for an example of usage.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="navigation" class="include-block">
+						<h1>navigation</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> tabsFlat;</h2>
+							<div><p>Add styles for a flat UI style tabbing interface.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> paginationFlat;</h2>
+							<div><p>Add flat ui pagination classes with this mixin. Arguments allow you to control Colours, sizing, outer roundness and thickness of the bottom border.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="forms" class="include-block">
+						<h1>Forms</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> formLined;</h2>
+							<div><p>Include styles for a form with bottom-bordered inputs and textareas. Arguments Allow you to control the border thickness, padding and font size of elements.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> formRounded;</h2>
+							<div><p>Include styles for a form with rounded inputs and textareas. Arguments Allow you to control the rounding amount, padding and font size of elements.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> formsTheme;</h2>
+							<div><p>Control the colours of form elements by passing in arguments for text, background and focus colours.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> switch;</h2>
+							<div><p>Include styles for a modern looking javascript form switch with this mixin. A class name is required for the first argument. Optional arguments allow you to control on colour, off colour, width and font size. <strong>Note:</strong> the javascript for this is yet to be included. See below for expected markup.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="buttons" class="include-block">
+						<h1>Buttons</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> flatButton;</h2>
+							<div><p>Add styles for a flat button with a bottom border to give an embossed effect. Arguments allow you to control colour, border thickness, text contrast, optional icon styles and rounding.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gradientButton;</h2>
+							<div><p>Add styles for an old school gradient button for that retro vibe. Arguments allow you to control colour, gradient contrast, text contrast, optional icon styles and rounding.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> roundedButton;</h2>
+							<div><p>Add styles for an old school gradient button for that retro vibe. Arguments allow you to control colour, gradient contrast, text contrast, optional icon styles and rounding.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="svg" class="include-block">
+						<h1>Svg</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> doughnut;</h2>
+							<div><p>For styling doughnut svgs</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+						
+
+				</div>
+
+			</div>
+
+		</div>	
+
+	</section>
+
+    
+	<script src="js/docs.js"></script>
+
+  </body>
+</html>

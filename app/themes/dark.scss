@@ -1,0 +1,132 @@
+@import "../../node_modules/sass-includes/sass/includes";
+
+$type : "dark";
+$themeColour : #222;
+$darker : darken($themeColour,5%);
+$lighter : lighten($themeColour,5%);
+$contrast :contrast($themeColour,60%); 
+
+@mixin themeStack($themeColour){
+
+    .stack{
+
+        display: block;
+        background-color:$themeColour;
+        border-bottom:1px  solid darken($themeColour,7%);
+
+        &:nth-child(even){
+
+            background-color: darken($themeColour,2%);
+        }
+
+    }
+
+}
+
+@mixin headingEmphasis($colour:$col-primary,$icon:false){
+
+    //@warn "The `headingEmphasis()` mixin will be deprecated in the next release";
+
+    h1,h2,h3,h4,h5,h6{
+
+        &.emph{
+
+            line-height:1.2;
+            color:$colour;
+            padding-left:20px;
+            border-left:5px solid $colour;
+
+            @if $icon {
+
+                [class^="icon-"], [class*=" icon-"]{
+
+                    line-height: 1.7;
+                    font-size: 0.8em;
+                    float:right;
+                }
+            }
+        }
+    }
+}
+
+
+
+@include normalise(2.7em);
+@include headerSizes(45,20);
+
+body{
+	
+	@include fontSize(18);
+}
+
+
+@include themeBase($themeColour);
+@include googleFont('open-sans-condensed',h1 h2 h3 h4 h5 h6,700);
+@include googleFont('open-sans',body textarea button);
+@include themeTypography($themeColour,#aaa,#eee,$col-primary);
+@include themeLinks(white);
+@include headingEmphasis($col-pastel-red,true);
+@include themeBlockquote($col-pastel-red,darken($themeColour,5%));
+
+@include formsTheme($contrast,$darker,$col-secondary);
+@include themeNavigation("main",#111,#000,#aaa,white);
+@include themeNavigation("page-nav",#111,#000,#aaa,white);
+
+
+.scrollbar{
+	@include scrollbar($themeColour);
+}
+
+
+@include themeStack($themeColour);
+@include themeTables($themeColour);
+@include themeRangeInput($themeColour,lighten($themeColour,20%),$col-secondary);
+
+@include linedTabs(#000,#222);
+
+
+@include messageClass(10px,5);
+@include themeMessageClass('info', $col-secondary,white);
+@include themeMessageClass('warning', $col-warning,white);
+@include themeMessageClass('danger', $col-danger,white);
+@include themeMessageClass('success', $col-success,white);
+@include tabsFlat('flat',contrast($darker,6%),$darker);
+
+$cols : (
+	"red":#e7534f,
+	"blue":#1b8898,
+	"green":#54A03A,
+	'yellow':#D8BE2E,
+	'orange':$col-warning,
+	'violet' : #9E6FB5
+);
+
+@include palette($cols);
+
+
+@include doughnut('primary',$col-primary,10px,#111,#e9e9e9);
+@include doughnut('secondary',$col-secondary,10px,#111,#e9e9e9);
+@include doughnut('warning',$col-warning,10px,#111,#e9e9e9);
+@include doughnut('danger',$col-danger,10px,#111,#e9e9e9);
+@include doughnut('submit',$col-success,10px,#111,#e9e9e9);
+
+.contrast{
+
+	color: contrast($themeColour,60%);
+}
+
+header.sticky{
+
+	background-color: #111;
+	color:#eee;
+}
+
+@include themeCardClass(lighten($themeColour,5%));
+
+.grid-block, .masonry-item, .grid-example, .icon-holder{
+	
+	@extend .card;
+}
+
+
+@include paginationFlat('flat',#222,$col-secondary);

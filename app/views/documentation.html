@@ -1,0 +1,58 @@
+{% extends '../layouts/main.html' %}
+{% block title %}
+	<title>{{pageTitle}}</title>
+{% endblock %}
+
+{% block content %}
+  	<section class="fullscreen" id="documentation">
+
+  		<div id="docs-wrapper">
+
+			<nav class="vertical page-nav scrollbar"  id="sidebar">
+				<ul>		
+					{% for inc in docs.includesOrder %}
+			  		<li>
+			  			<a href="#{{inc}}">{{docs.includes[inc].title}}</a>
+			  			<ul class="subnav">
+			  				{% for mixin in docs.includes[inc].mixins %}
+								<li>
+									<a href="#{{mixin.name}}"><span>@include</span> {{mixin.name}};</a>
+								</li>
+							{% endfor %}
+						</ul>
+			  		</li>
+					{% endfor %}
+				</ul>
+			</nav>
+
+			<div class="scrollbar" id="docs">
+
+				<div id="docs-container">
+
+					{% for inc in docs.includesOrder %}
+					<div id="{{inc}}" class="include-block">
+						<h1>{{docs.includes[inc].title}}</h1>
+						<hr />
+						
+						{% for mixin in docs.includes[inc].mixins %}
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> {{mixin.name}};</h2>
+							<div>{{mixin.desc | raw}}</div>
+							<hr />
+						</div>
+						{% endfor %}
+
+					</div>	
+					{% endfor %}	
+
+				</div>
+
+			</div>
+
+		</div>	
+
+	</section>
+{% endblock %}
+{% block footerScript %}
+	<script src="js/docs.js"></script>
+{% endblock %}

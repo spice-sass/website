@@ -1,0 +1,44 @@
+
+#pane-1{
+
+
+	#logo{
+
+		color:#e7534f;
+		margin-bottom: 0.7em;
+		font:{
+			size:5em;
+		}
+
+		@include breakPoint(760px){
+			font-size: 4.2em;
+		}
+
+		@include breakPoint(560px){
+			font-size: 3.2em;
+		}
+	}
+
+	#strap{
+
+		text-transform: uppercase;
+		font:{
+			size:1.2em;
+		}
+
+		@include breakPoint(560px){
+			font-size: 1em;
+		}
+	}
+
+}
+
+.red{
+
+	color:#e7534f;
+}
+
+.feature{
+
+	padding:20px;
+}

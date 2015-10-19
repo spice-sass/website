@@ -1,0 +1,73 @@
+<header class="sticky slide-in-down">
+	
+	<div class="container transition main {% if template == 'documentation' %}stretch{% endif %}">
+
+		{% if template != 'index' %}
+		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
+			<a href="/" class="red">@includes</a>
+		</h1>
+		{% endif %}
+
+		<nav class="horizontal main {% if template != 'index' %}shift{% endif %}">
+
+			<ul>
+				<li class="slide-in-down">
+					<a href="/documentation"><i class="block-icon-open-book font20"></i> <span>Documentation</span></a>
+				</li>
+				<li class="slide-in-down">
+					<a href="/examples"><i class="block-icon-lab-flask font20"></i> <span>Examples</span></a>
+				</li>
+				<li class="slide-in-down" id="theme-options">
+					<a href="#"><i class="block-icon-brush font20"></i> <span>Themes</span></a>
+					<ul class="subnav">
+						<li>
+							<a href="#" ng-click="switchTheme('light')">Light Theme</a>
+						</li>
+						<li>
+							<a href="#" ng-click="switchTheme('dark')">Dark Theme</a>
+						</li>
+						<li>
+							<a href="#" ng-click="switchTheme('slate')">Slate Theme</a>
+						</li>
+						<li>
+							<a href="#" ng-click="switchTheme('vanilla')">Vanilla Theme</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a ng-click="showdemos = !showdemos"><i class="block-icon-lab-flask font20"></i> <span>Demos</span></a>
+				</li>
+			</ul>
+
+		</nav>
+
+		{% if template == 'documentation' %}
+			<i class="line-icon-menu font20" ng-click="toggleDocs()"></i>
+
+			<form class="lined" id="search-docs">
+				<input class="text" placeholder="Search docs"/>
+			</form>
+		{% endif %}
+
+		<p id="version" class="align-right slide-in-left">{{vesrion}}</p>
+
+
+	</div>
+
+	<div class="dropdown" ng-class="{open:showdemos}">
+		
+		<div class="container transition" ng-class="{stretch:shiftNav}">
+			<ul>
+				<li ng-repeat="demo in demos">
+					<a ng-href="/demo/{{demo.title}}">
+						<img src="http://placehold.it/55x55" ng-attr-alt="{{demo.title}} demo">
+						<span class="demo-title" ng-bind="::demo.title"></span>
+						<span class="demo-desc" ng-bind="::demo.desc"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+</header>
