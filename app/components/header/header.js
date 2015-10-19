@@ -1,13 +1,16 @@
 import React from "../../../node_modules/react/react";
 
 let Header = React.createClass({
+
+	filter(){
+
+		var val = this.refs.search.getDOMNode().value;
+		console.log(val);
+	},
+
 	render () {
 		return (
-			<nav>
-				<div className="container">
-					Nav goes here
-				</div>
-			</nav>
+			<input className="text" ref="search" onKeyUp={this.filter} placeholder="Search docs"/>
 		)
 	}
 });

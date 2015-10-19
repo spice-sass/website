@@ -14,16 +14,14 @@ var _node_modulesReactReact2 = _interopRequireDefault(_node_modulesReactReact);
 var Header = _node_modulesReactReact2["default"].createClass({
 	displayName: "Header",
 
+	filter: function filter() {
+
+		var val = this.refs.search.getDOMNode().value;
+		console.log(val);
+	},
+
 	render: function render() {
-		return _node_modulesReactReact2["default"].createElement(
-			"nav",
-			null,
-			_node_modulesReactReact2["default"].createElement(
-				"div",
-				{ className: "container" },
-				"Nav goes here"
-			)
-		);
+		return _node_modulesReactReact2["default"].createElement("input", { className: "text", ref: "search", onKeyUp: this.filter, placeholder: "Search docs" });
 	}
 });
 
