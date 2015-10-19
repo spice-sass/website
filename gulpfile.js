@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var babelify = require("babelify");
+var uglify = require('gulp-uglify');
 var compass = require('gulp-compass');
 var minifyCSS = require('gulp-minify-css');
 var server = require('gulp-express');
@@ -11,7 +12,7 @@ var swig = require('gulp-swig');
 var data = require('gulp-data');
 
 var getJsonData = function(file) {
-  return require('./app/api/' + file + '.json');
+  return require(file + '.json');
 };
 
 gulp.task('server', function () {
@@ -30,6 +31,7 @@ gulp.task('browserify', function () {
     .pipe(browserify({
       transform: ['babelify']
     }))
+    .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
 
@@ -51,8 +53,8 @@ gulp.task('static', function() {
 
     var dest = (template.indexOf('demos/') > -1) ? './build/demos': './build/';
     var obj = {
-      "docs" : getJsonData('includes'),
-      "version" : getJsonData('version').version,
+      "docs" : getJsonData('./app/api/includes'),
+      "version" : getJsonData('./node_modules/spice-sass/package').version,
       "siteTitle" : "includes | A sass library for awesome modern web interfaces"
     }
 

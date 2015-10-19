@@ -1,5 +1,3 @@
-import React from "../../../node_modules/react/react";
-
 let Header = React.createClass({
 
 	filter(){

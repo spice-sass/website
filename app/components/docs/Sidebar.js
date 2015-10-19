@@ -1,4 +1,3 @@
-import React from "../../../node_modules/react/react";
 import SBLink from './SBLink';
 
 // Ancestors - Docs
