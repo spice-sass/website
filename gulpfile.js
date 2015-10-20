@@ -54,8 +54,8 @@ gulp.task('static', function() {
     var dest = (template.indexOf('demos/') > -1) ? './build/demos': './build/';
     var obj = {
       "docs" : getJsonData('./app/api/includes'),
-      "version" : getJsonData('./node_modules/spice-sass/package').version,
-      "siteTitle" : "includes | A sass library for awesome modern web interfaces"
+      "version" : getJsonData('../spice/package').version, // Requires spice repo to be cloned to the same directory
+      "siteTitle" : "Spice | A sass library for tasty web interfaces"
     }
 
     obj.template = template;
@@ -77,6 +77,11 @@ gulp.task('compass', function() {
     .pipe(minifyCSS())
 });
 
+gulp.task('copybuild',function(){
+  gulp.src(['./build/**/*.*'])
+    .pipe(gulp.dest('../spice-sass.github.io'))
+});
+
 gulp.task('watch', function () {
   gulp.watch('app/**/*.html', ['frontEnd']);
   gulp.watch('app/**/*.scss', ['frontEnd']);
@@ -85,3 +90,4 @@ gulp.task('watch', function () {
 
 gulp.task('frontEnd', ['browserify', 'compass', 'static', 'json']);
 gulp.task('default', ['browserify', 'compass', 'static', 'json', 'watch', 'server']);
+gulp.task('publish',['static','copybuild']);
