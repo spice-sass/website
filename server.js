@@ -63,7 +63,7 @@ app.post('/tickets', function (req, res){
         response    = {};
  
 
-    fs.writeFile("./build/jsonapi/tickets.json", sandwich, function(err) {
+    fs.writeFile("./build/api/tickets.json", sandwich, function(err) {
 
         if(err) {
 
