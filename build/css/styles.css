@@ -3140,7 +3140,6 @@ header.sticky #logo {
   top: 12px;
   position: absolute;
   letter-spacing: 0;
-  text-transform: lowercase;
   margin-right: 20px;
   font-size: 1em;
   font-weight: normal;
@@ -3159,7 +3158,7 @@ header.sticky nav {
   transition: all,ease,0.5s;
 }
 header.sticky nav.shift {
-  margin-left: 100px;
+  margin-left: 40px;
 }
 @media (max-width: 800px) {
   header.sticky nav a {
