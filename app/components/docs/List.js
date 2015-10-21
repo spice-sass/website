@@ -6,6 +6,23 @@ var List = React.createClass({
 		var inc = this.props.includes;
 		return (
 			<div className="scrollbar" id="docs">
+				<div className="include-block" id="getting-started">
+					<h1>Getting Started</h1>
+					<hr />
+
+					<div id="installation">
+						<h2 className="red">Installation</h2>
+						<p>{'Spice is available for download via npm or bower'}</p>
+						<h5>npm</h5>
+						<blockquote>npm install sass-includes</blockquote>
+						<h5>Bower</h5>
+						<blockquote>bower install includes</blockquote>
+					</div>
+
+					<hr />
+					
+				</div>
+
 				{this.props.order.map(function(ord){
 					return <MixinGroup ord={ord} includes={inc}/>
 				})}

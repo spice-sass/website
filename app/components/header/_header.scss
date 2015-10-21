@@ -24,7 +24,6 @@ header.sticky{
 		top:12px;
 		position: absolute;
 		letter-spacing:0;
-		text-transform:lowercase;
 		margin-right:20px;
 		font:{
 			size:1em;
@@ -50,7 +49,7 @@ header.sticky{
 
 		&.shift{
 
-			margin-left: 100px;
+			margin-left: 40px;
 		}
 
 		a {
