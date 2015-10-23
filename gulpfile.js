@@ -35,11 +35,6 @@ gulp.task('browserify', function () {
     .pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('json', function() {
-  gulp.src('./app/api/**/*.json')
-  .pipe(gulp.dest('./build/api'));
-});
-
 gulp.task('static', function() {
 
   var templates = [
@@ -88,6 +83,6 @@ gulp.task('watch', function () {
   gulp.watch('app/**/*.js', ['frontEnd']);
 });
 
-gulp.task('frontEnd', ['browserify', 'compass', 'static', 'json']);
-gulp.task('default', ['browserify', 'compass', 'static', 'json', 'watch', 'server']);
-gulp.task('publish',['static','json','copybuild']);
+gulp.task('frontEnd', ['browserify', 'compass', 'static']);
+gulp.task('default', ['browserify', 'compass', 'static', 'watch', 'server']);
+gulp.task('publish',['static','copybuild']);
