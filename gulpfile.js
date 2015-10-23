@@ -90,4 +90,4 @@ gulp.task('watch', function () {
 
 gulp.task('frontEnd', ['browserify', 'compass', 'static', 'json']);
 gulp.task('default', ['browserify', 'compass', 'static', 'json', 'watch', 'server']);
-gulp.task('publish',['static','copybuild']);
+gulp.task('publish',['static','json','copybuild']);
