@@ -36,7 +36,7 @@
 			<form class="lined" id="search-docs"></form>
 		
 
-		<p id="version" class="align-right slide-in-left">0.4.6</p>
+		<p id="version" class="align-right slide-in-left">0.4.8</p>
 
 	</div>
 
@@ -97,6 +97,10 @@
 							
 								<li>
 									<a href="#rotateIn"><span>@include</span> rotateIn;</a>
+								</li>
+							
+								<li>
+									<a href="#pulse"><span>@include</span> pulse;</a>
 								</li>
 							
 								<li>
@@ -249,10 +253,6 @@
 									<a href="#gradientButton"><span>@include</span> gradientButton;</a>
 								</li>
 							
-								<li>
-									<a href="#roundedButton"><span>@include</span> roundedButton;</a>
-								</li>
-							
 						</ul>
 			  		</li>
 					
@@ -308,13 +308,13 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> keyframes;</h2>
-							<div><p>Easlily generate animation keyframes with this mixin. The sass "@content" directive is used to wrap the mixin's content with the various vendor prefixes.</p></div>
+							<div><p>Easlily generate animation keyframes with this mixin. The sass <strong>@content</strong> directive is used to wrap the mixin's content with the various vendor prefixes.</p></div>
 							<hr />
 						</div>
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> transformKeyframes;</h2>
-							<div><p>Easlily generate transform based animation keyframes with this mixin. Sass maps are used to replicate the keframe syntax.</p></div>
+							<div><p>Easlily generate transform based animation keyframes with this mixin. Sass maps are used to replicate the keyframe syntax.</p></div>
 							<hr />
 						</div>
 						
@@ -328,7 +328,7 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> fadeIn;</h2>
-							<div><p>Predefined class and keyframes for a fade in transform animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the easing, duration &amp; nth-child(n) stagger count.</p></div>
+							<div><p>Predefined class and keyframes for a fade in style animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the easing, duration &amp; nth-child(n) stagger count.</p></div>
 							<hr />
 						</div>
 						
@@ -340,7 +340,13 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> rotateIn;</h2>
-							<div><p>Predefined class and keyframes for a rotate in transform animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the rotate angle, easing, duration &amp; nth-child(n) stagger count.</p></div>
+							<div><p>Predefined class and keyframes for a rotate in style animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the rotate angle, easing, duration &amp; nth-child(n) stagger count.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> pulse;</h2>
+							<div><p>Predefined class and keyframes for a looping pulse animation. Can be used as a subtle attention grabber for buttons.</p></div>
 							<hr />
 						</div>
 						
@@ -550,12 +556,6 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gradientButton;</h2>
-							<div><p>Add styles for an old school gradient button for that retro vibe. Arguments allow you to control colour, gradient contrast, text contrast, optional icon styles and rounding.</p></div>
-							<hr />
-						</div>
-						
-						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> roundedButton;</h2>
 							<div><p>Add styles for an old school gradient button for that retro vibe. Arguments allow you to control colour, gradient contrast, text contrast, optional icon styles and rounding.</p></div>
 							<hr />
 						</div>

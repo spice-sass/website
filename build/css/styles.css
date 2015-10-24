@@ -18,14 +18,14 @@ button.grad-light, .button.grad-light {
   color: #5a5a5a;
   position: relative;
   border-radius: 3px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #dadada;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #d9d9d9));
-  background-image: -moz-linear-gradient(white, #d9d9d9);
-  background-image: -webkit-linear-gradient(white, #d9d9d9);
-  background-image: linear-gradient(white #d9d9d9);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #dadada));
+  background-image: -moz-linear-gradient(white, #dadada);
+  background-image: -webkit-linear-gradient(white, #dadada);
+  background-image: linear-gradient(white #dadada);
   font-size: 16px;
   font-size: 1rem;
 }
@@ -75,7 +75,7 @@ button.grad-light[class^="block-icon-"]:after, button.grad-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -113,10 +113,10 @@ button.grad-dark.small, .button.grad-dark.small {
 }
 button.grad-dark:hover, button.grad-dark:focus, .button.grad-dark:hover, .button.grad-dark:focus {
   color: #efefef;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #282828), color-stop(100%, #0e0e0e));
-  background-image: -moz-linear-gradient(#282828, #0e0e0e);
-  background-image: -webkit-linear-gradient(#282828, #0e0e0e);
-  background-image: linear-gradient(#282828 #0e0e0e);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #282828), color-stop(100%, #0f0f0f));
+  background-image: -moz-linear-gradient(#282828, #0f0f0f);
+  background-image: -webkit-linear-gradient(#282828, #0f0f0f);
+  background-image: linear-gradient(#282828 #0f0f0f);
 }
 button.grad-dark:active, .button.grad-dark:active {
   border-bottom-width: 1px;
@@ -147,7 +147,7 @@ button.grad-dark[class^="block-icon-"]:after, button.grad-dark[class*=" block-ic
   content: "";
   position: absolute;
   width: 1px;
-  background: #0e0e0e;
+  background: #0f0f0f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -672,7 +672,7 @@ button.flat-light, .button.flat-light {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #d9d9d9;
+  border-bottom-color: #dadada;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -722,7 +722,7 @@ button.flat-light[class^="block-icon-"]:after, button.flat-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -743,7 +743,7 @@ button.flat-dark, .button.flat-dark {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #0e0e0e;
+  border-bottom-color: #0f0f0f;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -793,7 +793,7 @@ button.flat-dark[class^="block-icon-"]:after, button.flat-dark[class*=" block-ic
   content: "";
   position: absolute;
   width: 1px;
-  background: #0e0e0e;
+  background: #0f0f0f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1356,7 +1356,7 @@ button.round-light[class^="block-icon-"]:after, button.round-light[class*=" bloc
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1422,7 +1422,7 @@ button.round-dark[class^="block-icon-"]:after, button.round-dark[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #0e0e0e;
+  background: #0f0f0f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -3990,21 +3990,81 @@ header.sticky .line-icon-menu {
 }
 
 .columns {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
 }
-@media (max-width: 550px) {
+@media (min-width: 3) {
   .columns {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-    -webkit-column-gap: 0;
-    -moz-column-gap: 0;
-    column-gap: 0;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+  }
+}
+@media (min-width: 6) {
+  .columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+  }
+}
+@media (min-width: 9) {
+  .columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+  }
+}
+@media (min-width: 12) {
+  .columns {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+  }
+}
+@media (min-width: 15) {
+  .columns {
+    -webkit-column-count: 6;
+    -moz-column-count: 6;
+    column-count: 6;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+  }
+}
+@media (min-width: 18) {
+  .columns {
+    -webkit-column-count: 7;
+    -moz-column-count: 7;
+    column-count: 7;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+  }
+}
+@media (min-width: 21) {
+  .columns {
+    -webkit-column-count: 8;
+    -moz-column-count: 8;
+    column-count: 8;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
   }
 }
 

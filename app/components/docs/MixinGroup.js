@@ -11,6 +11,8 @@ var MixinGroup = React.createClass({
 		var mixins = inc[group].mixins;
 		var title  = inc[group].title;
 
+		console.log(mixins);
+
 		return (
 			<div className="include-block" id={group}>
 				<h1>{{title}}</h1>
