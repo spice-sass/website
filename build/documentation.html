@@ -36,7 +36,7 @@
 			<form class="lined" id="search-docs"></form>
 		
 
-		<p id="version" class="align-right slide-in-left">0.4.8</p>
+		<p id="version" class="align-right slide-in-left">0.4.9</p>
 
 	</div>
 
@@ -59,6 +59,18 @@
 							
 								<li>
 									<a href="#headerSizes"><span>@include</span> headerSizes;</a>
+								</li>
+							
+								<li>
+									<a href="#gradientText"><span>@include</span> gradientText;</a>
+								</li>
+							
+								<li>
+									<a href="#textColumns"><span>@include</span> textColumns;</a>
+								</li>
+							
+								<li>
+									<a href="#fontSize"><span>@include</span> fontSize;</a>
 								</li>
 							
 						</ul>
@@ -138,6 +150,60 @@
 			  		</li>
 					
 			  		<li>
+			  			<a href="#helpers">Helpers</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#normalise"><span>@include</span> normalise;</a>
+								</li>
+							
+								<li>
+									<a href="#retinaImage"><span>@include</span> retinaImage;</a>
+								</li>
+							
+								<li>
+									<a href="#scrollbar"><span>@include</span> scrollbar;</a>
+								</li>
+							
+								<li>
+									<a href="#circle"><span>@include</span> circle;</a>
+								</li>
+							
+								<li>
+									<a href="#arrow"><span>@include</span> arrow;</a>
+								</li>
+							
+								<li>
+									<a href="#noSelect"><span>@include</span> noSelect;</a>
+								</li>
+							
+								<li>
+									<a href="#vendorPrefix"><span>@include</span> vendorPrefix;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
+			  			<a href="#colours">Colour Palette</a>
+			  			<ul class="subnav">
+			  				
+								<li>
+									<a href="#linkColours"><span>@include</span> linkColours;</a>
+								</li>
+							
+								<li>
+									<a href="#swatch"><span>@include</span> swatch;</a>
+								</li>
+							
+								<li>
+									<a href="#palette"><span>@include</span> palette;</a>
+								</li>
+							
+						</ul>
+			  		</li>
+					
+			  		<li>
 			  			<a href="#icons">Icons</a>
 			  			<ul class="subnav">
 			  				
@@ -165,23 +231,7 @@
 								</li>
 							
 								<li>
-									<a href="#breakPoint"><span>@include</span> breakPoint;</a>
-								</li>
-							
-								<li>
-									<a href="#containerClass"><span>@include</span> containerClass;</a>
-								</li>
-							
-								<li>
 									<a href="#fullScreen"><span>@include</span> fullScreen;</a>
-								</li>
-							
-								<li>
-									<a href="#centre"><span>@include</span> centre;</a>
-								</li>
-							
-								<li>
-									<a href="#centreClasses"><span>@include</span> centreClasses;</a>
 								</li>
 							
 								<li>
@@ -200,6 +250,18 @@
 									<a href="#sideBarAppend"><span>@include</span> sideBarAppend;</a>
 								</li>
 							
+								<li>
+									<a href="#centre"><span>@include</span> centre;</a>
+								</li>
+							
+								<li>
+									<a href="#centreClasses"><span>@include</span> centreClasses;</a>
+								</li>
+							
+								<li>
+									<a href="#breakPoint"><span>@include</span> breakPoint;</a>
+								</li>
+							
 						</ul>
 			  		</li>
 					
@@ -208,11 +270,15 @@
 			  			<ul class="subnav">
 			  				
 								<li>
-									<a href="#tabsFlat"><span>@include</span> tabsFlat;</a>
+									<a href="#paginationFlat"><span>@include</span> paginationFlat;</a>
 								</li>
 							
 								<li>
-									<a href="#paginationFlat"><span>@include</span> paginationFlat;</a>
+									<a href="#dropdownFlat"><span>@include</span> dropdownFlat;</a>
+								</li>
+							
+								<li>
+									<a href="#tabsFlat"><span>@include</span> tabsFlat;</a>
 								</li>
 							
 						</ul>
@@ -223,11 +289,11 @@
 			  			<ul class="subnav">
 			  				
 								<li>
-									<a href="#formLined"><span>@include</span> formLined;</a>
+									<a href="#formRounded"><span>@include</span> formRounded;</a>
 								</li>
 							
 								<li>
-									<a href="#formRounded"><span>@include</span> formRounded;</a>
+									<a href="#formLined"><span>@include</span> formLined;</a>
 								</li>
 							
 								<li>
@@ -236,6 +302,10 @@
 							
 								<li>
 									<a href="#switch"><span>@include</span> switch;</a>
+								</li>
+							
+								<li>
+									<a href="#slider"><span>@include</span> slider;</a>
 								</li>
 							
 						</ul>
@@ -288,7 +358,25 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> headerSizes;</h2>
-							<div><p>Programmatically calculate the sizes of your heading elements by passing in the ceiling(h1) and floor(h6) size values. These integers will be converted into px and rem values using the @include fontSize(); mixin.</p></div>
+							<div><p>Programmatically calculate the sizes of your heading elements. This mixin uses the @include fontSize mixin in order to calulate both rem and pixel value fallbacks. by passing in the ceiling(h1) and floor(h6) size values. These integers will be converted into px and rem values using the @include fontSize(); mixin.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gradientText;</h2>
+							<div><p>Add a vertical linear gradient to text. <strong>Webkit support only.</strong> Other browsers will fall back to a flat colour.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> textColumns;</h2>
+							<div><p>Programmatically generate css3 columns with breakpoints by using this mixin.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> fontSize;</h2>
+							<div><p>Convert a pixel value into rem value with this mixin. Pixel values are still output for legacy browsers.</p></div>
 							<hr />
 						</div>
 						
@@ -378,19 +466,95 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridColumns;</h2>
-							<div><p>This mixin is used by @include gridClasses. But it can also be used nested in selectors in the same way that you might use the susy ruby gem. This is useful if you dont need all the grid classes or if you want to apply column widths to elements that are dynamicly added on to the page - e.g. iframes.</p></div>
+							<div><p>This mixin is used by @include gridClasses to calculate widths of column elements but it can also be used nested in selectors in the same way that you might use the susy ruby gem. This is useful if you dont need all the grid classes or if you want to apply column widths to elements that are dynamicly added on to the page - e.g. iframes.</p></div>
 							<hr />
 						</div>
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridIndent;</h2>
-							<div><p>This mixin is used by @include gridClasses to calculate the margin indents needed for the various push classes. as with @include grid-col this mixin can be used individually, nested in a selector to calculate the margin width of an element.</p></div>
+							<div><p>This mixin is used by @include gridClasses to calculate the margin indents needed for the various push classes. as with @include gridColumns this mixin can be used individually, nested in a selector to calculate the margin width of an element.</p></div>
 							<hr />
 						</div>
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridOutdent;</h2>
-							<div><p>This mixin is used by @include gridClasses to calculate the margin outdents needed for the various pull classes. as with @include grid-push this mixin can be used individually, nested in a selector to calculate the margin width of an element.</p></div>
+							<div><p>This mixin is used by @include gridClasses to calculate the margin outdents needed for the various pull classes. as with @include gridIndent this mixin can be used individually, nested in a selector to calculate the margin width of an element.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="helpers" class="include-block">
+						<h1>Helpers</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> normalise;</h2>
+							<div><p>Normalise Html elements and programtically computes heading sizes</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> retinaImage;</h2>
+							<div><p>Add retina/HD background images really easily with this mixin. It takes arguments for the image path (relative to the compiled css file) and for image dimentions to scale to.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> scrollbar;</h2>
+							<div><p>Create custon scrollbars for webkit browsers</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> circle;</h2>
+							<div><p>Mixin for creating a css circle with equal dimentions for height, width, line-height &amp; border-radius.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> arrow;</h2>
+							<div><p>Mixin for creating css triangle arrows</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> noSelect;</h2>
+							<div><p>Helper to stop unwanted highlighting effect on elements</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> vendorPrefix;</h2>
+							<div><p>Mixin for generating vendor prefixes for css3 properties.</p></div>
+							<hr />
+						</div>
+						
+
+					</div>	
+					
+					<div id="colours" class="include-block">
+						<h1>Colour Palette</h1>
+						<hr />
+						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> linkColours;</h2>
+							<div><p>Generate link :psuedo classes with colours for each link state with this mixin.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> swatch;</h2>
+							<div><p><strong>Generate classes for a colour swatch</strong>. Creates text, border, background and contrast classes.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> palette;</h2>
+							<div><p><strong>Generate classes for a colour palette</strong>. Creates text, border, background and contrast classes for each colour in the sass map required for the first argument. The map format requires a</p></div>
 							<hr />
 						</div>
 						
@@ -435,32 +599,8 @@
 						</div>
 						
 						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> breakPoint;</h2>
-							<div><p>A more semantic wrapper for handling breakpoints. It takes a single argument for the size. This can be "large" - 1420px, "medium" - 1200px, "small" - 760px or a pixel value of your choosing.</p></div>
-							<hr />
-						</div>
-						
-						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> containerClass;</h2>
-							<div><p>Adds a .container class</p></div>
-							<hr />
-						</div>
-						
-						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> fullScreen;</h2>
 							<div><p>Nested include to apply full screen styles to a selector. Uses the vh css property see caniuse for more information</p></div>
-							<hr />
-						</div>
-						
-						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> centre;</h2>
-							<div><p>Centralises a fluid container element to its nearest relatively posisiotned parent. Can be used within an element with the fullscreen class.</p></div>
-							<hr />
-						</div>
-						
-						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> centreClasses;</h2>
-							<div><p>This mixin genrates 4 classes for centering elements or text. Can be used within an element with the fullscreen class.</p></div>
 							<hr />
 						</div>
 						
@@ -488,6 +628,24 @@
 							<hr />
 						</div>
 						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> centre;</h2>
+							<div><p>Centralises a fluid container element to its nearest relatively posisiotned parent. Can be used within an element with the fullscreen class.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> centreClasses;</h2>
+							<div><p>This mixin genrates 4 classes for centering elements or text. Can be used within an element with the fullscreen class.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> breakPoint;</h2>
+							<div><p>A more symantic wrapper for handling breakpoints. It takes a single argument for the size. This can be 'large' - 1420px, 'medium' - 1200px, 'small' - 760px or a pixel value of your choosing.</p></div>
+							<hr />
+						</div>
+						
 
 					</div>	
 					
@@ -497,14 +655,20 @@
 						
 						
 						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> tabsFlat;</h2>
-							<div><p>Add styles for a flat UI style tabbing interface.</p></div>
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> paginationFlat;</h2>
+							<div><p>Add flat ui pagination classes with this mixin. Arguments allow you to control Colours, sizing, outer roundness and thickness of the bottom border.</p></div>
 							<hr />
 						</div>
 						
 						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> paginationFlat;</h2>
-							<div><p>Add flat ui pagination classes with this mixin. Arguments allow you to control Colours, sizing, outer roundness and thickness of the bottom border.</p></div>
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> dropdownFlat;</h2>
+							<div><p>Add styles for a flat ui list dropdaown. Arguments allow you to control Colours, sizing &amp; outer roundness.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> tabsFlat;</h2>
+							<div><p>Add styles for a flat UI style tabbing interface.</p></div>
 							<hr />
 						</div>
 						
@@ -517,14 +681,14 @@
 						
 						
 						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> formLined;</h2>
-							<div><p>Include styles for a form with bottom-bordered inputs and textareas. Arguments Allow you to control the border thickness, padding and font size of elements.</p></div>
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> formRounded;</h2>
+							<div><p>Include styles for a form with rounded inputs and textareas. Arguments Allow you to control the rounding amount, padding and font size of elements.</p></div>
 							<hr />
 						</div>
 						
 						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> formRounded;</h2>
-							<div><p>Include styles for a form with rounded inputs and textareas. Arguments Allow you to control the rounding amount, padding and font size of elements.</p></div>
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> formLined;</h2>
+							<div><p>Include styles for a form with bottom-bordered inputs and textareas. Arguments Allow you to control the border thickness, padding and font size of elements.</p></div>
 							<hr />
 						</div>
 						
@@ -537,6 +701,12 @@
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> switch;</h2>
 							<div><p>Include styles for a modern looking javascript form switch with this mixin. A class name is required for the first argument. Optional arguments allow you to control on colour, off colour, width and font size. <strong>Note:</strong> the javascript for this is yet to be included. See below for expected markup.</p></div>
+							<hr />
+						</div>
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> slider;</h2>
+							<div><p>Include styles for a modern looking javascript range slider element. A class name is required for the first argument. Optional arguments allow you to control slide colour, track colour, and height. <strong>Note:</strong> the javascript for this is yet to be included. See below for expected markup.</p></div>
 							<hr />
 						</div>
 						
