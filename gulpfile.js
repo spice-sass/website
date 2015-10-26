@@ -48,7 +48,7 @@ gulp.task('static', function() {
 
     var dest = (template.indexOf('demos/') > -1) ? './build/demos': './build/';
     var obj = {
-      "docs" : getJsonData('./app/api/includes'),
+      "docs" : getJsonData('./build/api/includes'),
       "version" : getJsonData('../spice/package').version, // Requires spice repo to be cloned to the same directory
       "siteTitle" : "Spice | A sass library for tasty web interfaces"
     }
