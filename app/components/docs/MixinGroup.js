@@ -11,8 +11,6 @@ var MixinGroup = React.createClass({
 		var mixins = inc[group].mixins;
 		var title  = inc[group].title;
 
-		console.log(mixins);
-
 		return (
 			<div className="include-block" id={group}>
 				<h1>{{title}}</h1>
@@ -49,6 +47,20 @@ var MixinGroup = React.createClass({
 										</ul>
 									</header>
 									<div className="code-body scrollbar html" dangerouslySetInnerHTML={{__html: mixin.markup}} />
+								</div>
+							}
+							{mixin.links && 
+								<div>
+									<h6>{mixin.linksTitle ? mixin.linksTitle + " :" : 'See also :'}</h6>
+									<ul className="mixin-links">
+										{mixin.links.map(function(link){
+											return (
+												<li>
+													<a href={'#' + link}>{'@include ' + link}</a>
+												</li>
+											)
+										})}
+									</ul>
 								</div>
 							}
 							<hr />
