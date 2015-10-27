@@ -6,6 +6,13 @@ $darker : darken($themeColour,5%);
 $lighter : lighten($themeColour,5%);
 $contrast :contrast($themeColour,60%); 
 
+$linkcols : (
+    'link'    : #333,
+    'visited' : #FFF,
+    'hover'   : #289e83,
+    'active'  : #1b8898
+);
+
 @mixin themeStack($themeColour){
 
     .stack{
@@ -55,14 +62,13 @@ $contrast :contrast($themeColour,60%);
 
 body{
 	
+    background-color : $themeColour;
 	@include fontSize(18);
 }
 
-@include themeBase($themeColour);
 @include googleFont('roboto-slab',h1 h2 h3 h4 h5 h6 button,300);
 @include googleFont('roboto',body textarea,300);
-@include themeTypography($themeColour,#8E949D,#E0F7FF,$col-primary);
-@include themeLinks(white);
+@include linkColours($linkcols);
 @include headingEmphasis($col-primary,true);
 @include themeBlockquote($col-primary,darken($themeColour,5%));
 
@@ -75,17 +81,11 @@ body{
 	@include scrollbar($themeColour);
 }
 
-@include themeNavigation($type);
 @include themeStack($themeColour);
-@include themeTables($themeColour);
+@include flatTables(contrast($themeColour,65%),$themeColour);
 @include themeRangeInput($themeColour,lighten($themeColour,20%),$col-secondary);
 @include linedTabs(#000,$darker);
 
-@include messageClass(10px,5);
-@include themeMessageClass('info', $col-secondary,white);
-@include themeMessageClass('warning', $col-warning,white);
-@include themeMessageClass('danger', $col-danger,white);
-@include themeMessageClass('success', $col-success,white);
 @include tabsFlat('flat',contrast($darker,8%),$darker);
 
 $cols : (

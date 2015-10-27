@@ -294,55 +294,6 @@ textarea:focus, form.lined input[type=text]:focus, form.lined input[type=email]:
     column-count: 8;
   }
 }
-body {
-  color: #666;
-  line-height: 140%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #111;
-}
-
-p {
-  color: #666;
-}
-
-strong, b {
-  color: #434343;
-  font-weight: bold;
-}
-
-hr {
-  display: block;
-  margin: 20px 20px 40px 20px;
-  height: 0;
-  border-left: none;
-  border-right: none;
-  border-top: 1px solid #b6b6b6;
-  border-bottom: 1px solid white;
-  opacity: 0.3;
-}
-
-mark {
-  font-size: 0.8em;
-  background-color: orange;
-  padding: 5px;
-}
-
-ol li {
-  list-style: decimal;
-  margin-left: 30px;
-}
-
-.highlighted {
-  font-size: 0.9em;
-  padding: 3px 5px;
-  border-radius: 5px;
-  color: #e7534f;
-  background-color: #f9d7d6;
-  border: 1px solid #f3aba9;
-}
-
 header {
   background: white;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
