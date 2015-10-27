@@ -41,7 +41,8 @@ gulp.task('static', function() {
     "index",
     "documentation",
     "examples",
-    "demos/dash"
+    "demos/dash",
+    "demos/punfest"
   ]
 
   templates.forEach(function(template){
