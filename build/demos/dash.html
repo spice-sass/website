@@ -6,40 +6,144 @@
 	
 		<title>Default title</title>
 	
-	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/themes/light.css" />
+	
+	<link rel="stylesheet" type="text/css" href="/css/views/demos/dash.css">
+
 </head>
   <body>
-    <header class="sticky slide-in-down">
+    
+<section id="dashboard">
 	
-	<div class="container transition main ">
+	<div id="side-bar">
 
+		<div id="dash-logo">
+			<h1>Dash</h1>
+		</div>
+
+		<div id="user-bar">
+			
+			<img src="http://www.placecage.com/g/60/60" alt="Nicolas">
+			<h2>Nicolas</h2>
+			<h3>Creative consultant</h3>
+
+		</div>
 		
-		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
-			<a href="/" class="red">Spice</a>
-		</h1>
-		
-
-		<nav class="horizontal main shift">
-
-			<ul>
-				<li class="slide-in-down">
-					<a href="/documentation"><i class="block-icon-open-book font20"></i> <span>Documentation</span></a>
-				</li>
-			</ul>
-
-		</nav>
-
-		
-
-		<p id="version" class="align-right slide-in-left">0.4.9</p>
+		<ul class="vertical-nav">
+			<li>
+				<div class="badge blue">5 new</div>
+				<a href="#"><i class="block-icon-mail"></i>Messages</a>
+			</li>
+			<li>
+				<a href=""><i class="block-icon-calendar"></i>Calendar</a>
+			</li>
+			<li class="active">
+				<a href="#"><i class="block-icon-line-graph"></i>Stats</a>
+			</li>
+			<li>
+				<div class="badge blue">17</div>
+				<a href=""><i class="block-icon-list"></i>To-do list</a>
+				<ul class="subnav">
+					<li class="slide-in-right"><a href="">Lorem.</a></li>
+					<li class="slide-in-right"><a href="">Vel?</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href=""><i class="block-icon-cog"></i>Settings</a>
+				<ul class="subnav">
+					<li class="slide-in-right"><a href="">Lorem.</a></li>
+					<li class="slide-in-right"><a href="">Vel?</a></li>
+					<li class="slide-in-right"><a href="">Ea.</a></li>
+				</ul>
+			</li>
+		</ul>
 
 	</div>
 
-</header>
-    
-<section>
-	derp
+	<div id="main">
+
+		<header>
+
+			<form action="#" class="lined">
+				<input type="search" placeholder="search">
+			</form>
+
+		</header>
+		
+		<div id="chart" class="clearfix">
+
+			<div class="panel wide">
+
+				<div class="panel-header">
+					<h1>Welcome back Dave...</h1>
+					<p>You have <span>5</span> unread messages.</p>
+				</div>
+
+				
+				<div class="notification">
+					
+					<span class="index">1</span>
+					<p class="from">Silvia Phelps</p>
+					<p class="msg">A note about the deployments we...</p>
+
+				</div>
+
+				<div class="notification">
+					
+					<span class="index">2</span>
+					<p class="from">John Wilks</p>
+					<p class="msg">Great feedback on the new template...</p>
+
+				</div>
+
+				<div class="notification">
+					
+					<span class="index">3</span>
+					<p class="from">Jack Sutton</p>
+					<p class="msg">Great feedback on the new template</p>
+
+				</div>
+				
+			</div>
+			
+			<div class="panel narrow">
+				
+		    	<div ng-doughnut="{val:87,size:250,padding:30,className:'blue'}"></div>
+
+			</div>
+
+		</div>		
+
+
+		<div id="stats" class="clearfix">
+			
+
+			<div class="stat">
+				
+				<span class="badge turquoise">Tuesday</span>
+				<p class="figure">1,459</p>
+				<p class="summary turquoise-contrast">Unique visits</p>
+
+			</div>
+
+			<div class="stat">
+				
+				<span class="badge turquoise">Last 7 days</span>
+				<p class="figure">34,459</p>
+				<p class="summary">Unique visits</p>
+
+			</div>
+
+			<div class="stat">
+				
+				<p class="figure">1,459</p>
+				<p class="summary">Unique visits</p>
+
+			</div>
+
+		</div>
+
+	</div>
+
 </section>
 
   </body>

@@ -4,9 +4,7 @@ $break : 750px;
 
 #docs-wrapper{
 
-	@include fitContainer(50px 0px 0px)
-
-	
+	@include fitContainer(50px 0px 0px);	
 }
 
 #sidebar{

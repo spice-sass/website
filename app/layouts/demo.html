@@ -6,11 +6,12 @@
 	{% block title %}
 		<title>Default title</title>
 	{% endblock %}
-	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/themes/light.css" />
+	{% block stylesheets %}
+		<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/themes/light.css" />
+	{% endblock %}
 </head>
   <body>
-    {% include '../components/header/header.html' %}
     {% block content %}{% endblock %}
   </body>
 </html>

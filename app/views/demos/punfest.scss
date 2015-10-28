@@ -1,0 +1,96 @@
+@import "../node_modules/spice-sass/src/spice";
+
+$headerHeight : 50px;
+$bgColour     : #e9e9e9;
+
+
+
+@include normalise;
+@include headerSizes(40,20);
+@include containerClass(2500px);
+@include googleFont('leckerli-one',h1,300);
+@include googleFont('source-sans',body textarea button,100);
+@include formLined(4px,5px 20px,16);
+@include formsTheme(#333,#f3f3f3,$col-pastel-red);
+@include masonryColumns;
+
+
+header{
+
+	background:white;
+	@include vendorPrefix(box-shadow,0 0 10px rgba(0,0,0,0.3));
+	@include stickyHeader(50px);
+
+	h1{
+
+		line-height: $headerHeight;
+		margin-bottom: 0;
+		color:$col-pastel-red;
+		float: left;
+		@include fontSize(22);
+	}
+
+	p{
+		margin-left: 10px;
+		float: left;
+		line-height: $headerHeight;
+		@include fontSize(16);
+	}
+
+	form{
+
+		margin-top:7px;
+		float: right;
+		max-width: 300px;
+	}
+}
+
+#main{
+
+	background:$bgColour;
+	min-height:100vh;
+	padding:$headerHeight + 30px 0;
+
+	.masonry-item{
+
+		background:white;
+		@include vendorPrefix(box-shadow,0 3px 5px rgba(0,0,0,0.3));
+
+		h3{
+			padding:10px;
+			margin-bottom: 0;
+			border-bottom: 1px solid #eee;
+			font-weight: 600;
+			@include fontSize(18);
+		}
+
+		p{
+
+			padding:10px;
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 0;
+			@include fontSize(14);
+		}
+	}
+}
+
+.social{
+
+	li{
+		display: inline-block;
+		line-height: 28px;
+		padding: 0 0 0 10px;
+		@include fontSize(16);
+
+		i{
+			margin-right: 3px;
+			@include fontSize(12);
+		}
+
+		&:hover{
+			color:$col-pastel-red;
+		}
+	}
+}
+
+@include lineIcons;
