@@ -111,13 +111,7 @@
 @include flipClass(y);
 
 @include cardClass;
-@include paddedClass;
-@include tables;
-
-@include navigationClasses("vertical",0.9em,50px,20px);
-@include navigationClasses("horizontal",0.9em,50px,20px,0);
-
-
+@include paddedClass; 
 @include masonryColumns;
 
 @import "components/header/header";
@@ -126,7 +120,6 @@
 @import "views/documentation";
 @import "views/examples";
 @import "views/tickets";
-// @import "views/tests/test";
 
 .columns{
 

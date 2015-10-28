@@ -522,6 +522,38 @@ svg.submit path:hover {
   transform: translate(-50%, -50%);
 }
 
+#docs-wrapper ul.vertical-nav li {
+  display: block;
+  position: relative;
+}
+#docs-wrapper ul.vertical-nav li.active a {
+  color: #289e83;
+}
+#docs-wrapper ul.vertical-nav li a {
+  display: block;
+  color: #637F7D;
+  padding: 0 20px;
+  line-height: 56px;
+  font-size: 16px;
+  font-size: 1rem;
+}
+#docs-wrapper ul.vertical-nav li a:hover {
+  background-color: #fff;
+  color: #8c8c8c;
+}
+#docs-wrapper ul.vertical-nav li a i {
+  margin-right: 10px;
+}
+#docs-wrapper ul.vertical-nav li .subnav {
+  display: none;
+}
+#docs-wrapper ul.vertical-nav li .subnav li a {
+  padding-left: 40px;
+}
+#docs-wrapper ul.vertical-nav li:hover .subnav {
+  display: block;
+}
+
 .red {
   color: #e7534f;
 }

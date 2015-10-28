@@ -9,7 +9,7 @@ var Sidebar = React.createClass({
 		var inc = this.props.includes;
 		var goToMixin = this.props.goToMixin;
 		return (
-			<nav className="vertical page-nav scrollbar" id="sidebar">
+			<nav className="vertical-nav page-nav scrollbar" id="sidebar">
 				<ul>
 					<li>
 						<a onClick={goToMixin.bind(this,'getting-started')}>Getting Started</a>
