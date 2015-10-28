@@ -9,8 +9,8 @@ var Sidebar = React.createClass({
 		var inc = this.props.includes;
 		var goToMixin = this.props.goToMixin;
 		return (
-			<nav className="vertical-nav page-nav scrollbar" id="sidebar">
-				<ul>
+			<nav className="page-nav scrollbar" id="sidebar">
+				<ul className="vertical-nav">
 					<li>
 						<a onClick={goToMixin.bind(this,'getting-started')}>Getting Started</a>
 						<ul className="subnav">
@@ -20,7 +20,7 @@ var Sidebar = React.createClass({
 						</ul>
 					</li>
 				</ul>
-				<ul>
+				<ul className="vertical-nav">
 					{this.props.order.map(function(ord){
 						return <SBLink ord={ord} includes={inc} goToMixin={goToMixin}/>
 					})}
