@@ -1,6 +1,8 @@
 
 header.sticky{
 
+
+	line-height:50px;
 	@include stickyHeader(50px);
 
 	.container.transition{
@@ -21,7 +23,6 @@ header.sticky{
 
 	#logo{
 		
-		top:12px;
 		position: absolute;
 		letter-spacing:0;
 		margin-right:20px;
@@ -45,6 +46,7 @@ header.sticky{
 	nav{
 
 		margin-right:20px;
+		padding-left:20px;
 		@include vendorPrefix(transition,'all,ease,0.5s');
 
 		&.shift{

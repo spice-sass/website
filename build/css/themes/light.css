@@ -522,38 +522,6 @@ svg.submit path:hover {
   transform: translate(-50%, -50%);
 }
 
-#sidebar ul.vertical-nav li {
-  display: block;
-  position: relative;
-}
-#sidebar ul.vertical-nav li.active a {
-  color: #289e83;
-}
-#sidebar ul.vertical-nav li a {
-  display: block;
-  color: #637F7D;
-  padding: 0 20px;
-  line-height: 56px;
-  font-size: 16px;
-  font-size: 1rem;
-}
-#sidebar ul.vertical-nav li a:hover {
-  background-color: #fff;
-  color: #8c8c8c;
-}
-#sidebar ul.vertical-nav li a i {
-  margin-right: 10px;
-}
-#sidebar ul.vertical-nav li .subnav {
-  display: none;
-}
-#sidebar ul.vertical-nav li .subnav li a {
-  padding-left: 40px;
-}
-#sidebar ul.vertical-nav li:hover .subnav {
-  display: block;
-}
-
 .red {
   color: #e7534f;
 }
