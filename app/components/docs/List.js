@@ -14,9 +14,9 @@ var List = React.createClass({
 						<h2 className="red">Installation</h2>
 						<p>{'Spice is available for download via npm or bower'}</p>
 						<h5>npm</h5>
-						<blockquote>npm install sass-includes</blockquote>
+						<blockquote>npm install spice-sass</blockquote>
 						<h5>Bower</h5>
-						<blockquote>bower install includes</blockquote>
+						<blockquote>bower install spice-sass</blockquote>
 					</div>
 
 					<hr />

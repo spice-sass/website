@@ -56,7 +56,7 @@ gulp.task('static', function() {
 
     obj.template = template;
 
-    gulp.src('./app/views/'+template+'.html')
+    gulp.src('./app/views/'+template+'.twig')
       .pipe(data(obj))
       .pipe(swig())
       .pipe(gulp.dest(dest))
