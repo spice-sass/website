@@ -7,7 +7,7 @@ $lighter : lighten($themeColour,5%);
 
 $linkcols : (
     'link'    : #333,
-    'visited' : #FFF,
+    'visited' : #000,
     'hover'   : #289e83,
     'active'  : #1b8898
 );
@@ -87,7 +87,11 @@ body{
 @include googleFont('source-sans',body textarea input button);
 @include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6, 300);
 
-@include linkColours($linkcols);
+
+#docs{
+  @include linkColours($linkcols);  
+}
+
 @include headingEmphasis($col-pastel-red,true);
 @include themeBlockquote($col-pastel-red,#f3f3f3);
 @include formsTheme(#333,$lighter,$col-primary);

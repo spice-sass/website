@@ -31,11 +31,31 @@
 		}
 	}
 
+	a{
+
+		text-decoration: none;
+	}
+
 }
 
-.code{
-	
+#installation{
+
+	h2{
+		
+		text-align:center;
+	}
+
+	.code-demo{
+
+		display: block;
+		padding:10px;
+		border-radius:5px;
+		color:#BECFDC;
+		background-color:#2F404C;
+	}
 }
+
+
 
 .red{
 
