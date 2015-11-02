@@ -3012,6 +3012,7 @@ input[type=range]::-ms-track {
   }
 }
 header.sticky {
+  line-height: 50px;
   position: fixed;
   top: 0;
   height: 50px;
@@ -3033,7 +3034,6 @@ header.sticky .container.main {
   z-index: 999;
 }
 header.sticky #logo {
-  top: 12px;
   position: absolute;
   letter-spacing: 0;
   margin-right: 20px;
@@ -3048,6 +3048,7 @@ header.sticky button {
 }
 header.sticky nav {
   margin-right: 20px;
+  padding-left: 20px;
   -webkit-transition: all,ease,0.5s;
   -moz-transition: all,ease,0.5s;
   -o-transition: all,ease,0.5s;
@@ -3244,7 +3245,18 @@ header.sticky .line-icon-menu {
   -o-transition: all,ease,0.4s;
   transition: all,ease,0.4s;
 }
+#sidebar ul {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+#sidebar ul li a {
+  display: block;
+  padding: 0 20px;
+  line-height: 40px;
+}
 #sidebar .subnav li a {
+  padding-left: 30px;
   -webkit-transition: all,ease,0.4s;
   -moz-transition: all,ease,0.4s;
   -o-transition: all,ease,0.4s;

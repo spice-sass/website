@@ -36,7 +36,7 @@
 			<form class="lined" id="search-docs"></form>
 		
 
-		<p id="version" class="align-right slide-in-left">0.5.2</p>
+		<p id="version" class="align-right slide-in-left">0.5.3</p>
 
 	</div>
 
@@ -352,7 +352,7 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> googleFont;</h2>
-							<div><p>Google web fonts can be added to your styles without the need to import the google hosted stylesheets to your html</p></div>
+							<div><p>Add selected Google web fonts and assign them to selectors with this mixin and eliminate the need to reference an external stylesheet. Arguments allow you to select the font you wish to add, the selectors to assign and optional weight of the font.<br><br><strong>Currently available fonts:</strong></p><ul><li>open-sans</li><li>open-sans-condensed</li><li>roboto</li><li>roboto-slab</li><li>leckerli-one</li><li>quicksand</li><li>oswald</li><li>source-sans</li><li>lobster</li><li>arvo</li></ul></div>
 							<hr />
 						</div>
 						
@@ -460,7 +460,7 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridClasses;</h2>
-							<div><p>This mixin genrates classes for a fluid grid system. You can specify the amount of columns you want, the guttering, the screen width at which you want elements to stack and optional outdent/indent classes.</p></div>
+							<div><p>This mixin genrates classes for a fluid grid system. Arguments allow you to define the amount of columns you want, the guttering, the screen width at which you want elements to stack and optional outdent/indent classes. Default settings can be overwritten to suit your template.</p><p><strong>Default Settings:</strong></p><ul><li>$grid-col-count : 12;</li><li>$grid-gutter-width : 2%;</li><li>$grid-stack-point : 550px;</li><li>$grid-mobile-first : true;</li><li>$grid-shift-classes : true;</li></ul></div>
 							<hr />
 						</div>
 						
@@ -642,7 +642,7 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> breakPoint;</h2>
-							<div><p>A more symantic wrapper for handling breakpoints. It takes a single argument for the size. This can be 'large' - 1420px, 'medium' - 1200px, 'small' - 760px or a pixel value of your choosing.</p></div>
+							<div><p>A more symantic wrapper for handling breakpoints. It takes two arguments. Firstly for the size. This can be 'large' - 1420px, 'medium' - 1200px, 'small' - 760px or a pixel value of your choosing. The second argument allows you to specify the type of breakpoint i.e. 'min' = min-width or 'max' = max-width.</p></div>
 							<hr />
 						</div>
 						

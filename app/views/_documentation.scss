@@ -12,8 +12,24 @@ $break : 750px;
 	@include sideBar($sidebarWidth);
 	@include vendorPrefix(transition,'all,ease,0.4s');
 
+
+	ul{
+
+		margin-bottom: 20px;
+		@include fontSize(14px);
+
+		li a{
+
+			display: block;
+			padding:0 20px;
+			line-height: 40px;
+
+		}
+	}
+
 	.subnav li a{
 
+		padding-left:30px;
 		@include vendorPrefix(transition,'all,ease,0.4s');
 	}
 

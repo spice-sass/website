@@ -84,16 +84,12 @@ body{
 }
 
 
-@include googleFont('open-sans',body textarea input button);
-
-h1,h2,h3,h4,h5,h6{
-	font-weight:600;
-}
+@include googleFont('source-sans',body textarea input button);
+@include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6, 300);
 
 @include linkColours($linkcols);
 @include headingEmphasis($col-pastel-red,true);
 @include themeBlockquote($col-pastel-red,#f3f3f3);
-
 @include formsTheme(#333,$lighter,$col-primary);
 
 
@@ -114,9 +110,7 @@ h1,h2,h3,h4,h5,h6{
 @include doughnut('danger',$col-danger,3px,#ccc,#111);
 @include doughnut('submit',$col-success,3px,#ccc,#111);
 
-#sidebar{
-    @include verticalNav(#637F7D,#fff,$col-primary);
-}
+
 
 $cols : (
 	"red":#e7534f,
