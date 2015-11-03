@@ -47,6 +47,7 @@ header.sticky{
 
 		margin-right:20px;
 		padding-left:20px;
+		float: left;
 		@include vendorPrefix(transition,'all,ease,0.5s');
 
 		&.shift{

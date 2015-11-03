@@ -209,7 +209,7 @@ hr {
 }
 
 #sidebar {
-  background-color: #252727;
+  background-color: #1C2227;
   overflow: auto;
 }
 #sidebar a {
@@ -224,12 +224,12 @@ hr {
   padding: 10px;
 }
 #sidebar::-webkit-scrollbar-track {
-  background: #575b5b;
+  background: #475662;
 }
 #sidebar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #0c0d0d;
-  border: 2px solid #575b5b;
+  background: #070809;
+  border: 2px solid #475662;
 }
 
 #docs {
