@@ -2,20 +2,36 @@
 #pane-1{
 
 
-	#logo{
+	#main-logo{
 
-		color:#e7534f;
-		margin-bottom: 0.7em;
-		font:{
-			size:5em;
-		}
+		max-width: 350px;
+		margin: 0 auto;
 
-		@include breakPoint(760px){
-			font-size: 4.2em;
-		}
+		path{
 
-		@include breakPoint(560px){
-			font-size: 3.2em;
+			&.light-red{
+				fill:#BE2126;
+			}
+
+			&.dark-red{
+				fill:#942322;
+			}
+
+			&.highlight{
+				fill:#F2B6B9;
+			}
+
+			&.light-green{
+				fill:#6CAA43;
+			}
+
+			&.dark-green{
+				fill:#507C39;
+			}
+
+			&.text{
+				fill:#E25D2B;
+			}
 		}
 	}
 
@@ -51,7 +67,15 @@
 		padding:10px;
 		border-radius:5px;
 		color:#BECFDC;
-		background-color:#2F404C;
+		background-color:$col-wet-asphalt;
+		border:1px solid $col-midnight-blue;
+
+		.import{
+			color:$col-alizarin;
+		}
+		.string{
+			color:$col-sunflower;
+		}
 	}
 }
 

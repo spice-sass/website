@@ -85,7 +85,12 @@ body{
 
 
 @include googleFont('source-sans',body textarea input button);
-@include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6, 300);
+@include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6);
+
+h1,h2,h3,h4,h5,h6{
+
+    color:#3B4954;
+}
 
 hr{
 
@@ -101,7 +106,7 @@ hr{
 
 #sidebar{
 
-    $sidebar : $col-slate;
+    $sidebar : #252525;
     background-color:$sidebar;
 
     a{
@@ -160,7 +165,6 @@ $cols : (
 
 header.sticky{
 
-	background-color: #111;
 	color:#eee;
 }
 
