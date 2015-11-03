@@ -213,7 +213,7 @@ form.lined fieldset {
 
 textarea, form.lined input[type=text], form.lined input[type=email], form.lined input[type=password], form.lined input[type=url], form.lined input[type=tel], form.lined input[type=search], form.lined input[type=date], form.lined input[type=time], form.lined input[type=number], form.lined input.text, form.lined select, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text {
   background-color: #f3f3f3;
-  border-color: #d9d9d9;
+  border-color: #dadada;
   color: #333;
 }
 textarea:hover, form.lined input[type=text]:hover, form.lined input[type=email]:hover, form.lined input[type=password]:hover, form.lined input[type=url]:hover, form.lined input[type=tel]:hover, form.lined input[type=search]:hover, form.lined input[type=date]:hover, form.lined input[type=time]:hover, form.lined input[type=number]:hover, form.lined input.text:hover, form.lined select:hover, select:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover, input[type=date]:hover, input[type=time]:hover, input[type=number]:hover, input.text:hover {

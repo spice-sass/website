@@ -9,7 +9,7 @@ $break : 750px;
 
 #sidebar{
 
-	@include sideBar($sidebarWidth,'left', #f4f4f4);
+	@include sideBar($sidebarWidth);
 	@include vendorPrefix(transition,'all,ease,0.4s');
 
 
@@ -23,6 +23,8 @@ $break : 750px;
 			display: block;
 			padding:0 20px;
 			line-height: 40px;
+			text-decoration: none;
+			cursor: pointer;
 
 		}
 	}

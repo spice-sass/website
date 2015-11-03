@@ -2,7 +2,7 @@
 
 
 $type : "light";
-$themeColour : #e9e9e9;
+$themeColour : $col-clouds;
 $lighter : lighten($themeColour,5%);
 
 $linkcols : (
@@ -87,9 +87,37 @@ body{
 @include googleFont('source-sans',body textarea input button);
 @include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6, 300);
 
+hr{
+
+    display: block;
+    margin: 20px 20px 40px 20px;
+    height:0;
+    border-left:none;
+    border-right:none;
+    border-top: 1px solid darken($themeColour,20%);
+    border-bottom: 1px solid lighten($themeColour,20%);
+    opacity: 0.3;
+}
+
+#sidebar{
+
+    $sidebar : $col-slate;
+    background-color:$sidebar;
+
+    a{
+        color: darken($col-clouds,25%);
+
+        &:hover{
+            color: white;
+        }
+    }
+
+    @include scrollbar($sidebar);
+}
 
 #docs{
-  @include linkColours($linkcols);  
+    @include linkColours($linkcols);
+    @include scrollbar($themeColour);  
 }
 
 @include headingEmphasis($col-pastel-red,true);
@@ -99,9 +127,7 @@ body{
 
 @include tabsFlat('flat',contrast($lighter,8%),$lighter);
 
-.scrollbar{
-	@include scrollbar($themeColour);
-}
+
 
 @include themeStack($themeColour);
 @include flatTables(contrast($themeColour,65%),$themeColour);

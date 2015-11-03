@@ -127,7 +127,7 @@ h6 {
 
 body {
   line-height: 150%;
-  background-color: #e9e9e9;
+  background-color: #ECF0F1;
   font-size: 18px;
   font-size: 1.125rem;
 }
@@ -197,6 +197,44 @@ body {
   font-weight: 300;
 }
 
+hr {
+  display: block;
+  margin: 20px 20px 40px 20px;
+  height: 0;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #b1c2c6;
+  border-bottom: 1px solid white;
+  opacity: 0.3;
+}
+
+#sidebar {
+  background-color: #1C2227;
+  overflow: auto;
+}
+#sidebar a {
+  color: #a3b6bb;
+}
+#sidebar a:hover {
+  color: white;
+}
+#sidebar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+}
+#sidebar::-webkit-scrollbar-track {
+  background: #475662;
+}
+#sidebar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #070809;
+  border: 2px solid #475662;
+}
+
+#docs {
+  overflow: auto;
+}
 #docs a {
   text-decoration: none;
 }
@@ -211,6 +249,19 @@ body {
 }
 #docs a:active {
   color: #1b8898;
+}
+#docs::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+}
+#docs::-webkit-scrollbar-track {
+  background: white;
+}
+#docs::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #cfd9db;
+  border: 2px solid white;
 }
 
 h1.emph, h2.emph, h3.emph, h4.emph, h5.emph, h6.emph {
@@ -233,12 +284,12 @@ blockquote {
 }
 
 textarea, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text {
-  background-color: #f6f6f6;
-  border-color: gainsboro;
+  background-color: #fbfcfc;
+  border-color: #dde4e6;
   color: #333;
 }
 textarea:hover, select:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover, input[type=date]:hover, input[type=time]:hover, input[type=number]:hover, input.text:hover {
-  border-color: #c3c3c3;
+  border-color: #c0cdd1;
 }
 textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus, input[type=date]:focus, input[type=time]:focus, input[type=number]:focus, input.text:focus {
   color: black;
@@ -246,14 +297,14 @@ textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, i
 }
 
 .tabs.flat header {
-  background-color: #e1e1e1;
+  background-color: #e3e9eb;
   border-radius: 3px 3px 0 0;
-  border-left: 1px solid gainsboro;
-  border-right: 1px solid gainsboro;
-  border-top: 1px solid gainsboro;
-  -webkit-box-shadow: inset 0 -1px 0 gainsboro;
-  -moz-box-shadow: inset 0 -1px 0 gainsboro;
-  box-shadow: inset 0 -1px 0 gainsboro;
+  border-left: 1px solid #dde4e6;
+  border-right: 1px solid #dde4e6;
+  border-top: 1px solid #dde4e6;
+  -webkit-box-shadow: inset 0 -1px 0 #dde4e6;
+  -moz-box-shadow: inset 0 -1px 0 #dde4e6;
+  box-shadow: inset 0 -1px 0 #dde4e6;
 }
 .tabs.flat header ul li {
   display: inline-block;
@@ -263,7 +314,7 @@ textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, i
   padding: 0 20px;
   cursor: pointer;
   border-radius: 3px 3px 0 0;
-  color: #484848;
+  color: #42555a;
   position: relative;
   line-height: 38.4px;
   border-left: 1px solid transparent;
@@ -272,46 +323,29 @@ textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, i
   font-size: 1rem;
 }
 .tabs.flat header ul li a.active {
-  background-color: #f6f6f6;
+  background-color: #fbfcfc;
   color: black;
-  border-color: gainsboro;
+  border-color: #dde4e6;
 }
 .tabs.flat header ul li:first-child a.active {
-  border-left-color: #f6f6f6;
+  border-left-color: #fbfcfc;
 }
 .tabs.flat .tab-content {
   padding: 30px;
-  background-color: #f6f6f6;
-  border-left: 1px solid gainsboro;
-  border-right: 1px solid gainsboro;
-  border-bottom: 1px solid gainsboro;
+  background-color: #fbfcfc;
+  border-left: 1px solid #dde4e6;
+  border-right: 1px solid #dde4e6;
+  border-bottom: 1px solid #dde4e6;
   border-radius: 0 0 3px 3px;
-}
-
-.scrollbar {
-  overflow: auto;
-}
-.scrollbar::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  padding: 10px;
-}
-.scrollbar::-webkit-scrollbar-track {
-  background: white;
-}
-.scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: #d0d0d0;
-  border: 2px solid white;
 }
 
 .stack {
   display: block;
-  background-color: #e9e9e9;
-  border-bottom: 1px solid #d7d7d7;
+  background-color: #ECF0F1;
+  border-bottom: 1px solid #d7e0e2;
 }
 .stack:nth-child(even) {
-  background-color: #e4e4e4;
+  background-color: #e6ebed;
 }
 
 table, caption, tbody, tfoot, thead, tr, th, td {
@@ -350,42 +384,42 @@ table tr {
 }
 table th {
   font-weight: 600;
-  color: #2a2a2a;
-  border-color: #d0d0d0;
+  color: #283436;
+  border-color: #cfd9db;
 }
 table td {
   border-top-width: 1px;
   border-style: solid;
-  color: #434343;
-  border-color: #d0d0d0;
+  color: #3e4f54;
+  border-color: #cfd9db;
 }
 table tbody tr:nth-child(odd) {
-  background-color: #eeeeee;
+  background-color: #f2f5f5;
 }
 
 input[type=range]::-webkit-slider-thumb {
-  background: #b6b6b6;
-  border: 1px solid #838383;
+  background: #b1c2c6;
+  border: 1px solid #77939a;
 }
 input[type=range]::-moz-range-thumb {
-  background: #b6b6b6;
-  border: 1px solid #838383;
+  background: #b1c2c6;
+  border: 1px solid #77939a;
 }
 input[type=range]::-ms-thumb {
-  background: #b6b6b6;
-  border: 1px solid #838383;
+  background: #b1c2c6;
+  border: 1px solid #77939a;
 }
 input[type=range]::-moz-range-track {
-  background-color: #f6f6f6;
-  border: 1px solid #d0d0d0;
+  background-color: #fbfcfc;
+  border: 1px solid #cfd9db;
 }
 input[type=range]::-webkit-slider-runnable-track {
-  background-color: #f6f6f6;
-  border: 1px solid #d0d0d0;
+  background-color: #fbfcfc;
+  border: 1px solid #cfd9db;
 }
 input[type=range]::-ms-track {
-  background-color: #f6f6f6;
-  border: 1px solid #d0d0d0;
+  background-color: #fbfcfc;
+  border: 1px solid #cfd9db;
 }
 input[type=range]::-ms-fill-lower {
   background: #289e83;
@@ -655,7 +689,7 @@ svg.submit path:hover {
 }
 
 .contrast {
-  color: #505050;
+  color: #495d62;
 }
 
 header.sticky {
@@ -664,11 +698,11 @@ header.sticky {
 }
 
 .card, .grid-block, .masonry-item, .grid-example, .icon-holder, .example {
-  background-color: #f6f6f6;
+  background-color: #fbfcfc;
   border: 1px solid #ddd;
 }
 .card header, .grid-block header, .masonry-item header, .grid-example header, .icon-holder header, .example header {
-  background-color: #eeeeee;
+  background-color: #f2f5f5;
   border-bottom: 1px solid #ddd;
 }
 .card header h1, .grid-block header h1, .masonry-item header h1, .grid-example header h1, .icon-holder header h1, .example header h1, .card header h2, .grid-block header h2, .masonry-item header h2, .grid-example header h2, .icon-holder header h2, .example header h2, .card header h3, .grid-block header h3, .masonry-item header h3, .grid-example header h3, .icon-holder header h3, .example header h3, .card header h4, .grid-block header h4, .masonry-item header h4, .grid-example header h4, .icon-holder header h4, .example header h4, .card header h5, .grid-block header h5, .masonry-item header h5, .grid-example header h5, .icon-holder header h5, .example header h5, .card header h6, .grid-block header h6, .masonry-item header h6, .grid-example header h6, .icon-holder header h6, .example header h6 {
@@ -676,7 +710,7 @@ header.sticky {
   border-left: 3px solid #289e83;
 }
 .card footer, .grid-block footer, .masonry-item footer, .grid-example footer, .icon-holder footer, .example footer {
-  background-color: #eeeeee;
+  background-color: #f2f5f5;
   border-top: 1px solid #ddd;
 }
 .card footer a, .grid-block footer a, .masonry-item footer a, .grid-example footer a, .icon-holder footer a, .example footer a {
