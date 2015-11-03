@@ -8,15 +8,15 @@
 		
 		<div class="centre-y text-centre">
 			<h1 id="logo" class="leckerli-one fade-in" style="text-transform:none;font-weight:300;letter-spacing:0;">Spice</h1>
-			<h2 id="strap" class="roboto-slab slide-in-right contrast">Add a little spice to your UI</h2>
+			<h2 id="strap" class="roboto-slab slide-in-up contrast">Add a little spice to your UI</h2>
 			<a href="#installation" class="button large flat-secondary block-icon-open-book slide-in-right">Installation</a>
 			<a href="/documentation#getting-started" class="button large flat-primary block-icon-open-book slide-in-left">View Docs</a>
-			<p class="slide-in-right">{{version}}</p>
+			<p class="slide-in-up">Version {{version}}</p>
 		</div>
 		
 	</section>
 
-	<section class="fullscreen stack" id="installation">
+	<section class="stack" id="installation">
 			
 			<div class="container">
 
@@ -24,27 +24,27 @@
 
 					<div class="grid-col-8 grid-col-indent-2">
 
-						<h2 class="red centre-text">Installation &amp; Usage</h2>
+						<h2 class="red"><span>Installation &amp; Usage</span></h2>
 						<p>Spice is available for download via npm or bower</p>
 
 						<h5>npm</h5>
-						<p class="code">
+						<p class="code-demo">
 							npm install spice-sass
 						</p>
 
 						<h5>Bower</h5>
-						<p class="code">
+						<p class="code-demo">
 							bower install spice-sass
 						</p>
 
 						<p>
-							Once installed you can import spice into your main sass file.
+							Once installed you can import spice into your main scss file.
 							<strong>Note:</strong> the import must be relative to your 
 							node_modules/bower_components folder dependent on your chosen
-							method of installation. E.g.
+							method of installation. E.g. for a node installation:
 						</p>
 
-						<p class="code">
+						<p class="code-demo">
 							@import "../node_modules/spice-sass/src/spice";
 						</p>
 

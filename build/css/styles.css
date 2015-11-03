@@ -18,14 +18,14 @@ button.grad-light, .button.grad-light {
   color: #5a5a5a;
   position: relative;
   border-radius: 3px;
-  border: 1px solid #dadada;
+  border: 1px solid #d9d9d9;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #dadada));
-  background-image: -moz-linear-gradient(white, #dadada);
-  background-image: -webkit-linear-gradient(white, #dadada);
-  background-image: linear-gradient(white #dadada);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #d9d9d9));
+  background-image: -moz-linear-gradient(white, #d9d9d9);
+  background-image: -webkit-linear-gradient(white, #d9d9d9);
+  background-image: linear-gradient(white #d9d9d9);
   font-size: 16px;
   font-size: 1rem;
 }
@@ -75,7 +75,7 @@ button.grad-light[class^="block-icon-"]:after, button.grad-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #dadada;
+  background: #d9d9d9;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -113,10 +113,10 @@ button.grad-dark.small, .button.grad-dark.small {
 }
 button.grad-dark:hover, button.grad-dark:focus, .button.grad-dark:hover, .button.grad-dark:focus {
   color: #efefef;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #282828), color-stop(100%, #0f0f0f));
-  background-image: -moz-linear-gradient(#282828, #0f0f0f);
-  background-image: -webkit-linear-gradient(#282828, #0f0f0f);
-  background-image: linear-gradient(#282828 #0f0f0f);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #282828), color-stop(100%, #0e0e0e));
+  background-image: -moz-linear-gradient(#282828, #0e0e0e);
+  background-image: -webkit-linear-gradient(#282828, #0e0e0e);
+  background-image: linear-gradient(#282828 #0e0e0e);
 }
 button.grad-dark:active, .button.grad-dark:active {
   border-bottom-width: 1px;
@@ -147,7 +147,7 @@ button.grad-dark[class^="block-icon-"]:after, button.grad-dark[class*=" block-ic
   content: "";
   position: absolute;
   width: 1px;
-  background: #0f0f0f;
+  background: #0e0e0e;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -672,7 +672,7 @@ button.flat-light, .button.flat-light {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #dadada;
+  border-bottom-color: #d9d9d9;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -722,7 +722,7 @@ button.flat-light[class^="block-icon-"]:after, button.flat-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #dadada;
+  background: #d9d9d9;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -743,7 +743,7 @@ button.flat-dark, .button.flat-dark {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #0f0f0f;
+  border-bottom-color: #0e0e0e;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -793,7 +793,7 @@ button.flat-dark[class^="block-icon-"]:after, button.flat-dark[class*=" block-ic
   content: "";
   position: absolute;
   width: 1px;
-  background: #0f0f0f;
+  background: #0e0e0e;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1356,7 +1356,7 @@ button.round-light[class^="block-icon-"]:after, button.round-light[class*=" bloc
   content: "";
   position: absolute;
   width: 1px;
-  background: #dadada;
+  background: #d9d9d9;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1422,7 +1422,7 @@ button.round-dark[class^="block-icon-"]:after, button.round-dark[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #0f0f0f;
+  background: #0e0e0e;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -3105,6 +3105,21 @@ header.sticky .line-icon-menu {
     margin-top: 10px;
   }
 }
+header.sticky a {
+  text-decoration: none;
+}
+header.sticky a:link {
+  color: #ddd;
+}
+header.sticky a:visited {
+  color: #ddd;
+}
+header.sticky a:hover {
+  color: #ffffff;
+}
+header.sticky a:active {
+  color: #1b8898;
+}
 
 .dropdown {
   background-color: #222;
@@ -3194,6 +3209,20 @@ header.sticky .line-icon-menu {
     font-size: 1em;
   }
 }
+#pane-1 a {
+  text-decoration: none;
+}
+
+#installation h2 {
+  text-align: center;
+}
+#installation .code-demo {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  color: #BECFDC;
+  background-color: #2F404C;
+}
 
 .red {
   color: #e7534f;
@@ -3239,6 +3268,7 @@ header.sticky .line-icon-menu {
   top: 0;
   bottom: 0;
   width: 280px;
+  background-color: #f4f4f4;
   left: 0;
   -webkit-transition: all,ease,0.4s;
   -moz-transition: all,ease,0.4s;
@@ -3475,6 +3505,33 @@ header.sticky .line-icon-menu {
 }
 #docs #docs-container.show {
   opacity: 1;
+}
+#docs .mixin-links {
+  min-height: 1%;
+}
+#docs .mixin-links:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#docs .mixin-links li {
+  float: left;
+  position: relative;
+  width: 32%;
+  margin-right: 2%;
+}
+#docs .mixin-links li:nth-child(3n + 3) {
+  margin-right: 0;
+}
+#docs .mixin-links li a {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background-color: #f3f3f3;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 #styleguide {

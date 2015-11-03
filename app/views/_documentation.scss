@@ -9,7 +9,7 @@ $break : 750px;
 
 #sidebar{
 
-	@include sideBar($sidebarWidth);
+	@include sideBar($sidebarWidth,'left', #f4f4f4);
 	@include vendorPrefix(transition,'all,ease,0.4s');
 
 
@@ -247,6 +247,30 @@ $break : 750px;
 		&.show{
 
 			opacity: 1;
+		}
+	}
+
+	.mixin-links{
+
+		@include clearFix;
+
+		li{
+
+			@include gridColumns(4);
+			&:nth-child(3n + 3){
+				margin-right: 0;
+			}
+
+			a{
+
+				display: block;
+				padding:5px 10px;
+				margin-bottom: 5px;
+				border-radius:3px;
+				border:1px solid #ddd;
+				background-color:#f3f3f3;
+				@include fontSize(14px);
+			}
 		}
 	}
 }

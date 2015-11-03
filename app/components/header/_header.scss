@@ -120,6 +120,16 @@ header.sticky{
 		}
 
 	}
+
+
+	$linkcols : (
+	    'link'    : #ddd,
+	    'visited' : #ddd,
+	    'hover'   : #ffffff,
+	    'active'  : #1b8898
+	);
+
+	@include linkColours($linkcols); 
 }
 
 .dropdown{
@@ -192,4 +202,5 @@ header.sticky{
 			@extend .slide-in-right !optional;
 		}
 	}
+
 }
