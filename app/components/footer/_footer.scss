@@ -9,10 +9,10 @@
 	}
 
 	$footerlinks : (
-		'link'    : $col-primary,
-		'visited' : lighten($col-primary,5%),
+		'link'    : $col-alizarin,
+		'visited' : $col-alizarin,
 		'hover'   : white,
-		'active'  : darken($col-primary,5%)
+		'active'  : $col-alizarin
 	);
 
 	@include linkColours($footerlinks);

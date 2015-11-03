@@ -2183,7 +2183,7 @@ header.sticky a:active {
   fill: #507C39;
 }
 #pane-1 #main-logo path.text {
-  fill: #E25D2B;
+  fill: #CC775D;
 }
 #pane-1 #strap {
   text-transform: uppercase;
@@ -2235,16 +2235,16 @@ header.sticky a:active {
   text-decoration: none;
 }
 #main-footer a:link {
-  color: #289e83;
+  color: #E74C3C;
 }
 #main-footer a:visited {
-  color: #2db294;
+  color: #E74C3C;
 }
 #main-footer a:hover {
   color: white;
 }
 #main-footer a:active {
-  color: #238a72;
+  color: #E74C3C;
 }
 
 #docs-wrapper {
