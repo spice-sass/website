@@ -3284,6 +3284,8 @@ header.sticky a:active {
   display: block;
   padding: 0 20px;
   line-height: 40px;
+  text-decoration: none;
+  cursor: pointer;
 }
 #sidebar .subnav li a {
   padding-left: 30px;
