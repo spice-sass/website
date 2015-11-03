@@ -18,14 +18,14 @@ button.grad-light, .button.grad-light {
   color: #5a5a5a;
   position: relative;
   border-radius: 3px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #dadada;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #d9d9d9));
-  background-image: -moz-linear-gradient(white, #d9d9d9);
-  background-image: -webkit-linear-gradient(white, #d9d9d9);
-  background-image: linear-gradient(white #d9d9d9);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #dadada));
+  background-image: -moz-linear-gradient(white, #dadada);
+  background-image: -webkit-linear-gradient(white, #dadada);
+  background-image: linear-gradient(white #dadada);
   font-size: 16px;
   font-size: 1rem;
 }
@@ -75,7 +75,7 @@ button.grad-light[class^="block-icon-"]:after, button.grad-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -113,10 +113,10 @@ button.grad-dark.small, .button.grad-dark.small {
 }
 button.grad-dark:hover, button.grad-dark:focus, .button.grad-dark:hover, .button.grad-dark:focus {
   color: #efefef;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #282828), color-stop(100%, #0e0e0e));
-  background-image: -moz-linear-gradient(#282828, #0e0e0e);
-  background-image: -webkit-linear-gradient(#282828, #0e0e0e);
-  background-image: linear-gradient(#282828 #0e0e0e);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #282828), color-stop(100%, #0f0f0f));
+  background-image: -moz-linear-gradient(#282828, #0f0f0f);
+  background-image: -webkit-linear-gradient(#282828, #0f0f0f);
+  background-image: linear-gradient(#282828 #0f0f0f);
 }
 button.grad-dark:active, .button.grad-dark:active {
   border-bottom-width: 1px;
@@ -147,7 +147,7 @@ button.grad-dark[class^="block-icon-"]:after, button.grad-dark[class*=" block-ic
   content: "";
   position: absolute;
   width: 1px;
-  background: #0e0e0e;
+  background: #0f0f0f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -672,7 +672,7 @@ button.flat-light, .button.flat-light {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #d9d9d9;
+  border-bottom-color: #dadada;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -722,7 +722,7 @@ button.flat-light[class^="block-icon-"]:after, button.flat-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -743,7 +743,7 @@ button.flat-dark, .button.flat-dark {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #0e0e0e;
+  border-bottom-color: #0f0f0f;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -793,7 +793,7 @@ button.flat-dark[class^="block-icon-"]:after, button.flat-dark[class*=" block-ic
   content: "";
   position: absolute;
   width: 1px;
-  background: #0e0e0e;
+  background: #0f0f0f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1356,7 +1356,7 @@ button.round-light[class^="block-icon-"]:after, button.round-light[class*=" bloc
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1422,7 +1422,7 @@ button.round-dark[class^="block-icon-"]:after, button.round-dark[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #0e0e0e;
+  background: #0f0f0f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -3268,7 +3268,6 @@ header.sticky a:active {
   top: 0;
   bottom: 0;
   width: 280px;
-  background-color: #f4f4f4;
   left: 0;
   -webkit-transition: all,ease,0.4s;
   -moz-transition: all,ease,0.4s;
