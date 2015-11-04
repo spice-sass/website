@@ -3,9 +3,11 @@
 	<div class="container transition main {% if template == 'documentation' %}stretch{% endif %}">
 
 		{% if template != 'index' %}
-		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
-			<a href="/" class="red">Spice</a>
-		</h1>
+		<div id="logo" class="slide-in-right" ng-if="logoNav">
+			<a href="/">
+				<img src="/img/spice-logo.svg" width="55" />
+			</a>
+		</div>
 		{% endif %}
 
 		<nav class="horizontal main {% if template != 'index' %}shift{% endif %}">

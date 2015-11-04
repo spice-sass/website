@@ -27,7 +27,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('browserify', function () {
-  gulp.src(['./app/app.js', './app/docs.js'], {entry: true})
+  gulp.src(['./app/home.js', './app/docs.js'], {entry: true})
     .pipe(browserify({
       transform: ['babelify']
     }))

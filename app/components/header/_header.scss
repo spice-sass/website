@@ -3,7 +3,7 @@ header.sticky{
 
 
 	line-height:50px;
-	@include stickyHeader(50px);
+	@include stickyHeader(50px,#151515);
 
 	.container.transition{
 
@@ -24,13 +24,11 @@ header.sticky{
 	#logo{
 		
 		position: absolute;
-		letter-spacing:0;
-		margin-right:20px;
-		font:{
-			size:1em;
-			weight:normal;
+
+		img{
+
+			margin-top: 16px;
 		}
-		@extend .leckerli-one;
 
 		a{
 
@@ -52,7 +50,7 @@ header.sticky{
 
 		&.shift{
 
-			margin-left: 40px;
+			margin-left: 62px;
 		}
 
 		a {
