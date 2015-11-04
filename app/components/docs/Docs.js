@@ -1,6 +1,7 @@
 import apiService from '../../services/apiService';
 import Sidebar from './Sidebar';
 import List from './List';
+import AppActions from '../../actions/appActions';
 
 var Docs = React.createClass({
 

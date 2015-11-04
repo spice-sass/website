@@ -1,8 +1,37 @@
 import MixinTabs from "./MixinTabs";
+import AppStore from '../../stores/appStore';
+import AppActions from '../../actions/appActions';
 
 // Ancestors - List > Docs
 
 var MixinGroup = React.createClass({
+
+	getInitialState () {
+		return{
+			filterTerm : ""
+		}
+	},
+
+	componentDidMount () {
+		AppStore.addChangeListener('filter',this.filterHandler);
+		AppStore.addChangeListener('scroll',this.onScrollHandler);
+	},
+
+	filterHandler (term) {
+
+		this.setState({
+			filterTerm : term.toLowerCase()
+		});
+		//console.log(term);
+	},
+
+	onScrollHandler (event) {
+
+		var group = this.group.getDOMNode(),
+			top   = group.getBoundingClientRect().top;
+
+		console.log(top,event);
+	},
 
 	render() {
 
@@ -13,8 +42,9 @@ var MixinGroup = React.createClass({
 		var title  = inc[group].title;
 
 		return (
-			<div className="include-block" id={group}>
+			<div className="include-block" id={group} ref={(ref) => this.group = ref}>
 				<h1>{{title}}</h1>
+				{title.toLowerCase().indexOf(this.state.filterTerm) && <span>Derp</span>}
 				<hr />
 				{mixins.map(function(mixin){
 					return (

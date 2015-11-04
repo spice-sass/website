@@ -1,15 +1,15 @@
 import MixinGroup from './MixinGroup';
+import AppActions from '../../actions/appActions';
+import AppStore from '../../stores/appStore';
 
 var List = React.createClass({
-
-	scrollHandler (){
-		console.log('derp');
-	},
 
 	componentDidMount (){
 
 		var docs = this.docs.getDOMNode();
-		docs.addEventListener('scroll',this.scrollHandler);
+		docs.onscroll = function(e) {
+			AppActions.scroll(e.srcElement.scrollTop);
+		}
 	},
 
 	render() {

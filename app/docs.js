@@ -14,12 +14,10 @@ import Header from './components/header/header';
 //        |-- MixinGroup
 //    	      |-- MixinTab 
 
-
-
-// React.render(
-//  	<Header/>,
-//     document.getElementById('search-docs')
-// );
+React.render(
+ 	<Header/>,
+    document.getElementById('search-docs')
+);
 
 React.render(
  	<Docs/>,
