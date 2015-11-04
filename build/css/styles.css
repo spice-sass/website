@@ -18,14 +18,14 @@ button.grad-light, .button.grad-light {
   color: #5a5a5a;
   position: relative;
   border-radius: 3px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #dadada;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #d9d9d9));
-  background-image: -moz-linear-gradient(white, #d9d9d9);
-  background-image: -webkit-linear-gradient(white, #d9d9d9);
-  background-image: linear-gradient(white #d9d9d9);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #dadada));
+  background-image: -moz-linear-gradient(white, #dadada);
+  background-image: -webkit-linear-gradient(white, #dadada);
+  background-image: linear-gradient(white #dadada);
   font-size: 16px;
   font-size: 1rem;
 }
@@ -75,7 +75,7 @@ button.grad-light[class^="block-icon-"]:after, button.grad-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -162,14 +162,14 @@ button.grad-secondary, .button.grad-secondary {
   color: #9ab1c7;
   position: relative;
   border-radius: 3px;
-  border: 1px solid #1a242f;
+  border: 1px solid #1a252f;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3e5771), color-stop(100%, #1a242f));
-  background-image: -moz-linear-gradient(#3e5771, #1a242f);
-  background-image: -webkit-linear-gradient(#3e5771, #1a242f);
-  background-image: linear-gradient(#3e5771 #1a242f);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3e5871), color-stop(100%, #1a252f));
+  background-image: -moz-linear-gradient(#3e5871, #1a252f);
+  background-image: -webkit-linear-gradient(#3e5871, #1a252f);
+  background-image: linear-gradient(#3e5871 #1a252f);
   font-size: 16px;
   font-size: 1rem;
 }
@@ -219,7 +219,7 @@ button.grad-secondary[class^="block-icon-"]:after, button.grad-secondary[class*=
   content: "";
   position: absolute;
   width: 1px;
-  background: #1a242f;
+  background: #1a252f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -456,7 +456,7 @@ button.flat-light, .button.flat-light {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #d9d9d9;
+  border-bottom-color: #dadada;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -506,7 +506,7 @@ button.flat-light[class^="block-icon-"]:after, button.flat-light[class*=" block-
   content: "";
   position: absolute;
   width: 1px;
-  background: #d9d9d9;
+  background: #dadada;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -598,7 +598,7 @@ button.flat-secondary, .button.flat-secondary {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #1a242f;
+  border-bottom-color: #1a252f;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -648,7 +648,7 @@ button.flat-secondary[class^="block-icon-"]:after, button.flat-secondary[class*=
   content: "";
   position: absolute;
   width: 1px;
-  background: #1a242f;
+  background: #1a252f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1995,7 +1995,7 @@ header.sticky {
   height: 50px;
   width: 100%;
   z-index: 9999;
-  background-color: #151515;
+  background-color: #212527;
 }
 header.sticky .container.transition {
   position: relative;
