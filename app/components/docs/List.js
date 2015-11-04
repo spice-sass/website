@@ -1,6 +1,5 @@
 import MixinGroup from './MixinGroup';
 import AppActions from '../../actions/appActions';
-import AppStore from '../../stores/appStore';
 
 var List = React.createClass({
 
@@ -13,6 +12,7 @@ var List = React.createClass({
 	},
 
 	render() {
+		
 		var inc = this.props.includes;
 		return (
 			<div id="docs" ref={(ref) => this.docs = ref}>
@@ -22,6 +22,7 @@ var List = React.createClass({
 			</div>
 		)
 	}
+
 });
 
 export default List;

@@ -22,7 +22,6 @@ var MixinGroup = React.createClass({
 		this.setState({
 			filterTerm : term.toLowerCase()
 		});
-		//console.log(term);
 	},
 
 	onScrollHandler (event) {
@@ -43,8 +42,7 @@ var MixinGroup = React.createClass({
 
 		return (
 			<div className="include-block" id={group} ref={(ref) => this.group = ref}>
-				<h1>{{title}}</h1>
-				{title.toLowerCase().indexOf(this.state.filterTerm) && <span>Derp</span>}
+				<h1>{{title}}</h1>	
 				<hr />
 				{mixins.map(function(mixin){
 					return (

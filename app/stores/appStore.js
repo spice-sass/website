@@ -2,7 +2,6 @@ import AppDispatcher from "../dispatchers/appDispatchers";
 import assign from "../../node_modules/object-assign/index";
 
 const EventEmitter = require('events').EventEmitter;
-const CHANGE_EVENT = 'change';
 
 let AppStore = assign({}, EventEmitter.prototype,{
 
@@ -15,8 +14,8 @@ let AppStore = assign({}, EventEmitter.prototype,{
 	    this.on(event,callback);
 	},
 
-	removeChangeListener: function(callback) {
-	    this.removeListener(CHANGE_EVENT, callback);
+	removeChangeListener: function(event,callback) {
+	    this.removeListener(event,callback);
 	}
 
 });

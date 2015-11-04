@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var babelify = require("babelify");
-var reactify = require("reactify");
 var uglify = require('gulp-uglify');
 var compass = require('gulp-compass');
 var minifyCSS = require('gulp-minify-css');
@@ -32,6 +31,7 @@ gulp.task('browserify', function () {
     .pipe(browserify({
       transform: ['babelify']
     }))
+    .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
 
