@@ -12,7 +12,8 @@ import Header from './components/header/header';
 //    |
 //    |-- List
 //        |-- MixinGroup
-//    	      |-- MixinTab 
+//            |-- MixinItem
+//    	      	  |-- MixinTabs
 
 React.render(
  	<Header/>,

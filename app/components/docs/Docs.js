@@ -2,6 +2,7 @@ import apiService from '../../services/apiService';
 import Sidebar from './Sidebar';
 import List from './List';
 import AppActions from '../../flux/appActions';
+import AppStore from '../../flux/appStore';
 
 var Docs = React.createClass({
 
@@ -9,7 +10,8 @@ var Docs = React.createClass({
 		return {
 			includes : {},
 			order : [],
-			stylePages : []
+			stylePages : [],
+			activeMix : AppStore.getActive()
 		}
 	},
 
@@ -21,8 +23,16 @@ var Docs = React.createClass({
 
 		docs.scrollTop = top;
 	},
-	
+
+	activeHandler (name) {
+		this.setState({
+			activeMix : name
+		});
+	},
+
 	componentDidMount () {
+
+		AppStore.addChangeListener('active',this.activeHandler);
 
 		this.api = new apiService();
 		this.api.request('/api/includes.json')
@@ -38,10 +48,15 @@ var Docs = React.createClass({
 
 	},
 	render (){
+
+		var order    = this.state.order,
+			includes = this.state.includes,
+			active   = this.state.activeMix;
+
 		return (
 			<div id="docs-wrapper">
-				<Sidebar order={this.state.order} includes={this.state.includes} goToMixin={this.goToMixin} />
-				<List order={this.state.order} includes={this.state.includes} />
+				<Sidebar order={order} includes={includes} goToMixin={this.goToMixin} active={active}/>
+				<List order={order} includes={includes} active={active}/>
 			</div>
 		)
 	}

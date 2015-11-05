@@ -1,4 +1,4 @@
-// Ancestors - MixinGroup > List > Docs
+// Ancestors -  List > Docs > MixinGroup > MixinItem
 
 var MixinTabs = React.createClass({
 

@@ -2290,6 +2290,9 @@ header.sticky a:active {
   text-decoration: none;
   cursor: pointer;
 }
+#sidebar ul li a.active {
+  color: red;
+}
 #sidebar ul li.hide {
   display: none;
 }

@@ -22,9 +22,10 @@ var SBLink = React.createClass({
 
 	render() {
 
-		var ord = this.props.ord;
-		var inc = this.props.includes;
+		var ord       = this.props.ord;
+		var inc       = this.props.includes;
 		var goToMixin = this.props.goToMixin;
+		var active    = this.props.active;
 		
 		return (
 			<li>
@@ -35,7 +36,7 @@ var SBLink = React.createClass({
 							{inc[ord].mixins.map(function(mix){
 								return (
 									<li>
-										<a onClick={goToMixin.bind(this,mix.name)}><span>@include</span> {mix.name}</a>
+										<a className={mix.name == active ? 'active' : ''} onClick={goToMixin.bind(this,mix.name)}><span>@include</span> {mix.name}</a>
 									</li>
 								)
 							})}

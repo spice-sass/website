@@ -2,17 +2,17 @@ import AppDispatcher from "./appDispatchers";
 
 let AppActions = {
 
-	scroll : function(pos){
-		AppDispatcher.handleEvent({
-			type : 'scroll',
-			pos  : pos
+	filter : function(term){
+		AppDispatcher.handleFilter({
+			type : 'filter',
+			term : term
 		});
 	},
 
-	filter : function(term){
-		AppDispatcher.handleEvent({
-			type : 'filter',
-			term : term
+	active : function(name){
+		AppDispatcher.handleActive({
+			type : 'active',
+			name : name
 		});
 	}
 

@@ -23,6 +23,10 @@ var _fluxAppActions = require('../../flux/appActions');
 
 var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
 
+var _fluxAppStore = require('../../flux/appStore');
+
+var _fluxAppStore2 = _interopRequireDefault(_fluxAppStore);
+
 var Docs = React.createClass({
 	displayName: 'Docs',
 
@@ -30,7 +34,8 @@ var Docs = React.createClass({
 		return {
 			includes: {},
 			order: [],
-			stylePages: []
+			stylePages: [],
+			activeMix: _fluxAppStore2['default'].getActive()
 		};
 	},
 
@@ -43,7 +48,15 @@ var Docs = React.createClass({
 		docs.scrollTop = top;
 	},
 
+	activeHandler: function activeHandler(name) {
+		this.setState({
+			activeMix: name
+		});
+	},
+
 	componentDidMount: function componentDidMount() {
+
+		_fluxAppStore2['default'].addChangeListener('active', this.activeHandler);
 
 		this.api = new _servicesApiService2['default']();
 		this.api.request('/api/includes.json').end((function (err, response) {
@@ -56,11 +69,16 @@ var Docs = React.createClass({
 		}).bind(this));
 	},
 	render: function render() {
+
+		var order = this.state.order,
+		    includes = this.state.includes,
+		    active = this.state.activeMix;
+
 		return React.createElement(
 			'div',
 			{ id: 'docs-wrapper' },
-			React.createElement(_Sidebar2['default'], { order: this.state.order, includes: this.state.includes, goToMixin: this.goToMixin }),
-			React.createElement(_List2['default'], { order: this.state.order, includes: this.state.includes })
+			React.createElement(_Sidebar2['default'], { order: order, includes: includes, goToMixin: this.goToMixin, active: active }),
+			React.createElement(_List2['default'], { order: order, includes: includes, active: active })
 		);
 	}
 
@@ -69,7 +87,7 @@ var Docs = React.createClass({
 exports['default'] = Docs;
 module.exports = exports['default'];
 
-},{"../../flux/appActions":10,"../../services/apiService":13,"./List":2,"./Sidebar":7}],2:[function(require,module,exports){
+},{"../../flux/appActions":10,"../../flux/appStore":12,"../../services/apiService":13,"./List":2,"./Sidebar":7}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -89,25 +107,38 @@ var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
 var List = React.createClass({
 	displayName: 'List',
 
+	getInitialState: function getInitialState() {
+		return {
+			scrollPos: 0
+		};
+	},
+
 	componentDidMount: function componentDidMount() {
 
 		var docs = this.docs.getDOMNode();
-		docs.onscroll = function (e) {
-			_fluxAppActions2['default'].scroll(e.srcElement.scrollTop);
-		};
+		docs.onscroll = (function (e) {
+			//AppActions.scroll(e.srcElement.scrollTop);
+
+			this.setState({
+				scrollPos: e.srcElement.scrollTop
+			});
+		}).bind(this);
 	},
 
 	render: function render() {
 		var _this = this;
 
 		var inc = this.props.includes;
+		var active = this.props.active;
+		var scroll = this.state.scrollPos;
+
 		return React.createElement(
 			'div',
 			{ id: 'docs', ref: function (ref) {
 					return _this.docs = ref;
 				} },
 			this.props.order.map(function (ord) {
-				return React.createElement(_MixinGroup2['default'], { ord: ord, includes: inc });
+				return React.createElement(_MixinGroup2['default'], { ord: ord, includes: inc, active: active, scroll: scroll });
 			})
 		);
 	}
@@ -138,11 +169,8 @@ var _fluxAppStore = require('../../flux/appStore');
 
 var _fluxAppStore2 = _interopRequireDefault(_fluxAppStore);
 
-var _fluxAppActions = require('../../flux/appActions');
-
-var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
-
 // Ancestors - List > Docs
+// Children - MixinItem > MixinTabs
 
 var MixinGroup = React.createClass({
 	displayName: "MixinGroup",
@@ -155,32 +183,20 @@ var MixinGroup = React.createClass({
 
 	componentDidMount: function componentDidMount() {
 		_fluxAppStore2["default"].addChangeListener('filter', this.filterHandler);
-		_fluxAppStore2["default"].addChangeListener('scroll', this.onScrollHandler);
 	},
 
 	filterHandler: function filterHandler(term) {
-
 		this.setState({
 			filterTerm: term.toLowerCase()
 		});
 	},
 
-	onScrollHandler: function onScrollHandler(event) {
-
-		if (this.group) {
-
-			var group = this.group.getDOMNode(),
-			    top = group.getBoundingClientRect().top;
-
-			console.log(top, event);
-		}
-	},
-
 	render: function render() {
-		var _this = this;
 
 		var group = this.props.ord;
 		var inc = this.props.includes;
+		var active = this.props.active;
+		var scroll = this.props.scroll;
 		var mixins = inc[group].mixins;
 		var fns = inc[group].functions;
 		var title = inc[group].title;
@@ -192,9 +208,7 @@ var MixinGroup = React.createClass({
 			null,
 			search.toLowerCase().indexOf(this.state.filterTerm) > -1 && React.createElement(
 				"div",
-				{ className: "include-block", id: group, ref: function (ref) {
-						return _this.group = ref;
-					} },
+				{ className: "include-block", id: group },
 				React.createElement(
 					"h1",
 					null,
@@ -203,10 +217,10 @@ var MixinGroup = React.createClass({
 				intro && React.createElement("div", { dangerouslySetInnerHTML: { __html: intro } }),
 				React.createElement("hr", null),
 				mixins.map(function (mixin) {
-					return React.createElement(_MixinItem2["default"], { data: mixin, type: "mixin" });
+					return React.createElement(_MixinItem2["default"], { data: mixin, type: "mixin", active: active, scroll: scroll });
 				}),
 				fns && fns.map(function (fn) {
-					return React.createElement(_MixinItem2["default"], { data: fn, type: "function" });
+					return React.createElement(_MixinItem2["default"], { data: fn, type: "function", active: active, scroll: scroll });
 				})
 			)
 		);
@@ -216,119 +230,155 @@ var MixinGroup = React.createClass({
 exports["default"] = MixinGroup;
 module.exports = exports["default"];
 
-},{"../../flux/appActions":10,"../../flux/appStore":12,"./MixinItem":4,"./MixinTabs":5}],4:[function(require,module,exports){
-"use strict";
+},{"../../flux/appStore":12,"./MixinItem":4,"./MixinTabs":5}],4:[function(require,module,exports){
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
 	value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _MixinTabs = require("./MixinTabs");
 
 var _MixinTabs2 = _interopRequireDefault(_MixinTabs);
 
+var _fluxAppStore = require('../../flux/appStore');
+
+var _fluxAppStore2 = _interopRequireDefault(_fluxAppStore);
+
+var _fluxAppActions = require('../../flux/appActions');
+
+var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
+
+var _fluxAppDispatchers = require("../../flux/appDispatchers");
+
+var _fluxAppDispatchers2 = _interopRequireDefault(_fluxAppDispatchers);
+
+// Ancestors - List > Docs > MixinGroup
+// Children -  MixinTabs
+
 var MixinItem = React.createClass({
-	displayName: "MixinItem",
+	displayName: 'MixinItem',
+
+	componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+
+		if (this.mix) {
+
+			var mix = this.mix.getDOMNode(),
+			    name = this.props.data.name,
+			    active = this.props.active,
+			    wHalf = window.innerHeight / 1.5,
+			    rect = mix.getBoundingClientRect(),
+			    bottom = rect.top + rect.height,
+			    top = rect.top;
+
+			if (name != active && (top < wHalf && bottom > wHalf)) {
+				_fluxAppActions2['default'].active(name);
+			}
+		}
+	},
 
 	render: function render() {
+		var _this = this;
 
 		var mixin = this.props.data;
 		return React.createElement(
-			"div",
-			{ className: this.props.type, id: mixin.name },
+			'div',
+			{ className: this.props.type, id: mixin.name, ref: function (ref) {
+					return _this.mix = ref;
+				} },
 			React.createElement(
-				"h2",
-				{ className: "red" },
+				'h2',
+				{ className: 'red' },
 				React.createElement(
-					"span",
-					{ className: "leckerli-one" },
-					"@include"
+					'span',
+					{ className: 'leckerli-one' },
+					'@include'
 				),
-				" ",
+				' ',
 				mixin.name,
-				";"
+				';'
 			),
-			React.createElement("div", { dangerouslySetInnerHTML: { __html: mixin.desc } }),
+			React.createElement('div', { dangerouslySetInnerHTML: { __html: mixin.desc } }),
 			mixin.args > -1 && React.createElement(
-				"div",
+				'div',
 				null,
 				React.createElement(
-					"h6",
+					'h6',
 					null,
-					"Arguments"
+					'Arguments'
 				),
 				React.createElement(
-					"p",
+					'p',
 					null,
-					"This mixin takes ",
+					'This mixin takes ',
 					React.createElement(
-						"span",
+						'span',
 						null,
 						mixin.args
 					),
-					" argument",
+					' argument',
 					mixin.args > 1 && "s",
-					"."
+					'.'
 				),
-				React.createElement("div", { dangerouslySetInnerHTML: { __html: mixin.params } })
+				React.createElement('div', { dangerouslySetInnerHTML: { __html: mixin.params } })
 			),
 			React.createElement(
-				"h6",
+				'h6',
 				null,
-				"Usage"
+				'Usage'
 			),
-			React.createElement(_MixinTabs2["default"], { data: mixin }),
+			React.createElement(_MixinTabs2['default'], { data: mixin }),
 			mixin.demo && React.createElement(
-				"div",
+				'div',
 				null,
 				React.createElement(
-					"h6",
+					'h6',
 					null,
-					"Example"
+					'Example'
 				),
-				React.createElement("div", { dangerouslySetInnerHTML: { __html: mixin.demo } })
+				React.createElement('div', { dangerouslySetInnerHTML: { __html: mixin.demo } })
 			),
 			mixin.markup && React.createElement(
-				"div",
-				{ className: "code html-code" },
+				'div',
+				{ className: 'code html-code' },
 				React.createElement(
-					"header",
+					'header',
 					null,
 					React.createElement(
-						"ul",
+						'ul',
 						null,
 						React.createElement(
-							"li",
-							{ className: "active" },
+							'li',
+							{ className: 'active' },
 							React.createElement(
-								"a",
+								'a',
 								null,
-								"Example HTML"
+								'Example HTML'
 							)
 						)
 					)
 				),
-				React.createElement("div", { className: "code-body scrollbar html", dangerouslySetInnerHTML: { __html: mixin.markup } })
+				React.createElement('div', { className: 'code-body scrollbar html', dangerouslySetInnerHTML: { __html: mixin.markup } })
 			),
 			mixin.links && React.createElement(
-				"div",
+				'div',
 				null,
 				React.createElement(
-					"h6",
+					'h6',
 					null,
 					mixin.linksTitle ? mixin.linksTitle + " :" : 'See also :'
 				),
 				React.createElement(
-					"ul",
-					{ className: "mixin-links" },
+					'ul',
+					{ className: 'mixin-links' },
 					mixin.links.map(function (link) {
 						return React.createElement(
-							"li",
+							'li',
 							null,
 							React.createElement(
-								"a",
+								'a',
 								{ href: '#' + link },
 								'@include ' + link
 							)
@@ -336,17 +386,17 @@ var MixinItem = React.createClass({
 					})
 				)
 			),
-			React.createElement("hr", null)
+			React.createElement('hr', null)
 		);
 	}
 
 });
 
-exports["default"] = MixinItem;
-module.exports = exports["default"];
+exports['default'] = MixinItem;
+module.exports = exports['default'];
 
-},{"./MixinTabs":5}],5:[function(require,module,exports){
-// Ancestors - MixinGroup > List > Docs
+},{"../../flux/appActions":10,"../../flux/appDispatchers":11,"../../flux/appStore":12,"./MixinTabs":5}],5:[function(require,module,exports){
+// Ancestors -  List > Docs > MixinGroup > MixinItem
 
 'use strict';
 
@@ -462,6 +512,7 @@ var SBLink = React.createClass({
 		var ord = this.props.ord;
 		var inc = this.props.includes;
 		var goToMixin = this.props.goToMixin;
+		var active = this.props.active;
 
 		return React.createElement(
 			'li',
@@ -483,7 +534,7 @@ var SBLink = React.createClass({
 							null,
 							React.createElement(
 								'a',
-								{ onClick: goToMixin.bind(this, mix.name) },
+								{ className: mix.name == active ? 'active' : '', onClick: goToMixin.bind(this, mix.name) },
 								React.createElement(
 									'span',
 									null,
@@ -525,6 +576,8 @@ var Sidebar = React.createClass({
 	render: function render() {
 		var inc = this.props.includes;
 		var goToMixin = this.props.goToMixin;
+		var active = this.props.active;
+
 		return React.createElement(
 			"nav",
 			{ className: "page-nav scrollbar", id: "sidebar" },
@@ -532,7 +585,7 @@ var Sidebar = React.createClass({
 				"ul",
 				{ className: "vertical-nav" },
 				this.props.order.map(function (ord) {
-					return React.createElement(_SBLink2["default"], { ord: ord, includes: inc, goToMixin: goToMixin });
+					return React.createElement(_SBLink2["default"], { ord: ord, includes: inc, goToMixin: goToMixin, active: active });
 				})
 			)
 		);
@@ -594,7 +647,8 @@ var _componentsHeaderHeader2 = _interopRequireDefault(_componentsHeaderHeader);
 //    |
 //    |-- List
 //        |-- MixinGroup
-//    	      |-- MixinTab
+//            |-- MixinItem
+//    	      	  |-- MixinTabs
 
 React.render(React.createElement(_componentsHeaderHeader2['default'], null), document.getElementById('search-docs'));
 
@@ -615,17 +669,17 @@ var _appDispatchers2 = _interopRequireDefault(_appDispatchers);
 
 var AppActions = {
 
-	scroll: function scroll(pos) {
-		_appDispatchers2['default'].handleEvent({
-			type: 'scroll',
-			pos: pos
+	filter: function filter(term) {
+		_appDispatchers2['default'].handleFilter({
+			type: 'filter',
+			term: term
 		});
 	},
 
-	filter: function filter(term) {
-		_appDispatchers2['default'].handleEvent({
-			type: 'filter',
-			term: term
+	active: function active(name) {
+		_appDispatchers2['default'].handleActive({
+			type: 'active',
+			name: name
 		});
 	}
 
@@ -644,9 +698,15 @@ var Dispatcher = require("../../node_modules/flux/dist/flux").Dispatcher;
 var assign = require("../../node_modules/object-assign/index");
 
 var AppDispatcher = assign(new Dispatcher(), {
-	handleEvent: function handleEvent(payload) {
+
+	handleFilter: function handleFilter(payload) {
+		this.dispatch(payload);
+	},
+
+	handleActive: function handleActive(payload) {
 		this.dispatch(payload);
 	}
+
 });
 
 exports["default"] = AppDispatcher;
@@ -671,7 +731,17 @@ var _node_modulesObjectAssignIndex2 = _interopRequireDefault(_node_modulesObject
 
 var EventEmitter = require('events').EventEmitter;
 
+var active = "googleFont";
+
 var AppStore = (0, _node_modulesObjectAssignIndex2["default"])({}, EventEmitter.prototype, {
+
+	setActive: function setActive(name) {
+		active = name;
+	},
+
+	getActive: function getActive() {
+		return active;
+	},
 
 	emitChange: function emitChange(event, data) {
 		this.emit(event, data);
@@ -692,8 +762,8 @@ _appDispatchers2["default"].register(function (payload) {
 	if (payload.type == 'filter') {
 		AppStore.emitChange(payload.type, payload.term);
 	}
-	if (payload.type == 'scroll') {
-		AppStore.emitChange(payload.type, payload.pos);
+	if (payload.type == 'active') {
+		AppStore.emitChange(payload.type, payload.name);
 	}
 });
 

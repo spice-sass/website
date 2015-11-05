@@ -1,9 +1,9 @@
 import MixinTabs from "./MixinTabs";
 import MixinItem from "./MixinItem";
 import AppStore from '../../flux/appStore';
-import AppActions from '../../flux/appActions';
 
 // Ancestors - List > Docs
+// Children - MixinItem > MixinTabs
 
 var MixinGroup = React.createClass({
 
@@ -15,32 +15,20 @@ var MixinGroup = React.createClass({
 
 	componentDidMount () {
 		AppStore.addChangeListener('filter',this.filterHandler);
-		AppStore.addChangeListener('scroll',this.onScrollHandler);
 	},
 
 	filterHandler (term) {
-
 		this.setState({
 			filterTerm : term.toLowerCase()
 		});
-	},
-
-	onScrollHandler (event) {
-
-		if(this.group){
-
-			var group = this.group.getDOMNode(),
-				top   = group.getBoundingClientRect().top;
-
-				console.log(top,event);
-		}
-
 	},
 
 	render() {
 
 		var group  = this.props.ord;
 		var inc    = this.props.includes;
+		var active = this.props.active;
+		var scroll = this.props.scroll;
 		var mixins = inc[group].mixins;
 		var fns    = inc[group].functions;
 		var title  = inc[group].title;
@@ -50,15 +38,15 @@ var MixinGroup = React.createClass({
 		return (
 			<div>
 				{search.toLowerCase().indexOf(this.state.filterTerm) > -1 &&
-					<div className="include-block" id={group} ref={(ref) => this.group = ref}>
+					<div className="include-block" id={group} >
 						<h1>{{title}}</h1>
 						{intro && <div dangerouslySetInnerHTML={{__html: intro}} />}	
 						<hr />
 						{mixins.map(function(mixin){
-							return <MixinItem data={mixin} type="mixin"/>
+							return <MixinItem data={mixin} type="mixin" active={active} scroll={scroll}/ >
 						})}
 						{fns && fns.map(function(fn){
-							return <MixinItem data={fn} type="function"/>
+							return <MixinItem data={fn} type="function" active={active} scroll={scroll}/ >
 						})}
 					</div>
 				}

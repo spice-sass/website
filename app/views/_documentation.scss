@@ -26,6 +26,10 @@ $break : 750px;
 			text-decoration: none;
 			cursor: pointer;
 
+			&.active{
+				color:red;
+			}
+
 		}
 
 		li.hide{
