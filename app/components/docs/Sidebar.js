@@ -5,11 +5,15 @@ import SBLink from './SBLink';
 
 var Sidebar = React.createClass({
 
+	componentWillReceiveProps (nextProps) {
+		console.log(nextProps.active);
+	},
+
 	render() {
 		var inc       = this.props.includes;
 		var goToMixin = this.props.goToMixin;
 		var active    = this.props.active;
-		
+
 		return (
 			<nav className="page-nav scrollbar" id="sidebar">
 				<ul className="vertical-nav">

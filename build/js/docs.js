@@ -573,6 +573,10 @@ var _SBLink2 = _interopRequireDefault(_SBLink);
 var Sidebar = React.createClass({
 	displayName: "Sidebar",
 
+	componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+		console.log(nextProps.active);
+	},
+
 	render: function render() {
 		var inc = this.props.includes;
 		var goToMixin = this.props.goToMixin;

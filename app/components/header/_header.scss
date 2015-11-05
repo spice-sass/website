@@ -82,6 +82,12 @@ header.sticky{
 
 			margin-top:10px;
 			padding:5px 10px;
+			outline: none;
+			border-top:none;
+			border-left:none;
+			border-right:none;
+			border-bottom-style:solid;
+			border-bottom-width:3px;
 			@include fontSize(14);
 			
 		}

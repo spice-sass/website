@@ -27,7 +27,7 @@ $break : 750px;
 			cursor: pointer;
 
 			&.active{
-				color:red;
+				color:$col-river-blue;
 			}
 
 		}
@@ -66,11 +66,12 @@ $break : 750px;
 		padding-top: 30px;
 	}
 
-	.mixin{
+	.mixin, .function{
 
 		padding-top: 30px;
 		margin-bottom: 50px;
 		@extend .grid-row;
+
 	}
 
 	hr{
