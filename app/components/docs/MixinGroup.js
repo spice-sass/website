@@ -1,7 +1,7 @@
 import MixinTabs from "./MixinTabs";
 import MixinItem from "./MixinItem";
-import AppStore from '../../stores/appStore';
-import AppActions from '../../actions/appActions';
+import AppStore from '../../flux/appStore';
+import AppActions from '../../flux/appActions';
 
 // Ancestors - List > Docs
 
@@ -45,12 +45,14 @@ var MixinGroup = React.createClass({
 		var fns    = inc[group].functions;
 		var title  = inc[group].title;
 		var search = inc[group].searchTerms;
+		var intro  = inc[group].intro;
 
 		return (
 			<div>
 				{search.toLowerCase().indexOf(this.state.filterTerm) > -1 &&
 					<div className="include-block" id={group} ref={(ref) => this.group = ref}>
-						<h1>{{title}}</h1>	
+						<h1>{{title}}</h1>
+						{intro && <div dangerouslySetInnerHTML={{__html: intro}} />}	
 						<hr />
 						{mixins.map(function(mixin){
 							return <MixinItem data={mixin} type="mixin"/>

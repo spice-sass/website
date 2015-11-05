@@ -1,7 +1,7 @@
 import apiService from '../../services/apiService';
 import Sidebar from './Sidebar';
 import List from './List';
-import AppActions from '../../actions/appActions';
+import AppActions from '../../flux/appActions';
 
 var Docs = React.createClass({
 
@@ -41,7 +41,7 @@ var Docs = React.createClass({
 		return (
 			<div id="docs-wrapper">
 				<Sidebar order={this.state.order} includes={this.state.includes} goToMixin={this.goToMixin} />
-				<List order={this.state.order} includes={this.state.includes}/>
+				<List order={this.state.order} includes={this.state.includes} />
 			</div>
 		)
 	}

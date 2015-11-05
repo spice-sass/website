@@ -1,4 +1,4 @@
-import AppDispatcher from "../dispatchers/appDispatchers";
+import AppDispatcher from "./appDispatchers";
 
 let AppActions = {
 

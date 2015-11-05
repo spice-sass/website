@@ -1,5 +1,5 @@
 import MixinGroup from './MixinGroup';
-import AppActions from '../../actions/appActions';
+import AppActions from '../../flux/appActions';
 
 var List = React.createClass({
 

@@ -1,4 +1,4 @@
-import AppActions from '../../actions/appActions';
+import AppActions from '../../flux/appActions';
 
 let Header = React.createClass({
 

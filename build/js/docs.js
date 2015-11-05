@@ -1,36 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var _dispatchersAppDispatchers = require("../dispatchers/appDispatchers");
-
-var _dispatchersAppDispatchers2 = _interopRequireDefault(_dispatchersAppDispatchers);
-
-var AppActions = {
-
-	scroll: function scroll(pos) {
-		_dispatchersAppDispatchers2["default"].handleScroll({
-			pos: pos
-		});
-	},
-
-	filter: function filter(term) {
-		_dispatchersAppDispatchers2["default"].handleFilter({
-			term: term
-		});
-	}
-
-};
-
-exports["default"] = AppActions;
-module.exports = exports["default"];
-
-},{"../dispatchers/appDispatchers":10}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -51,9 +19,9 @@ var _List = require('./List');
 
 var _List2 = _interopRequireDefault(_List);
 
-var _actionsAppActions = require('../../actions/appActions');
+var _fluxAppActions = require('../../flux/appActions');
 
-var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
+var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
 
 var Docs = React.createClass({
 	displayName: 'Docs',
@@ -101,7 +69,7 @@ var Docs = React.createClass({
 exports['default'] = Docs;
 module.exports = exports['default'];
 
-},{"../../actions/appActions":1,"../../services/apiService":12,"./List":3,"./Sidebar":8}],3:[function(require,module,exports){
+},{"../../flux/appActions":10,"../../services/apiService":13,"./List":2,"./Sidebar":7}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -114,9 +82,9 @@ var _MixinGroup = require('./MixinGroup');
 
 var _MixinGroup2 = _interopRequireDefault(_MixinGroup);
 
-var _actionsAppActions = require('../../actions/appActions');
+var _fluxAppActions = require('../../flux/appActions');
 
-var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
+var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
 
 var List = React.createClass({
 	displayName: 'List',
@@ -125,7 +93,7 @@ var List = React.createClass({
 
 		var docs = this.docs.getDOMNode();
 		docs.onscroll = function (e) {
-			_actionsAppActions2['default'].scroll(e.srcElement.scrollTop);
+			_fluxAppActions2['default'].scroll(e.srcElement.scrollTop);
 		};
 	},
 
@@ -149,7 +117,7 @@ var List = React.createClass({
 exports['default'] = List;
 module.exports = exports['default'];
 
-},{"../../actions/appActions":1,"./MixinGroup":4}],4:[function(require,module,exports){
+},{"../../flux/appActions":10,"./MixinGroup":3}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -166,13 +134,13 @@ var _MixinItem = require("./MixinItem");
 
 var _MixinItem2 = _interopRequireDefault(_MixinItem);
 
-var _storesAppStore = require('../../stores/appStore');
+var _fluxAppStore = require('../../flux/appStore');
 
-var _storesAppStore2 = _interopRequireDefault(_storesAppStore);
+var _fluxAppStore2 = _interopRequireDefault(_fluxAppStore);
 
-var _actionsAppActions = require('../../actions/appActions');
+var _fluxAppActions = require('../../flux/appActions');
 
-var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
+var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
 
 // Ancestors - List > Docs
 
@@ -186,8 +154,8 @@ var MixinGroup = React.createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		_storesAppStore2["default"].addChangeListener('filter', this.filterHandler);
-		_storesAppStore2["default"].addChangeListener('scroll', this.onScrollHandler);
+		_fluxAppStore2["default"].addChangeListener('filter', this.filterHandler);
+		_fluxAppStore2["default"].addChangeListener('scroll', this.onScrollHandler);
 	},
 
 	filterHandler: function filterHandler(term) {
@@ -217,6 +185,7 @@ var MixinGroup = React.createClass({
 		var fns = inc[group].functions;
 		var title = inc[group].title;
 		var search = inc[group].searchTerms;
+		var intro = inc[group].intro;
 
 		return React.createElement(
 			"div",
@@ -231,6 +200,7 @@ var MixinGroup = React.createClass({
 					null,
 					{ title: title }
 				),
+				intro && React.createElement("div", { dangerouslySetInnerHTML: { __html: intro } }),
 				React.createElement("hr", null),
 				mixins.map(function (mixin) {
 					return React.createElement(_MixinItem2["default"], { data: mixin, type: "mixin" });
@@ -246,7 +216,7 @@ var MixinGroup = React.createClass({
 exports["default"] = MixinGroup;
 module.exports = exports["default"];
 
-},{"../../actions/appActions":1,"../../stores/appStore":13,"./MixinItem":5,"./MixinTabs":6}],5:[function(require,module,exports){
+},{"../../flux/appActions":10,"../../flux/appStore":12,"./MixinItem":4,"./MixinTabs":5}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -375,7 +345,7 @@ var MixinItem = React.createClass({
 exports["default"] = MixinItem;
 module.exports = exports["default"];
 
-},{"./MixinTabs":6}],6:[function(require,module,exports){
+},{"./MixinTabs":5}],5:[function(require,module,exports){
 // Ancestors - MixinGroup > List > Docs
 
 'use strict';
@@ -453,7 +423,7 @@ var MixinTabs = React.createClass({
 exports['default'] = MixinTabs;
 module.exports = exports['default'];
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -462,9 +432,9 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _storesAppStore = require('../../stores/appStore');
+var _fluxAppStore = require('../../flux/appStore');
 
-var _storesAppStore2 = _interopRequireDefault(_storesAppStore);
+var _fluxAppStore2 = _interopRequireDefault(_fluxAppStore);
 
 // Ancestors - Sidebar > Docs
 
@@ -478,7 +448,7 @@ var SBLink = React.createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		_storesAppStore2['default'].addChangeListener('filter', this.filterHandler);
+		_fluxAppStore2['default'].addChangeListener('filter', this.filterHandler);
 	},
 
 	filterHandler: function filterHandler(term) {
@@ -533,7 +503,7 @@ var SBLink = React.createClass({
 exports['default'] = SBLink;
 module.exports = exports['default'];
 
-},{"../../stores/appStore":13}],8:[function(require,module,exports){
+},{"../../flux/appStore":12}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -572,7 +542,7 @@ var Sidebar = React.createClass({
 exports["default"] = Sidebar;
 module.exports = exports["default"];
 
-},{"./SBLink":7}],9:[function(require,module,exports){
+},{"./SBLink":6}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -581,16 +551,16 @@ Object.defineProperty(exports, "__esModule", {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _actionsAppActions = require('../../actions/appActions');
+var _fluxAppActions = require('../../flux/appActions');
 
-var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
+var _fluxAppActions2 = _interopRequireDefault(_fluxAppActions);
 
 var Header = React.createClass({
 	displayName: "Header",
 
 	filter: function filter() {
 		var val = this.refs.search.getDOMNode().value;
-		_actionsAppActions2["default"].filter(val);
+		_fluxAppActions2["default"].filter(val);
 	},
 
 	render: function render() {
@@ -601,34 +571,7 @@ var Header = React.createClass({
 exports["default"] = Header;
 module.exports = exports["default"];
 
-},{"../../actions/appActions":1}],10:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-var Dispatcher = require("../../node_modules/flux/dist/flux").Dispatcher;
-var assign = require("../../node_modules/object-assign/index");
-
-var AppDispatcher = assign(new Dispatcher(), {
-
-	handleScroll: function handleScroll(pos) {
-		this.dispatch({
-			pos: pos
-		});
-	},
-
-	handleFilter: function handleFilter(term) {
-		this.dispatch({
-			term: term
-		});
-	}
-});
-
-exports["default"] = AppDispatcher;
-module.exports = exports["default"];
-
-},{"../../node_modules/flux/dist/flux":14,"../../node_modules/object-assign/index":16}],11:[function(require,module,exports){
+},{"../../flux/appActions":10}],9:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -657,7 +600,114 @@ React.render(React.createElement(_componentsHeaderHeader2['default'], null), doc
 
 React.render(React.createElement(_componentsDocsDocs2['default'], null), document.getElementById('documentation'));
 
-},{"./components/docs/Docs":2,"./components/header/header":9}],12:[function(require,module,exports){
+},{"./components/docs/Docs":1,"./components/header/header":8}],10:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _appDispatchers = require("./appDispatchers");
+
+var _appDispatchers2 = _interopRequireDefault(_appDispatchers);
+
+var AppActions = {
+
+	scroll: function scroll(pos) {
+		_appDispatchers2["default"].handleScroll({
+			pos: pos
+		});
+	},
+
+	filter: function filter(term) {
+		_appDispatchers2["default"].handleFilter({
+			term: term
+		});
+	}
+
+};
+
+exports["default"] = AppActions;
+module.exports = exports["default"];
+
+},{"./appDispatchers":11}],11:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var Dispatcher = require("../../node_modules/flux/dist/flux").Dispatcher;
+var assign = require("../../node_modules/object-assign/index");
+
+var AppDispatcher = assign(new Dispatcher(), {
+
+	handleScroll: function handleScroll(pos) {
+		this.dispatch({
+			pos: pos
+		});
+	},
+
+	handleFilter: function handleFilter(term) {
+		this.dispatch({
+			term: term
+		});
+	}
+});
+
+exports["default"] = AppDispatcher;
+module.exports = exports["default"];
+
+},{"../../node_modules/flux/dist/flux":14,"../../node_modules/object-assign/index":16}],12:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _appDispatchers = require("./appDispatchers");
+
+var _appDispatchers2 = _interopRequireDefault(_appDispatchers);
+
+var _node_modulesObjectAssignIndex = require("../../node_modules/object-assign/index");
+
+var _node_modulesObjectAssignIndex2 = _interopRequireDefault(_node_modulesObjectAssignIndex);
+
+var EventEmitter = require('events').EventEmitter;
+
+var AppStore = (0, _node_modulesObjectAssignIndex2["default"])({}, EventEmitter.prototype, {
+
+	emitChange: function emitChange(event, data) {
+		this.emit(event, data);
+	},
+
+	addChangeListener: function addChangeListener(event, callback) {
+		this.setMaxListeners(Infinity);
+		this.on(event, callback);
+	},
+
+	removeChangeListener: function removeChangeListener(event, callback) {
+		this.removeListener(event, callback);
+	}
+
+});
+
+_appDispatchers2["default"].register(function (payload) {
+	if (payload.term) {
+		AppStore.emitChange('filter', payload.term.term);
+	}
+	if (payload.pos) {
+		AppStore.emitChange('scroll', payload.pos.pos);
+	}
+});
+
+exports["default"] = AppStore;
+module.exports = exports["default"];
+
+},{"../../node_modules/object-assign/index":16,"./appDispatchers":11,"events":15}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -692,55 +742,7 @@ var apiService = (function () {
 exports["default"] = apiService;
 module.exports = exports["default"];
 
-},{"../../node_modules/superagent/lib/client":17}],13:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var _dispatchersAppDispatchers = require("../dispatchers/appDispatchers");
-
-var _dispatchersAppDispatchers2 = _interopRequireDefault(_dispatchersAppDispatchers);
-
-var _node_modulesObjectAssignIndex = require("../../node_modules/object-assign/index");
-
-var _node_modulesObjectAssignIndex2 = _interopRequireDefault(_node_modulesObjectAssignIndex);
-
-var EventEmitter = require('events').EventEmitter;
-
-var AppStore = (0, _node_modulesObjectAssignIndex2["default"])({}, EventEmitter.prototype, {
-
-	emitChange: function emitChange(event, data) {
-		this.emit(event, data);
-	},
-
-	addChangeListener: function addChangeListener(event, callback) {
-		this.setMaxListeners(Infinity);
-		this.on(event, callback);
-	},
-
-	removeChangeListener: function removeChangeListener(event, callback) {
-		this.removeListener(event, callback);
-	}
-
-});
-
-_dispatchersAppDispatchers2["default"].register(function (payload) {
-	if (payload.term) {
-		AppStore.emitChange('filter', payload.term.term);
-	}
-	if (payload.pos) {
-		AppStore.emitChange('scroll', payload.pos.pos);
-	}
-});
-
-exports["default"] = AppStore;
-module.exports = exports["default"];
-
-},{"../../node_modules/object-assign/index":16,"../dispatchers/appDispatchers":10,"events":15}],14:[function(require,module,exports){
+},{"../../node_modules/superagent/lib/client":17}],14:[function(require,module,exports){
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -2783,4 +2785,4 @@ module.exports = function(arr, fn, initial){
   
   return curr;
 };
-},{}]},{},[11])
+},{}]},{},[9])

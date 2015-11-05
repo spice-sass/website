@@ -1,4 +1,4 @@
-import AppStore from '../../stores/appStore';
+import AppStore from '../../flux/appStore';
 
 // Ancestors - Sidebar > Docs
 

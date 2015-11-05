@@ -1,4 +1,4 @@
-import AppDispatcher from "../dispatchers/appDispatchers";
+import AppDispatcher from "./appDispatchers";
 import assign from "../../node_modules/object-assign/index";
 
 const EventEmitter = require('events').EventEmitter;
