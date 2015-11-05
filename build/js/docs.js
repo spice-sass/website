@@ -199,10 +199,13 @@ var MixinGroup = React.createClass({
 
 	onScrollHandler: function onScrollHandler(event) {
 
-		var group = this.group.getDOMNode(),
-		    top = group.getBoundingClientRect().top;
+		if (this.group) {
 
-		console.log(top, event);
+			var group = this.group.getDOMNode(),
+			    top = group.getBoundingClientRect().top;
+
+			console.log(top, event);
+		}
 	},
 
 	render: function render() {
@@ -213,24 +216,29 @@ var MixinGroup = React.createClass({
 		var mixins = inc[group].mixins;
 		var fns = inc[group].functions;
 		var title = inc[group].title;
+		var search = inc[group].searchTerms;
 
 		return React.createElement(
 			"div",
-			{ className: "include-block", id: group, ref: function (ref) {
-					return _this.group = ref;
-				} },
-			React.createElement(
-				"h1",
-				null,
-				{ title: title }
-			),
-			React.createElement("hr", null),
-			mixins.map(function (mixin) {
-				return React.createElement(_MixinItem2["default"], { data: mixin, type: "mixin" });
-			}),
-			fns && fns.map(function (fn) {
-				return React.createElement(_MixinItem2["default"], { data: fn, type: "function" });
-			})
+			null,
+			search.toLowerCase().indexOf(this.state.filterTerm) > -1 && React.createElement(
+				"div",
+				{ className: "include-block", id: group, ref: function (ref) {
+						return _this.group = ref;
+					} },
+				React.createElement(
+					"h1",
+					null,
+					{ title: title }
+				),
+				React.createElement("hr", null),
+				mixins.map(function (mixin) {
+					return React.createElement(_MixinItem2["default"], { data: mixin, type: "mixin" });
+				}),
+				fns && fns.map(function (fn) {
+					return React.createElement(_MixinItem2["default"], { data: fn, type: "function" });
+				})
+			)
 		);
 	}
 });
@@ -446,15 +454,38 @@ exports['default'] = MixinTabs;
 module.exports = exports['default'];
 
 },{}],7:[function(require,module,exports){
-// Ancestors - Sidebar > Docs
+'use strict';
 
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
 	value: true
 });
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _storesAppStore = require('../../stores/appStore');
+
+var _storesAppStore2 = _interopRequireDefault(_storesAppStore);
+
+// Ancestors - Sidebar > Docs
+
 var SBLink = React.createClass({
-	displayName: "SBLink",
+	displayName: 'SBLink',
+
+	getInitialState: function getInitialState() {
+		return {
+			filterTerm: ""
+		};
+	},
+
+	componentDidMount: function componentDidMount() {
+		_storesAppStore2['default'].addChangeListener('filter', this.filterHandler);
+	},
+
+	filterHandler: function filterHandler(term) {
+		this.setState({
+			filterTerm: term.toLowerCase()
+		});
+	},
 
 	render: function render() {
 
@@ -463,42 +494,46 @@ var SBLink = React.createClass({
 		var goToMixin = this.props.goToMixin;
 
 		return React.createElement(
-			"li",
+			'li',
 			null,
-			React.createElement(
-				"a",
-				{ onClick: goToMixin.bind(this, ord) },
-				inc[ord].title
-			),
-			React.createElement(
-				"ul",
-				{ className: "subnav" },
-				inc[ord].mixins.map(function (mix) {
-					return React.createElement(
-						"li",
-						null,
-						React.createElement(
-							"a",
-							{ onClick: goToMixin.bind(this, mix.name) },
+			inc[ord].searchTerms.toLowerCase().indexOf(this.state.filterTerm) > -1 && React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'a',
+					{ onClick: goToMixin.bind(this, ord) },
+					inc[ord].title
+				),
+				React.createElement(
+					'ul',
+					{ className: 'subnav' },
+					inc[ord].mixins.map(function (mix) {
+						return React.createElement(
+							'li',
+							null,
 							React.createElement(
-								"span",
-								null,
-								"@include"
-							),
-							" ",
-							mix.name
-						)
-					);
-				})
+								'a',
+								{ onClick: goToMixin.bind(this, mix.name) },
+								React.createElement(
+									'span',
+									null,
+									'@include'
+								),
+								' ',
+								mix.name
+							)
+						);
+					})
+				)
 			)
 		);
 	}
 });
 
-exports["default"] = SBLink;
-module.exports = exports["default"];
+exports['default'] = SBLink;
+module.exports = exports['default'];
 
-},{}],8:[function(require,module,exports){
+},{"../../stores/appStore":13}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

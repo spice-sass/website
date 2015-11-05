@@ -1,6 +1,24 @@
+import AppStore from '../../stores/appStore';
+
 // Ancestors - Sidebar > Docs
 
 var SBLink = React.createClass({
+
+	getInitialState () {
+		return{
+			filterTerm : ""
+		}
+	},
+
+	componentDidMount () {
+		AppStore.addChangeListener('filter',this.filterHandler);
+	},
+
+	filterHandler (term) {
+		this.setState({
+			filterTerm : term.toLowerCase()
+		});
+	},
 
 	render() {
 
@@ -10,16 +28,20 @@ var SBLink = React.createClass({
 		
 		return (
 			<li>
-				<a onClick={goToMixin.bind(this,ord)}>{inc[ord].title}</a>
-				<ul className="subnav">
-					{inc[ord].mixins.map(function(mix){
-						return (
-							<li>
-								<a onClick={goToMixin.bind(this,mix.name)}><span>@include</span> {mix.name}</a>
-							</li>
-						)
-					})}
-				</ul>
+				{inc[ord].searchTerms.toLowerCase().indexOf(this.state.filterTerm) >-1 &&
+					<div>
+						<a onClick={goToMixin.bind(this,ord)}>{inc[ord].title}</a>
+						<ul className="subnav">
+							{inc[ord].mixins.map(function(mix){
+								return (
+									<li>
+										<a onClick={goToMixin.bind(this,mix.name)}><span>@include</span> {mix.name}</a>
+									</li>
+								)
+							})}
+						</ul>
+					</div>
+				}
 			</li>
 		)
 	}

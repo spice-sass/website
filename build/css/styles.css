@@ -2278,6 +2278,9 @@ header.sticky a:active {
   text-decoration: none;
   cursor: pointer;
 }
+#sidebar ul li.hide {
+  display: none;
+}
 #sidebar .subnav li a {
   padding-left: 30px;
   -webkit-transition: all,ease,0.4s;

@@ -27,10 +27,14 @@ var MixinGroup = React.createClass({
 
 	onScrollHandler (event) {
 
-		var group = this.group.getDOMNode(),
-			top   = group.getBoundingClientRect().top;
+		if(this.group){
 
-		console.log(top,event);
+			var group = this.group.getDOMNode(),
+				top   = group.getBoundingClientRect().top;
+
+				console.log(top,event);
+		}
+
 	},
 
 	render() {
@@ -40,17 +44,22 @@ var MixinGroup = React.createClass({
 		var mixins = inc[group].mixins;
 		var fns    = inc[group].functions;
 		var title  = inc[group].title;
+		var search = inc[group].searchTerms;
 
 		return (
-			<div className="include-block" id={group} ref={(ref) => this.group = ref}>
-				<h1>{{title}}</h1>	
-				<hr />
-				{mixins.map(function(mixin){
-					return <MixinItem data={mixin} type="mixin"/>
-				})}
-				{fns && fns.map(function(fn){
-					return <MixinItem data={fn} type="function"/>
-				})}
+			<div>
+				{search.toLowerCase().indexOf(this.state.filterTerm) > -1 &&
+					<div className="include-block" id={group} ref={(ref) => this.group = ref}>
+						<h1>{{title}}</h1>	
+						<hr />
+						{mixins.map(function(mixin){
+							return <MixinItem data={mixin} type="mixin"/>
+						})}
+						{fns && fns.map(function(fn){
+							return <MixinItem data={fn} type="function"/>
+						})}
+					</div>
+				}
 			</div>
 		)
 	}
