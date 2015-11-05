@@ -601,13 +601,13 @@ React.render(React.createElement(_componentsHeaderHeader2['default'], null), doc
 React.render(React.createElement(_componentsDocsDocs2['default'], null), document.getElementById('documentation'));
 
 },{"./components/docs/Docs":1,"./components/header/header":8}],10:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
 	value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _appDispatchers = require("./appDispatchers");
 
@@ -616,21 +616,23 @@ var _appDispatchers2 = _interopRequireDefault(_appDispatchers);
 var AppActions = {
 
 	scroll: function scroll(pos) {
-		_appDispatchers2["default"].handleScroll({
+		_appDispatchers2['default'].handleEvent({
+			type: 'scroll',
 			pos: pos
 		});
 	},
 
 	filter: function filter(term) {
-		_appDispatchers2["default"].handleFilter({
+		_appDispatchers2['default'].handleEvent({
+			type: 'filter',
 			term: term
 		});
 	}
 
 };
 
-exports["default"] = AppActions;
-module.exports = exports["default"];
+exports['default'] = AppActions;
+module.exports = exports['default'];
 
 },{"./appDispatchers":11}],11:[function(require,module,exports){
 "use strict";
@@ -642,17 +644,8 @@ var Dispatcher = require("../../node_modules/flux/dist/flux").Dispatcher;
 var assign = require("../../node_modules/object-assign/index");
 
 var AppDispatcher = assign(new Dispatcher(), {
-
-	handleScroll: function handleScroll(pos) {
-		this.dispatch({
-			pos: pos
-		});
-	},
-
-	handleFilter: function handleFilter(term) {
-		this.dispatch({
-			term: term
-		});
+	handleEvent: function handleEvent(payload) {
+		this.dispatch(payload);
 	}
 });
 
@@ -696,11 +689,11 @@ var AppStore = (0, _node_modulesObjectAssignIndex2["default"])({}, EventEmitter.
 });
 
 _appDispatchers2["default"].register(function (payload) {
-	if (payload.term) {
-		AppStore.emitChange('filter', payload.term.term);
+	if (payload.type == 'filter') {
+		AppStore.emitChange(payload.type, payload.term);
 	}
-	if (payload.pos) {
-		AppStore.emitChange('scroll', payload.pos.pos);
+	if (payload.type == 'scroll') {
+		AppStore.emitChange(payload.type, payload.pos);
 	}
 });
 

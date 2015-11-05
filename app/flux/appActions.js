@@ -3,14 +3,16 @@ import AppDispatcher from "./appDispatchers";
 let AppActions = {
 
 	scroll : function(pos){
-		AppDispatcher.handleScroll({
-			pos:pos
+		AppDispatcher.handleEvent({
+			type : 'scroll',
+			pos  : pos
 		});
 	},
 
 	filter : function(term){
-		AppDispatcher.handleFilter({
-			term:term
+		AppDispatcher.handleEvent({
+			type : 'filter',
+			term : term
 		});
 	}
 

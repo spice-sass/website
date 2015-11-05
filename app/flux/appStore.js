@@ -21,11 +21,11 @@ let AppStore = assign({}, EventEmitter.prototype,{
 });
 
 AppDispatcher.register(function (payload) {
-	if(payload.term){
-		AppStore.emitChange('filter',payload.term.term);
+	if(payload.type == 'filter'){
+		AppStore.emitChange(payload.type,payload.term);
 	}
-	if(payload.pos){
-		AppStore.emitChange('scroll',payload.pos.pos);
+	if(payload.type == 'scroll'){
+		AppStore.emitChange(payload.type,payload.pos);
 	}
 });
 
