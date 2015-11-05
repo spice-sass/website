@@ -4,27 +4,32 @@ import assign from "../../node_modules/object-assign/index";
 const EventEmitter = require('events').EventEmitter;
 
 var active = "googleFont";
+var activePosition = 0;
 
 let AppStore = assign({}, EventEmitter.prototype,{
 
-	setActive : function(name){
-		active = name;
+	setPosition (pos){
+		activePosition  = pos;
 	},
 
-	getActive : function(){
+	getActive (){
 		return active;
 	},
 
-	emitChange: function(event,data) {
+	getActivePosition (){
+		return activePosition;
+	},
+
+	emitChange (event,data) {
 	    this.emit(event,data);
 	},
 
-	addChangeListener: function(event,callback) {
+	addChangeListener (event,callback) {
 		this.setMaxListeners(Infinity);
 	    this.on(event,callback);
 	},
 
-	removeChangeListener: function(event,callback) {
+	removeChangeListener (event,callback) {
 	    this.removeListener(event,callback);
 	}
 

@@ -50,7 +50,8 @@ var Docs = React.createClass({
 
 	activeHandler: function activeHandler(name) {
 		this.setState({
-			activeMix: name
+			activeMix: name,
+			activePosition: _fluxAppStore2['default'].getActivePosition()
 		});
 	},
 
@@ -72,12 +73,13 @@ var Docs = React.createClass({
 
 		var order = this.state.order,
 		    includes = this.state.includes,
-		    active = this.state.activeMix;
+		    active = this.state.activeMix,
+		    activeP = this.state.activePosition;
 
 		return React.createElement(
 			'div',
 			{ id: 'docs-wrapper' },
-			React.createElement(_Sidebar2['default'], { order: order, includes: includes, goToMixin: this.goToMixin, active: active }),
+			React.createElement(_Sidebar2['default'], { order: order, includes: includes, goToMixin: this.goToMixin, active: active, activeP: activeP }),
 			React.createElement(_List2['default'], { order: order, includes: includes, active: active })
 		);
 	}
@@ -479,12 +481,7 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
 	value: true
 });
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _fluxAppStore = require('../../flux/appStore');
-
-var _fluxAppStore2 = _interopRequireDefault(_fluxAppStore);
+var AppStore = require('../../flux/appStore');
 
 // Ancestors - Sidebar > Docs
 
@@ -498,7 +495,7 @@ var SBLink = React.createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		_fluxAppStore2['default'].addChangeListener('filter', this.filterHandler);
+		AppStore.addChangeListener('filter', this.filterHandler);
 	},
 
 	filterHandler: function filterHandler(term) {
@@ -529,23 +526,50 @@ var SBLink = React.createClass({
 					'ul',
 					{ className: 'subnav' },
 					inc[ord].mixins.map(function (mix) {
-						return React.createElement(
-							'li',
-							null,
-							React.createElement(
-								'a',
-								{ className: mix.name == active ? 'active' : '', onClick: goToMixin.bind(this, mix.name) },
-								React.createElement(
-									'span',
-									null,
-									'@include'
-								),
-								' ',
-								mix.name
-							)
-						);
+						return React.createElement(LinkTemplate, { mix: mix, goToMixin: goToMixin, active: active });
 					})
 				)
+			)
+		);
+	}
+});
+
+var LinkTemplate = React.createClass({
+	displayName: 'LinkTemplate',
+
+	componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+
+		var link = this.linkName.getDOMNode(),
+		    thisTop = link.getBoundingClientRect().top,
+		    sidebar = document.getElementById('sidebar');
+
+		if (nextProps.active == this.props.mix.name && (thisTop - sidebar.scrollTop < 0 || thisTop > window.innerHeight)) {
+			AppStore.setPosition(thisTop);
+		}
+	},
+
+	render: function render() {
+		var _this = this;
+
+		var mix = this.props.mix;
+		var goToMixin = this.props.goToMixin;
+		var active = this.props.active;
+
+		return React.createElement(
+			'li',
+			{ ref: function (ref) {
+					return _this.linkName = ref;
+				} },
+			React.createElement(
+				'a',
+				{ className: mix.name == active ? 'active' : '', onClick: goToMixin.bind(this, mix.name) },
+				React.createElement(
+					'span',
+					null,
+					'@include'
+				),
+				' ',
+				mix.name
 			)
 		);
 	}
@@ -574,17 +598,24 @@ var Sidebar = React.createClass({
 	displayName: "Sidebar",
 
 	componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-		console.log(nextProps.active);
+
+		console.log(nextProps.activeP);
+
+		this.sideBar.scrollTop = nextProps.activeP;
 	},
 
 	render: function render() {
+		var _this = this;
+
 		var inc = this.props.includes;
 		var goToMixin = this.props.goToMixin;
 		var active = this.props.active;
 
 		return React.createElement(
 			"nav",
-			{ className: "page-nav scrollbar", id: "sidebar" },
+			{ className: "page-nav scrollbar", id: "sidebar", ref: function (ref) {
+					return _this.sideBar = ref;
+				} },
 			React.createElement(
 				"ul",
 				{ className: "vertical-nav" },
@@ -736,15 +767,20 @@ var _node_modulesObjectAssignIndex2 = _interopRequireDefault(_node_modulesObject
 var EventEmitter = require('events').EventEmitter;
 
 var active = "googleFont";
+var activePosition = 0;
 
 var AppStore = (0, _node_modulesObjectAssignIndex2["default"])({}, EventEmitter.prototype, {
 
-	setActive: function setActive(name) {
-		active = name;
+	setPosition: function setPosition(pos) {
+		activePosition = pos;
 	},
 
 	getActive: function getActive() {
 		return active;
+	},
+
+	getActivePosition: function getActivePosition() {
+		return activePosition;
 	},
 
 	emitChange: function emitChange(event, data) {

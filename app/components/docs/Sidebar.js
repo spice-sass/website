@@ -6,7 +6,11 @@ import SBLink from './SBLink';
 var Sidebar = React.createClass({
 
 	componentWillReceiveProps (nextProps) {
-		console.log(nextProps.active);
+
+		console.log(nextProps.activeP);
+
+		this.sideBar.scrollTop = nextProps.activeP;
+
 	},
 
 	render() {
@@ -15,7 +19,7 @@ var Sidebar = React.createClass({
 		var active    = this.props.active;
 
 		return (
-			<nav className="page-nav scrollbar" id="sidebar">
+			<nav className="page-nav scrollbar" id="sidebar" ref={(ref) => this.sideBar = ref}>
 				<ul className="vertical-nav">
 					{this.props.order.map(function(ord){
 						return <SBLink ord={ord} includes={inc} goToMixin={goToMixin} active={active}/>

@@ -26,7 +26,8 @@ var Docs = React.createClass({
 
 	activeHandler (name) {
 		this.setState({
-			activeMix : name
+			activeMix : name,
+			activePosition : AppStore.getActivePosition()
 		});
 	},
 
@@ -51,12 +52,13 @@ var Docs = React.createClass({
 
 		var order    = this.state.order,
 			includes = this.state.includes,
-			active   = this.state.activeMix;
+			active   = this.state.activeMix,
+			activeP  = this.state.activePosition;
 
 		return (
 			<div id="docs-wrapper">
-				<Sidebar order={order} includes={includes} goToMixin={this.goToMixin} active={active}/>
-				<List order={order} includes={includes} active={active}/>
+				<Sidebar order={order} includes={includes} goToMixin={this.goToMixin} active={active} activeP={activeP}/>
+				<List order={order} includes={includes} active={active} />
 			</div>
 		)
 	}
