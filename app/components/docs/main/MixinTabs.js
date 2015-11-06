@@ -1,4 +1,4 @@
-// Ancestors - MixinGroup > List > Docs
+// Ancestors -  List > Docs > MixinGroup > MixinItem
 
 var MixinTabs = React.createClass({
 
@@ -35,7 +35,7 @@ var MixinTabs = React.createClass({
 					</ul>
 				</header>
 				<div className={active == 'output' ? "css code-body scrollbar" : "scss code-body scrollbar"}>
-					<div className="slide-in-up" dangerouslySetInnerHTML={{__html: data[this.state.active]}} />
+					<div dangerouslySetInnerHTML={{__html: data[this.state.active]}} />
 				</div>
 			</div>
 

@@ -3,9 +3,11 @@
 	<div class="container transition main {% if template == 'documentation' %}stretch{% endif %}">
 
 		{% if template != 'index' %}
-		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
-			<a href="/" class="red">Spice</a>
-		</h1>
+		<div id="logo" class="slide-in-right" ng-if="logoNav">
+			<a href="/">
+				<img src="/img/spice-logo.svg" width="55" />
+			</a>
+		</div>
 		{% endif %}
 
 		<nav class="horizontal main {% if template != 'index' %}shift{% endif %}">
@@ -21,7 +23,7 @@
 		{% if template == 'documentation' %}
 			<i class="line-icon-menu font20" ng-click="toggleDocs()"></i>
 
-			<form class="lined" id="search-docs"></form>
+			<div class="lined" id="search-docs"></div>
 		{% endif %}
 
 		<p id="version" class="align-right slide-in-left">{{version}}</p>

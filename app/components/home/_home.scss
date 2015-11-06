@@ -1,0 +1,91 @@
+#pane-1{
+
+
+	#main-logo{
+
+		max-width: 350px;
+		margin: 0 auto;
+
+		path{
+
+			&.light-red{
+				fill:#BE2126;
+			}
+
+			&.dark-red{
+				fill:#942322;
+			}
+
+			&.highlight{
+				fill:#F2B6B9;
+			}
+
+			&.light-green{
+				fill:#6CAA43;
+			}
+
+			&.dark-green{
+				fill:#507C39;
+			}
+
+			&.text{
+				fill:#CC775D;
+			}
+		}
+	}
+
+	#strap{
+
+		text-transform: uppercase;
+		font:{
+			size:1.2em;
+		}
+
+		@include breakPoint(560px){
+			font-size: 1em;
+		}
+	}
+
+	a{
+
+		text-decoration: none;
+	}
+
+}
+
+#installation{
+
+	h2{
+		
+		text-align:center;
+	}
+
+	.code-demo{
+
+		display: block;
+		padding:10px;
+		border-radius:5px;
+		color:#BECFDC;
+		background-color:$col-wet-asphalt;
+		border:1px solid $col-midnight-blue;
+
+		.import{
+			color:$col-alizarin;
+		}
+		.string{
+			color:$col-sunflower;
+		}
+	}
+}
+
+
+
+.red{
+
+	color:#e7534f;
+}
+
+.feature{
+
+	padding:20px;
+}

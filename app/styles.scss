@@ -55,34 +55,19 @@
 
 
 @include gradientButton('grad-light',#f3f3f3,10%,60%);
-@include gradientButton('grad-dark',#282828,5%,60%);
-@include gradientButton('grad-slate',#25333E,5%,60%);
-@include gradientButton('grad-vanilla',#FFC458,10%,40%);
-@include gradientButton('grad-primary',$col-primary);
-@include gradientButton('grad-secondary',$col-secondary);
+@include gradientButton('grad-primary',$col-belize-hole);
+@include gradientButton('grad-secondary',$col-midnight-blue);
 @include gradientButton('grad-warning',$col-warning);
 @include gradientButton('grad-danger',$col-danger);
 @include gradientButton('grad-submit',$col-success);
 
 @include flatButton('flat-light',#f3f3f3,5px,60%);
-@include flatButton('flat-dark',#282828,5px,60%);
-@include flatButton('flat-slate',#25333E,5px,60%);
-@include flatButton('flat-vanilla',#FFC458,5px,40%);
-@include flatButton('flat-primary',$col-primary);
-@include flatButton('flat-secondary',$col-secondary);
+@include flatButton('flat-primary',$col-belize-hole);
+@include flatButton('flat-secondary',$col-midnight-blue);
 @include flatButton('flat-warning',$col-warning);
 @include flatButton('flat-danger',$col-danger);
 @include flatButton('flat-submit',$col-success);
 
-@include roundedButton('round-light',#f3f3f3,20px,60%);
-@include roundedButton('round-dark',#282828,20px,60%);
-@include roundedButton('round-slate',#25333E,20px,60%);
-@include roundedButton('round-vanilla',#FFC458,20px,40%);
-@include roundedButton('round-primary',$col-primary);
-@include roundedButton('round-secondary',$col-secondary);
-@include roundedButton('round-warning',$col-warning);
-@include roundedButton('round-danger',$col-danger);
-@include roundedButton('round-submit',$col-success);
 
 @include containerClass(1100px);
 
@@ -115,9 +100,9 @@
 @include masonryColumns;
 
 @import "components/header/header";
-@import "views/index";
+@import "components/home/home";
 @import "components/footer/footer";
-@import "views/documentation";
+@import "components/docs/docs";
 @import "views/examples";
 @import "views/tickets";
 

@@ -194,7 +194,10 @@ body {
 }
 .roboto-slab, h1, h2, h3, h4, h5, h6 {
   font-family: Roboto Slab, arial, sans-serif;
-  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3B4954;
 }
 
 hr {
@@ -209,7 +212,7 @@ hr {
 }
 
 #sidebar {
-  background-color: #1C2227;
+  background-color: #283035;
   overflow: auto;
 }
 #sidebar a {
@@ -224,12 +227,12 @@ hr {
   padding: 10px;
 }
 #sidebar::-webkit-scrollbar-track {
-  background: #475662;
+  background: #54656f;
 }
 #sidebar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #070809;
-  border: 2px solid #475662;
+  background: #121618;
+  border: 2px solid #54656f;
 }
 
 #docs {
@@ -693,7 +696,6 @@ svg.submit path:hover {
 }
 
 header.sticky {
-  background-color: #111;
   color: #eee;
 }
 
