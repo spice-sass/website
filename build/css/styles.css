@@ -569,10 +569,6 @@ header.sticky a:active {
   transform: translateY(0px);
 }
 
-#intro-pane, #installation {
-  display: none;
-}
-
 #intro-pane #main-logo {
   max-width: 350px;
   margin: 0 auto;
@@ -608,6 +604,9 @@ header.sticky a:active {
   text-decoration: none;
 }
 
+#installation {
+  padding: 100px;
+}
 #installation h2 {
   text-align: center;
 }
@@ -639,9 +638,9 @@ header.sticky a:active {
   border-radius: 0 0 7px 7px;
   float: left;
   position: relative;
-  width: 66%;
+  width: 83%;
   margin-right: 2%;
-  margin-left: 17%;
+  margin-left: 8.5%;
 }
 #preview .code-wrapper .top-bar {
   height: 20px;
@@ -662,7 +661,7 @@ header.sticky a:active {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 35%;
+  width: 360px;
   left: 0;
 }
 #preview .code-wrapper .sass-block .keyword {
@@ -690,7 +689,7 @@ header.sticky a:active {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 35%;
+  left: 360px;
   right: 0;
 }
 #preview .code-wrapper .css-block .selector {

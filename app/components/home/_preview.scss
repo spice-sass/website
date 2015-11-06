@@ -1,5 +1,5 @@
 $radius : 7px;
-$sass-block : 35%;
+$sass-block : 360px;
 $top-bar-height :20px;
 $top-bar-col:#CCCCCC;
 
@@ -13,8 +13,8 @@ $top-bar-col:#CCCCCC;
 		height: 400px;
 		margin-top:$top-bar-height;
 		border-radius: 0 0 $radius $radius;
-		@include gridColumns(8);
-		@include gridIndent(2);
+		@include gridColumns(10);
+		@include gridIndent(1);
 
 		.top-bar{
 

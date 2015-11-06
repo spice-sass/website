@@ -34,6 +34,9 @@ class Preview extends React.Component {
 					</div>
 
 					<div className="sass-block">
+						{this.state &&
+							<div dangerouslySetInnerHTML={{__html: this.state.includes.grid.mixins[0].include}} />
+						}
 					</div>
 
 					<div className="css-block">
