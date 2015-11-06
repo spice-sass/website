@@ -7,16 +7,16 @@ var Sidebar = React.createClass({
 
 	componentWillReceiveProps (nextProps) {
 
-		console.log(nextProps.activeP);
+		//console.log(nextProps.activeP);
 
 		this.sideBar.scrollTop = nextProps.activeP;
 
 	},
 
 	render() {
-		var inc       = this.props.includes;
-		var goToMixin = this.props.goToMixin;
-		var active    = this.props.active;
+		var inc       = this.props.includes,
+			goToMixin = this.props.goToMixin,
+			active    = this.props.active;
 
 		return (
 			<nav className="page-nav scrollbar" id="sidebar" ref={(ref) => this.sideBar = ref}>

@@ -1,6 +1,6 @@
 import MixinTabs from "./MixinTabs";
 import MixinItem from "./MixinItem";
-import AppStore from '../../flux/appStore';
+import AppStore from '../../../flux/appStore';
 
 // Ancestors - List > Docs
 // Children - MixinItem > MixinTabs
@@ -25,15 +25,15 @@ var MixinGroup = React.createClass({
 
 	render() {
 
-		var group  = this.props.ord;
-		var inc    = this.props.includes;
-		var active = this.props.active;
-		var scroll = this.props.scroll;
-		var mixins = inc[group].mixins;
-		var fns    = inc[group].functions;
-		var title  = inc[group].title;
-		var search = inc[group].searchTerms;
-		var intro  = inc[group].intro;
+		var group  = this.props.ord,
+			inc    = this.props.includes,
+			active = this.props.active,
+			scroll = this.props.scroll,
+			mixins = inc[group].mixins,
+			fns    = inc[group].functions,
+			title  = inc[group].title,
+			search = inc[group].searchTerms,
+			intro  = inc[group].intro;
 
 		return (
 			<div>
@@ -46,7 +46,7 @@ var MixinGroup = React.createClass({
 							return <MixinItem data={mixin} type="mixin" active={active} scroll={scroll}/ >
 						})}
 						{fns && fns.map(function(fn){
-							return <MixinItem data={fn} type="function" active={active} scroll={scroll}/ >
+							return <MixinItem data={fn} type="func" active={active} scroll={scroll}/ >
 						})}
 					</div>
 				}

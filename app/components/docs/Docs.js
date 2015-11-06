@@ -1,6 +1,6 @@
 import apiService from '../../services/apiService';
-import Sidebar from './Sidebar';
-import List from './List';
+import Sidebar from './sidebar/Sidebar';
+import List from './main/List';
 import AppActions from '../../flux/appActions';
 import AppStore from '../../flux/appStore';
 
@@ -48,6 +48,7 @@ var Docs = React.createClass({
 			}.bind(this));
 
 	},
+
 	render (){
 
 		var order    = this.state.order,
