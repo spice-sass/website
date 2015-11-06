@@ -3,7 +3,7 @@ header.sticky{
 
 
 	line-height:50px;
-	@include stickyHeader(50px);
+	@include stickyHeader(50px,#212527);
 
 	.container.transition{
 
@@ -24,13 +24,11 @@ header.sticky{
 	#logo{
 		
 		position: absolute;
-		letter-spacing:0;
-		margin-right:20px;
-		font:{
-			size:1em;
-			weight:normal;
+
+		img{
+
+			margin-top: 16px;
 		}
-		@extend .leckerli-one;
 
 		a{
 
@@ -52,7 +50,7 @@ header.sticky{
 
 		&.shift{
 
-			margin-left: 40px;
+			margin-left: 62px;
 		}
 
 		a {
@@ -78,11 +76,18 @@ header.sticky{
 
 		float:right;
 		margin-left:20px;
+		@include formsTheme(contrast(#212527,45%),enhance(#212527,15%),$col-pastel-red);
 
 		input{
 
 			margin-top:10px;
 			padding:5px 10px;
+			outline: none;
+			border-top:none;
+			border-left:none;
+			border-right:none;
+			border-bottom-style:solid;
+			border-bottom-width:3px;
 			@include fontSize(14);
 			
 		}

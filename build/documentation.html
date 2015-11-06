@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/themes/light.css" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 </head>
   <body>
     <header class="sticky slide-in-down">
@@ -15,9 +16,11 @@
 	<div class="container transition main stretch">
 
 		
-		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
-			<a href="/" class="red">Spice</a>
-		</h1>
+		<div id="logo" class="slide-in-right" ng-if="logoNav">
+			<a href="/">
+				<img src="/img/spice-logo.svg" width="55" />
+			</a>
+		</div>
 		
 
 		<nav class="horizontal main shift">
@@ -33,10 +36,10 @@
 		
 			<i class="line-icon-menu font20" ng-click="toggleDocs()"></i>
 
-			<form class="lined" id="search-docs"></form>
+			<div class="lined" id="search-docs"></div>
 		
 
-		<p id="version" class="align-right slide-in-left">0.5.4</p>
+		<p id="version" class="align-right slide-in-left">0.6.0</p>
 
 	</div>
 
@@ -109,10 +112,6 @@
 							
 								<li>
 									<a href="#rotateIn"><span>@include</span> rotateIn;</a>
-								</li>
-							
-								<li>
-									<a href="#pulse"><span>@include</span> pulse;</a>
 								</li>
 							
 								<li>
@@ -429,12 +428,6 @@
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> rotateIn;</h2>
 							<div><p>Predefined class and keyframes for a rotate in style animation. This is a good example of the power of the @include animation; &amp; @include transformKeyframes; mixins. Arguments allow you to change the rotate angle, easing, duration &amp; nth-child(n) stagger count.</p></div>
-							<hr />
-						</div>
-						
-						<div class="mixin">
-							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> pulse;</h2>
-							<div><p>Predefined class and keyframes for a looping pulse animation. Can be used as a subtle attention grabber for buttons.</p></div>
 							<hr />
 						</div>
 						

@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/themes/light.css" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 </head>
   <body>
     <header class="sticky slide-in-down">
@@ -15,9 +16,11 @@
 	<div class="container transition main ">
 
 		
-		<h1 id="logo" class="slide-in-right" ng-if="logoNav">
-			<a href="/" class="red">Spice</a>
-		</h1>
+		<div id="logo" class="slide-in-right" ng-if="logoNav">
+			<a href="/">
+				<img src="/img/spice-logo.svg" width="55" />
+			</a>
+		</div>
 		
 
 		<nav class="horizontal main shift">
@@ -32,7 +35,7 @@
 
 		
 
-		<p id="version" class="align-right slide-in-left">0.5.4</p>
+		<p id="version" class="align-right slide-in-left">0.6.0</p>
 
 	</div>
 

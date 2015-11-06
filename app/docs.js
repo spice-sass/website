@@ -12,14 +12,13 @@ import Header from './components/header/header';
 //    |
 //    |-- List
 //        |-- MixinGroup
-//    	      |-- MixinTab 
+//            |-- MixinItem
+//    	      	  |-- MixinTabs
 
-
-
-// React.render(
-//  	<Header/>,
-//     document.getElementById('search-docs')
-// );
+React.render(
+ 	<Header/>,
+    document.getElementById('search-docs')
+);
 
 React.render(
  	<Docs/>,

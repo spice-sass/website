@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/themes/light.css" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 </head>
   <body>
     <header class="sticky slide-in-down">
@@ -28,23 +29,26 @@
 
 		
 
-		<p id="version" class="align-right slide-in-left">0.5.4</p>
+		<p id="version" class="align-right slide-in-left">0.6.0</p>
 
 	</div>
 
 </header>
     
-  	<section class="fullscreen stack" id="pane-1">
+  	<section class="fullscreen stack" id="intro-pane">
 		
 		<div class="centre-y text-centre">
-			<img src="/img/spice-logo.svg" width="380" alt="Spice" title="Spice" />
-			<h2 id="strap" class="roboto-slab slide-in-up contrast">Add a little spice to your UI</h2>
-			<a href="#installation" class="button large flat-secondary block-icon-open-book slide-in-right">Installation</a>
-			<a href="/documentation#getting-started" class="button large flat-primary block-icon-open-book slide-in-left">View Docs</a>
-			<p class="slide-in-up">Version 0.5.4</p>
+			<div id="main-logo">
+			</div>
+			<h2 id="strap" class="roboto-slab slide-in-up">The sass library for tasty web interfaces</h2>
+			<a href="#installation" class="button flat-secondary block-icon-download slide-in-right">Installation</a>
+			<a href="/documentation" class="button flat-primary block-icon-open-book slide-in-left">View Docs</a>
+			<p class="slide-in-up">Version 0.6.0</p>
 		</div>
 		
 	</section>
+
+
 
 	<section class="stack" id="installation">
 			
@@ -54,7 +58,7 @@
 
 					<div class="grid-col-8 grid-col-indent-2">
 
-						<h2 class="red"><span>Installation &amp; Usage</span></h2>
+						<h2><span>Installation &amp; Usage</span></h2>
 						<p>Spice is available for download via npm or bower</p>
 
 						<h5>npm</h5>
@@ -75,7 +79,8 @@
 						</p>
 
 						<p class="code-demo">
-							@import "../node_modules/spice-sass/src/spice";
+							<span class="import">@import</span>
+							<span class="string"> "../node_modules/spice-sass/src/spice";</span>
 						</p>
 
 					</div>
@@ -89,15 +94,20 @@
 	
 	<div class="container">
 		
-		<p>Designed and built by Dan Osborne. Code licensed under <a href="https://github.com/dannyoz/includes/blob/master/MIT-LICENSE.txt">MIT</a></p>
-		<p><a href="https://github.com/dannyoz/includes/">View on Github</a></p>
+		<div class="grid-row">
 
-		<img src="https://api.travis-ci.org/spice-sass/spice.svg" />
+			<p class="align-left">Designed and built by Dan Osborne. Code licensed under <a href="https://github.com/dannyoz/includes/blob/master/MIT-LICENSE.txt">MIT</a></p>
+			<p class="align-right"><a href="https://github.com/dannyoz/includes/">View on Github</a></p>
+
+		</div>
+		
 	</div>
 
 </footer>
 
     
-  	
+	<script src="js/react.min.js"></script>
+	<script src="js/home.js"></script>
+
   </body>
 </html>

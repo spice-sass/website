@@ -21,9 +21,9 @@ $linkcols : (
         background-color:$themeColour;
         border-bottom:1px  solid darken($themeColour,7%);
 
-        &:nth-child(even){
+        &:nth-of-type(even){
 
-            background-color: darken($themeColour,2%);
+            background-color: darken($themeColour,3%);
         }
 
     }
@@ -47,31 +47,6 @@ $linkcols : (
 }
 
 
-@mixin headingEmphasis($colour:$col-primary,$icon:false){
-
-    //@warn "The `headingEmphasis()` mixin will be deprecated in the next release";
-
-    h1,h2,h3,h4,h5,h6{
-
-        &.emph{
-
-            line-height:1.2;
-            color:$colour;
-            padding-left:20px;
-            border-left:5px solid $colour;
-
-            @if $icon {
-
-                [class^="icon-"], [class*=" icon-"]{
-
-                    line-height: 1.7;
-                    font-size: 0.8em;
-                    float:right;
-                }
-            }
-        }
-    }
-}
 
 @include normalise;
 @include headerSizes(45,20);
@@ -85,7 +60,12 @@ body{
 
 
 @include googleFont('source-sans',body textarea input button);
-@include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6, 300);
+@include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6);
+
+h1,h2,h3,h4,h5,h6{
+
+    color:#3B4954;
+}
 
 hr{
 
@@ -101,7 +81,7 @@ hr{
 
 #sidebar{
 
-    $sidebar : $col-slate;
+    $sidebar : #283035;
     background-color:$sidebar;
 
     a{
@@ -120,7 +100,6 @@ hr{
     @include scrollbar($themeColour);  
 }
 
-@include headingEmphasis($col-pastel-red,true);
 @include themeBlockquote($col-pastel-red,#f3f3f3);
 @include formsTheme(#333,$lighter,$col-primary);
 
@@ -131,47 +110,12 @@ hr{
 
 @include themeStack($themeColour);
 @include flatTables(contrast($themeColour,65%),$themeColour);
-@include themeRangeInput($themeColour,darken($themeColour,20%),$col-primary);
-
-
-@include doughnut('primary',$col-primary,3px,#ccc,#111);
-@include doughnut('secondary',$col-secondary,3px,#ccc,#111);
-@include doughnut('warning',$col-warning,3px,#ccc,#111);
-@include doughnut('danger',$col-danger,3px,#ccc,#111);
-@include doughnut('submit',$col-success,3px,#ccc,#111);
 
 
 
-$cols : (
-	"red":#e7534f,
-	"blue":#1b8898,
-	"green":#54A03A,
-	'yellow':#D8BE2E,
-	'orange':$col-warning,
-	'violet' : #9E6FB5
-);
-
-@include palette($cols);
-
-.contrast{
-
-	color: contrast($themeColour,60%);
-}
-
-header.sticky{
-
-	background-color: #111;
-	color:#eee;
-}
-
-@include themeCardClass(lighten($themeColour,5%),#ddd,$col-primary);
-
-.grid-block, .masonry-item, .grid-example, .icon-holder, .example{
-	
-	@extend .card;
-}
 
 
-@include paginationFlat('flat',#f3f3f3);
+
+
 
 
