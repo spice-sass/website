@@ -7,7 +7,7 @@ var Sidebar = React.createClass({
 
 	componentWillReceiveProps (nextProps) {
 
-		console.log(nextProps.activeP);
+		//console.log(nextProps.activeP);
 
 		this.sideBar.scrollTop = nextProps.activeP;
 

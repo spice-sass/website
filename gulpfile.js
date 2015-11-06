@@ -31,6 +31,7 @@ gulp.task('browserify', function () {
     .pipe(browserify({
       transform: ['babelify']
     }))
+    .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
 
@@ -59,7 +60,7 @@ gulp.task('static', function() {
       .pipe(data(obj))
       .pipe(swig())
       .pipe(gulp.dest(dest))
-  });
+    });
 
 });
 
