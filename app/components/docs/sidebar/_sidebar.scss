@@ -1,0 +1,48 @@
+
+#sidebar{
+
+	@include sideBar($sidebarWidth);
+	@include vendorPrefix(transition,'all,ease,0.4s');
+
+
+	ul{
+
+		margin-bottom: 20px;
+		@include fontSize(14px);
+
+		li a{
+
+			display: block;
+			padding:0 20px;
+			line-height: 40px;
+			text-decoration: none;
+			cursor: pointer;
+
+			&.active{
+				color:$col-river-blue;
+			}
+
+		}
+
+		li.hide{
+			display: none;
+		}
+	}
+
+	.subnav li a{
+
+		padding-left:30px;
+		@include vendorPrefix(transition,'all,ease,0.4s');
+	}
+
+	@include breakPoint($break){
+		
+		left:-$sidebarWidth;
+		z-index: 999;
+
+		&.open{
+
+			left:0;
+		}
+	}
+}

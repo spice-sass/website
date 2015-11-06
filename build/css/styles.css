@@ -2265,14 +2265,6 @@ header.sticky a:active {
   color: #E74C3C;
 }
 
-#docs-wrapper {
-  position: absolute;
-  top: 50px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
 #sidebar {
   position: absolute;
   top: 0;
@@ -2319,6 +2311,14 @@ header.sticky a:active {
   }
 }
 
+#docs-wrapper {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 #docs {
   padding: 0 30px;
   position: absolute;
@@ -2326,75 +2326,6 @@ header.sticky a:active {
   bottom: 0;
   left: 280px;
   right: 0;
-}
-#docs .include-block {
-  padding-top: 30px;
-}
-#docs .mixin, #docs .func {
-  padding-top: 30px;
-  margin-bottom: 50px;
-}
-#docs table {
-  font-size: 0.85em;
-  margin-bottom: 30px;
-}
-#docs table .visually-hidden {
-  display: none;
-}
-#docs table .item__parameter th, #docs table .item__parameter td {
-  font-weight: normal;
-  border-top-width: 1px;
-  border-style: solid;
-}
-#docs table .item__parameter code {
-  color: #289e83;
-}
-@media (max-width: 750px) {
-  #docs {
-    left: 0;
-    padding: 0 15px;
-    font-size: 16px;
-    font-size: 1rem;
-  }
-  #docs h1 {
-    font-size: 30px;
-    font-size: 1.875rem;
-  }
-  #docs h2 {
-    font-size: 28px;
-    font-size: 1.75rem;
-  }
-  #docs h3 {
-    font-size: 26px;
-    font-size: 1.625rem;
-  }
-  #docs h4 {
-    font-size: 24px;
-    font-size: 1.5rem;
-  }
-  #docs h5 {
-    font-size: 22px;
-    font-size: 1.375rem;
-  }
-  #docs h6 {
-    font-size: 18px;
-    font-size: 1.125rem;
-  }
-  #docs table, #docs tbody, #docs tr, #docs td {
-    display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
-  #docs td {
-    border-style: none;
-  }
-  #docs th {
-    display: none;
-  }
-  #docs tr {
-    border-top-width: 1px;
-    border-style: solid;
-  }
 }
 #docs .code.html-code {
   margin-top: 30px;
@@ -2499,6 +2430,75 @@ header.sticky a:active {
 }
 #docs .code .code-body.html .punctuation {
   color: #dadada;
+}
+#docs .include-block {
+  padding-top: 30px;
+}
+#docs .mixin, #docs .func {
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+#docs table {
+  font-size: 0.85em;
+  margin-bottom: 30px;
+}
+#docs table .visually-hidden {
+  display: none;
+}
+#docs table .item__parameter th, #docs table .item__parameter td {
+  font-weight: normal;
+  border-top-width: 1px;
+  border-style: solid;
+}
+#docs table .item__parameter code {
+  color: #289e83;
+}
+@media (max-width: 750px) {
+  #docs {
+    left: 0;
+    padding: 0 15px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  #docs h1 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+  #docs h2 {
+    font-size: 28px;
+    font-size: 1.75rem;
+  }
+  #docs h3 {
+    font-size: 26px;
+    font-size: 1.625rem;
+  }
+  #docs h4 {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+  #docs h5 {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
+  #docs h6 {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+  #docs table, #docs tbody, #docs tr, #docs td {
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+  #docs td {
+    border-style: none;
+  }
+  #docs th {
+    display: none;
+  }
+  #docs tr {
+    border-top-width: 1px;
+    border-style: solid;
+  }
 }
 #docs .doughnut-example {
   display: inline-block;

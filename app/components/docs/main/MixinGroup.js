@@ -1,6 +1,6 @@
 import MixinTabs from "./MixinTabs";
 import MixinItem from "./MixinItem";
-import AppStore from '../../flux/appStore';
+import AppStore from '../../../flux/appStore';
 
 // Ancestors - List > Docs
 // Children - MixinItem > MixinTabs

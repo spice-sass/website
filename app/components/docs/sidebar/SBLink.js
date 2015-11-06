@@ -1,4 +1,4 @@
-const AppStore = require('../../flux/appStore');
+const AppStore = require('../../../flux/appStore');
 
 // Ancestors - Sidebar > Docs
 

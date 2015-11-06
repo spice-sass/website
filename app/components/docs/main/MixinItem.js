@@ -1,7 +1,7 @@
 import MixinTabs from "./MixinTabs";
-import AppStore from '../../flux/appStore';
-import AppActions from '../../flux/appActions';
-import AppDispatcher from "../../flux/appDispatchers";
+import AppStore from '../../../flux/appStore';
+import AppActions from '../../../flux/appActions';
+import AppDispatcher from "../../../flux/appDispatchers";
 
 // Ancestors - List > Docs > MixinGroup
 // Children -  MixinTabs
