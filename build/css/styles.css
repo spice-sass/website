@@ -604,6 +604,9 @@ header.sticky a:active {
   text-decoration: none;
 }
 
+#installation {
+  padding: 100px;
+}
 #installation h2 {
   text-align: center;
 }
@@ -624,6 +627,96 @@ header.sticky a:active {
 
 .feature {
   padding: 20px;
+}
+
+#preview {
+  padding-top: 120px;
+}
+#preview .code-wrapper {
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 0 0 7px 7px;
+  float: left;
+  position: relative;
+  width: 83%;
+  margin-right: 2%;
+  margin-left: 8.5%;
+}
+#preview .code-wrapper .top-bar {
+  height: 20px;
+  background-color: #CCCCCC;
+  border-radius: 7px 7px 0 0;
+  border: 1px solid #bfbfbf;
+  position: absolute;
+  top: -20px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+}
+#preview .code-wrapper .sass-block {
+  border-radius: 0 0 0 7px;
+  color: #FFB93A;
+  background-color: #161a1e;
+  border: 1px solid #272f36;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 360px;
+  left: 0;
+}
+#preview .code-wrapper .sass-block .keyword {
+  color: #FF7951;
+}
+#preview .code-wrapper .sass-block .function {
+  color: #26AAC1;
+}
+#preview .code-wrapper .sass-block .punctuation {
+  color: #dadada;
+}
+#preview .code-wrapper .sass-block .selector {
+  color: #26C160;
+}
+#preview .code-wrapper .sass-block .property {
+  color: #26AAC1;
+}
+#preview .code-wrapper .sass-block .variable {
+  color: #EA8884;
+}
+#preview .code-wrapper .css-block {
+  border-radius: 0 0 7px 0;
+  background-color: #1C2227;
+  color: #FF7951;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 360px;
+  right: 0;
+}
+#preview .code-wrapper .css-block .selector {
+  color: #26C160;
+}
+#preview .code-wrapper .css-block .property {
+  color: #26AAC1;
+}
+#preview .code-wrapper .css-block .punctuation {
+  color: #dadada;
+}
+#preview .code-wrapper .sass-block, #preview .code-wrapper .css-block {
+  padding: 20px;
+  overflow: auto;
+}
+#preview .code-wrapper .sass-block::-webkit-scrollbar, #preview .code-wrapper .css-block::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+}
+#preview .code-wrapper .sass-block::-webkit-scrollbar-track, #preview .code-wrapper .css-block::-webkit-scrollbar-track {
+  background: #475662;
+}
+#preview .code-wrapper .sass-block::-webkit-scrollbar-thumb, #preview .code-wrapper .css-block::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #070809;
+  border: 2px solid #475662;
 }
 
 #main-footer {

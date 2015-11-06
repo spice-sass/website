@@ -9,7 +9,7 @@ React.render(
 	document.getElementById('main-logo')
 );
 
-React.render(
- 	<Preview/>,
-    document.getElementById('preview')
-);
+// React.render(
+//  	<Preview/>,
+//     document.getElementById('preview')
+// );
