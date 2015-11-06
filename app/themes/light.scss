@@ -21,9 +21,9 @@ $linkcols : (
         background-color:$themeColour;
         border-bottom:1px  solid darken($themeColour,7%);
 
-        &:nth-child(even){
+        &:nth-of-type(even){
 
-            background-color: darken($themeColour,2%);
+            background-color: darken($themeColour,3%);
         }
 
     }

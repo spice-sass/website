@@ -2062,7 +2062,7 @@ header.sticky #search-docs textarea:hover, header.sticky #search-docs select:hov
 }
 header.sticky #search-docs textarea:focus, header.sticky #search-docs select:focus, header.sticky #search-docs input[type=text]:focus, header.sticky #search-docs input[type=email]:focus, header.sticky #search-docs input[type=password]:focus, header.sticky #search-docs input[type=url]:focus, header.sticky #search-docs input[type=tel]:focus, header.sticky #search-docs input[type=search]:focus, header.sticky #search-docs input[type=date]:focus, header.sticky #search-docs input[type=time]:focus, header.sticky #search-docs input[type=number]:focus, header.sticky #search-docs input.text:focus {
   color: white;
-  border-color: #3498DB;
+  border-color: #e7534f;
 }
 header.sticky #search-docs input {
   margin-top: 10px;
@@ -2201,7 +2201,7 @@ header.sticky a:active {
   fill: #507C39;
 }
 #pane-1 #main-logo path.text {
-  fill: #CC775D;
+  fill: #D05B37;
 }
 #pane-1 #strap {
   text-transform: uppercase;
@@ -2289,7 +2289,10 @@ header.sticky a:active {
   cursor: pointer;
 }
 #sidebar ul li a.active {
-  color: #3498DB;
+  color: #e7534f;
+  -webkit-box-shadow: inset 5px 0 0 #e7534f;
+  -moz-box-shadow: inset 5px 0 0 #e7534f;
+  box-shadow: inset 5px 0 0 #e7534f;
 }
 #sidebar ul li.hide {
   display: none;
@@ -2437,6 +2440,9 @@ header.sticky a:active {
 #docs .mixin, #docs .func {
   padding-top: 30px;
   margin-bottom: 50px;
+}
+#docs .mixin h2, #docs .func h2 {
+  color: #e7534f;
 }
 #docs table {
   font-size: 0.85em;

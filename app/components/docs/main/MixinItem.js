@@ -32,7 +32,7 @@ var MixinItem = React.createClass({
 		var mixin = this.props.data;
 		return (
 			<div className={this.props.type} id={mixin.name} ref={(ref) => this.mix = ref}>
-				<h2 className="red"><span className="leckerli-one">@include</span> {mixin.name};</h2>
+				<h2><span className="leckerli-one">@include</span> {mixin.name};</h2>
 				<div dangerouslySetInnerHTML={{__html: mixin.desc}} />
 				{mixin.args > -1 &&
 					<div>
