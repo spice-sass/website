@@ -19,7 +19,9 @@
 			cursor: pointer;
 
 			&.active{
-				color:$col-river-blue;
+
+				color:$col-pastel-red;
+				@include vendorPrefix(box-shadow, inset 5px 0 0 $col-pastel-red)
 			}
 
 		}

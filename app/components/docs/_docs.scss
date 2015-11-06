@@ -29,6 +29,10 @@ $break : 750px;
 		margin-bottom: 50px;
 		@extend .grid-row;
 
+		h2{
+			color: $col-pastel-red;
+		}
+
 	}
 
 	hr{
