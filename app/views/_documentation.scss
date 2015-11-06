@@ -26,6 +26,14 @@ $break : 750px;
 			text-decoration: none;
 			cursor: pointer;
 
+			&.active{
+				color:$col-river-blue;
+			}
+
+		}
+
+		li.hide{
+			display: none;
 		}
 	}
 
@@ -58,11 +66,12 @@ $break : 750px;
 		padding-top: 30px;
 	}
 
-	.mixin{
+	.mixin, .function{
 
 		padding-top: 30px;
 		margin-bottom: 50px;
 		@extend .grid-row;
+
 	}
 
 	hr{

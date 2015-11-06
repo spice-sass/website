@@ -913,10 +913,10 @@ button.flat-submit[class^="block-icon-"]:after, button.flat-submit[class*=" bloc
   text-align: center;
 }
 
-.grid-row, #docs .mixin, #docs hr {
+.grid-row, #docs .mixin, #docs .function, #docs hr {
   min-height: 1%;
 }
-.grid-row:after, #docs .mixin:after, #docs hr:after {
+.grid-row:after, #docs .mixin:after, #docs .function:after, #docs hr:after {
   content: "";
   display: table;
   clear: both;
@@ -1133,7 +1133,7 @@ form.rounded label {
   font-size: 18px;
   font-size: 1.125rem;
 }
-form.rounded textarea, form.rounded input[type=text], form.rounded input[type=email], form.rounded input[type=password], form.rounded input[type=url], form.rounded input[type=tel], form.rounded input[type=search], form.rounded input[type=date], form.rounded input[type=time], form.rounded input[type=number], form.rounded input.text, form.rounded select {
+form.rounded textarea, form.rounded input[type=text], form.rounded input[type=email], form.rounded input[type=password], form.rounded input[type=url], form.rounded input[type=tel], form.rounded input[type=search], form.rounded input[type=date], form.rounded input[type=time], form.rounded input[type=number], form.rounded input.text, form.rounded select, form.rounded header.sticky #search-docs select, header.sticky #search-docs form.rounded select, form.rounded header.sticky #search-docs input[type=text], header.sticky #search-docs form.rounded input[type=text], form.rounded header.sticky #search-docs input[type=email], header.sticky #search-docs form.rounded input[type=email], form.rounded header.sticky #search-docs input[type=password], header.sticky #search-docs form.rounded input[type=password], form.rounded header.sticky #search-docs input[type=url], header.sticky #search-docs form.rounded input[type=url], form.rounded header.sticky #search-docs input[type=tel], header.sticky #search-docs form.rounded input[type=tel], form.rounded header.sticky #search-docs input[type=search], header.sticky #search-docs form.rounded input[type=search], form.rounded header.sticky #search-docs input[type=date], header.sticky #search-docs form.rounded input[type=date], form.rounded header.sticky #search-docs input[type=time], header.sticky #search-docs form.rounded input[type=time], form.rounded header.sticky #search-docs input[type=number], header.sticky #search-docs form.rounded input[type=number], form.rounded header.sticky #search-docs input.text, header.sticky #search-docs form.rounded input.text {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -1159,7 +1159,7 @@ form.lined label {
   font-size: 18px;
   font-size: 1.125rem;
 }
-form.lined textarea, form.lined input[type=text], form.lined input[type=email], form.lined input[type=password], form.lined input[type=url], form.lined input[type=tel], form.lined input[type=search], form.lined input[type=date], form.lined input[type=time], form.lined input[type=number], form.lined input.text, form.lined select {
+form.lined textarea, form.lined input[type=text], form.lined input[type=email], form.lined input[type=password], form.lined input[type=url], form.lined input[type=tel], form.lined input[type=search], form.lined input[type=date], form.lined input[type=time], form.lined input[type=number], form.lined input.text, form.lined select, form.lined header.sticky #search-docs select, header.sticky #search-docs form.lined select, form.lined header.sticky #search-docs input[type=text], header.sticky #search-docs form.lined input[type=text], form.lined header.sticky #search-docs input[type=email], header.sticky #search-docs form.lined input[type=email], form.lined header.sticky #search-docs input[type=password], header.sticky #search-docs form.lined input[type=password], form.lined header.sticky #search-docs input[type=url], header.sticky #search-docs form.lined input[type=url], form.lined header.sticky #search-docs input[type=tel], header.sticky #search-docs form.lined input[type=tel], form.lined header.sticky #search-docs input[type=search], header.sticky #search-docs form.lined input[type=search], form.lined header.sticky #search-docs input[type=date], header.sticky #search-docs form.lined input[type=date], form.lined header.sticky #search-docs input[type=time], header.sticky #search-docs form.lined input[type=time], form.lined header.sticky #search-docs input[type=number], header.sticky #search-docs form.lined input[type=number], form.lined header.sticky #search-docs input.text, header.sticky #search-docs form.lined input.text {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -2052,9 +2052,27 @@ header.sticky #search-docs {
   float: right;
   margin-left: 20px;
 }
+header.sticky #search-docs textarea, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
+  background-color: black;
+  border-color: #171a1c;
+  color: #8e9a9f;
+}
+header.sticky #search-docs textarea:hover, header.sticky #search-docs select:hover, header.sticky #search-docs input[type=text]:hover, header.sticky #search-docs input[type=email]:hover, header.sticky #search-docs input[type=password]:hover, header.sticky #search-docs input[type=url]:hover, header.sticky #search-docs input[type=tel]:hover, header.sticky #search-docs input[type=search]:hover, header.sticky #search-docs input[type=date]:hover, header.sticky #search-docs input[type=time]:hover, header.sticky #search-docs input[type=number]:hover, header.sticky #search-docs input.text:hover {
+  border-color: #2f3437;
+}
+header.sticky #search-docs textarea:focus, header.sticky #search-docs select:focus, header.sticky #search-docs input[type=text]:focus, header.sticky #search-docs input[type=email]:focus, header.sticky #search-docs input[type=password]:focus, header.sticky #search-docs input[type=url]:focus, header.sticky #search-docs input[type=tel]:focus, header.sticky #search-docs input[type=search]:focus, header.sticky #search-docs input[type=date]:focus, header.sticky #search-docs input[type=time]:focus, header.sticky #search-docs input[type=number]:focus, header.sticky #search-docs input.text:focus {
+  color: white;
+  border-color: #3498DB;
+}
 header.sticky #search-docs input {
   margin-top: 10px;
   padding: 5px 10px;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
   font-size: 14px;
   font-size: 0.875rem;
 }
@@ -2278,6 +2296,12 @@ header.sticky a:active {
   text-decoration: none;
   cursor: pointer;
 }
+#sidebar ul li a.active {
+  color: #3498DB;
+}
+#sidebar ul li.hide {
+  display: none;
+}
 #sidebar .subnav li a {
   padding-left: 30px;
   -webkit-transition: all,ease,0.4s;
@@ -2306,7 +2330,7 @@ header.sticky a:active {
 #docs .include-block {
   padding-top: 30px;
 }
-#docs .mixin {
+#docs .mixin, #docs .function {
   padding-top: 30px;
   margin-bottom: 50px;
 }
@@ -2717,7 +2741,7 @@ header.sticky a:active {
   font-size: 14px;
   font-size: 0.875rem;
 }
-#tickets #ticket-pane .grid-row, #tickets #ticket-pane #docs .mixin, #docs #tickets #ticket-pane .mixin, #tickets #ticket-pane #docs hr, #docs #tickets #ticket-pane hr {
+#tickets #ticket-pane .grid-row, #tickets #ticket-pane #docs .mixin, #docs #tickets #ticket-pane .mixin, #tickets #ticket-pane #docs .function, #docs #tickets #ticket-pane .function, #tickets #ticket-pane #docs hr, #docs #tickets #ticket-pane hr {
   display: flex;
   align-items: stretch;
 }

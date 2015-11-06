@@ -76,11 +76,18 @@ header.sticky{
 
 		float:right;
 		margin-left:20px;
+		@include formsTheme(contrast(#212527,45%),enhance(#212527,15%),$col-river-blue);
 
 		input{
 
 			margin-top:10px;
 			padding:5px 10px;
+			outline: none;
+			border-top:none;
+			border-left:none;
+			border-right:none;
+			border-bottom-style:solid;
+			border-bottom-width:3px;
 			@include fontSize(14);
 			
 		}

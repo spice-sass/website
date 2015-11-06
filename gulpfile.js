@@ -31,7 +31,6 @@ gulp.task('browserify', function () {
     .pipe(browserify({
       transform: ['babelify']
     }))
-    .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
 

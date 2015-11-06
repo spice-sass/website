@@ -1,9 +1,10 @@
+import AppActions from '../../flux/appActions';
+
 let Header = React.createClass({
 
 	filter(){
-
 		var val = this.refs.search.getDOMNode().value;
-		console.log(val);
+		AppActions.filter(val);
 	},
 
 	render () {
