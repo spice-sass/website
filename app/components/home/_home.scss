@@ -1,4 +1,10 @@
-#pane-1{
+// //DEv 
+// #intro-pane, #installation{
+
+// 	display:none;
+// }
+
+#intro-pane{
 
 	#main-logo{
 
@@ -30,11 +36,6 @@
 			&.text{
 				fill:#D05B37;
 			}
-		}
-
-		.chilli{
-
-			//@include vendorPrefix(transform,scale(0.8));
 		}
 	}
 
@@ -80,13 +81,6 @@
 			color:$col-sunflower;
 		}
 	}
-}
-
-
-
-.red{
-
-	color:#e7534f;
 }
 
 .feature{
