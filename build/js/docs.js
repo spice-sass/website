@@ -222,7 +222,7 @@ var MixinGroup = React.createClass({
 					return React.createElement(_MixinItem2["default"], { data: mixin, type: "mixin", active: active, scroll: scroll });
 				}),
 				fns && fns.map(function (fn) {
-					return React.createElement(_MixinItem2["default"], { data: fn, type: "function", active: active, scroll: scroll });
+					return React.createElement(_MixinItem2["default"], { data: fn, type: "func", active: active, scroll: scroll });
 				})
 			)
 		);
@@ -466,7 +466,7 @@ var MixinTabs = React.createClass({
 			React.createElement(
 				'div',
 				{ className: active == 'output' ? "css code-body scrollbar" : "scss code-body scrollbar" },
-				React.createElement('div', { className: 'slide-in-up', dangerouslySetInnerHTML: { __html: data[this.state.active] } })
+				React.createElement('div', { dangerouslySetInnerHTML: { __html: data[this.state.active] } })
 			)
 		);
 	}

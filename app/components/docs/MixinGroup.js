@@ -46,7 +46,7 @@ var MixinGroup = React.createClass({
 							return <MixinItem data={mixin} type="mixin" active={active} scroll={scroll}/ >
 						})}
 						{fns && fns.map(function(fn){
-							return <MixinItem data={fn} type="function" active={active} scroll={scroll}/ >
+							return <MixinItem data={fn} type="func" active={active} scroll={scroll}/ >
 						})}
 					</div>
 				}
