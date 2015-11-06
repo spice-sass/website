@@ -569,38 +569,38 @@ header.sticky a:active {
   transform: translateY(0px);
 }
 
-#pane-1 #main-logo {
+#intro-pane #main-logo {
   max-width: 350px;
   margin: 0 auto;
 }
-#pane-1 #main-logo path.light-red {
+#intro-pane #main-logo path.light-red {
   fill: #BE2126;
 }
-#pane-1 #main-logo path.dark-red {
+#intro-pane #main-logo path.dark-red {
   fill: #942322;
 }
-#pane-1 #main-logo path.highlight {
+#intro-pane #main-logo path.highlight {
   fill: #F2B6B9;
 }
-#pane-1 #main-logo path.light-green {
+#intro-pane #main-logo path.light-green {
   fill: #6CAA43;
 }
-#pane-1 #main-logo path.dark-green {
+#intro-pane #main-logo path.dark-green {
   fill: #507C39;
 }
-#pane-1 #main-logo path.text {
+#intro-pane #main-logo path.text {
   fill: #D05B37;
 }
-#pane-1 #strap {
+#intro-pane #strap {
   text-transform: uppercase;
   font-size: 1.2em;
 }
 @media (max-width: 560px) {
-  #pane-1 #strap {
+  #intro-pane #strap {
     font-size: 1em;
   }
 }
-#pane-1 a {
+#intro-pane a {
   text-decoration: none;
 }
 
@@ -620,10 +620,6 @@ header.sticky a:active {
 }
 #installation .code-demo .string {
   color: #F1C40F;
-}
-
-.red {
-  color: #e7534f;
 }
 
 .feature {
@@ -939,8 +935,8 @@ header.sticky a:active {
   padding: 5px 10px;
   margin-bottom: 5px;
   border-radius: 3px;
-  border: 1px solid #ddd;
-  background-color: #f3f3f3;
+  border: 1px solid #cfd9db;
+  background-color: #fbfcfc;
   font-size: 14px;
   font-size: 0.875rem;
 }

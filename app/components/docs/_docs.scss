@@ -142,8 +142,8 @@ $break : 750px;
 				padding:5px 10px;
 				margin-bottom: 5px;
 				border-radius:3px;
-				border:1px solid #ddd;
-				background-color:#f3f3f3;
+				border:1px solid darken($col-clouds,10%);
+				background-color:lighten($col-clouds,5%);
 				@include fontSize(14px);
 			}
 		}
