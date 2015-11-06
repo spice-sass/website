@@ -60,7 +60,7 @@ gulp.task('static', function() {
       .pipe(data(obj))
       .pipe(swig())
       .pipe(gulp.dest(dest))
-    });
+  });
 
 });
 

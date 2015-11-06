@@ -25,15 +25,15 @@ var MixinGroup = React.createClass({
 
 	render() {
 
-		var group  = this.props.ord;
-		var inc    = this.props.includes;
-		var active = this.props.active;
-		var scroll = this.props.scroll;
-		var mixins = inc[group].mixins;
-		var fns    = inc[group].functions;
-		var title  = inc[group].title;
-		var search = inc[group].searchTerms;
-		var intro  = inc[group].intro;
+		var group  = this.props.ord,
+			inc    = this.props.includes,
+			active = this.props.active,
+			scroll = this.props.scroll,
+			mixins = inc[group].mixins,
+			fns    = inc[group].functions,
+			title  = inc[group].title,
+			search = inc[group].searchTerms,
+			intro  = inc[group].intro;
 
 		return (
 			<div>
