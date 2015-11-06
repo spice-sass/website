@@ -1,6 +1,4 @@
-
 #pane-1{
-
 
 	#main-logo{
 
@@ -30,8 +28,13 @@
 			}
 
 			&.text{
-				fill:#CC775D;
+				fill:#D05B37;
 			}
+		}
+
+		.chilli{
+
+			//@include vendorPrefix(transform,scale(0.8));
 		}
 	}
 

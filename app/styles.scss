@@ -100,9 +100,9 @@
 @include masonryColumns;
 
 @import "components/header/header";
-@import "views/index";
+@import "components/home/home";
 @import "components/footer/footer";
-@import "views/documentation";
+@import "components/docs/docs";
 @import "views/examples";
 @import "views/tickets";
 
