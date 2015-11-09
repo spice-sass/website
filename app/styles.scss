@@ -1,19 +1,5 @@
 @import "../node_modules/spice-sass/src/spice";
 
-.grid-example{
-
-	padding:45px 0;
-	min-height:30px;
-	margin-bottom:20px;
-	position:relative;
-	border-radius: 5px;
-
-	span{
-
-		font-size: 0.8em;
-	}
-}
-
 //app specific
 @mixin paddedClass($ammount:20px){
 
@@ -57,6 +43,7 @@
 
 @include centreClasses;
 @include gridClasses;
+@include griddedList(3);
 @include googleFont('leckerli-one');
 
 @include cardClass;
