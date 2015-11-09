@@ -34,6 +34,14 @@
 @include formRounded(12px);
 @include formLined(6px,15px 20px,18);
 @include rangeInput;
+@include iconTooltip(#444,120px,20px);
+
+@include gradientButtonGroup('gradient',#2671A2);
+@include flatButtonGroup('flat',#2671A2);
+
+.tooltip .tooltip-body{
+	z-index:999;
+}
 
 .grid-example{
 
