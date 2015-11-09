@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "express": "^4.8.0",
-    "spice-sass": "^0.5.0"
+    "spice-sass": "^0.6.0"
   },
   "devDependencies": {
     "babelify": "^6.1.2",
