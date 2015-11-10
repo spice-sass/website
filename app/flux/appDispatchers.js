@@ -9,6 +9,10 @@ let AppDispatcher = assign(new Dispatcher(),{
 
 	handleActive (payload){
 		this.dispatch(payload);
+	},
+
+	handleJump (payload){
+		this.dispatch(payload);
 	}
 
 });

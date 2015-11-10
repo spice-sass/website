@@ -942,7 +942,7 @@ header.sticky a:active {
   border-style: solid;
 }
 #docs table .item__parameter code {
-  color: #289e83;
+  color: #2980B9;
 }
 @media (max-width: 750px) {
   #docs {

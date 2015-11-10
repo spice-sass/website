@@ -14,6 +14,13 @@ let AppActions = {
 			type : 'active',
 			name : name
 		});
+	},
+
+	jumpToTop : function(top){
+		AppDispatcher.handleJump({
+			type : 'jump',
+			pos : top
+		});
 	}
 
 }
