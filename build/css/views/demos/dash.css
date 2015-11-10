@@ -262,8 +262,8 @@ body {
 #side-bar ul.vertical-nav li a {
   display: block;
   color: #637F7D;
-  padding: 0 20px;
-  line-height: 56px;
+  padding: 12px 20px;
+  text-decoration: none;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -274,14 +274,8 @@ body {
 #side-bar ul.vertical-nav li a i {
   margin-right: 10px;
 }
-#side-bar ul.vertical-nav li .subnav {
-  display: none;
-}
 #side-bar ul.vertical-nav li .subnav li a {
   padding-left: 40px;
-}
-#side-bar ul.vertical-nav li:hover .subnav {
-  display: block;
 }
 #side-bar .badge {
   right: 10px;
