@@ -12,8 +12,6 @@ $break : 750px;
 
 #docs{
 
-	@import "main/mixinTabs";
-
 	padding:0 30px;
 	@include sideBarAppend($sidebarWidth);
 	
@@ -28,10 +26,6 @@ $break : 750px;
 		padding-top: 30px;
 		margin-bottom: 50px;
 		@extend .grid-row;
-
-		h2{
-			color: $col-pastel-red;
-		}
 
 	}
 
