@@ -39,8 +39,27 @@
 @include gradientButtonGroup('gradient',#2671A2);
 @include flatButtonGroup('flat',#2671A2);
 
-.tooltip .tooltip-body{
-	z-index:999;
+#docs{
+
+	@include verticalNav(#333,$col-belize-hole,$col-belize-hole);
+}
+
+
+.nav-holder{
+
+	background-color:darken($col-clouds,2%);
+	width:320px;
+}
+
+.tooltip{
+	
+	margin-top: -48px;
+    margin-left: 90px;
+
+	.tooltip-body{
+
+		z-index:999;
+	}
 }
 
 .grid-example{

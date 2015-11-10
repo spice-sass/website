@@ -2990,6 +2990,41 @@ input[type=range]::-ms-track {
   border-radius: 0 5px 5px 0;
 }
 
+#docs ul.vertical-nav li {
+  display: block;
+  position: relative;
+}
+#docs ul.vertical-nav li.active a {
+  color: #2980B9;
+}
+#docs ul.vertical-nav li a {
+  display: block;
+  color: #333;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1rem;
+}
+#docs ul.vertical-nav li a:hover {
+  background-color: #2980B9;
+  color: #d2e7f5;
+}
+#docs ul.vertical-nav li a i {
+  margin-right: 10px;
+}
+#docs ul.vertical-nav li .subnav li a {
+  padding-left: 40px;
+}
+
+.nav-holder {
+  background-color: #e6ebed;
+  width: 320px;
+}
+
+.tooltip {
+  margin-top: -48px;
+  margin-left: 90px;
+}
 .tooltip .tooltip-body {
   z-index: 999;
 }
