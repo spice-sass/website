@@ -8,27 +8,30 @@ var Docs = React.createClass({
 
 	getInitialState (){
 		return {
-			includes : {},
-			order : [],
+			includes   : {},
+			order      : [],
 			stylePages : [],
-			activeMix : AppStore.getActive()
+			activeMix  : AppStore.getActive()
 		}
 	},
 
-	goToMixin(mixin){
+	activeHandler (name) {
+
+		history.pushState(null,null,'#'+name);
+
+		this.setState({
+			activeMix : name,
+			activePosition : AppStore.getActivePosition()
+		});
+	},
+
+	goToMixin (mixin) {
 
 		var target = document.getElementById(mixin);
 		var docs   = document.getElementById('docs');
 		var top    = target.offsetTop;
 
 		docs.scrollTop = top;
-	},
-
-	activeHandler (name) {
-		this.setState({
-			activeMix : name,
-			activePosition : AppStore.getActivePosition()
-		});
 	},
 
 	componentDidMount () {
@@ -51,15 +54,16 @@ var Docs = React.createClass({
 
 	render (){
 
-		var order    = this.state.order,
-			includes = this.state.includes,
-			active   = this.state.activeMix,
-			activeP  = this.state.activePosition;
+		var order     = this.state.order,
+			includes  = this.state.includes,
+			active    = this.state.activeMix,
+			activeP   = this.state.activePosition,
+			goToMixin = this.goToMixin;
 
 		return (
 			<div id="docs-wrapper">
-				<Sidebar order={order} includes={includes} goToMixin={this.goToMixin} active={active} activeP={activeP}/>
-				<List order={order} includes={includes} active={active} />
+				<Sidebar order={order} includes={includes} active={active} activeP={activeP} goToMixin={goToMixin}/>
+				<List order={order} includes={includes} active={active}/>
 			</div>
 		)
 	}
