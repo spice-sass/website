@@ -47,7 +47,7 @@
 @include googleFont('leckerli-one');
 
 @include cardClass;
-@include paddedClass; 
+@include paddedClass;
 
 @import "components/header/header";
 @import "components/home/home";

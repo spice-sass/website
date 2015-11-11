@@ -399,6 +399,9 @@ header.sticky #theme-switcher {
   float: right;
 }
 
+#intro-pane .centre-y {
+  padding: 0 20px;
+}
 #intro-pane #main-logo {
   max-width: 350px;
   margin: 0 auto;
@@ -417,7 +420,7 @@ header.sticky #theme-switcher {
 }
 
 #installation {
-  padding: 100px;
+  padding: 100px 0;
 }
 #installation h2 {
   text-align: center;
@@ -435,6 +438,16 @@ header.sticky #theme-switcher {
 }
 #installation .code-demo .string {
   color: #F1C40F;
+}
+@media (max-width: 650px) {
+  #installation h2 {
+    font-size: 26px;
+    font-size: 1.625rem;
+  }
+  #installation h5 {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
 }
 
 .feature {
