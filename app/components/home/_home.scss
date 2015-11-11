@@ -6,6 +6,11 @@
 
 #intro-pane{
 
+	.centre-y{
+
+		padding:0 20px;
+	}
+
 	#main-logo{
 	    max-width: 350px;
 	    margin: 0 auto;
@@ -30,7 +35,7 @@
 
 #installation{
 
-	padding:100px;
+	padding:100px 0;
 
 	h2{	
 		text-align:center;
@@ -50,6 +55,16 @@
 		}
 		.string{
 			color:$col-sunflower;
+		}
+	}
+
+	@include breakPoint(650px){
+		h2{
+			@include fontSize(26px);
+		}
+
+		h5{
+			@include fontSize(20px);
 		}
 	}
 }
