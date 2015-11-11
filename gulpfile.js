@@ -31,6 +31,14 @@ gulp.task('browserify', function () {
     .pipe(browserify({
       transform: ['babelify']
     }))
+    .pipe(gulp.dest('./build/js'));
+});
+
+gulp.task('jsMin', function () {
+  gulp.src(['./app/home.js', './app/docs.js'], {entry: true})
+    .pipe(browserify({
+      transform: ['babelify']
+    }))
     .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
@@ -70,10 +78,15 @@ gulp.task('compass', function() {
       css: './build/css',
       sass: './app'
     }))
-    .pipe(minifyCSS())
 });
 
-gulp.task('copybuild',function(){
+gulp.task('cssMin', function() {
+  gulp.src('./build/css/**/*.css')
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('./build/css'))
+});
+
+gulp.task('copybuild', ['static','jsMin','cssMin'], function(){
   gulp.src(['./build/**/*.*'])
     .pipe(gulp.dest('../spice-sass.github.io'))
 });
@@ -86,4 +99,4 @@ gulp.task('watch', function () {
 
 gulp.task('frontEnd', ['browserify', 'compass', 'static']);
 gulp.task('default', ['browserify', 'compass', 'static', 'watch', 'server']);
-gulp.task('publish',['static','copybuild']);
+gulp.task('publish',['copybuild']);
