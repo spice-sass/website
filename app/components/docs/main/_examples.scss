@@ -1,0 +1,66 @@
+
+@include doughnut('primary',$col-primary,10px,#ccc,#111);
+@include doughnut('secondary',$col-secondary,10px,#ccc,#111);
+@include doughnut('warning',$col-warning,10px,#ccc,#111);
+@include doughnut('danger',$col-danger,10px,#ccc,#111);
+@include doughnut('submit',$col-success,10px,#ccc,#111);
+
+@include paginationFlat('flat',#f3f3f3);
+
+@include fadeIn;
+@include pulse;
+@include slideIn("left",40);
+@include slideIn("right",40);
+@include slideIn("up",20);
+@include slideIn("down",20);
+@include rotateIn(10);
+@include flipClass(y);
+
+@include switch('green',$col-success);
+
+@include masonryColumns(500px);
+
+@include formRounded(12px);
+@include formLined(6px,15px 20px,18);
+@include rangeInput;
+@include iconTooltip(#444,120px,20px);
+
+@include gradientButtonGroup('gradient',#2671A2);
+@include flatButtonGroup('flat',#2671A2);
+
+#docs{
+
+	@include verticalNav(#333,$col-belize-hole,$col-belize-hole);
+}
+
+
+.nav-holder{
+
+	background-color:darken($col-clouds,2%);
+	width:320px;
+}
+
+.tooltip{
+	
+	margin-top: -48px;
+    margin-left: 90px;
+
+	.tooltip-body{
+
+		z-index:999;
+	}
+}
+
+.grid-example [class^="grid-col"], .grid-example .gridded-list{
+
+	padding:20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+
+    span{
+        text-align:center;
+        display: block;
+        @include fontSize(14px);
+    }
+}
+

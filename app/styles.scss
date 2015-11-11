@@ -1,19 +1,5 @@
 @import "../node_modules/spice-sass/src/spice";
 
-.grid-example{
-
-	padding:45px 0;
-	min-height:30px;
-	margin-bottom:20px;
-	position:relative;
-	border-radius: 5px;
-
-	span{
-
-		font-size: 0.8em;
-	}
-}
-
 //app specific
 @mixin paddedClass($ammount:20px){
 
@@ -49,26 +35,6 @@
     }
 }
 
-
-
-
-
-
-@include gradientButton('grad-light',#f3f3f3,10%,60%);
-@include gradientButton('grad-primary',$col-belize-hole);
-@include gradientButton('grad-secondary',$col-midnight-blue);
-@include gradientButton('grad-warning',$col-warning);
-@include gradientButton('grad-danger',$col-danger);
-@include gradientButton('grad-submit',$col-success);
-
-@include flatButton('flat-light',#f3f3f3,5px,60%);
-@include flatButton('flat-primary',$col-belize-hole);
-@include flatButton('flat-secondary',$col-midnight-blue);
-@include flatButton('flat-warning',$col-warning);
-@include flatButton('flat-danger',$col-danger);
-@include flatButton('flat-submit',$col-success);
-
-
 @include containerClass(1100px);
 
 .fullscreen{
@@ -77,39 +43,16 @@
 
 @include centreClasses;
 @include gridClasses;
+@include griddedList(3);
 @include googleFont('leckerli-one');
-
-@include formRounded(12px);
-@include formLined(6px,15px 20px,18);
-@include rangeInput;
-
-
-@include fadeIn;
-@include pulse;
-
-@include slideIn("left",40);
-@include slideIn("right",40);
-@include slideIn("up",20);
-@include slideIn("down",20);
-
-@include rotateIn(10);
-@include flipClass(y);
 
 @include cardClass;
 @include paddedClass; 
-@include masonryColumns;
 
 @import "components/header/header";
 @import "components/home/home";
 @import "components/footer/footer";
 @import "components/docs/docs";
-@import "views/examples";
-@import "views/tickets";
-
-.columns{
-
-	@include textColumns(3);
-}
 
 #test{
 

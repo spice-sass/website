@@ -1,0 +1,62 @@
+$radius : 7px;
+$sass-block : 360px;
+$top-bar-height :20px;
+$top-bar-col:#CCCCCC;
+
+
+#preview{
+
+	padding-top:120px;
+
+	.code-wrapper{
+
+		height: 400px;
+		margin-top:$top-bar-height;
+		border-radius: 0 0 $radius $radius;
+		@include gridColumns(10);
+		@include gridIndent(1);
+
+		.top-bar{
+
+			height:$top-bar-height;
+			background-color:$top-bar-col;
+			border-radius: $radius $radius 0 0;
+			border:1px solid darken($top-bar-col,5%);
+			@include fitContainer((-$top-bar-height) 0 auto 0);			
+		}
+
+		.sass-block{
+
+			border-radius: 0 0 0 $radius;
+			color:#FFB93A;
+			background-color: darken($col-slate,3%);
+			border:1px solid lighten($col-slate,5%);
+			@include sideBar($sass-block);
+
+			.keyword{color:#FF7951;}
+			.function{color:#26AAC1;}
+			.punctuation{color:#dadada;}
+			.selector{color:#26C160;}
+			.property{color:#26AAC1;}
+			.variable{color:#EA8884;}
+		}
+
+		.css-block{
+
+			border-radius: 0 0 $radius 0;
+			background-color: $col-slate;
+			color:#FF7951;
+			@include sideBarAppend($sass-block);
+
+			.selector{color:#26C160;}
+			.property{color:#26AAC1;}
+			.punctuation{color:#dadada;}
+		}
+
+		.sass-block, .css-block{
+
+			padding:20px;
+			@include scrollbar($col-slate);
+		}
+	}
+}

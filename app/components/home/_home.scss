@@ -1,41 +1,14 @@
-#pane-1{
+//DEv 
+// #intro-pane, #installation{
+
+// 	opacity:0;
+// }
+
+#intro-pane{
 
 	#main-logo{
-
-		max-width: 350px;
-		margin: 0 auto;
-
-		path{
-
-			&.light-red{
-				fill:#BE2126;
-			}
-
-			&.dark-red{
-				fill:#942322;
-			}
-
-			&.highlight{
-				fill:#F2B6B9;
-			}
-
-			&.light-green{
-				fill:#6CAA43;
-			}
-
-			&.dark-green{
-				fill:#507C39;
-			}
-
-			&.text{
-				fill:#D05B37;
-			}
-		}
-
-		.chilli{
-
-			//@include vendorPrefix(transform,scale(0.8));
-		}
+	    max-width: 350px;
+	    margin: 0 auto;
 	}
 
 	#strap{
@@ -51,16 +24,15 @@
 	}
 
 	a{
-
 		text-decoration: none;
 	}
-
 }
 
 #installation{
 
-	h2{
-		
+	padding:100px;
+
+	h2{	
 		text-align:center;
 	}
 
@@ -82,14 +54,9 @@
 	}
 }
 
-
-
-.red{
-
-	color:#e7534f;
-}
-
 .feature{
 
 	padding:20px;
 }
+
+@import "preview";
