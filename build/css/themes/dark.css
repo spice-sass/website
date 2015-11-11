@@ -131,17 +131,17 @@ button.grad-primary, .button.grad-primary {
   padding: 10px 20px;
   margin-bottom: 10px;
   cursor: pointer;
-  color: #d2e7f5;
+  color: #1e1302;
   position: relative;
   border-radius: 3px;
-  border: 1px solid #20638f;
+  border: 1px solid #c87f0a;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #409ad5), color-stop(100%, #20638f));
-  background-image: -moz-linear-gradient(#409ad5, #20638f);
-  background-image: -webkit-linear-gradient(#409ad5, #20638f);
-  background-image: linear-gradient(#409ad5 #20638f);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5b043), color-stop(100%, #c87f0a));
+  background-image: -moz-linear-gradient(#f5b043, #c87f0a);
+  background-image: -webkit-linear-gradient(#f5b043, #c87f0a);
+  background-image: linear-gradient(#f5b043 #c87f0a);
   font-size: 16px;
   font-size: 1rem;
 }
@@ -156,11 +156,11 @@ button.grad-primary.small, .button.grad-primary.small {
   font-size: 0.875rem;
 }
 button.grad-primary:hover, button.grad-primary:focus, .button.grad-primary:hover, .button.grad-primary:focus {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2e8ece), color-stop(100%, #1b557a));
-  background-image: -moz-linear-gradient(#2e8ece, #1b557a);
-  background-image: -webkit-linear-gradient(#2e8ece, #1b557a);
-  background-image: linear-gradient(#2e8ece #1b557a);
+  color: black;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4a62a), color-stop(100%, #b06f09));
+  background-image: -moz-linear-gradient(#f4a62a, #b06f09);
+  background-image: -webkit-linear-gradient(#f4a62a, #b06f09);
+  background-image: linear-gradient(#f4a62a #b06f09);
 }
 button.grad-primary:active, .button.grad-primary:active {
   border-bottom-width: 1px;
@@ -191,7 +191,7 @@ button.grad-primary[class^="block-icon-"]:after, button.grad-primary[class*=" bl
   content: "";
   position: absolute;
   width: 1px;
-  background: #20638f;
+  background: #c87f0a;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -203,17 +203,17 @@ button.grad-secondary, .button.grad-secondary {
   padding: 10px 20px;
   margin-bottom: 10px;
   cursor: pointer;
-  color: #a8f3e4;
+  color: #f7ddda;
   position: relative;
   border-radius: 3px;
-  border: 1px solid #107360;
+  border: 1px solid #962d22;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1ccdaa), color-stop(100%, #107360));
-  background-image: -moz-linear-gradient(#1ccdaa, #107360);
-  background-image: -webkit-linear-gradient(#1ccdaa, #107360);
-  background-image: linear-gradient(#1ccdaa #107360);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d65548), color-stop(100%, #962d22));
+  background-image: -moz-linear-gradient(#d65548, #962d22);
+  background-image: -webkit-linear-gradient(#d65548, #962d22);
+  background-image: linear-gradient(#d65548 #962d22);
   font-size: 16px;
   font-size: 1rem;
 }
@@ -228,11 +228,11 @@ button.grad-secondary.small, .button.grad-secondary.small {
   font-size: 0.875rem;
 }
 button.grad-secondary:hover, button.grad-secondary:focus, .button.grad-secondary:hover, .button.grad-secondary:focus {
-  color: #e5fbf7;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #19b698), color-stop(100%, #0d5d4d));
-  background-image: -moz-linear-gradient(#19b698, #0d5d4d);
-  background-image: -webkit-linear-gradient(#19b698, #0d5d4d);
-  background-image: linear-gradient(#19b698 #0d5d4d);
+  color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d14233), color-stop(100%, #81261d));
+  background-image: -moz-linear-gradient(#d14233, #81261d);
+  background-image: -webkit-linear-gradient(#d14233, #81261d);
+  background-image: linear-gradient(#d14233 #81261d);
 }
 button.grad-secondary:active, .button.grad-secondary:active {
   border-bottom-width: 1px;
@@ -263,7 +263,7 @@ button.grad-secondary[class^="block-icon-"]:after, button.grad-secondary[class*=
   content: "";
   position: absolute;
   width: 1px;
-  background: #107360;
+  background: #962d22;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -563,16 +563,16 @@ button.flat-primary, .button.flat-primary {
   padding: 10px 20px;
   margin-bottom: 10px;
   cursor: pointer;
-  color: #d2e7f5;
+  color: #1e1302;
   position: relative;
-  background-color: #2980B9;
+  background-color: #F39C12;
   border-radius: 3px;
   border-style: solid;
   border-width: 5px;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #20638f;
+  border-bottom-color: #c87f0a;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -590,8 +590,8 @@ button.flat-primary.small, .button.flat-primary.small {
   font-size: 0.875rem;
 }
 button.flat-primary:hover, button.flat-primary:focus, .button.flat-primary:hover, .button.flat-primary:focus {
-  color: white;
-  background-color: #2472a4;
+  color: black;
+  background-color: #e08e0b;
 }
 button.flat-primary:active, .button.flat-primary:active {
   border-bottom-width: 1px;
@@ -622,7 +622,7 @@ button.flat-primary[class^="block-icon-"]:after, button.flat-primary[class*=" bl
   content: "";
   position: absolute;
   width: 1px;
-  background: #20638f;
+  background: #c87f0a;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -634,16 +634,16 @@ button.flat-secondary, .button.flat-secondary {
   padding: 10px 20px;
   margin-bottom: 10px;
   cursor: pointer;
-  color: #a8f3e4;
+  color: #f7ddda;
   position: relative;
-  background-color: #16A085;
+  background-color: #C0392B;
   border-radius: 3px;
   border-style: solid;
   border-width: 5px;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #107360;
+  border-bottom-color: #962d22;
   font-weight: 600;
   line-height: inherit;
   font-family: inherit;
@@ -661,8 +661,8 @@ button.flat-secondary.small, .button.flat-secondary.small {
   font-size: 0.875rem;
 }
 button.flat-secondary:hover, button.flat-secondary:focus, .button.flat-secondary:hover, .button.flat-secondary:focus {
-  color: #e5fbf7;
-  background-color: #138a72;
+  color: white;
+  background-color: #ab3326;
 }
 button.flat-secondary:active, .button.flat-secondary:active {
   border-bottom-width: 1px;
@@ -693,7 +693,7 @@ button.flat-secondary[class^="block-icon-"]:after, button.flat-secondary[class*=
   content: "";
   position: absolute;
   width: 1px;
-  background: #107360;
+  background: #962d22;
   right: 35px;
   top: 0;
   bottom: 0;

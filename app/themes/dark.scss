@@ -17,15 +17,15 @@ $linkcols : (
 @include normalise;
 @include headerSizes(45,20);
 
-@include gradientButton('grad-primary',$col-belize-hole);
-@include gradientButton('grad-secondary',$col-green-sea);
+@include gradientButton('grad-primary',$col-orange);
+@include gradientButton('grad-secondary',$col-pomegranate);
 @include gradientButton('grad-info',$col-belize-hole);
 @include gradientButton('grad-warning',$col-pumpkin);
 @include gradientButton('grad-danger',$col-pomegranate);
 @include gradientButton('grad-submit',$col-nephritis);
 
-@include flatButton('flat-primary',$col-belize-hole);
-@include flatButton('flat-secondary',$col-green-sea);
+@include flatButton('flat-primary',$col-orange);
+@include flatButton('flat-secondary',$col-pomegranate);
 @include flatButton('flat-info',$col-belize-hole);
 @include flatButton('flat-warning',$col-pumpkin);
 @include flatButton('flat-danger',$col-pomegranate);
