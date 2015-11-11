@@ -14,7 +14,7 @@
 
 			<ul>
 				<li class="slide-in-down">
-					<a href="/documentation"><i class="block-icon-open-book font20"></i> <span>Documentation</span></a>
+					<a href="/documentation"><i class="line-icon-paper font20"></i> <span>Documentation</span></a>
 				</li>
 			</ul>
 
@@ -25,8 +25,10 @@
 
 			<div class="lined" id="search-docs"></div>
 		{% endif %}
-
-		<p id="version" class="align-right slide-in-left">{{version}}</p>
+		
+		{% if template != 'documentation' %}
+			<p id="version" class="align-right slide-in-left">{{version}}</p>
+		{% endif %}
 
 	</div>
 

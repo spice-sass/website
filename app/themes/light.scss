@@ -14,11 +14,20 @@ $linkcols : (
     'active'  : $col-river-blue
 );
 
-
-
-
 @include normalise;
 @include headerSizes(45,20);
+
+@include gradientButton('grad-primary',$col-belize-hole);
+@include gradientButton('grad-secondary',$col-midnight-blue);
+@include gradientButton('grad-warning',$col-warning);
+@include gradientButton('grad-danger',$col-danger);
+@include gradientButton('grad-submit',$col-success);
+
+@include flatButton('flat-primary',$col-belize-hole);
+@include flatButton('flat-secondary',$col-midnight-blue);
+@include flatButton('flat-warning',$col-warning);
+@include flatButton('flat-danger',$col-danger);
+@include flatButton('flat-submit',$col-success);
 
 body{
     

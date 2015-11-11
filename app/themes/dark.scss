@@ -2,9 +2,9 @@
 
 
 $type         : "light";
-$themeColour  : $col-clouds;
-$textColour   : #525252;
-$headerColour : #3B4954;
+$themeColour  : #1E2227;
+$textColour   : darken($col-clouds,25%);
+$headerColour : $col-clouds;
 $lighter      : lighten($themeColour,5%);
 
 $linkcols : (
@@ -14,11 +14,20 @@ $linkcols : (
     'active'  : $col-river-blue
 );
 
-
-
-
 @include normalise;
 @include headerSizes(45,20);
+
+@include gradientButton('grad-primary',$col-belize-hole);
+@include gradientButton('grad-secondary',$col-midnight-blue);
+@include gradientButton('grad-warning',$col-warning);
+@include gradientButton('grad-danger',$col-danger);
+@include gradientButton('grad-submit',$col-success);
+
+@include flatButton('flat-primary',$col-belize-hole);
+@include flatButton('flat-secondary',$col-midnight-blue);
+@include flatButton('flat-warning',$col-warning);
+@include flatButton('flat-danger',$col-danger);
+@include flatButton('flat-submit',$col-success);
 
 body{
 	
@@ -84,7 +93,7 @@ hr{
 
 #sidebar{
 
-    $sidebar : #283035;
+    $sidebar : #191B1D;
     background-color:$sidebar;
 
     a{
@@ -167,7 +176,7 @@ hr{
 
 header.sticky{
 
-    background-color:#212527;
+    background-color:#111213;
 
     $linkcols : (
         'link'    : #ddd,

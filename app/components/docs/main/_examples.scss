@@ -1,26 +1,11 @@
 
-
-@include doughnut('primary',$col-primary,3px,#ccc,#111);
-@include doughnut('secondary',$col-secondary,3px,#ccc,#111);
-@include doughnut('warning',$col-warning,3px,#ccc,#111);
-@include doughnut('danger',$col-danger,3px,#ccc,#111);
-@include doughnut('submit',$col-success,3px,#ccc,#111);
+@include doughnut('primary',$col-primary,10px,#ccc,#111);
+@include doughnut('secondary',$col-secondary,10px,#ccc,#111);
+@include doughnut('warning',$col-warning,10px,#ccc,#111);
+@include doughnut('danger',$col-danger,10px,#ccc,#111);
+@include doughnut('submit',$col-success,10px,#ccc,#111);
 
 @include paginationFlat('flat',#f3f3f3);
-
-@include gradientButton('grad-light',#f3f3f3,10%,60%);
-@include gradientButton('grad-primary',$col-belize-hole);
-@include gradientButton('grad-secondary',$col-midnight-blue);
-@include gradientButton('grad-warning',$col-warning);
-@include gradientButton('grad-danger',$col-danger);
-@include gradientButton('grad-submit',$col-success);
-
-@include flatButton('flat-light',#f3f3f3,5px,60%);
-@include flatButton('flat-primary',$col-belize-hole);
-@include flatButton('flat-secondary',$col-midnight-blue);
-@include flatButton('flat-warning',$col-warning);
-@include flatButton('flat-danger',$col-danger);
-@include flatButton('flat-submit',$col-success);
 
 @include fadeIn;
 @include pulse;
