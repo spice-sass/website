@@ -4,6 +4,11 @@ class Logo extends React.Component {
 		super();
 	}
 
+	componentDidMount () {
+
+		console.log('logo ready derp');
+	}
+
 	render () {
 		return (
 			<svg className="slide-in-down" viewBox="-180 204.3 481 188">
