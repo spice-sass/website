@@ -6,13 +6,16 @@ $themeColour  : #1E2227;
 $textColour   : darken($col-clouds,25%);
 $headerColour : $col-clouds;
 $lighter      : lighten($themeColour,5%);
+$mixin-header : $col-pastel-red;
 
 $linkcols : (
-    'link'    : #333,
-    'visited' : #000,
+    'link'    : white,
+    'visited' : darken($col-clouds,25%),
     'hover'   : $col-belize-hole,
     'active'  : $col-river-blue
 );
+
+@include switch('theme', $col-midnight-blue,$col-midnight-blue,80px,14px);
 
 @include normalise;
 @include headerSizes(45,20);
@@ -81,18 +84,6 @@ h1,h2,h3,h4,h5,h6{
     color:$headerColour;
 }
 
-hr{
-
-    display: block;
-    margin: 20px 20px 40px 20px;
-    height:0;
-    border-left:none;
-    border-right:none;
-    border-top: 1px solid darken($themeColour,20%);
-    border-bottom: 1px solid lighten($themeColour,20%);
-    opacity: 0.3;
-}
-
 #sidebar{
 
     $sidebar : #191B1D;
@@ -108,8 +99,8 @@ hr{
 
         &.active{
 
-            color:$col-pastel-red;
-            @include vendorPrefix(box-shadow, inset 5px 0 0 $col-pastel-red)
+            color:$mixin-header;
+            @include vendorPrefix(box-shadow, inset 5px 0 0 $mixin-header)
         }
     }
 
@@ -117,12 +108,38 @@ hr{
 }
 
 #docs{
+
+    $themeColour : darken($col-clouds,8%);
+
+    background-color:$themeColour;
+    
     
     @include linkColours($linkcols);
     @include scrollbar($themeColour);
 
     h2{
-        color: $col-pastel-red;
+        color: $mixin-header;
+    }
+
+    h1,h3,h4,h5,h6{
+
+        color:#222;
+    }
+
+    p{
+        color: #666;
+    }
+
+    hr{
+
+        display: block;
+        margin: 20px 20px 40px 20px;
+        height:0;
+        border-left:none;
+        border-right:none;
+        border-top: 1px solid darken($themeColour,20%);
+        border-bottom: 1px solid lighten($themeColour,20%);
+        opacity: 0.3;
     }
 
     .mixin-links{
@@ -142,10 +159,16 @@ hr{
                 padding:5px 10px;
                 margin-bottom: 5px;
                 border-radius:3px;
+                color: #333;
                 cursor: pointer;
                 border:1px solid contrast($themeColour,10%);
                 background-color:enhance($themeColour,5%);
                 @include fontSize(14px);
+
+                &:hover{
+
+                    color:$col-river-blue;
+                }
             }
         }
 
@@ -164,6 +187,8 @@ hr{
         background-color:enhance($themeColour,5%);
         color: contrast($themeColour,30%);   
     }
+
+    @include flatTables(contrast($themeColour,65%),$themeColour);
 }
 
 .stack{
@@ -181,7 +206,7 @@ hr{
 
 @include formsTheme(#333,$lighter,$col-primary);
 @include tabsFlat('flat',contrast($lighter,8%),$lighter);
-@include flatTables(contrast($themeColour,65%),$themeColour);
+
 
 
 

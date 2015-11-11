@@ -16,6 +16,8 @@
 @include rotateIn(10);
 @include flipClass(y);
 
+@include switch('green',$col-success);
+
 @include masonryColumns(500px);
 
 @include formRounded(12px);

@@ -6,6 +6,7 @@ $themeColour  : $col-clouds;
 $textColour   : #525252;
 $headerColour : #3B4954;
 $lighter      : lighten($themeColour,5%);
+$mixin-header : $col-pastel-red;
 
 $linkcols : (
     'link'    : #333,
@@ -13,6 +14,8 @@ $linkcols : (
     'hover'   : $col-belize-hole,
     'active'  : $col-river-blue
 );
+
+@include switch('theme', $col-midnight-blue,$col-midnight-blue,80px,14px);
 
 @include normalise;
 @include headerSizes(45,20);
@@ -108,8 +111,8 @@ hr{
 
         &.active{
 
-            color:$col-pastel-red;
-            @include vendorPrefix(box-shadow, inset 5px 0 0 $col-pastel-red)
+            color:$mixin-header;
+            @include vendorPrefix(box-shadow, inset 5px 0 0 $mixin-header)
         }
     }
 
@@ -122,7 +125,7 @@ hr{
     @include scrollbar($themeColour);
 
     h2{
-        color: $col-pastel-red;
+        color: $mixin-header;
     }
 
     .mixin-links{

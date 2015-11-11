@@ -1,3 +1,77 @@
+.switch.theme {
+  width: 80px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  height: 28px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 14px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.switch.theme:before {
+  content: "";
+  left: 5px;
+  z-index: 1;
+  background-color: #3e5871;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 19.6px;
+  height: 19.6px;
+  line-height: 19.6px;
+  text-align: center;
+  border-radius: 19.6px;
+}
+.switch.theme span {
+  position: absolute;
+  line-height: 28px;
+  height: 28px;
+  display: block;
+  width: 80px;
+  top: 0;
+  padding: 0 20px;
+  color: #9ab1c7;
+  background-color: #2C3E50;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.switch.theme span.on {
+  left: -100%;
+  text-align: left;
+}
+.switch.theme span.off {
+  left: 0%;
+  text-align: right;
+}
+.switch.theme.selected span {
+  color: #9ab1c7;
+  background-color: #2C3E50;
+  left: -100%;
+}
+.switch.theme.selected span.on {
+  left: 0%;
+}
+.switch.theme.selected span.off {
+  left: 100%;
+}
+.switch.theme.selected:before {
+  background-color: #3e5871;
+  left: 55.4px;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

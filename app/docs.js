@@ -1,5 +1,6 @@
 import Docs from './components/docs/Docs';
 import Header from './components/header/header';
+import ThemeSwitch from './components/header/themeSwitch';
 
 
 // Component Tree
@@ -18,6 +19,11 @@ import Header from './components/header/header';
 React.render(
  	<Header/>,
     document.getElementById('search-docs')
+);
+
+React.render(
+	<ThemeSwitch />,
+	document.getElementById('theme-switcher')
 );
 
 React.render(
