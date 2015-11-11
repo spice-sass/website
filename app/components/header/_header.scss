@@ -55,14 +55,6 @@ header.sticky{
 				}
 			}
 		}
-
-		#theme-options{
-
-			@include breakPoint(800px){
-				display: none;
-			}
-		}
-
 	}
 
 	
@@ -105,5 +97,10 @@ header.sticky{
 		
 		padding-top:10px;
 		float: right;
+
+		@include breakPoint(650px){
+
+			display: none;
+		}
 	}
 }
