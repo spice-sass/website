@@ -6,7 +6,7 @@ class Logo extends React.Component {
 
 	componentDidMount () {
 
-		console.log('logo ready');
+		console.log('logo ready derp');
 	}
 
 	render () {
