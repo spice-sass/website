@@ -1,11 +1,11 @@
 @import "../node_modules/spice-sass/src/spice";
 
 
-$type          : "light";
-$themeColour   : $col-clouds;
-$textColour    : #525252;
-$headerColour  : #3B4954;
-$lighter       : lighten($themeColour,5%);
+$type         : "light";
+$themeColour  : $col-clouds;
+$textColour   : #525252;
+$headerColour : #3B4954;
+$lighter      : lighten($themeColour,5%);
 
 $linkcols : (
     'link'    : #333,
@@ -139,7 +139,7 @@ hr{
         }
     }
 
-    .grid-example [class^="grid-col"], .grid-example .gridded-list, .card{
+    .grid-example [class^="grid-col"], .grid-example .gridded-list{
 
         border:1px solid contrast($themeColour,10%);
         background-color:enhance($themeColour,5%);    

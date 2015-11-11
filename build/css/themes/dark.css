@@ -326,7 +326,7 @@ hr {
   font-size: 14px;
   font-size: 0.875rem;
 }
-#docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list, #docs .card {
+#docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list {
   border: 1px solid #cfd9db;
   background-color: #fbfcfc;
 }
