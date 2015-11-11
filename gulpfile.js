@@ -10,6 +10,7 @@ var server = require('gulp-express');
 var flatten = require('gulp-flatten');
 var swig = require('gulp-swig');
 var data = require('gulp-data');
+var stripDebug = require('gulp-strip-debug');
 
 var getJsonData = function(file) {
   return require(file + '.json');
@@ -40,6 +41,7 @@ gulp.task('jsMin', function () {
       transform: ['babelify']
     }))
     .pipe(uglify())
+    .pipe(stripDebug())
     .pipe(gulp.dest('./build/js'));
 });
 
