@@ -320,12 +320,13 @@ hr {
   padding: 5px 10px;
   margin-bottom: 5px;
   border-radius: 3px;
+  cursor: pointer;
   border: 1px solid #cfd9db;
   background-color: #fbfcfc;
   font-size: 14px;
   font-size: 0.875rem;
 }
-#docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list {
+#docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list, #docs .card {
   border: 1px solid #cfd9db;
   background-color: #fbfcfc;
 }

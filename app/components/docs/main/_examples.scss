@@ -31,6 +31,8 @@
 @include rotateIn(10);
 @include flipClass(y);
 
+@include masonryColumns(500px);
+
 @include formRounded(12px);
 @include formLined(6px,15px 20px,18);
 @include rangeInput;

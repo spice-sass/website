@@ -131,6 +131,7 @@ hr{
                 padding:5px 10px;
                 margin-bottom: 5px;
                 border-radius:3px;
+                cursor: pointer;
                 border:1px solid contrast($themeColour,10%);
                 background-color:enhance($themeColour,5%);
                 @include fontSize(14px);
@@ -140,7 +141,7 @@ hr{
 
 
 
-    .grid-example [class^="grid-col"], .grid-example .gridded-list{
+    .grid-example [class^="grid-col"], .grid-example .gridded-list, .card{
 
         border:1px solid contrast($themeColour,10%);
         background-color:enhance($themeColour,5%);    
