@@ -269,6 +269,78 @@ button.grad-secondary[class^="block-icon-"]:after, button.grad-secondary[class*=
   bottom: 0;
 }
 
+button.grad-info, .button.grad-info {
+  display: inline-block;
+  outline: none;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #d2e7f5;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #20638f;
+  font-weight: 600;
+  line-height: inherit;
+  font-family: inherit;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #409ad5), color-stop(100%, #20638f));
+  background-image: -moz-linear-gradient(#409ad5, #20638f);
+  background-image: -webkit-linear-gradient(#409ad5, #20638f);
+  background-image: linear-gradient(#409ad5 #20638f);
+  font-size: 16px;
+  font-size: 1rem;
+}
+button.grad-info.large, .button.grad-info.large {
+  padding: 12px 25px;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+button.grad-info.small, .button.grad-info.small {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+button.grad-info:hover, button.grad-info:focus, .button.grad-info:hover, .button.grad-info:focus {
+  color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2e8ece), color-stop(100%, #1b557a));
+  background-image: -moz-linear-gradient(#2e8ece, #1b557a);
+  background-image: -webkit-linear-gradient(#2e8ece, #1b557a);
+  background-image: linear-gradient(#2e8ece #1b557a);
+}
+button.grad-info:active, .button.grad-info:active {
+  border-bottom-width: 1px;
+  margin-bottom: 2px;
+  top: 3px;
+}
+button.grad-info[class^="block-icon-"]:before, button.grad-info[class*=" block-icon-"]:before, .button.grad-info[class^="block-icon-"]:before, .button.grad-info[class*=" block-icon-"]:before {
+  font-family: 'block-icon-set';
+}
+button.grad-info[class^="line-icon-"]:before, button.grad-info[class*=" line-icon-"]:before, .button.grad-info[class^="line-icon-"]:before, .button.grad-info[class*=" line-icon-"]:before {
+  font-family: 'line-icon-set';
+}
+button.grad-info[class^="block-icon-"], button.grad-info[class*=" block-icon-"], button.grad-info[class^="line-icon-"], button.grad-info[class*=" line-icon-"], .button.grad-info[class^="block-icon-"], .button.grad-info[class*=" block-icon-"], .button.grad-info[class^="line-icon-"], .button.grad-info[class*=" line-icon-"] {
+  padding-right: 50px;
+}
+button.grad-info[class^="block-icon-"]:before, button.grad-info[class*=" block-icon-"]:before, button.grad-info[class^="line-icon-"]:before, button.grad-info[class*=" line-icon-"]:before, .button.grad-info[class^="block-icon-"]:before, .button.grad-info[class*=" block-icon-"]:before, .button.grad-info[class^="line-icon-"]:before, .button.grad-info[class*=" line-icon-"]:before {
+  text-transform: none;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -10px;
+  font-weight: normal;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+button.grad-info[class^="block-icon-"]:after, button.grad-info[class*=" block-icon-"]:after, button.grad-info[class^="line-icon-"]:after, button.grad-info[class*=" line-icon-"]:after, .button.grad-info[class^="block-icon-"]:after, .button.grad-info[class*=" block-icon-"]:after, .button.grad-info[class^="line-icon-"]:after, .button.grad-info[class*=" line-icon-"]:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  background: #20638f;
+  right: 35px;
+  top: 0;
+  bottom: 0;
+}
+
 button.grad-warning, .button.grad-warning {
   display: inline-block;
   outline: none;
@@ -622,6 +694,77 @@ button.flat-secondary[class^="block-icon-"]:after, button.flat-secondary[class*=
   position: absolute;
   width: 1px;
   background: #1a252f;
+  right: 35px;
+  top: 0;
+  bottom: 0;
+}
+
+button.flat-info, .button.flat-info {
+  display: inline-block;
+  outline: none;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #d2e7f5;
+  position: relative;
+  background-color: #2980B9;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: #20638f;
+  font-weight: 600;
+  line-height: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  font-size: 1rem;
+}
+button.flat-info.large, .button.flat-info.large {
+  padding: 12px 25px;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+button.flat-info.small, .button.flat-info.small {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+button.flat-info:hover, button.flat-info:focus, .button.flat-info:hover, .button.flat-info:focus {
+  color: white;
+  background-color: #2472a4;
+}
+button.flat-info:active, .button.flat-info:active {
+  border-bottom-width: 1px;
+  margin-bottom: 2px;
+  top: 3px;
+}
+button.flat-info[class^="block-icon-"]:before, button.flat-info[class*=" block-icon-"]:before, .button.flat-info[class^="block-icon-"]:before, .button.flat-info[class*=" block-icon-"]:before {
+  font-family: 'block-icon-set';
+}
+button.flat-info[class^="line-icon-"]:before, button.flat-info[class*=" line-icon-"]:before, .button.flat-info[class^="line-icon-"]:before, .button.flat-info[class*=" line-icon-"]:before {
+  font-family: 'line-icon-set';
+}
+button.flat-info[class^="block-icon-"], button.flat-info[class*=" block-icon-"], button.flat-info[class^="line-icon-"], button.flat-info[class*=" line-icon-"], .button.flat-info[class^="block-icon-"], .button.flat-info[class*=" block-icon-"], .button.flat-info[class^="line-icon-"], .button.flat-info[class*=" line-icon-"] {
+  padding-right: 50px;
+}
+button.flat-info[class^="block-icon-"]:before, button.flat-info[class*=" block-icon-"]:before, button.flat-info[class^="line-icon-"]:before, button.flat-info[class*=" line-icon-"]:before, .button.flat-info[class^="block-icon-"]:before, .button.flat-info[class*=" block-icon-"]:before, .button.flat-info[class^="line-icon-"]:before, .button.flat-info[class*=" line-icon-"]:before {
+  text-transform: none;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -10px;
+  font-weight: normal;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+button.flat-info[class^="block-icon-"]:after, button.flat-info[class*=" block-icon-"]:after, button.flat-info[class^="line-icon-"]:after, button.flat-info[class*=" line-icon-"]:after, .button.flat-info[class^="block-icon-"]:after, .button.flat-info[class*=" block-icon-"]:after, .button.flat-info[class^="line-icon-"]:after, .button.flat-info[class*=" line-icon-"]:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  background: #20638f;
   right: 35px;
   top: 0;
   bottom: 0;
@@ -1041,9 +1184,13 @@ hr {
   font-size: 14px;
   font-size: 0.875rem;
 }
+#docs .mixin-links .item__parameter code {
+  color: #2980B9;
+}
 #docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list, #docs .card {
   border: 1px solid #cfd9db;
   background-color: #fbfcfc;
+  color: #94aab0;
 }
 
 .stack {

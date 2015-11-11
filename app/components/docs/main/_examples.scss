@@ -58,6 +58,7 @@
     span{
         text-align:center;
         display: block;
+        @include fontSize(14px);
     }
 }
 

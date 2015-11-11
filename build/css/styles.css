@@ -692,9 +692,6 @@ header.sticky .line-icon-menu {
   border-top-width: 1px;
   border-style: solid;
 }
-#docs table .item__parameter code {
-  color: #2980B9;
-}
 @media (max-width: 750px) {
   #docs {
     left: 0;
@@ -1973,6 +1970,8 @@ input[type=range]::-ms-track {
 .grid-example [class^="grid-col"] span, .grid-example .gridded-list span {
   text-align: center;
   display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 #test {

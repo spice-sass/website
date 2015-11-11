@@ -18,16 +18,18 @@ $linkcols : (
 @include headerSizes(45,20);
 
 @include gradientButton('grad-primary',$col-belize-hole);
-@include gradientButton('grad-secondary',$col-midnight-blue);
-@include gradientButton('grad-warning',$col-warning);
-@include gradientButton('grad-danger',$col-danger);
-@include gradientButton('grad-submit',$col-success);
+@include gradientButton('grad-secondary',$col-green-sea);
+@include gradientButton('grad-info',$col-belize-hole);
+@include gradientButton('grad-warning',$col-pumpkin);
+@include gradientButton('grad-danger',$col-pomegranate);
+@include gradientButton('grad-submit',$col-nephritis);
 
 @include flatButton('flat-primary',$col-belize-hole);
-@include flatButton('flat-secondary',$col-midnight-blue);
-@include flatButton('flat-warning',$col-warning);
-@include flatButton('flat-danger',$col-danger);
-@include flatButton('flat-submit',$col-success);
+@include flatButton('flat-secondary',$col-green-sea);
+@include flatButton('flat-info',$col-belize-hole);
+@include flatButton('flat-warning',$col-pumpkin);
+@include flatButton('flat-danger',$col-pomegranate);
+@include flatButton('flat-submit',$col-nephritis);
 
 body{
 	
@@ -65,7 +67,7 @@ body{
         }
 
         &.text{
-            fill:#D05B37;
+            fill:$col-carrot;
         }
     }
 }
@@ -146,12 +148,21 @@ hr{
                 @include fontSize(14px);
             }
         }
+
+        .item__parameter{
+
+            code{
+
+                color: #8AC7FF;
+            }
+        }
     }
 
     .grid-example [class^="grid-col"], .grid-example .gridded-list{
 
         border:1px solid contrast($themeColour,10%);
-        background-color:enhance($themeColour,5%);    
+        background-color:enhance($themeColour,5%);
+        color: contrast($themeColour,30%);   
     }
 }
 
@@ -203,13 +214,10 @@ header.sticky{
             border-right:none;
             border-bottom-style:solid;
             border-bottom-width:3px;
-            @include fontSize(14);
-            
+            @include fontSize(14);  
         }
     }
 }
-
-
 
 $codeBg  : #272F35;
 
@@ -275,7 +283,6 @@ $codeBg  : #272F35;
             padding:10px 20px;
             border-radius:0 0 5px 5px;
             font-size: 0.9em;
-            
 
             &.scss{
 
