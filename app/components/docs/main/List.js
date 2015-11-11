@@ -29,13 +29,15 @@ var List = React.createClass({
 
 	render() {
 		
-		var inc     = this.props.includes,
-			active  = this.props.active,
-			scroll  = this.state.scrollPos;
+		var inc       = this.props.includes,
+			active    = this.props.active,
+			scroll    = this.state.scrollPos,
+			goToMixin = this.props.goToMixin;
+
 		return (
 			<div id="docs" ref={(ref) => this.docs = ref}>
 				{this.props.order.map(function(ord){
-					return <MixinGroup ord={ord} includes={inc} active={active} scroll={scroll}/>
+					return <MixinGroup ord={ord} includes={inc} active={active} scroll={scroll} goToMixin={goToMixin}/>
 				})}
 			</div>
 		)

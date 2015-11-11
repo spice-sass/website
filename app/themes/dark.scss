@@ -21,10 +21,10 @@ $linkcols : (
 @include headerSizes(45,20);
 
 body{
-    
+	
     line-height: 150%;
     background-color : $themeColour;
-    @include fontSize(18);
+	@include fontSize(18);
 
     p{
         color: $textColour;
@@ -138,13 +138,11 @@ hr{
         }
     }
 
-
-
     .grid-example [class^="grid-col"], .grid-example .gridded-list{
 
         border:1px solid contrast($themeColour,10%);
         background-color:enhance($themeColour,5%);    
-    } 
+    }
 }
 
 .stack{

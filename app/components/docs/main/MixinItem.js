@@ -40,10 +40,13 @@ var MixinItem = React.createClass({
 
 	render (){
 
-		var mixin = this.props.data;
+		var mixin     = this.props.data,
+			goToMixin = this.props.goToMixin,
+			type      = this.props.type;
+
 		return (
 			<div className={this.props.type} id={mixin.name} ref={(ref) => this.mix = ref}>
-				<h2><span className="leckerli-one">@include</span> {mixin.name};</h2>
+				<h2>{type == "mixin" && <span className="leckerli-one">@include</span>} {mixin.name}{type == "func" && <span>()</span>};</h2>
 				<div dangerouslySetInnerHTML={{__html: mixin.desc}} />
 				{mixin.args > -1 &&
 					<div>
@@ -81,7 +84,7 @@ var MixinItem = React.createClass({
 							{mixin.links.map(function(link){
 								return (
 									<li>
-										<a href={'#' + link}>{'@include ' + link}</a>
+										<a onClick={goToMixin.bind(this,link)}>{'@include ' + link}</a>
 									</li>
 								)
 							})}
