@@ -1,4 +1,5 @@
 const AppStore = require('../../../flux/appStore');
+import AppActions from '../../../flux/appActions';
 
 // Ancestors - Sidebar > Docs
 
@@ -26,6 +27,7 @@ var SBLink = React.createClass({
 		var inc       = this.props.includes;
 		var goToMixin = this.props.goToMixin;
 		var active    = this.props.active;
+		var goToMixin = this.props.goToMixin;
 		
 		return (
 			<li>
@@ -34,7 +36,7 @@ var SBLink = React.createClass({
 						<a onClick={goToMixin.bind(this,ord)}>{inc[ord].title}</a>
 						<ul className="subnav">
 							{inc[ord].mixins.map(function(mix){
-								return <LinkTemplate mix={mix} goToMixin={goToMixin} active={active}/>
+								return <LinkTemplate mix={mix} active={active} goToMixin={goToMixin}/>
 							})}
 						</ul>
 					</div>

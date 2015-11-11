@@ -3,7 +3,7 @@ import assign from "../../node_modules/object-assign/index";
 
 const EventEmitter = require('events').EventEmitter;
 
-var active = "googleFont";
+var active = "gridClasses";
 var activePosition = 0;
 
 let AppStore = assign({}, EventEmitter.prototype,{
@@ -41,6 +41,9 @@ AppDispatcher.register(function (payload) {
 	}
 	if(payload.type == 'active'){
 		AppStore.emitChange(payload.type,payload.name);
+	}
+	if(payload.type == 'jump'){
+		AppStore.emitChange(payload.type,payload.pos);
 	}
 });
 
