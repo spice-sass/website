@@ -391,7 +391,6 @@ header.sticky {
   height: 50px;
   width: 100%;
   z-index: 9999;
-  background-color: #212527;
 }
 header.sticky .container.transition {
   position: relative;
@@ -404,7 +403,6 @@ header.sticky .container.stretch {
   max-width: 100%;
 }
 header.sticky .container.main {
-  background-color: #111;
   z-index: 999;
 }
 header.sticky #logo {
@@ -412,9 +410,6 @@ header.sticky #logo {
 }
 header.sticky #logo img {
   margin-top: 16px;
-}
-header.sticky #logo a {
-  color: #e7534f;
 }
 header.sticky button {
   margin-top: 5px;
@@ -444,34 +439,6 @@ header.sticky nav.shift {
     display: none;
   }
 }
-header.sticky #search-docs {
-  float: right;
-  margin-left: 20px;
-}
-header.sticky #search-docs textarea, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
-  background-color: black;
-  border-color: #171a1c;
-  color: #8e9a9f;
-}
-header.sticky #search-docs textarea:hover, header.sticky #search-docs select:hover, header.sticky #search-docs input[type=text]:hover, header.sticky #search-docs input[type=email]:hover, header.sticky #search-docs input[type=password]:hover, header.sticky #search-docs input[type=url]:hover, header.sticky #search-docs input[type=tel]:hover, header.sticky #search-docs input[type=search]:hover, header.sticky #search-docs input[type=date]:hover, header.sticky #search-docs input[type=time]:hover, header.sticky #search-docs input[type=number]:hover, header.sticky #search-docs input.text:hover {
-  border-color: #2f3437;
-}
-header.sticky #search-docs textarea:focus, header.sticky #search-docs select:focus, header.sticky #search-docs input[type=text]:focus, header.sticky #search-docs input[type=email]:focus, header.sticky #search-docs input[type=password]:focus, header.sticky #search-docs input[type=url]:focus, header.sticky #search-docs input[type=tel]:focus, header.sticky #search-docs input[type=search]:focus, header.sticky #search-docs input[type=date]:focus, header.sticky #search-docs input[type=time]:focus, header.sticky #search-docs input[type=number]:focus, header.sticky #search-docs input.text:focus {
-  color: white;
-  border-color: #e7534f;
-}
-header.sticky #search-docs input {
-  margin-top: 10px;
-  padding: 5px 10px;
-  outline: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  font-size: 14px;
-  font-size: 0.875rem;
-}
 header.sticky #version {
   line-height: 50px;
   color: #e9e9e9;
@@ -496,21 +463,6 @@ header.sticky .line-icon-menu {
     float: right;
     margin-top: 10px;
   }
-}
-header.sticky a {
-  text-decoration: none;
-}
-header.sticky a:link {
-  color: #ddd;
-}
-header.sticky a:visited {
-  color: #ddd;
-}
-header.sticky a:hover {
-  color: #ffffff;
-}
-header.sticky a:active {
-  color: #1b8898;
 }
 
 .dropdown {
@@ -580,24 +532,6 @@ header.sticky a:active {
 #intro-pane #main-logo {
   max-width: 350px;
   margin: 0 auto;
-}
-#intro-pane #main-logo path.light-red {
-  fill: #BE2126;
-}
-#intro-pane #main-logo path.dark-red {
-  fill: #942322;
-}
-#intro-pane #main-logo path.highlight {
-  fill: #F2B6B9;
-}
-#intro-pane #main-logo path.light-green {
-  fill: #6CAA43;
-}
-#intro-pane #main-logo path.dark-green {
-  fill: #507C39;
-}
-#intro-pane #main-logo path.text {
-  fill: #D05B37;
 }
 #intro-pane #strap {
   text-transform: uppercase;
@@ -773,12 +707,6 @@ header.sticky a:active {
   text-decoration: none;
   cursor: pointer;
 }
-#sidebar ul li a.active {
-  color: #e7534f;
-  -webkit-box-shadow: inset 5px 0 0 #e7534f;
-  -moz-box-shadow: inset 5px 0 0 #e7534f;
-  box-shadow: inset 5px 0 0 #e7534f;
-}
 #sidebar ul li.hide {
   display: none;
 }
@@ -815,119 +743,12 @@ header.sticky a:active {
   left: 280px;
   right: 0;
 }
-#docs .code.html-code {
-  margin-top: 30px;
-}
-#docs .code header {
-  border-top: 1px solid #111518;
-  border-right: 1px solid #111518;
-  border-left: 1px solid #111518;
-  border-radius: 5px 5px 0 0;
-  background-color: #3d4952;
-}
-#docs .code header ul li {
-  display: inline-block;
-}
-#docs .code header ul li a {
-  padding: 8px 15px;
-  color: #ddd;
-  display: block;
-  font-size: 0.85em;
-  cursor: pointer;
-  border-right: 1px solid #111518;
-}
-#docs .code header ul li a:hover {
-  color: white;
-}
-#docs .code header ul li:first-child a {
-  padding-left: 20px;
-  border-radius: 5px 0 0 0;
-}
-#docs .code header ul li.active a {
-  background-color: #272F35;
-  box-shadow: 0 1px 0 #272F35;
-}
-#docs .code .scrollbar {
-  overflow: auto;
-}
-#docs .code .scrollbar::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  padding: 10px;
-}
-#docs .code .scrollbar::-webkit-scrollbar-track {
-  background: #3d4952;
-}
-#docs .code .scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: black;
-  border: 2px solid #3d4952;
-}
-#docs .code .code-body {
-  background-color: #272F35;
-  border: 1px solid #111518;
-  margin-bottom: 30px;
-  padding: 10px 20px;
-  border-radius: 0 0 5px 5px;
-  font-size: 0.9em;
-}
-#docs .code .code-body.scss {
-  color: #FFB93A;
-}
-#docs .code .code-body.scss .keyword {
-  color: #FF7951;
-}
-#docs .code .code-body.scss .function {
-  color: #26AAC1;
-}
-#docs .code .code-body.scss .punctuation {
-  color: #dadada;
-}
-#docs .code .code-body.scss .selector {
-  color: #26C160;
-}
-#docs .code .code-body.scss .property {
-  color: #26AAC1;
-}
-#docs .code .code-body.scss .variable {
-  color: #EA8884;
-}
-#docs .code .code-body.css {
-  color: #FF7951;
-}
-#docs .code .code-body.css .selector {
-  color: #26C160;
-}
-#docs .code .code-body.css .property {
-  color: #26AAC1;
-}
-#docs .code .code-body.css .punctuation {
-  color: #dadada;
-}
-#docs .code .code-body.html {
-  color: #bbb;
-}
-#docs .code .code-body.html .tag {
-  color: #FF7951;
-}
-#docs .code .code-body.html .attr-name {
-  color: #26C160;
-}
-#docs .code .code-body.html .attr-value {
-  color: #FFB93A;
-}
-#docs .code .code-body.html .punctuation {
-  color: #dadada;
-}
 #docs .include-block {
   padding-top: 30px;
 }
 #docs .mixin, #docs .func {
   padding-top: 30px;
   margin-bottom: 50px;
-}
-#docs .mixin h2, #docs .func h2 {
-  color: #e7534f;
 }
 #docs table {
   font-size: 0.85em;
@@ -1013,33 +834,6 @@ header.sticky a:active {
 }
 #docs #docs-container.show {
   opacity: 1;
-}
-#docs .mixin-links {
-  min-height: 1%;
-}
-#docs .mixin-links:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#docs .mixin-links li {
-  float: left;
-  position: relative;
-  width: 32%;
-  margin-right: 2%;
-}
-#docs .mixin-links li:nth-child(3n + 3) {
-  margin-right: 0;
-}
-#docs .mixin-links li a {
-  display: block;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  border-radius: 3px;
-  border: 1px solid #cfd9db;
-  background-color: #fbfcfc;
-  font-size: 14px;
-  font-size: 0.875rem;
 }
 
 svg.primary {
@@ -2751,7 +2545,7 @@ form.rounded label {
   font-size: 18px;
   font-size: 1.125rem;
 }
-form.rounded textarea, form.rounded header.sticky #search-docs select, header.sticky #search-docs form.rounded select, form.rounded header.sticky #search-docs input[type=text], header.sticky #search-docs form.rounded input[type=text], form.rounded header.sticky #search-docs input[type=email], header.sticky #search-docs form.rounded input[type=email], form.rounded header.sticky #search-docs input[type=password], header.sticky #search-docs form.rounded input[type=password], form.rounded header.sticky #search-docs input[type=url], header.sticky #search-docs form.rounded input[type=url], form.rounded header.sticky #search-docs input[type=tel], header.sticky #search-docs form.rounded input[type=tel], form.rounded header.sticky #search-docs input[type=search], header.sticky #search-docs form.rounded input[type=search], form.rounded header.sticky #search-docs input[type=date], header.sticky #search-docs form.rounded input[type=date], form.rounded header.sticky #search-docs input[type=time], header.sticky #search-docs form.rounded input[type=time], form.rounded header.sticky #search-docs input[type=number], header.sticky #search-docs form.rounded input[type=number], form.rounded header.sticky #search-docs input.text, header.sticky #search-docs form.rounded input.text, form.rounded input[type=text], form.rounded input[type=email], form.rounded input[type=password], form.rounded input[type=url], form.rounded input[type=tel], form.rounded input[type=search], form.rounded input[type=date], form.rounded input[type=time], form.rounded input[type=number], form.rounded input.text, form.rounded select {
+form.rounded textarea, form.rounded input[type=text], form.rounded input[type=email], form.rounded input[type=password], form.rounded input[type=url], form.rounded input[type=tel], form.rounded input[type=search], form.rounded input[type=date], form.rounded input[type=time], form.rounded input[type=number], form.rounded input.text, form.rounded select {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -2777,7 +2571,7 @@ form.lined label {
   font-size: 18px;
   font-size: 1.125rem;
 }
-form.lined textarea, form.lined header.sticky #search-docs select, header.sticky #search-docs form.lined select, form.lined header.sticky #search-docs input[type=text], header.sticky #search-docs form.lined input[type=text], form.lined header.sticky #search-docs input[type=email], header.sticky #search-docs form.lined input[type=email], form.lined header.sticky #search-docs input[type=password], header.sticky #search-docs form.lined input[type=password], form.lined header.sticky #search-docs input[type=url], header.sticky #search-docs form.lined input[type=url], form.lined header.sticky #search-docs input[type=tel], header.sticky #search-docs form.lined input[type=tel], form.lined header.sticky #search-docs input[type=search], header.sticky #search-docs form.lined input[type=search], form.lined header.sticky #search-docs input[type=date], header.sticky #search-docs form.lined input[type=date], form.lined header.sticky #search-docs input[type=time], header.sticky #search-docs form.lined input[type=time], form.lined header.sticky #search-docs input[type=number], header.sticky #search-docs form.lined input[type=number], form.lined header.sticky #search-docs input.text, header.sticky #search-docs form.lined input.text, form.lined input[type=text], form.lined input[type=email], form.lined input[type=password], form.lined input[type=url], form.lined input[type=tel], form.lined input[type=search], form.lined input[type=date], form.lined input[type=time], form.lined input[type=number], form.lined input.text, form.lined select {
+form.lined textarea, form.lined input[type=text], form.lined input[type=email], form.lined input[type=password], form.lined input[type=url], form.lined input[type=tel], form.lined input[type=search], form.lined input[type=date], form.lined input[type=time], form.lined input[type=number], form.lined input.text, form.lined select {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -3031,9 +2825,12 @@ input[type=range]::-ms-track {
 
 .grid-example [class^="grid-col"], .grid-example .gridded-list {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.3);
-  text-align: center;
   margin-bottom: 20px;
+  border-radius: 5px;
+}
+.grid-example [class^="grid-col"] span, .grid-example .gridded-list span {
+  text-align: center;
+  display: block;
 }
 
 #test {

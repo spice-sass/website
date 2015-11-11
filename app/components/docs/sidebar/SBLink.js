@@ -23,11 +23,11 @@ var SBLink = React.createClass({
 
 	render() {
 
-		var ord       = this.props.ord;
-		var inc       = this.props.includes;
-		var goToMixin = this.props.goToMixin;
-		var active    = this.props.active;
-		var goToMixin = this.props.goToMixin;
+		var ord       = this.props.ord,
+			inc       = this.props.includes,
+			goToMixin = this.props.goToMixin,
+			active    = this.props.active,
+			goToMixin = this.props.goToMixin;
 		
 		return (
 			<li>
@@ -36,7 +36,10 @@ var SBLink = React.createClass({
 						<a onClick={goToMixin.bind(this,ord)}>{inc[ord].title}</a>
 						<ul className="subnav">
 							{inc[ord].mixins.map(function(mix){
-								return <LinkTemplate mix={mix} active={active} goToMixin={goToMixin}/>
+								return <LinkTemplate mix={mix} active={active} goToMixin={goToMixin} type="mixin"/>
+							})}
+							{inc[ord].functions && inc[ord].functions.map(function(mix){
+								return <LinkTemplate mix={mix} active={active} goToMixin={goToMixin} type="function"/>
 							})}
 						</ul>
 					</div>
@@ -62,13 +65,16 @@ var LinkTemplate = React.createClass({
 
 	render () {
 
-		var mix       = this.props.mix;
-		var goToMixin = this.props.goToMixin;
-		var active    = this.props.active;
+		var mix       = this.props.mix,
+			goToMixin = this.props.goToMixin,
+			type      = this.props.type,
+			active    = this.props.active;
 
 		return (
 			<li ref={(ref) => this.linkName = ref}>
-				<a className={mix.name == active ? 'active' : ''} onClick={goToMixin.bind(this,mix.name)}><span>@include</span> {mix.name}</a>
+				<a className={mix.name == active ? 'active' : ''} onClick={goToMixin.bind(this,mix.name)}>
+					{type == "mixin" && <span>@include</span>} {mix.name}{type == "function" && <span>();</span>}
+				</a>
 			</li>
 		)
 	}

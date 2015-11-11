@@ -3,7 +3,7 @@ header.sticky{
 
 
 	line-height:50px;
-	@include stickyHeader(50px,#212527);
+	@include stickyHeader(50px);
 
 	.container.transition{
 
@@ -17,23 +17,17 @@ header.sticky{
 	}
 
 	.container.main{
-		background-color:#111;
 		z-index: 999;
 	}
 
 	#logo{
-		
-		position: absolute;
 
 		img{
 
 			margin-top: 16px;
 		}
-
-		a{
-
-			color: $col-pastel-red;
-		}
+		
+		position: absolute;
 	}
 
 	button{
@@ -72,26 +66,7 @@ header.sticky{
 
 	}
 
-	#search-docs{
-
-		float:right;
-		margin-left:20px;
-		@include formsTheme(contrast(#212527,45%),enhance(#212527,15%),$col-pastel-red);
-
-		input{
-
-			margin-top:10px;
-			padding:5px 10px;
-			outline: none;
-			border-top:none;
-			border-left:none;
-			border-right:none;
-			border-bottom-style:solid;
-			border-bottom-width:3px;
-			@include fontSize(14);
-			
-		}
-	}
+	
 
 	#version{
 
@@ -126,16 +101,6 @@ header.sticky{
 		}
 
 	}
-
-
-	$linkcols : (
-	    'link'    : #ddd,
-	    'visited' : #ddd,
-	    'hover'   : #ffffff,
-	    'active'  : #1b8898
-	);
-
-	@include linkColours($linkcols); 
 }
 
 .dropdown{

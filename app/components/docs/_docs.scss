@@ -12,8 +12,6 @@ $break : 750px;
 
 #docs{
 
-	@import "main/mixinTabs";
-
 	padding:0 30px;
 	@include sideBarAppend($sidebarWidth);
 	
@@ -28,10 +26,6 @@ $break : 750px;
 		padding-top: 30px;
 		margin-bottom: 50px;
 		@extend .grid-row;
-
-		h2{
-			color: $col-pastel-red;
-		}
 
 	}
 
@@ -122,30 +116,6 @@ $break : 750px;
 		&.show{
 
 			opacity: 1;
-		}
-	}
-
-	.mixin-links{
-
-		@include clearFix;
-
-		li{
-
-			@include gridColumns(4);
-			&:nth-child(3n + 3){
-				margin-right: 0;
-			}
-
-			a{
-
-				display: block;
-				padding:5px 10px;
-				margin-bottom: 5px;
-				border-radius:3px;
-				border:1px solid darken($col-clouds,10%);
-				background-color:lighten($col-clouds,5%);
-				@include fontSize(14px);
-			}
 		}
 	}
 }

@@ -24,13 +24,13 @@ var MixinTabs = React.createClass({
 				<header>
 					<ul>
 						<li className={active == 'include' ? 'active' : ''}>
-							<a onClick={this.switchTabs.bind(this, 'include')}>@Include</a>
-						</li>
-						<li className={active == 'mixin' ? 'active' : ''}>
-							<a onClick={this.switchTabs.bind(this, 'mixin')}>@Mixin</a>
+							<a onClick={this.switchTabs.bind(this, 'include')}>Scss</a>
 						</li>
 						<li className={active == 'output' ? 'active' : ''}>
-							<a onClick={this.switchTabs.bind(this, 'output')}>Output</a>
+							<a onClick={this.switchTabs.bind(this, 'output')}>Css output</a>
+						</li>
+						<li className={active == 'mixin' ? 'active' : ''}>
+							<a onClick={this.switchTabs.bind(this, 'mixin')}>Source code</a>
 						</li>
 					</ul>
 				</header>
