@@ -1,11 +1,12 @@
 @import "../node_modules/spice-sass/src/spice";
 
 
-$type          : "light";
-$themeColour   : $col-clouds;
-$textColour    : #525252;
-$headerColour  : #3B4954;
-$lighter       : lighten($themeColour,5%);
+$type         : "light";
+$themeColour  : $col-clouds;
+$textColour   : #525252;
+$headerColour : #3B4954;
+$lighter      : lighten($themeColour,5%);
+$mixin-header : $col-pastel-red;
 
 $linkcols : (
     'link'    : #333,
@@ -14,11 +15,24 @@ $linkcols : (
     'active'  : $col-river-blue
 );
 
-
-
+@include switch('theme', $col-midnight-blue,$col-midnight-blue,80px,14px);
 
 @include normalise;
 @include headerSizes(45,20);
+
+@include gradientButton('grad-primary',$col-belize-hole);
+@include gradientButton('grad-secondary',$col-midnight-blue);
+@include gradientButton('grad-info',$col-belize-hole);
+@include gradientButton('grad-warning',$col-warning);
+@include gradientButton('grad-danger',$col-danger);
+@include gradientButton('grad-submit',$col-success);
+
+@include flatButton('flat-primary',$col-belize-hole);
+@include flatButton('flat-secondary',$col-midnight-blue);
+@include flatButton('flat-info',$col-belize-hole);
+@include flatButton('flat-warning',$col-warning);
+@include flatButton('flat-danger',$col-danger);
+@include flatButton('flat-submit',$col-success);
 
 body{
     
@@ -97,8 +111,8 @@ hr{
 
         &.active{
 
-            color:$col-pastel-red;
-            @include vendorPrefix(box-shadow, inset 5px 0 0 $col-pastel-red)
+            color:$mixin-header;
+            @include vendorPrefix(box-shadow, inset 5px 0 0 $mixin-header)
         }
     }
 
@@ -111,7 +125,7 @@ hr{
     @include scrollbar($themeColour);
 
     h2{
-        color: $col-pastel-red;
+        color: $mixin-header;
     }
 
     .mixin-links{
@@ -131,19 +145,27 @@ hr{
                 padding:5px 10px;
                 margin-bottom: 5px;
                 border-radius:3px;
+                cursor: pointer;
                 border:1px solid contrast($themeColour,10%);
                 background-color:enhance($themeColour,5%);
                 @include fontSize(14px);
             }
         }
+
+        .item__parameter{
+
+            code{
+
+                color: $col-belize-hole;
+            }
+        }
     }
 
-
-
-    .grid-example [class^="grid-col"], .grid-example .gridded-list{
+    .grid-example [class^="grid-col"], .grid-example .gridded-list, .card{
 
         border:1px solid contrast($themeColour,10%);
-        background-color:enhance($themeColour,5%);    
+        background-color:enhance($themeColour,5%);
+        color: contrast($themeColour,30%);     
     } 
 }
 
