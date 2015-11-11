@@ -131,6 +131,28 @@ body {
   font-size: 18px;
   font-size: 1.125rem;
 }
+body p {
+  color: #525252;
+}
+
+#main-logo path.light-red {
+  fill: #BE2126;
+}
+#main-logo path.dark-red {
+  fill: #942322;
+}
+#main-logo path.highlight {
+  fill: #F2B6B9;
+}
+#main-logo path.light-green {
+  fill: #6CAA43;
+}
+#main-logo path.dark-green {
+  fill: #507C39;
+}
+#main-logo path.text {
+  fill: #D05B37;
+}
 
 @font-face {
   font-family: Source Sans Pro;
@@ -220,6 +242,7 @@ hr {
 }
 #sidebar a:hover {
   color: white;
+  background-color: #2f383e;
 }
 #sidebar a.active {
   color: #e7534f;
@@ -274,6 +297,37 @@ hr {
 }
 #docs h2 {
   color: #e7534f;
+}
+#docs .mixin-links {
+  min-height: 1%;
+}
+#docs .mixin-links:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#docs .mixin-links li {
+  float: left;
+  position: relative;
+  width: 32%;
+  margin-right: 2%;
+}
+#docs .mixin-links li:nth-child(3n + 3) {
+  margin-right: 0;
+}
+#docs .mixin-links li a {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  border: 1px solid #cfd9db;
+  background-color: #fbfcfc;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+#docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list {
+  border: 1px solid #cfd9db;
+  background-color: #fbfcfc;
 }
 
 .stack {

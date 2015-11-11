@@ -63,7 +63,7 @@ var Docs = React.createClass({
 		return (
 			<div id="docs-wrapper">
 				<Sidebar order={order} includes={includes} active={active} activeP={activeP} goToMixin={goToMixin}/>
-				<List order={order} includes={includes} active={active}/>
+				<List order={order} includes={includes} active={active} goToMixin={goToMixin}/>
 			</div>
 		)
 	}

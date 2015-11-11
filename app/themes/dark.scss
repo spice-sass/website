@@ -1,9 +1,11 @@
 @import "../node_modules/spice-sass/src/spice";
 
 
-$type : "light";
-$themeColour : $col-clouds;
-$lighter : lighten($themeColour,5%);
+$type          : "light";
+$themeColour   : $col-clouds;
+$textColour    : #525252;
+$headerColour  : #3B4954;
+$lighter       : lighten($themeColour,5%);
 
 $linkcols : (
     'link'    : #333,
@@ -23,6 +25,40 @@ body{
     line-height: 150%;
     background-color : $themeColour;
 	@include fontSize(18);
+
+    p{
+        color: $textColour;
+    }
+}
+
+#main-logo{
+
+    path{
+
+        &.light-red{
+            fill:#BE2126;
+        }
+
+        &.dark-red{
+            fill:#942322;
+        }
+
+        &.highlight{
+            fill:#F2B6B9;
+        }
+
+        &.light-green{
+            fill:#6CAA43;
+        }
+
+        &.dark-green{
+            fill:#507C39;
+        }
+
+        &.text{
+            fill:#D05B37;
+        }
+    }
 }
 
 
@@ -31,7 +67,7 @@ body{
 
 h1,h2,h3,h4,h5,h6{
 
-    color:#3B4954;
+    color:$headerColour;
 }
 
 hr{
@@ -56,9 +92,10 @@ hr{
 
         &:hover{
             color: white;
+            background-color:contrast($sidebar,3%);
         }
 
-         &.active{
+        &.active{
 
             color:$col-pastel-red;
             @include vendorPrefix(box-shadow, inset 5px 0 0 $col-pastel-red)
@@ -75,6 +112,36 @@ hr{
 
     h2{
         color: $col-pastel-red;
+    }
+
+    .mixin-links{
+
+        @include clearFix;
+
+        li{
+
+            @include gridColumns(4);
+            &:nth-child(3n + 3){
+                margin-right: 0;
+            }
+
+            a{
+
+                display: block;
+                padding:5px 10px;
+                margin-bottom: 5px;
+                border-radius:3px;
+                border:1px solid contrast($themeColour,10%);
+                background-color:enhance($themeColour,5%);
+                @include fontSize(14px);
+            }
+        }
+    }
+
+    .grid-example [class^="grid-col"], .grid-example .gridded-list{
+
+        border:1px solid contrast($themeColour,10%);
+        background-color:enhance($themeColour,5%);    
     }
 }
 
@@ -232,8 +299,4 @@ $codeBg  : #272F35;
             }
         }
     }
-
 }
-
-
-

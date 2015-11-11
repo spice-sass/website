@@ -118,30 +118,6 @@ $break : 750px;
 			opacity: 1;
 		}
 	}
-
-	.mixin-links{
-
-		@include clearFix;
-
-		li{
-
-			@include gridColumns(4);
-			&:nth-child(3n + 3){
-				margin-right: 0;
-			}
-
-			a{
-
-				display: block;
-				padding:5px 10px;
-				margin-bottom: 5px;
-				border-radius:3px;
-				border:1px solid darken($col-clouds,10%);
-				background-color:lighten($col-clouds,5%);
-				@include fontSize(14px);
-			}
-		}
-	}
 }
 
 @import "main/examples"

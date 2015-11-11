@@ -533,24 +533,6 @@ header.sticky .line-icon-menu {
   max-width: 350px;
   margin: 0 auto;
 }
-#intro-pane #main-logo path.light-red {
-  fill: #BE2126;
-}
-#intro-pane #main-logo path.dark-red {
-  fill: #942322;
-}
-#intro-pane #main-logo path.highlight {
-  fill: #F2B6B9;
-}
-#intro-pane #main-logo path.light-green {
-  fill: #6CAA43;
-}
-#intro-pane #main-logo path.dark-green {
-  fill: #507C39;
-}
-#intro-pane #main-logo path.text {
-  fill: #D05B37;
-}
 #intro-pane #strap {
   text-transform: uppercase;
   font-size: 1.2em;
@@ -852,33 +834,6 @@ header.sticky .line-icon-menu {
 }
 #docs #docs-container.show {
   opacity: 1;
-}
-#docs .mixin-links {
-  min-height: 1%;
-}
-#docs .mixin-links:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#docs .mixin-links li {
-  float: left;
-  position: relative;
-  width: 32%;
-  margin-right: 2%;
-}
-#docs .mixin-links li:nth-child(3n + 3) {
-  margin-right: 0;
-}
-#docs .mixin-links li a {
-  display: block;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  border-radius: 3px;
-  border: 1px solid #cfd9db;
-  background-color: #fbfcfc;
-  font-size: 14px;
-  font-size: 0.875rem;
 }
 
 svg.primary {
@@ -2870,9 +2825,12 @@ input[type=range]::-ms-track {
 
 .grid-example [class^="grid-col"], .grid-example .gridded-list {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.3);
-  text-align: center;
   margin-bottom: 20px;
+  border-radius: 5px;
+}
+.grid-example [class^="grid-col"] span, .grid-example .gridded-list span {
+  text-align: center;
+  display: block;
 }
 
 #test {
