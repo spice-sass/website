@@ -181,7 +181,7 @@ h1,h2,h3,h4,h5,h6{
         }
     }
 
-    .grid-example [class^="grid-col"], .grid-example .gridded-list{
+    .grid-example [class^="grid-col"], .grid-example .gridded-list, .card{
 
         border:1px solid contrast($themeColour,10%);
         background-color:enhance($themeColour,5%);

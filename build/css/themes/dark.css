@@ -1271,7 +1271,7 @@ h1, h2, h3, h4, h5, h6 {
 #docs .mixin-links .item__parameter code {
   color: #8AC7FF;
 }
-#docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list {
+#docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list, #docs .card {
   border: 1px solid #b7c6ca;
   background-color: #e3e9eb;
   color: #7c989f;
