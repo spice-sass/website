@@ -1,0 +1,37 @@
+{% extends '../../../layouts/demo.twig' %}
+
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="/css/views/examples/saffron/saffron.css">
+{% endblock %}
+{% block title %}
+	<title>{{siteTitle}} | Saffron </title>
+{% endblock %} 
+
+{% block content %}
+
+
+<section id="main">
+
+	 <div id="login">
+
+	 	<h1>Saffron</h1>
+		<p class="strap">Animated login form</p>
+
+		<form class="lined">
+			
+			<label>Username</label>
+			<input type="text" />
+
+			<label>Password</label>
+			<input type="password" />
+
+			<button class="flat-submit block-icon-check">Login</button>
+			
+		</form>
+
+	 </div>
+
+</section>
+
+{% endblock %}

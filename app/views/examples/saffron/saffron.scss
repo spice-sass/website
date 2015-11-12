@@ -1,0 +1,70 @@
+@import "../node_modules/spice-sass/src/spice";
+@import "../../../components/header/header";
+
+header.sticky{
+
+	background-color:#111213;
+
+    $linkcols : (
+        'link'    : #ddd,
+        'visited' : #ddd,
+        'hover'   : #ffffff,
+        'active'  : #1b8898
+    );
+
+    @include linkColours($linkcols); 
+}
+
+#example-body{
+	@include fitContainer(50px 0 0 0);
+}
+
+/// Example start --- 
+
+@include normalise;
+@include googleFont('pacifico',h1);
+@include googleFont('source-sans',body textarea button);
+@include formLined(5px,15px 20px,16px);
+@include formsTheme(#777,white,$col-alizarin);
+@include flatButton('flat-submit',#54A03A);
+@include blockIcons;
+
+
+#example-body{
+
+	background-color:$col-clouds;
+}
+
+#login{
+
+	$max-width : 550px;
+	padding    : 50px 20px;
+	background-color:$col-clouds;
+
+	h1{
+
+		text-align: center;
+		margin-bottom: 15px;
+		color:$col-alizarin;
+		@include fontSize(60px);
+	}
+
+	.strap{
+
+		text-align: center;
+		letter-spacing: 2px;
+		@include fontSize(16px);
+	}
+
+
+	@include breakPoint($max-width,'min'){
+		
+		width: $max-width;
+		@include centre;
+	}
+
+	button{
+
+		float: right;
+	}
+}

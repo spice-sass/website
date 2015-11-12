@@ -41,12 +41,20 @@ header.sticky{
 		float: left;
 		@include vendorPrefix(transition,'all,ease,0.5s');
 
+		li{
+
+			display: inline-block;
+		}
+
 		&.shift{
 
 			margin-left: 62px;
 		}
 
 		a {
+
+			display: block;
+			padding: 0 10px;
 
 			@include breakPoint(800px){
 				padding: 0 10px!important;
