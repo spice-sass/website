@@ -11,7 +11,7 @@ let Logo = React.createClass({
 		var delay    = 0;
 		var timeLine = [{
 			"state"    : "chilli-pepper",
-			"duration" : 500
+			"duration" : 600
 		},{
 			"state"    : "scale-down",
 			"duration" : 300	

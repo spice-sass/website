@@ -1,78 +1,94 @@
-body.animations #intro-pane{
+body.animations {
 
-	#main-logo{
-	    max-width: 800px;
-	    margin: 0 auto;
-	    @include vendorPrefix(transition,'all 0.5s #{$bounce}');
+	header.sticky{
+		@include animation('header-slide',$late,0.5s,0,2s);
 	}
 
-	a.flat-secondary{
-		margin-right: 20px;
-	}
-
-	#strap, a, .version-number{
-		visibility: hidden;
-	}
-
-	.text.s,.text.p,.text.c,.text.e{
-		display: none;
-		@include animation('text-scale-in',$handbrake,0.7s);
-	}
-
-	.chilli-pepper{
+	#intro-pane{
 
 		#main-logo{
-			@include animation('wobbleChilli',$bounce,0.3s,0,false,infinite);
+			opacity: 0;
+		    max-width: 1000px;
+		    margin: 0 auto;
+		    @include vendorPrefix(transition,'all 0.5s #{$bounce}');
 		}
-	}
 
-	.scale-down{
-		#main-logo{
-	    	max-width: 350px;
+		a.flat-secondary{
+			margin-right: 20px;
 		}
-	}
-	.s-show{
-		.text.s{display:block}
-	}
-	.e-show{
-		.text.e{display:block}
-	}
-	.p-show{
-		.text.p{display:block}
-	}
-	.c-show{
-		.text.c{display:block}
-	}
-	.strap-show{
-		#strap{
-			visibility: visible;
-			@extend .slide-in-up;
+
+		#strap, a, .version-number{
+			visibility: hidden;
 		}
-	}
-	.buttons-show{
-		a{
-			visibility: visible;
 
-			&.flat-secondary{
-				@extend .slide-in-right;
-			}
+		.text.s,.text.p,.text.c,.text.e{
+			display: none;
+			@include animation('text-scale-in',$handbrake,0.7s);
+		}
 
-			&.flat-primary{
-				@extend .slide-in-left;
+		.chilli-pepper{
+
+			#main-logo{
+				opacity: 1;
+				margin-top: 200px;
+				//@include animation('wobbleChilli',$bounce,0.3s,0,false,infinite);
 			}
 		}
-	}
-	.version-show{
-		.version-number{
-			visibility: visible;
-			@extend .slide-in-up;
-		}
 
-		#main-logo{
-			@include vendorPrefix(animation,'none !important');
+		.scale-down{
+			#main-logo{
+				margin-top: 0;
+		    	max-width: 350px;
+			}
+		}
+		.s-show{
+			.text.s{display:block}
+		}
+		.e-show{
+			.text.e{display:block}
+		}
+		.p-show{
+			.text.p{display:block}
+		}
+		.c-show{
+			.text.c{display:block}
+		}
+		.strap-show{
+			#strap{
+				visibility: visible;
+				@extend .slide-in-up;
+			}
+		}
+		.buttons-show{
+			a{
+				visibility: visible;
+
+				&.flat-secondary{
+					@extend .slide-in-right;
+				}
+
+				&.flat-primary{
+					@extend .slide-in-left;
+				}
+			}
+		}
+		.version-show{
+			.version-number{
+				visibility: visible;
+				@extend .slide-in-up;
+			}
+
+			#main-logo{
+				@include vendorPrefix(animation,'none !important');
+			}
 		}
 	}
 }
+
+$header-stops : (
+	0% : "translateY(-50px)",
+	100% : "translateY(0)"
+);
 
 $text-stops : (
 	0% : "scale(0.1) translateY(600px)",
@@ -86,5 +102,6 @@ $wobble-stops : (
 	100%  : "rotate(0deg)"
 );
 
+@include transformKeyframes('header-slide',$header-stops,'fade-in');
 @include transformKeyframes('text-scale-in',$text-stops,'fade-in');
 @include transformKeyframes('wobbleChilli',$wobble-stops);

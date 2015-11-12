@@ -595,8 +595,21 @@ header.sticky #theme-switcher {
   border: 2px solid #475662;
 }
 
+body.animations header.sticky {
+  -webkit-animation-name: "header-slide";
+  animation-name: "header-slide";
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.16, -0.32, 0.26, 0.59);
+  animation-timing-function: cubic-bezier(0.16, -0.32, 0.26, 0.59);
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
 body.animations #intro-pane #main-logo {
-  max-width: 800px;
+  opacity: 0;
+  max-width: 1000px;
   margin: 0 auto;
   -webkit-transition: all 0.5s cubic-bezier(0.39, -0.35, 0.4, 1.36);
   -moz-transition: all 0.5s cubic-bezier(0.39, -0.35, 0.4, 1.36);
@@ -621,18 +634,11 @@ body.animations #intro-pane .text.s, body.animations #intro-pane .text.p, body.a
   animation-duration: 0.7s;
 }
 body.animations #intro-pane .chilli-pepper #main-logo {
-  -webkit-animation-name: "wobbleChilli";
-  animation-name: "wobbleChilli";
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: cubic-bezier(0.39, -0.35, 0.4, 1.36);
-  animation-timing-function: cubic-bezier(0.39, -0.35, 0.4, 1.36);
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+  opacity: 1;
+  margin-top: 200px;
 }
 body.animations #intro-pane .scale-down #main-logo {
+  margin-top: 0;
   max-width: 350px;
 }
 body.animations #intro-pane .s-show .text.s {
@@ -662,6 +668,38 @@ body.animations #intro-pane .version-show #main-logo {
   animation: none !important;
 }
 
+@-webkit-keyframes header-slide {
+  0% {
+    -webkit-transform: translateY(-50px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes header-slide {
+  0% {
+    -moz-transform: translateY(-50px);
+  }
+  100% {
+    -moz-transform: translateY(0);
+  }
+}
+@-o-keyframes header-slide {
+  0% {
+    -o-transform: translateY(-50px);
+  }
+  100% {
+    -o-transform: translateY(0);
+  }
+}
+@keyframes header-slide {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @-webkit-keyframes text-scale-in {
   0% {
     -webkit-transform: scale(0.1) translateY(600px);
