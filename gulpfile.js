@@ -1,15 +1,16 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp       = require('gulp');
+var fs         = require('fs');
 var browserify = require('gulp-browserify');
-var babelify = require("babelify");
-var uglify = require('gulp-uglify');
-var compass = require('gulp-compass');
-var minifyCSS = require('gulp-minify-css');
-var server = require('gulp-express');
-var flatten = require('gulp-flatten');
-var swig = require('gulp-swig');
-var data = require('gulp-data');
+var babelify   = require("babelify");
+var uglify     = require('gulp-uglify');
+var compass    = require('gulp-compass');
+var minifyCSS  = require('gulp-minify-css');
+var server     = require('gulp-express');
+var flatten    = require('gulp-flatten');
+var swig       = require('gulp-swig');
+var data       = require('gulp-data');
 var stripDebug = require('gulp-strip-debug');
 
 var getJsonData = function(file) {
@@ -50,14 +51,22 @@ gulp.task('static', function() {
   var templates = [
     "index",
     "documentation",
-    "examples",
-    "demos/dash",
-    "demos/punfest"
+    "examples"
   ]
+
+  var examplesPath = './app/views/examples';
+  var exampleList  = fs.readdirSync(examplesPath);
+
+  exampleList.forEach(function(example){
+
+    if(example != '.DS_Store'){
+      templates.push('/examples/'+example+'/'+example);
+    }
+  });
 
   templates.forEach(function(template){
 
-    var dest = (template.indexOf('demos/') > -1) ? './build/demos': './build/';
+    var dest = (template.indexOf('examples/') > -1) ? './build/examples': './build/';
     var obj = {
       "docs" : getJsonData('./build/api/includes'),
       "version" : getJsonData('../spice/package').version, // Requires spice repo to be cloned to the same directory

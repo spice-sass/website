@@ -49,8 +49,8 @@ routeData.routes.forEach(function (route){
 
 });
 
-app.get('/demos/:demo', function(req,res){
-    res.sendfile('./build/demos/'+req.params.demo+'.html');
+app.get('/examples/:demo', function(req,res){
+    res.sendfile('./build/examples/'+req.params.demo+'.html');
 });
 
 app.get('/tickets', function(req, res) {
