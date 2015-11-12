@@ -18,7 +18,7 @@ var getJsonData = function(file) {
 
 gulp.task('server', function () {
     server.run(['server.js']);
-    gulp.watch(['build/**/*.*'], server.notify);
+    gulp.watch(['./build/**/*.*'], server.notify);
 });
 
 gulp.task('html', function () {
