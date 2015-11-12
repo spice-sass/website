@@ -1,5 +1,21 @@
 @import "../node_modules/spice-sass/src/spice";
 
+@import "../../../components/header/header";
+
+header.sticky{
+
+	background-color:#111213;
+
+    $linkcols : (
+        'link'    : #ddd,
+        'visited' : #ddd,
+        'hover'   : #ffffff,
+        'active'  : #1b8898
+    );
+
+    @include linkColours($linkcols); 
+}
+
 $headerHeight : 50px;
 $bgColour     : #e9e9e9;
 
@@ -17,7 +33,6 @@ header{
 
 	background:white;
 	@include vendorPrefix(box-shadow,0 0 10px rgba(0,0,0,0.3));
-	@include stickyHeader(50px);
 
 	h1{
 
@@ -41,6 +56,10 @@ header{
 		float: right;
 		max-width: 300px;
 	}
+}
+
+#example-body{
+	@include fitContainer(50px 0 0 0);
 }
 
 #main{

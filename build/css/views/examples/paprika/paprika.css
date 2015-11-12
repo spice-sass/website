@@ -1,3 +1,107 @@
+header.sticky {
+  line-height: 50px;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 9999;
+}
+header.sticky .container.transition {
+  position: relative;
+  -webkit-transition: all,ease,0.5s;
+  -moz-transition: all,ease,0.5s;
+  -o-transition: all,ease,0.5s;
+  transition: all,ease,0.5s;
+}
+header.sticky .container.stretch {
+  max-width: 100%;
+}
+header.sticky .container.main {
+  z-index: 999;
+}
+header.sticky #logo {
+  position: absolute;
+}
+header.sticky #logo img {
+  margin-top: 16px;
+}
+header.sticky button {
+  margin-top: 5px;
+}
+header.sticky nav {
+  margin-right: 20px;
+  padding-left: 20px;
+  float: left;
+  -webkit-transition: all,ease,0.5s;
+  -moz-transition: all,ease,0.5s;
+  -o-transition: all,ease,0.5s;
+  transition: all,ease,0.5s;
+}
+header.sticky nav.shift {
+  margin-left: 62px;
+}
+@media (max-width: 800px) {
+  header.sticky nav a {
+    padding: 0 10px !important;
+  }
+  header.sticky nav a span {
+    display: none;
+  }
+}
+header.sticky #version {
+  line-height: 50px;
+  color: #e9e9e9;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+header.sticky .font20 {
+  position: relative;
+  top: 3px;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+header.sticky .line-icon-menu {
+  display: none;
+}
+@media (max-width: 750px) {
+  header.sticky #version, header.sticky #search-docs {
+    display: none;
+  }
+  header.sticky .line-icon-menu {
+    display: block;
+    float: right;
+    margin-top: 10px;
+  }
+}
+header.sticky #theme-switcher {
+  padding-top: 10px;
+  float: right;
+}
+@media (max-width: 650px) {
+  header.sticky #theme-switcher {
+    display: none;
+  }
+}
+
+header.sticky {
+  background-color: #111213;
+}
+header.sticky a {
+  text-decoration: none;
+}
+header.sticky a:link {
+  color: #ddd;
+}
+header.sticky a:visited {
+  color: #ddd;
+}
+header.sticky a:hover {
+  color: #ffffff;
+}
+header.sticky a:active {
+  color: #1b8898;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -299,11 +403,6 @@ header {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 0;
-  height: 50px;
-  width: 100%;
-  z-index: 9999;
 }
 header h1 {
   line-height: 50px;
@@ -324,6 +423,14 @@ header form {
   margin-top: 7px;
   float: right;
   max-width: 300px;
+}
+
+#example-body {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 #main {
