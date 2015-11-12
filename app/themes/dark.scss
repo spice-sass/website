@@ -4,13 +4,13 @@
 $type         : "light";
 $themeColour  : #1E2227;
 $textColour   : darken($col-clouds,25%);
-$headerColour : $col-clouds;
+$headerColour : #D7E5E8;
 $lighter      : lighten($themeColour,5%);
 $mixin-header : $col-pastel-red;
 
 $linkcols : (
     'link'    : white,
-    'visited' : darken($col-clouds,25%),
+    'visited' : darken($col-clouds,35%),
     'hover'   : $col-belize-hole,
     'active'  : $col-river-blue
 );

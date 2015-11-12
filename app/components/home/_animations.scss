@@ -1,0 +1,90 @@
+body.animations #intro-pane{
+
+	#main-logo{
+	    max-width: 800px;
+	    margin: 0 auto;
+	    @include vendorPrefix(transition,'all 0.5s #{$bounce}');
+	}
+
+	a.flat-secondary{
+		margin-right: 20px;
+	}
+
+	#strap, a, .version-number{
+		visibility: hidden;
+	}
+
+	.text.s,.text.p,.text.c,.text.e{
+		display: none;
+		@include animation('text-scale-in',$handbrake,0.7s);
+	}
+
+	.chilli-pepper{
+
+		#main-logo{
+			@include animation('wobbleChilli',$bounce,0.3s,0,false,infinite);
+		}
+	}
+
+	.scale-down{
+		#main-logo{
+	    	max-width: 350px;
+		}
+	}
+	.s-show{
+		.text.s{display:block}
+	}
+	.e-show{
+		.text.e{display:block}
+	}
+	.p-show{
+		.text.p{display:block}
+	}
+	.c-show{
+		.text.c{display:block}
+	}
+	.strap-show{
+		#strap{
+			visibility: visible;
+			@extend .slide-in-up;
+		}
+	}
+	.buttons-show{
+		a{
+			visibility: visible;
+
+			&.flat-secondary{
+				@extend .slide-in-right;
+			}
+
+			&.flat-primary{
+				@extend .slide-in-left;
+			}
+		}
+	}
+	.version-show{
+		.version-number{
+			visibility: visible;
+			@extend .slide-in-up;
+		}
+
+		#main-logo{
+			@include vendorPrefix(animation,'none !important');
+		}
+	}
+}
+
+$text-stops : (
+	0% : "scale(0.1) translateY(600px)",
+	100% : "scale(1) translateY(0)"
+);
+
+$wobble-stops : (
+	0%    : "rotate(0deg)",
+	33.3% : "rotate(3deg)",
+	66.6% : "rotate(-3deg)",
+	100%  : "rotate(0deg)"
+);
+
+@include transformKeyframes('text-scale-in',$text-stops,'fade-in');
+@include transformKeyframes('wobbleChilli',$wobble-stops);

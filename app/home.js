@@ -1,13 +1,13 @@
 import Preview from './components/home/Preview';
 import Logo    from './components/home/Logo';
-import Timing  from './components/home/Timing';
 import ThemeSwitch from './components/header/themeSwitch';
 
-console.log(new Timing('d', 7000))
+
+document.body.className = 'animations';
 
 React.render(
 	<Logo />,
-	document.getElementById('main-logo')
+	document.getElementById('intro-pane')
 );
 
 React.render(
