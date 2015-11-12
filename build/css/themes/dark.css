@@ -1193,10 +1193,10 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 #docs a:link {
-  color: white;
+  color: #191B1D;
 }
 #docs a:visited {
-  color: #859fa5;
+  color: #2C3E50;
 }
 #docs a:hover {
   color: #2980B9;

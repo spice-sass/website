@@ -9,8 +9,8 @@ $lighter      : lighten($themeColour,5%);
 $mixin-header : $col-pastel-red;
 
 $linkcols : (
-    'link'    : white,
-    'visited' : darken($col-clouds,35%),
+    'link'    : #191B1D,
+    'visited' : $col-midnight-blue,
     'hover'   : $col-belize-hole,
     'active'  : $col-river-blue
 );
