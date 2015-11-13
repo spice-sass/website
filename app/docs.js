@@ -22,11 +22,6 @@ React.render(
 );
 
 React.render(
-	<ThemeSwitch />,
-	document.getElementById('theme-switcher')
-);
-
-React.render(
  	<Docs/>,
     document.getElementById('documentation')
 );

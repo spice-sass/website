@@ -558,7 +558,7 @@ var SBLink = React.createClass({
 				null,
 				React.createElement(
 					'a',
-					{ onClick: goToMixin.bind(this, ord) },
+					{ className: 'group-title', onClick: goToMixin.bind(this, ord) },
 					inc[ord].title
 				),
 				React.createElement(
@@ -788,8 +788,6 @@ var _componentsHeaderThemeSwitch2 = _interopRequireDefault(_componentsHeaderThem
 //    	      	  |-- MixinTabs
 
 React.render(React.createElement(_componentsHeaderHeader2['default'], null), document.getElementById('search-docs'));
-
-React.render(React.createElement(_componentsHeaderThemeSwitch2['default'], null), document.getElementById('theme-switcher'));
 
 React.render(React.createElement(_componentsDocsDocs2['default'], null), document.getElementById('documentation'));
 

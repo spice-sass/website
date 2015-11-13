@@ -12,71 +12,166 @@
 
 {% set tiles = 
 	[{
-		"img"      : '<img src="http://lorempixel.com/400/200/" alt="">',
+		"img"      : 1,
 		"title"    : "This is a tile",
 		"caption"  : "The description of the awesome title goes here",
 		"likes"    : 37,
 		"shares"   : 14,
 		"comments" : 3
 	},{
-		"img"      : '<img src="http://lorempixel.com/400/200/" alt="">',
+		"img"      : 2,
 		"title"    : "Second tile",
-		"caption"  : "The description of the awesome title goes here bruv",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quidem optio quo accusantium nemo, ullam.",
+		"likes"    : 67,
+		"shares"   : 22,
+		"comments" : 8
+	},{
+		"img"      : 7,
+		"title"    : "Title for tile",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum error fugiat, quis.",
+		"likes"    : 32,
+		"shares"   : 12,
+		"comments" : 3
+	},{
+		"img"      : 8,
+		"title"    : "Yet another tile",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit labore quod, commodi modi.",
+		"likes"    : 3,
+		"shares"   : 2,
+		"comments" : 1
+	},{
+		"img"      : 9,
+		"title"    : "Lorem ipsum",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, voluptate temporibus sunt.",
+		"likes"    : 12,
+		"shares"   : 6,
+		"comments" : 3
+	},{
+		"img"      : 10,
+		"title"    : "Dolor sit",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, dolorum, nisi.",
+		"likes"    : 24,
+		"shares"   : 12,
+		"comments" : 3
+	},{
+		"img"      : 3,
+		"title"    : "Lorem ipsum",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus expedita tenetur ipsum!",
+		"likes"    : 78,
+		"shares"   : 14,
+		"comments" : 13
+	},{
+		"img"      : 4,
+		"title"    : "Title goes here",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aliquid aliquam doloribus sunt aperiam quibusdam, fugiat praesentium? Nemo.",
+		"likes"    : 3,
+		"shares"   : 10,
+		"comments" : 2
+	},{
+		"img"      : 5,
+		"title"    : "Lorem ipsum",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab iusto unde dolorem impedit repellendus.",
+		"likes"    : 21,
+		"shares"   : 15,
+		"comments" : 2
+	},{
+		"img"      : 6,
+		"title"    : "Aother tile",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima.",
+		"likes"    : 12,
+		"shares"   : 14,
+		"comments" : 3
+	},{
+		"img"      : 11,
+		"title"    : "Title",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, dolore.",
+		"likes"    : 31,
+		"shares"   : 14,
+		"comments" : 3
+	},{
+		"img"      : 1,
+		"title"    : "This is a tile",
+		"caption"  : "The description of the awesome title goes here",
 		"likes"    : 37,
 		"shares"   : 14,
 		"comments" : 3
 	},{
-		"img"      : '<img src="http://lorempixel.com/400/600/" alt="">',
+		"img"      : 2,
 		"title"    : "Second tile",
-		"caption"  : "The description of the awesome title goes here bruv",
-		"likes"    : 37,
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quidem optio quo accusantium nemo, ullam.",
+		"likes"    : 67,
+		"shares"   : 22,
+		"comments" : 8
+	},{
+		"img"      : 3,
+		"title"    : "Lorem ipsum",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus expedita tenetur ipsum!",
+		"likes"    : 78,
+		"shares"   : 14,
+		"comments" : 13
+	},{
+		"img"      : 4,
+		"title"    : "Title goes here",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aliquid aliquam doloribus sunt aperiam quibusdam, fugiat praesentium? Nemo.",
+		"likes"    : 3,
+		"shares"   : 10,
+		"comments" : 2
+	},{
+		"img"      : 5,
+		"title"    : "Lorem ipsum",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab iusto unde dolorem impedit repellendus.",
+		"likes"    : 21,
+		"shares"   : 15,
+		"comments" : 2
+	},{
+		"img"      : 6,
+		"title"    : "Aother tile",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima.",
+		"likes"    : 12,
 		"shares"   : 14,
 		"comments" : 3
 	},{
-		"img"      : '<img src="http://lorempixel.com/400/500/" alt="">',
-		"title"    : "Second tile",
-		"caption"  : "The description of the awesome title goes here bruv",
-		"likes"    : 37,
-		"shares"   : 14,
+		"img"      : 7,
+		"title"    : "Title for tile",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum error fugiat, quis.",
+		"likes"    : 32,
+		"shares"   : 12,
 		"comments" : 3
 	},{
-		"img"      : '<img src="http://lorempixel.com/400/300/" alt="">',
-		"title"    : "Second tile",
-		"caption"  : "The description of the awesome title goes here bruv",
-		"likes"    : 37,
-		"shares"   : 14,
+		"img"      : 8,
+		"title"    : "Yet another tile",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit labore quod, commodi modi.",
+		"likes"    : 3,
+		"shares"   : 2,
+		"comments" : 1
+	},{
+		"img"      : 9,
+		"title"    : "Lorem ipsum",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, voluptate temporibus sunt.",
+		"likes"    : 12,
+		"shares"   : 6,
 		"comments" : 3
 	},{
-		"img"      : '<img src="http://lorempixel.com/400/800/" alt="">',
-		"title"    : "Second tile",
-		"caption"  : "The description of the awesome title goes here bruv",
-		"likes"    : 37,
-		"shares"   : 14,
+		"img"      : 10,
+		"title"    : "Dolor sit",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, dolorum, nisi.",
+		"likes"    : 24,
+		"shares"   : 12,
 		"comments" : 3
 	},{
-		"img"      : '<img src="http://lorempixel.com/400/200/" alt="">',
-		"title"    : "Second tile",
-		"caption"  : "The description of the awesome title goes here bruv",
-		"likes"    : 37,
-		"shares"   : 14,
-		"comments" : 3
-	},{
-		"img"      : '<img src="http://lorempixel.com/400/200/" alt="">',
-		"title"    : "Second tile",
-		"caption"  : "The description of the awesome title goes here bruv",
-		"likes"    : 37,
+		"img"      : 11,
+		"title"    : "Title",
+		"caption"  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, dolore.",
+		"likes"    : 31,
 		"shares"   : 14,
 		"comments" : 3
 	}]
 %}
 
-<header>
-	<div class="container">
+<header class="banner">
+	<div class="branding">
 		<h1>Paprika</h1>
 		<p class="strap">css only inspiration template</p>
-		<form class="lined" action="#">
-			<input type="search" placeholder="Search" />
-		</form>
 	</div>
 </header>
 
@@ -89,7 +184,7 @@
 			{% for tile in tiles %}
 				<div class="masonry-item">
 
-					{{tile.img | raw}}
+					<img src="/img/spices/{{tile.img}}.jpg" alt="Lorem ipsum">
 					<h3>{{tile.title}}</h3>
 					<p>{{tile.caption}}</p>
 

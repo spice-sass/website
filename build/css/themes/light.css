@@ -1060,11 +1060,9 @@ button.flat-submit[class^="block-icon-"]:after, button.flat-submit[class*=" bloc
 body {
   line-height: 150%;
   background-color: #ECF0F1;
+  color: #525252;
   font-size: 18px;
   font-size: 1.125rem;
-}
-body p {
-  color: #525252;
 }
 
 #main-logo path.light-red {
@@ -1170,7 +1168,10 @@ hr {
   overflow: auto;
 }
 #sidebar a {
-  color: #a3b6bb;
+  color: #707D7F;
+}
+#sidebar a.group-title {
+  color: #a5aeb0;
 }
 #sidebar a:hover {
   color: white;
@@ -1388,16 +1389,22 @@ header.sticky a {
   text-decoration: none;
 }
 header.sticky a:link {
-  color: #ddd;
+  color: #999;
 }
 header.sticky a:visited {
-  color: #ddd;
+  color: #999;
 }
 header.sticky a:hover {
   color: #ffffff;
 }
 header.sticky a:active {
-  color: #1b8898;
+  color: #3498DB;
+}
+header.sticky nav li {
+  border-left: 1px solid #000;
+}
+header.sticky nav li:last-child {
+  border-right: 1px solid #000;
 }
 header.sticky #search-docs {
   float: right;

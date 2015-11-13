@@ -33,7 +33,7 @@ var SBLink = React.createClass({
 			<li>
 				{inc[ord].searchTerms.toLowerCase().indexOf(this.state.filterTerm) >-1 &&
 					<div>
-						<a onClick={goToMixin.bind(this,ord)}>{inc[ord].title}</a>
+						<a className="group-title" onClick={goToMixin.bind(this,ord)}>{inc[ord].title}</a>
 						<ul className="subnav">
 							{inc[ord].mixins.map(function(mix){
 								return <LinkTemplate mix={mix} active={active} goToMixin={goToMixin} type="mixin"/>

@@ -21,25 +21,31 @@ header.sticky{
 
 /// Example start --- 
 
+$bgCol : $col-clouds;
+
 @include normalise;
+@include containerClass(1100px);
 @include googleFont('pacifico',h1);
 @include googleFont('source-sans',body textarea button);
 @include formLined(5px,15px 20px,16px);
 @include formsTheme(#777,white,$col-alizarin);
 @include flatButton('flat-submit',#54A03A);
 @include blockIcons;
+@include lineIcons;
+@include slideIn('down',50,$warpspeed,0.3s);
+@include slideIn('up',100,$bounce,0.8s);
 
 
 #example-body{
 
-	background-color:$col-clouds;
+	background-color:$bgCol;
 }
 
 #login{
 
 	$max-width : 550px;
 	padding    : 50px 20px;
-	background-color:$col-clouds;
+	border-radius:10px;
 
 	h1{
 

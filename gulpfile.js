@@ -29,7 +29,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('browserify', function () {
-  gulp.src(['./app/home.js', './app/docs.js'], {entry: true})
+  gulp.src(['./app/home.js', './app/docs.js', './app/examples.js'], {entry: true})
     .pipe(browserify({
       transform: ['babelify']
     }))
@@ -37,7 +37,7 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('jsMin', function () {
-  gulp.src(['./app/home.js', './app/docs.js'], {entry: true})
+  gulp.src(['./app/home.js', './app/docs.js', './app/examples.js'], {entry: true})
     .pipe(browserify({
       transform: ['babelify']
     }))

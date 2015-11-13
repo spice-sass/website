@@ -1060,11 +1060,9 @@ button.flat-submit[class^="block-icon-"]:after, button.flat-submit[class*=" bloc
 body {
   line-height: 150%;
   background-color: #1E2227;
+  color: #858B8C;
   font-size: 18px;
   font-size: 1.125rem;
-}
-body p {
-  color: #a3b6bb;
 }
 
 #main-logo path.light-red {
@@ -1151,25 +1149,28 @@ body p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #D7E5E8;
+  color: #EEF2F3;
 }
 
 #sidebar {
-  background-color: #191B1D;
+  background-color: #1D2023;
   overflow: auto;
 }
 #sidebar a {
-  color: #a3b6bb;
+  color: #707D7F;
+}
+#sidebar a.group-title {
+  color: #a5aeb0;
 }
 #sidebar a:hover {
   color: white;
-  background-color: #202325;
+  background-color: #24282b;
 }
 #sidebar a.active {
-  color: #e7534f;
-  -webkit-box-shadow: inset 5px 0 0 #e7534f;
-  -moz-box-shadow: inset 5px 0 0 #e7534f;
-  box-shadow: inset 5px 0 0 #e7534f;
+  color: #E74C3C;
+  -webkit-box-shadow: inset 5px 0 0 #E74C3C;
+  -moz-box-shadow: inset 5px 0 0 #E74C3C;
+  box-shadow: inset 5px 0 0 #E74C3C;
 }
 #sidebar::-webkit-scrollbar {
   width: 10px;
@@ -1177,16 +1178,16 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px;
 }
 #sidebar::-webkit-scrollbar-track {
-  background: #484e54;
+  background: #4b535b;
 }
 #sidebar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #010202;
-  border: 2px solid #484e54;
+  background: #060707;
+  border: 2px solid #4b535b;
 }
 
 #docs {
-  background-color: #d5dde0;
+  background-color: #ECF0F1;
   overflow: auto;
 }
 #docs a {
@@ -1214,11 +1215,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 #docs::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #b7c6ca;
+  background: #cfd9db;
   border: 2px solid white;
 }
 #docs h2 {
-  color: #e7534f;
+  color: #E74C3C;
 }
 #docs h1, #docs h3, #docs h4, #docs h5, #docs h6 {
   color: #222;
@@ -1232,7 +1233,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 0;
   border-left: none;
   border-right: none;
-  border-top: 1px solid #9aafb4;
+  border-top: 1px solid #b1c2c6;
   border-bottom: 1px solid white;
   opacity: 0.3;
 }
@@ -1260,8 +1261,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   color: #333;
   cursor: pointer;
-  border: 1px solid #b7c6ca;
-  background-color: #e3e9eb;
+  border: 1px solid #cfd9db;
+  background-color: #fbfcfc;
   font-size: 14px;
   font-size: 0.875rem;
 }
@@ -1272,9 +1273,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #8AC7FF;
 }
 #docs .grid-example [class^="grid-col"], #docs .grid-example .gridded-list, #docs .card {
-  border: 1px solid #b7c6ca;
-  background-color: #e3e9eb;
-  color: #7c989f;
+  border: 1px solid #cfd9db;
+  background-color: #fbfcfc;
+  color: #94aab0;
 }
 #docs table, #docs caption, #docs tbody, #docs tfoot, #docs thead, #docs tr, #docs th, #docs td {
   margin: 0;
@@ -1311,17 +1312,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 #docs table th {
   font-weight: 600;
-  color: #171d1f;
-  border-color: #b7c6ca;
+  color: #283436;
+  border-color: #cfd9db;
 }
 #docs table td {
   border-top-width: 1px;
   border-style: solid;
-  color: #2c393c;
-  border-color: #b7c6ca;
+  color: #3e4f54;
+  border-color: #cfd9db;
 }
 #docs table tbody tr:nth-child(odd) {
-  background-color: #dae2e4;
+  background-color: #f2f5f5;
 }
 
 .stack {
@@ -1390,22 +1391,28 @@ textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, i
 }
 
 header.sticky {
-  background-color: #111213;
+  background-color: #18191B;
 }
 header.sticky a {
   text-decoration: none;
 }
 header.sticky a:link {
-  color: #ddd;
+  color: #999;
 }
 header.sticky a:visited {
-  color: #ddd;
+  color: #999;
 }
 header.sticky a:hover {
   color: #ffffff;
 }
 header.sticky a:active {
-  color: #1b8898;
+  color: #3498DB;
+}
+header.sticky nav li {
+  border-left: 1px solid #000;
+}
+header.sticky nav li:last-child {
+  border-right: 1px solid #000;
 }
 header.sticky #search-docs {
   float: right;

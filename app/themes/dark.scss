@@ -3,10 +3,10 @@
 
 $type         : "light";
 $themeColour  : #1E2227;
-$textColour   : darken($col-clouds,25%);
-$headerColour : #D7E5E8;
+$textColour   : #858B8C;
+$headerColour : #EEF2F3;
 $lighter      : lighten($themeColour,5%);
-$mixin-header : $col-pastel-red;
+$mixin-header : $col-alizarin;
 
 $linkcols : (
     'link'    : #191B1D,
@@ -38,11 +38,8 @@ body{
 	
     line-height: 150%;
     background-color : $themeColour;
+    color : $textColour; 
 	@include fontSize(18);
-
-    p{
-        color: $textColour;
-    }
 }
 
 #main-logo{
@@ -86,11 +83,17 @@ h1,h2,h3,h4,h5,h6{
 
 #sidebar{
 
-    $sidebar : #191B1D;
+    $sidebar : #1D2023;
     background-color:$sidebar;
 
     a{
-        color: darken($col-clouds,25%);
+        $side-col:#707D7F;
+        color: $side-col;
+
+        &.group-title{
+
+            color:lighten($side-col,20%);
+        }
 
         &:hover{
             color: white;
@@ -102,6 +105,7 @@ h1,h2,h3,h4,h5,h6{
             color:$mixin-header;
             @include vendorPrefix(box-shadow, inset 5px 0 0 $mixin-header)
         }
+
     }
 
     @include scrollbar($sidebar);
@@ -109,7 +113,7 @@ h1,h2,h3,h4,h5,h6{
 
 #docs{
 
-    $themeColour : darken($col-clouds,8%);
+    $themeColour : $col-clouds;
 
     background-color:$themeColour;
     
@@ -212,16 +216,26 @@ h1,h2,h3,h4,h5,h6{
 
 header.sticky{
 
-    background-color:#111213;
+    background-color:#18191B;
 
     $linkcols : (
-        'link'    : #ddd,
-        'visited' : #ddd,
+        'link'    : #999,
+        'visited' : #999,
         'hover'   : #ffffff,
-        'active'  : #1b8898
+        'active'  : $col-river-blue
     );
 
-    @include linkColours($linkcols); 
+    @include linkColours($linkcols);
+
+    nav li{
+
+        border-left:1px solid #000;
+
+        &:last-child{
+
+            border-right:1px solid #000;
+        }
+    } 
 
     #search-docs{
 
