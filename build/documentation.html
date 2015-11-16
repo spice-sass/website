@@ -712,13 +712,13 @@
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> sideBar;</h2>
-							<div><p>Generates styles for an absolutely positioned sidebar scaling to the nearest relative parent's height. Arguments allow you to specify the width and position of the sidebar. Used in the <a href="/demo/dash">Dash demo.</a></p></div>
+							<div><p>Generates styles for an absolutely positioned sidebar scaling to the nearest relative parent's height. Arguments allow you to specify the width and position of the sidebar and optional background colour. For an example of usage, look no further than this documentation page. The side navigation was generated with @include sidebar and the main documentation section was generated with @include sideBarAppend bot using the same width variable.</p></div>
 							<hr />
 						</div>
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> sideBarAppend;</h2>
-							<div><p>This mixin can be used to absolutely position an element to fit the remainder of the screen if a sidebar has been included. Best used with the sideBar mixin, see <a href="/demo/dash">Dash demo</a> for an example of usage.</p></div>
+							<div><p>This mixin can be used to absolutely position an element to fit the remainder of the screen if a sidebar has been included. Best used with the sideBar mixin. For an example of usage, look no further than this documentation page. The side navigation was generated with @include sidebar and the main documentation section was generated with @include sideBarAppend bot using the same width variable.</p></div>
 							<hr />
 						</div>
 						
@@ -840,5 +840,15 @@
 	<script src="/js/react.min.js"></script>
 	<script src="/js/docs.js"></script>
 
+  	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-70173010-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
   </body>
 </html>
