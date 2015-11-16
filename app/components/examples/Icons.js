@@ -14,12 +14,21 @@ var Icons = React.createClass({
 	render () {
 		return (
 			<div className="container">
-				<h4>Line Icons</h4>
+				<h4>Block Icons</h4>
 				{this.state.blockIcons.map(function(icon){
 					return(
 						<div className="icon-example">
 							<span className={'block-icon-'+icon}></span>
 							<p className="tooltip-body">{'.block-icon-'+icon}</p>
+						</div>
+					)
+				})}
+				<h4>Line Icons</h4>
+				{this.state.lineIcons.map(function(icon){
+					return(
+						<div className="icon-example">
+							<span className={'line-icon-'+icon}></span>
+							<p className="tooltip-body">{'.line-icon-'+icon}</p>
 						</div>
 					)
 				})}

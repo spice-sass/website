@@ -37,9 +37,6 @@ header.sticky nav {
   -o-transition: all,ease,0.5s;
   transition: all,ease,0.5s;
 }
-header.sticky nav li {
-  display: inline-block;
-}
 header.sticky nav.shift {
   margin-left: 62px;
 }
@@ -54,6 +51,14 @@ header.sticky nav a {
   header.sticky nav a span {
     display: none;
   }
+}
+header.sticky nav li {
+  display: inline-block;
+}
+header.sticky nav li.active {
+  -webkit-box-shadow: inset 0 -5px 0 #e7534f;
+  -moz-box-shadow: inset 0 -5px 0 #e7534f;
+  box-shadow: inset 0 -5px 0 #e7534f;
 }
 header.sticky #version {
   line-height: 50px;

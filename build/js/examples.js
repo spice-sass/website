@@ -25,7 +25,7 @@ var Icons = React.createClass({
 			React.createElement(
 				"h4",
 				null,
-				"Line Icons"
+				"Block Icons"
 			),
 			this.state.blockIcons.map(function (icon) {
 				return React.createElement(
@@ -36,6 +36,23 @@ var Icons = React.createClass({
 						"p",
 						{ className: "tooltip-body" },
 						'.block-icon-' + icon
+					)
+				);
+			}),
+			React.createElement(
+				"h4",
+				null,
+				"Line Icons"
+			),
+			this.state.lineIcons.map(function (icon) {
+				return React.createElement(
+					"div",
+					{ className: "icon-example" },
+					React.createElement("span", { className: 'line-icon-' + icon }),
+					React.createElement(
+						"p",
+						{ className: "tooltip-body" },
+						'.line-icon-' + icon
 					)
 				);
 			})

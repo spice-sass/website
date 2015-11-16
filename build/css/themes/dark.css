@@ -1331,7 +1331,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #0e1013;
 }
 .stack:nth-of-type(even) {
-  background-color: #171a1e;
+  background-color: #1a1d21;
 }
 
 textarea, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
@@ -1391,7 +1391,7 @@ textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, i
 }
 
 header.sticky {
-  background-color: #18191B;
+  background-color: #131415;
 }
 header.sticky a {
   text-decoration: none;

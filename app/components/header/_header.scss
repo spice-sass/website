@@ -41,11 +41,6 @@ header.sticky{
 		float: left;
 		@include vendorPrefix(transition,'all,ease,0.5s');
 
-		li{
-
-			display: inline-block;
-		}
-
 		&.shift{
 
 			margin-left: 62px;
@@ -61,6 +56,16 @@ header.sticky{
 				span{
 					display: none;
 				}
+			}
+		}
+
+		li{
+
+			display: inline-block;
+
+			&.active{
+
+				@include vendorPrefix(box-shadow,inset 0 -5px 0 $col-pastel-red);
 			}
 		}
 	}
