@@ -17,7 +17,8 @@ var scripts = [
   './app/home.js', 
   './app/docs.js', 
   './app/examples.js',
-  './app/views/examples/saffron/saffron.js'
+  './app/views/examples/saffron/saffron.js',
+  './app/views/examples/cinnamon/cinnamon.js'
 ];
 
 var getJsonData = function(file) {

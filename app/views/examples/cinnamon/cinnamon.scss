@@ -21,8 +21,67 @@ header.sticky{
 
 /// Example start --- 
 
+$idebarWidth : 220px;
+
 @include normalise;
 @include containerClass(1100px);
-@include googleFont('pacifico',h1);
-@include googleFont('source-sans',body textarea button);
+@include googleFont('satisfy',h1);
+@include googleFont('roboto-slab',h2 h3 h4 h5 h6);
+@include googleFont('roboto',body textarea button);
 @include lineIcons;
+
+#sidebar{
+
+	$sidebarColour : $col-midnight-blue;
+	
+	background-color:$sidebarColour;
+	padding:20px;
+	@include scrollbar($sidebarColour);
+	@include sideBar($idebarWidth);
+
+	h1{
+
+		color:white;
+		margin-bottom: 5px;
+		@include fontSize(30px);
+	}
+
+	h2{
+		
+		color: contrast($sidebarColour,45%);
+		@include fontSize(12px);
+	}
+}
+
+#messages{
+
+	$headerHeight : 50px;
+	$messagesColour : $col-clouds;
+	$headings : $col-midnight-blue;
+	$text     : $col-wet-asphalt;
+	
+	padding:20px;
+	background-color:$messagesColour;
+	
+	@include sideBarAppend($idebarWidth);
+
+	h3{
+		
+		color:$headings;
+		line-height:$headerHeight; 
+		@include fontSize(22px);
+	}
+
+	#top-bar{
+
+		padding:0 20px;
+		height:$headerHeight;
+		@include fitContainer(0 0 auto 0);
+	}
+
+	#message-list{
+
+		@include scrollbar($messagesColour);
+		@include fitContainer($headerHeight 0 0 0);
+	}
+}
