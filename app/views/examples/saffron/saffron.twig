@@ -18,20 +18,29 @@
 	 	<h1 class="slide-in-down">Saffron</h1>
 		<p class="strap slide-in-down">Example login form</p>
 
-		<form class="lined">
-			
-			<label class="slide-in-up">Username</label>
-			<input class="slide-in-up" type="text" />
+		<div class="lined" id="saffron-form">
 
-			<label class="slide-in-up">Password</label>
-			<input class="slide-in-up" type="password" />
-
-			<button class="flat-submit block-icon-check slide-in-up">Login</button>
+			<form class="lined">
 			
-		</form>
+				<label class="slide-in-up">Username</label>
+				<input class="slide-in-up" type="text" />
+
+				<label class="slide-in-up">Password</label>
+				<input class="slide-in-up" type="password" />
+
+				<button class="flat-submit block-icon-check slide-in-up">Login</button>
+
+			</form>
+			
+		</div>
 
 	 </div>
 
 </section>
 
+{% endblock %}
+
+{% block footerScript %}
+	<script src="/js/react.min.js"></script>
+	<script src="/js/saffron.js"></script>
 {% endblock %}

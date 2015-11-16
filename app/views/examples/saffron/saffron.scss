@@ -22,23 +22,30 @@ header.sticky{
 /// Example start --- 
 
 $bgCol : $col-clouds;
+$slideFrames : (
+	0%   : "scale(1) translateY(0)",
+	100% : "scale(0.8) translateY(50px)"
+);
 
 @include normalise;
 @include containerClass(1100px);
 @include googleFont('pacifico',h1);
 @include googleFont('source-sans',body textarea button);
 @include formLined(5px,15px 20px,16px);
-@include formsTheme(#777,white,$col-alizarin);
+@include formsTheme(contrast($bgCol,55%),white,$col-alizarin);
 @include flatButton('flat-submit',#54A03A);
 @include blockIcons;
 @include lineIcons;
 @include slideIn('down',50,$warpspeed,0.3s);
 @include slideIn('up',100,$bounce,0.8s);
+@include fadeIn($bounce);
+@include transformKeyframes('slideAway',$slideFrames,'fadeOut');
 
 
 #example-body{
 
 	background-color:$bgCol;
+	overflow:hidden;
 }
 
 #login{
@@ -59,6 +66,7 @@ $bgCol : $col-clouds;
 
 		text-align: center;
 		letter-spacing: 2px;
+		color:contrast($bgCol,55%);
 		@include fontSize(16px);
 	}
 
@@ -69,8 +77,43 @@ $bgCol : $col-clouds;
 		@include centre;
 	}
 
+	form.slide-away{
+		@include animation('slideAway',$warpspeed,0.7s);
+	}
+
+	label{
+		color:contrast($bgCol,55%);
+	}
+
+	label.error, .error-msg {
+
+		font-style: italic;
+		color:$col-alizarin;
+	}
+
 	button{
 
 		float: right;
+	}
+
+	.success-message{
+
+		min-height: 220px;
+
+		i{
+
+			display: block;
+			text-align: center;
+			margin: 20px 40px;
+			color:contrast($bgCol,15%);
+			@include fontSize(90px);
+		}
+
+		h5{
+
+			text-align: center;
+			color:contrast($bgCol,55%);
+			@include fontSize(24px);
+		}
 	}
 }

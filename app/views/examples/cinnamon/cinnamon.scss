@@ -1,0 +1,28 @@
+@import "../node_modules/spice-sass/src/spice";
+@import "../../../components/header/header";
+
+header.sticky{
+
+	background-color:#111113;
+
+    $linkcols : (
+        'link'    : #ddd,
+        'visited' : #ddd,
+        'hover'   : #ffffff,
+        'active'  : #1b8898
+    );
+
+    @include linkColours($linkcols); 
+}
+
+#example-body{
+	@include fitContainer(50px 0 0 0);
+}
+
+/// Example start --- 
+
+@include normalise;
+@include containerClass(1100px);
+@include googleFont('pacifico',h1);
+@include googleFont('source-sans',body textarea button);
+@include lineIcons;

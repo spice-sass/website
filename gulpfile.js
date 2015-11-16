@@ -13,6 +13,13 @@ var swig       = require('gulp-swig');
 var data       = require('gulp-data');
 var stripDebug = require('gulp-strip-debug');
 
+var scripts = [
+  './app/home.js', 
+  './app/docs.js', 
+  './app/examples.js',
+  './app/views/examples/saffron/saffron.js'
+];
+
 var getJsonData = function(file) {
   return require(file + '.json');
 };
@@ -29,7 +36,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('browserify', function () {
-  gulp.src(['./app/home.js', './app/docs.js', './app/examples.js'], {entry: true})
+  gulp.src(scripts, {entry: true})
     .pipe(browserify({
       transform: ['babelify']
     }))
@@ -37,7 +44,7 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('jsMin', function () {
-  gulp.src(['./app/home.js', './app/docs.js', './app/examples.js'], {entry: true})
+  gulp.src(scripts, {entry: true})
     .pipe(browserify({
       transform: ['babelify']
     }))
