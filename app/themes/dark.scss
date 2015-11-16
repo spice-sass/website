@@ -15,7 +15,7 @@ $linkcols : (
     'active'  : $col-river-blue
 );
 
-@include switch('theme', $col-midnight-blue,$col-midnight-blue,80px,14px);
+@include switch('theme', $col-pomegranate,$col-pomegranate,80px,14px);
 
 @include normalise;
 @include headerSizes(45,20);
@@ -127,7 +127,7 @@ h1,h2,h3,h4,h5,h6{
 
     h1,h3,h4,h5,h6{
 
-        color:#222;
+        color:#44586B;
     }
 
     p{
@@ -203,7 +203,7 @@ h1,h2,h3,h4,h5,h6{
 
     &:nth-of-type(even){
 
-        background-color: darken($themeColour,2%);
+        background-color: darken($themeColour,1.5%);
     }
 
 }
@@ -216,7 +216,7 @@ h1,h2,h3,h4,h5,h6{
 
 header.sticky{
 
-    background-color:#131415;
+    background-color:#111113;
 
     $linkcols : (
         'link'    : #999,
@@ -234,6 +234,11 @@ header.sticky{
         &:last-child{
 
             border-right:1px solid #000;
+        }
+
+        &.active{
+
+
         }
     } 
 

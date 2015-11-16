@@ -62,11 +62,6 @@ header.sticky{
 		li{
 
 			display: inline-block;
-
-			&.active{
-
-				@include vendorPrefix(box-shadow,inset 0 -5px 0 $col-pastel-red);
-			}
 		}
 	}
 

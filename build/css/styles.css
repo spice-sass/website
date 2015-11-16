@@ -371,11 +371,6 @@ header.sticky nav a {
 header.sticky nav li {
   display: inline-block;
 }
-header.sticky nav li.active {
-  -webkit-box-shadow: inset 0 -5px 0 #e7534f;
-  -moz-box-shadow: inset 0 -5px 0 #e7534f;
-  box-shadow: inset 0 -5px 0 #e7534f;
-}
 header.sticky #version {
   line-height: 50px;
   color: #e9e9e9;
@@ -805,19 +800,21 @@ body.animations #intro-pane .version-show #main-logo {
   padding: 30px 0;
 }
 #main-footer p {
-  color: #e9e9e9;
+  color: #949da4;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 #main-footer a {
   text-decoration: none;
 }
 #main-footer a:link {
-  color: #E74C3C;
+  color: #ECF0F1;
 }
 #main-footer a:visited {
-  color: #E74C3C;
+  color: #ECF0F1;
 }
 #main-footer a:hover {
-  color: white;
+  color: #E74C3C;
 }
 #main-footer a:active {
   color: #E74C3C;
@@ -2259,7 +2256,6 @@ input[type=range]::-ms-track {
 
 #themed-examples {
   padding: 100px 0;
-  opacity: 0;
 }
 #themed-examples .gridded-list {
   float: left;

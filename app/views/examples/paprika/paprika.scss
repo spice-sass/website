@@ -4,7 +4,7 @@
 
 header.sticky{
 
-	background-color:#111213;
+	background-color:#111113;
 
     $linkcols : (
         'link'    : #ddd,
@@ -41,7 +41,7 @@ header.banner{
 		line-height: $headerHeight;
 		margin-bottom: 0;
 		color:white;
-		@include fontSize(50px);
+		@include fontSize(60px);
 	}
 
 	p{

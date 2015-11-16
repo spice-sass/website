@@ -16,7 +16,7 @@
   content: "";
   left: 5px;
   z-index: 1;
-  background-color: #3e5871;
+  background-color: #d65548;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -41,8 +41,8 @@
   width: 80px;
   top: 0;
   padding: 0 20px;
-  color: #9ab1c7;
-  background-color: #2C3E50;
+  color: #f7ddda;
+  background-color: #C0392B;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -57,8 +57,8 @@
   text-align: right;
 }
 .switch.theme.selected span {
-  color: #9ab1c7;
-  background-color: #2C3E50;
+  color: #f7ddda;
+  background-color: #C0392B;
   left: -100%;
 }
 .switch.theme.selected span.on {
@@ -68,7 +68,7 @@
   left: 100%;
 }
 .switch.theme.selected:before {
-  background-color: #3e5871;
+  background-color: #d65548;
   left: 55.4px;
 }
 
@@ -1222,7 +1222,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #E74C3C;
 }
 #docs h1, #docs h3, #docs h4, #docs h5, #docs h6 {
-  color: #222;
+  color: #44586B;
 }
 #docs p {
   color: #666;
@@ -1331,7 +1331,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #0e1013;
 }
 .stack:nth-of-type(even) {
-  background-color: #1a1d21;
+  background-color: #1b1e23;
 }
 
 textarea, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
@@ -1391,7 +1391,7 @@ textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, i
 }
 
 header.sticky {
-  background-color: #131415;
+  background-color: #111113;
 }
 header.sticky a {
   text-decoration: none;
