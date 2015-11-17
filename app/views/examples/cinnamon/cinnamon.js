@@ -58,6 +58,9 @@ let Messages = React.createClass({
 						return <Message msg={msg}/>
 					})}
 				</div>
+				<div id="bottom-bar">
+					derp
+				</div>
 			</div>
 		)
 	}
@@ -71,7 +74,11 @@ let Message = React.createClass({
 
 		return(
 			<div className="message">
-				{msg.user}
+				<img src="http://placehold.it/60x60" />
+				<div className="copy">
+					<h4>{msg.user}</h4>
+					<p>{msg.message}</p>
+				</div>
 			</div>
 		)
 	}

@@ -1,4 +1,4 @@
-@import "../node_modules/spice-sass/src/spice";
+@import "../../../../node_modules/spice-sass/src/spice";
 @import "../../../components/header/header";
 
 header.sticky{
@@ -55,10 +55,11 @@ $idebarWidth : 220px;
 
 #messages{
 
-	$headerHeight : 50px;
+	$headerHeight   : 70px;
+	$footerHeight   : 70px;
 	$messagesColour : $col-clouds;
-	$headings : $col-midnight-blue;
-	$text     : $col-wet-asphalt;
+	$headings       : $col-midnight-blue;
+	$text           : $col-wet-asphalt;
 	
 	padding:20px;
 	background-color:$messagesColour;
@@ -76,12 +77,34 @@ $idebarWidth : 220px;
 
 		padding:0 20px;
 		height:$headerHeight;
+		border-bottom:1px solid darken($messagesColour,8%);
 		@include fitContainer(0 0 auto 0);
 	}
 
 	#message-list{
 
+		padding:20px;
 		@include scrollbar($messagesColour);
-		@include fitContainer($headerHeight 0 0 0);
+		@include fitContainer($headerHeight 0 $footerHeight 0);
+
+		.message{
+
+			padding:10px 0;
+			@include clearFix;
+			
+			img{
+
+				float: left;
+				margin-right:10px;
+			}
+		}
+	}
+
+	#bottom-bar{
+
+		padding:0 20px;
+		height:$footerHeight;
+		border-top:1px solid darken($messagesColour,8%);
+		@include fitContainer(auto 0 0 0);
 	}
 }

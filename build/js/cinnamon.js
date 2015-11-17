@@ -79,6 +79,11 @@ var Messages = React.createClass({
 				this.state.list.map(function (msg) {
 					return React.createElement(Message, { msg: msg });
 				})
+			),
+			React.createElement(
+				"div",
+				{ id: "bottom-bar" },
+				"derp"
 			)
 		);
 	}
@@ -94,7 +99,21 @@ var Message = React.createClass({
 		return React.createElement(
 			"div",
 			{ className: "message" },
-			msg.user
+			React.createElement("img", { src: "http://placehold.it/60x60" }),
+			React.createElement(
+				"div",
+				{ className: "copy" },
+				React.createElement(
+					"h4",
+					null,
+					msg.user
+				),
+				React.createElement(
+					"p",
+					null,
+					msg.message
+				)
+			)
 		);
 	}
 });
