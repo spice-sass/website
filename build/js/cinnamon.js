@@ -4,17 +4,21 @@
 var messages = {};
 
 messages.list = [{
-	"user": "charlie-sheen3000",
+	"user": "Charlie Sheen",
 	"time": "11:49 AM",
 	"message": "I have tiger blood"
 }, {
-	"user": "Chucknorris",
+	"user": "Chuck Norris",
 	"time": "11:50 AM",
 	"message": "I can slam a revolving door"
 }, {
 	"user": "Arnie",
 	"time": "11:51 AM",
 	"message": "I'm back"
+}, {
+	"user": "Sigourney Weaver",
+	"time": "11:51 AM",
+	"message": "Bishop"
 }];
 
 var Cinnamon = React.createClass({
@@ -46,6 +50,46 @@ var SideBar = React.createClass({
 				"h2",
 				null,
 				"Modern chat app"
+			),
+			React.createElement(
+				"ul",
+				{ className: "rooms" },
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						null,
+						"Superheroes"
+					)
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						null,
+						"Movie stars"
+					)
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						null,
+						"Footballers"
+					)
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						null,
+						"Animals"
+					)
+				)
 			)
 		);
 	}
@@ -58,6 +102,43 @@ var Messages = React.createClass({
 		return {
 			list: messages.list
 		};
+	},
+
+	addComment: function addComment(e) {
+
+		e.preventDefault();
+
+		var comment = this.refs.commentBox.getDOMNode().value,
+		    list = this.state.list,
+		    template = {
+			"user": "Nicolas Cage",
+			"time": "11:51 AM",
+			"message": comment
+		};
+
+		list.push(template);
+		this.refs.commentBox.getDOMNode().value = "";
+		this.setState({
+			list: list
+		});
+
+		var scroll = this.scrollMsgs;
+
+		setTimeout(function () {
+			scroll();
+		}, 10);
+	},
+
+	scrollMsgs: function scrollMsgs() {
+
+		var messageList = this.refs.messageList.getDOMNode(),
+		    messageWrap = this.refs.messageWrap.getDOMNode(),
+		    viewHeight = messageList.clientHeight,
+		    msgHeight = messageWrap.clientHeight;
+
+		if (msgHeight > viewHeight) {
+			messageList.scrollTop = msgHeight - viewHeight + 20;
+		}
 	},
 
 	render: function render() {
@@ -75,15 +156,23 @@ var Messages = React.createClass({
 			),
 			React.createElement(
 				"div",
-				{ id: "message-list" },
-				this.state.list.map(function (msg) {
-					return React.createElement(Message, { msg: msg });
-				})
+				{ id: "message-list", ref: "messageList" },
+				React.createElement(
+					"div",
+					{ ref: "messageWrap" },
+					this.state.list.map(function (msg) {
+						return React.createElement(Message, { msg: msg });
+					})
+				)
 			),
 			React.createElement(
 				"div",
 				{ id: "bottom-bar" },
-				"derp"
+				React.createElement(
+					"form",
+					{ onSubmit: this.addComment },
+					React.createElement("input", { type: "text", ref: "commentBox" })
+				)
 			)
 		);
 	}
@@ -98,7 +187,7 @@ var Message = React.createClass({
 
 		return React.createElement(
 			"div",
-			{ className: "message" },
+			{ className: "message slide-in-up" },
 			React.createElement("img", { src: "http://placehold.it/60x60" }),
 			React.createElement(
 				"div",

@@ -27,7 +27,8 @@ $idebarWidth : 220px;
 @include containerClass(1100px);
 @include googleFont('satisfy',h1);
 @include googleFont('roboto-slab',h2 h3 h4 h5 h6);
-@include googleFont('roboto',body textarea button);
+@include googleFont('roboto',body input button);
+@include slideIn("up",40,$bounce,0.6s,0);
 @include lineIcons;
 
 #sidebar{
@@ -90,6 +91,7 @@ $idebarWidth : 220px;
 		.message{
 
 			padding:10px 0;
+			//opacity: 0;
 			@include clearFix;
 			
 			img{
@@ -104,7 +106,20 @@ $idebarWidth : 220px;
 
 		padding:0 20px;
 		height:$footerHeight;
+		overflow: hidden;
 		border-top:1px solid darken($messagesColour,8%);
 		@include fitContainer(auto 0 0 0);
+
+		input{
+
+			width:100%;
+			margin:10px 0;
+			outline:none;
+			display: block;
+			border:2px solid darken($messagesColour,8%);
+			border-radius:10px;
+			padding:15px 20px;
+			@include fontSize(14px);
+		}
 	}
 }
