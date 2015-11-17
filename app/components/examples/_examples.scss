@@ -1,13 +1,35 @@
 #themed-examples{
 
 	padding:100px 0;
-	@include griddedList(3);
+	@include griddedList(3,12,5%,600px);
 
 	//opacity:0;
 
-	.max{
 
-		max-width:100%;
+	.example{
+
+		text-align: center;
+
+		img{
+
+			border-radius:10px;
+			max-width:100%;
+			margin-bottom:20px;
+		}
+
+		h3{
+
+			@include fontSize(20px);
+		}
+
+		p{
+
+			@include fontSize(16px);
+		}
+
+		a{
+			text-decoration: none;
+		}
 	}
 }
 

@@ -8,21 +8,23 @@
 	[{
 		"img"  : "http://placehold.it/400x300",
 		"name" : "Paprika",
-		"desc" : "An inspiration website template with a css masonry style layout."
+		"desc" : "<p>An inspiration website template with a css masonry layout. This is a great example of <code><span class='inc'>@include</span> masonryColumns;</code> in action.</p>"
 	},{
 		"img"  : "http://placehold.it/400x300",
 		"name" : "Saffron",
-		"desc" : "An inspiration website template with a css masonry style layout."
+		"desc" : "A modern animated login form template built using animation presets and the <code><span class='inc'>@include</span> transfromKeyframes;</code> mixin."
 	},{
 		"img"  : "http://placehold.it/400x300",
 		"name" : "Cinnamon",
-		"desc" : "An inspiration website template with a css masonry style layout."
+		"desc" : "A chat application interface built to showcase the power of Spice's layout mixins and available glyphicons."
 	}]
 %}
 
 <section class="stack" id="themed-examples">
 
 	<div class="container">
+
+		<h1>Themed examples</h1>
 
 		<div class="grid-row">
 
@@ -36,8 +38,8 @@
 					<div class="text-holder">
 						
 						<h3>{{theme.name}}</h3>
-						<p>{{theme.desc}}</p>
-						<a href="/examples/{{theme.name | lower}}" class="button small flat-primary">View</a>
+						<p>{{theme.desc | raw}}</p>
+						<a href="/examples/{{theme.name | lower}}" class="button flat-secondary">View {{theme.name}}</a>
 
 					</div>
 					

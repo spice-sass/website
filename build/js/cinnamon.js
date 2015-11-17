@@ -6,19 +6,22 @@ var messages = {};
 messages.list = [{
 	"user": "Charlie Sheen",
 	"time": "11:49 AM",
-	"message": "I have tiger blood"
+	"message": "As an expert on everything, I know that this awesome chat interface was built using spice sass mixins. Hawt dang!!",
+	"likes": 3,
+	"shares": 1
 }, {
 	"user": "Chuck Norris",
 	"time": "11:50 AM",
-	"message": "I can slam a revolving door"
+	"message": "Yeah I know man... It's so awesome it makes me wanna slam a revolving door and roundhouse kick terrorism in the face!!! Again.",
+	"likes": 1,
+	"shares": 0
 }, {
 	"user": "Arnie",
 	"time": "11:51 AM",
-	"message": "I'm back"
-}, {
-	"user": "Sigourney Weaver",
-	"time": "11:51 AM",
-	"message": "Bishop"
+	"message": "I'm back",
+	"likes": 0,
+	"shares": 0
+
 }];
 
 var Cinnamon = React.createClass({
@@ -42,52 +45,120 @@ var SideBar = React.createClass({
 			"div",
 			{ id: "sidebar" },
 			React.createElement(
-				"h1",
-				null,
-				"Cinnamon"
+				"div",
+				{ id: "logo-space" },
+				React.createElement(
+					"h1",
+					null,
+					"Cinnamon"
+				),
+				React.createElement(
+					"h2",
+					null,
+					"Modern chat app"
+				)
 			),
 			React.createElement(
-				"h2",
-				null,
-				"Modern chat app"
-			),
-			React.createElement(
-				"ul",
-				{ className: "rooms" },
+				"div",
+				{ id: "side-main" },
 				React.createElement(
-					"li",
+					"h3",
 					null,
+					"Groups"
+				),
+				React.createElement(
+					"ul",
+					{ id: "rooms" },
 					React.createElement(
-						"a",
+						"li",
 						null,
-						"Superheroes"
+						React.createElement(
+							"a",
+							null,
+							"Superheroes"
+						)
+					),
+					React.createElement(
+						"li",
+						null,
+						React.createElement(
+							"a",
+							{ className: "active" },
+							"Movie stars"
+						)
+					),
+					React.createElement(
+						"li",
+						null,
+						React.createElement(
+							"a",
+							null,
+							"Footballers"
+						)
+					),
+					React.createElement(
+						"li",
+						null,
+						React.createElement(
+							"a",
+							null,
+							"Animals"
+						)
 					)
 				),
 				React.createElement(
-					"li",
+					"h3",
 					null,
-					React.createElement(
-						"a",
-						null,
-						"Movie stars"
-					)
+					"Chats"
 				),
 				React.createElement(
-					"li",
+					"ul",
 					null,
 					React.createElement(
-						"a",
+						"li",
 						null,
-						"Footballers"
-					)
-				),
-				React.createElement(
-					"li",
-					null,
+						React.createElement(
+							"a",
+							null,
+							"Charlie Sheen"
+						)
+					),
 					React.createElement(
-						"a",
+						"li",
 						null,
-						"Animals"
+						React.createElement(
+							"a",
+							null,
+							"Arnie",
+							React.createElement(
+								"span",
+								{ className: "badge" },
+								"5"
+							)
+						)
+					),
+					React.createElement(
+						"li",
+						null,
+						React.createElement(
+							"a",
+							null,
+							"Chuck Norris",
+							React.createElement(
+								"span",
+								{ className: "badge" },
+								"7"
+							)
+						)
+					),
+					React.createElement(
+						"li",
+						null,
+						React.createElement(
+							"a",
+							null,
+							"Bruce Willis"
+						)
 					)
 				)
 			)
@@ -113,7 +184,9 @@ var Messages = React.createClass({
 		    template = {
 			"user": "Nicolas Cage",
 			"time": "11:51 AM",
-			"message": comment
+			"message": comment,
+			"likes": 0,
+			"shares": 0
 		};
 
 		list.push(template);
@@ -152,6 +225,15 @@ var Messages = React.createClass({
 					"h3",
 					null,
 					"Messages"
+				),
+				React.createElement(
+					"p",
+					{ className: "date" },
+					React.createElement(
+						"span",
+						null,
+						"Today"
+					)
 				)
 			),
 			React.createElement(
@@ -170,7 +252,7 @@ var Messages = React.createClass({
 				{ id: "bottom-bar" },
 				React.createElement(
 					"form",
-					{ onSubmit: this.addComment },
+					{ className: "line-icon-speech-bubble", onSubmit: this.addComment },
 					React.createElement("input", { type: "text", ref: "commentBox" })
 				)
 			)
@@ -188,19 +270,39 @@ var Message = React.createClass({
 		return React.createElement(
 			"div",
 			{ className: "message slide-in-up" },
-			React.createElement("img", { src: "http://placehold.it/60x60" }),
+			React.createElement("img", { className: "fade-in", src: "http://placehold.it/60x60" }),
 			React.createElement(
 				"div",
 				{ className: "copy" },
 				React.createElement(
 					"h4",
-					null,
-					msg.user
+					{ className: "slide-in-left" },
+					msg.user,
+					" ",
+					React.createElement(
+						"span",
+						{ className: "time" },
+						msg.time
+					)
 				),
 				React.createElement(
 					"p",
-					null,
+					{ className: "slide-in-left" },
 					msg.message
+				),
+				React.createElement(
+					"ul",
+					{ className: "social slide-in-up" },
+					React.createElement(
+						"li",
+						{ className: msg.likes > 0 ? 'show likes line-icon-heart' : 'likes line-icon-heart' },
+						msg.likes
+					),
+					React.createElement(
+						"li",
+						{ className: msg.shares > 0 ? 'show shares line-icon-share' : 'shares line-icon-share' },
+						msg.shares
+					)
 				)
 			)
 		);

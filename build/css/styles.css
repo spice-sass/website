@@ -1802,18 +1802,30 @@ input[type=range] {
     float: left;
     position: relative;
     width: 100%;
-    margin-right: 2%;
+    margin-right: 5%;
     margin-right: 0; }
-    @media (min-width: 550px) {
+    @media (min-width: 600px) {
       #themed-examples .gridded-list {
         float: left;
         position: relative;
-        width: 32%;
-        margin-right: 2%; }
+        width: 30%;
+        margin-right: 5%; }
         #themed-examples .gridded-list:nth-child(3n+3) {
           margin-right: 0; } }
-  #themed-examples .max {
-    max-width: 100%; }
+  #themed-examples .example {
+    text-align: center; }
+    #themed-examples .example img {
+      border-radius: 10px;
+      max-width: 100%;
+      margin-bottom: 20px; }
+    #themed-examples .example h3 {
+      font-size: 20px;
+      font-size: 1.25rem; }
+    #themed-examples .example p {
+      font-size: 16px;
+      font-size: 1rem; }
+    #themed-examples .example a {
+      text-decoration: none; }
 
 #icons {
   padding: 100px 0; }

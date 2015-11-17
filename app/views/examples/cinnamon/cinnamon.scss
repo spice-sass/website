@@ -21,46 +21,122 @@ header.sticky{
 
 /// Example start --- 
 
-$idebarWidth : 220px;
+$idebarWidth    : 180px;
+$sidebarColour  : $col-pomegranate;
+$badgeColour    : $col-sunflower;
+$headerHeight   : 70px;
+$footerHeight   : 70px;
+$messagesColour : $col-clouds;
 
 @include normalise;
 @include containerClass(1100px);
 @include googleFont('satisfy',h1);
-@include googleFont('roboto-slab',h2 h3 h4 h5 h6);
-@include googleFont('roboto',body input button);
+@include googleFont('roboto',h2 h3 h4 h5 h6);
+@include googleFont('roboto',body input button,300);
 @include slideIn("up",40,$bounce,0.6s,0);
+@include slideIn("left",20,$bounce,0.6s,5);
+@include fadeIn;
 @include lineIcons;
 
 #sidebar{
 
-	$sidebarColour : $col-midnight-blue;
-	
 	background-color:$sidebarColour;
-	padding:20px;
-	@include scrollbar($sidebarColour);
+	border-right:1px solid enhance($sidebarColour,10%);
+	z-index:999;
 	@include sideBar($idebarWidth);
 
-	h1{
+	#logo-space{
 
-		color:white;
-		margin-bottom: 5px;
-		@include fontSize(30px);
+		padding:20px;
+		height:$headerHeight;
+		background-color:enhance($sidebarColour,2%);
+		border-bottom:1px solid enhance($sidebarColour,6%);
+		@include fitContainer(0 0 auto 0);
+
+		h1{
+
+			color:white;
+			margin-bottom: 5px;
+			@include fontSize(30px);
+		}
+
+		h2{
+			
+			margin: -10px 0 0 20px;
+			color: contrast($sidebarColour,45%);
+			@include fontSize(12px);
+		}
 	}
 
-	h2{
-		
-		color: contrast($sidebarColour,45%);
-		@include fontSize(12px);
+	#side-main{
+
+		@include fitContainer($headerHeight 0 0 0);
+
+		h3{
+
+			margin:20px 20px 5px;
+			font-weight:600;
+			color:contrast($sidebarColour,45%);
+		}
+
+		ul{
+			
+			margin-bottom:30px;
+
+			li a{
+
+				line-height: 250%;
+				position: relative;
+				padding:0 20px;
+				display: block;
+				cursor: pointer;
+				border-top:1px solid $sidebarColour;
+				border-bottom:1px solid $sidebarColour;
+				color: contrast($sidebarColour,35%);
+				@include fontSize(14px);
+
+				&:hover{
+
+					background-color:enhance($sidebarColour,3%);
+					border-color:enhance($sidebarColour,6%);
+				}
+
+				&.active{
+
+					color:white;
+					border-color:enhance($sidebarColour,6%);
+					background-color:enhance($sidebarColour,3%);
+
+					&:before{
+
+						content: "";
+						right: -10px;
+						@include centre(y);
+						@include arrow(10px,'right',enhance($sidebarColour,10%),1);
+					}
+
+					&:after{
+
+						content: "";
+						right: -8px;
+						@include centre(y);
+						@include arrow(8px,'right',enhance($sidebarColour,3%),1);
+					}
+				}
+
+				.badge{
+					
+					right: 10px;
+					font-weight: 600;
+					@include centre(y);
+					@include badge($badgeColour,10);
+				}
+			}
+		}
 	}
 }
 
 #messages{
-
-	$headerHeight   : 70px;
-	$footerHeight   : 70px;
-	$messagesColour : $col-clouds;
-	$headings       : $col-midnight-blue;
-	$text           : $col-wet-asphalt;
 	
 	padding:20px;
 	background-color:$messagesColour;
@@ -69,7 +145,7 @@ $idebarWidth : 220px;
 
 	h3{
 		
-		color:$headings;
+		color:$sidebarColour;
 		line-height:$headerHeight; 
 		@include fontSize(22px);
 	}
@@ -80,25 +156,126 @@ $idebarWidth : 220px;
 		height:$headerHeight;
 		border-bottom:1px solid darken($messagesColour,8%);
 		@include fitContainer(0 0 auto 0);
+
+		.date{
+
+			$fontSize : 12;
+
+			width:100%;
+			position:absolute;
+			text-align: center;
+			color:contrast($messagesColour,45%);
+			top:$headerHeight - $fontSize;
+			@include fontSize($fontSize);
+
+			span{
+
+				font-weight: bold;
+				padding:10px;
+				background-color:$messagesColour;
+			}
+
+			@include breakPoint(900px,'min'){
+				
+				width:680px;
+			}
+		}
+
 	}
 
 	#message-list{
 
 		padding:20px;
+		position: relative;
 		@include scrollbar($messagesColour);
 		@include fitContainer($headerHeight 0 $footerHeight 0);
 
 		.message{
 
 			padding:10px 0;
-			//opacity: 0;
+			overflow: hidden;
+
 			@include clearFix;
 			
 			img{
 
-				float: left;
-				margin-right:10px;
+				position: absolute;
+				border-radius:100%;
 			}
+
+			.copy{
+
+				float: left;
+				margin-left: 80px;
+				width: 100%;
+				position:relative;
+				border-bottom:1px solid darken($messagesColour,8%);
+
+				@include breakPoint(900px,'min'){
+
+					width:600px;
+				}
+			}
+
+			h4{
+				
+				color:contrast($messagesColour,68%);
+				font-weight: 600;
+				margin:10px 0 0 0;
+				@include fontSize(16px);
+
+				.time{
+
+					font-weight: 300;
+					@include fontSize(14px);
+				}
+			}
+
+			p{
+				color:contrast($messagesColour,55%);
+			}
+
+			.social{
+
+				position:absolute;
+				right:0;
+				bottom:10px;
+				//display: none;
+
+				li{
+
+					display: inline-block;
+					padding:4px;
+					color:contrast($messagesColour,55%);
+					background-color:enhance($messagesColour,3%);
+					border:1px solid darken($messagesColour,8%);
+					border-radius:5px 0 0 5px;
+					cursor: pointer;
+					@include fontSize(12px);
+
+					&:before{
+						
+						margin-right: 4px;
+					}
+
+					&:last-child{
+
+						border-radius:0 5px 5px 0;
+						border-left:0;
+					}
+
+					&:hover{
+
+						color: $sidebarColour;
+					}
+				}
+			}
+
+			&:hover .social{
+
+				display: block;
+			}
+
 		}
 	}
 
@@ -110,6 +287,15 @@ $idebarWidth : 220px;
 		border-top:1px solid darken($messagesColour,8%);
 		@include fitContainer(auto 0 0 0);
 
+		form:before{
+
+			position:absolute;
+			top:22px;
+			left:30px;
+			color:darken($messagesColour,15%);
+			@include fontSize(22px);
+		}
+
 		input{
 
 			width:100%;
@@ -118,8 +304,8 @@ $idebarWidth : 220px;
 			display: block;
 			border:2px solid darken($messagesColour,8%);
 			border-radius:10px;
-			padding:15px 20px;
-			@include fontSize(14px);
+			padding:12px 20px 12px 50px;
+			@include fontSize(16px);
 		}
 	}
 }
