@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var babelify = require("babelify");
 var uglify = require('gulp-uglify');
-var compass = require('gulp-compass');
+var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
 var server = require('gulp-express');
 var flatten = require('gulp-flatten');
@@ -74,12 +74,10 @@ gulp.task('static', function() {
 
 });
 
-gulp.task('compass', function() {
-  gulp.src('./src/*.scss')
-    .pipe(compass({
-      css: './build/css',
-      sass: './app'
-    }))
+gulp.task('sass', function () {
+  gulp.src('./app/**/*.scss')
+    .pipe(sass({outputStyle: 'nested'}))
+    .pipe(gulp.dest('./build/css'));
 });
 
 gulp.task('cssMin', function() {
@@ -99,6 +97,6 @@ gulp.task('watch', function () {
   gulp.watch('app/**/*.js', ['frontEnd']);
 });
 
-gulp.task('frontEnd', ['browserify', 'compass', 'static']);
-gulp.task('default', ['browserify', 'compass', 'static', 'watch', 'server']);
+gulp.task('frontEnd', ['browserify', 'sass', 'static']);
+gulp.task('default', ['browserify', 'sass', 'static', 'watch', 'server']);
 gulp.task('publish',['copybuild']);
