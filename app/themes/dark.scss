@@ -1,12 +1,12 @@
-@import "../node_modules/spice-sass/src/spice";
+@import "../../node_modules/spice-sass/src/spice";
 
 
 $type         : "light";
 $themeColour  : #1E2227;
-$textColour   : darken($col-clouds,25%);
-$headerColour : #D7E5E8;
+$textColour   : #858B8C;
+$headerColour : #EEF2F3;
 $lighter      : lighten($themeColour,5%);
-$mixin-header : $col-pastel-red;
+$mixin-header : $col-alizarin;
 
 $linkcols : (
     'link'    : #191B1D,
@@ -15,7 +15,7 @@ $linkcols : (
     'active'  : $col-river-blue
 );
 
-@include switch('theme', $col-midnight-blue,$col-midnight-blue,80px,14px);
+@include switch('theme', $col-pomegranate,$col-pomegranate,80px,14px);
 
 @include normalise;
 @include headerSizes(45,20);
@@ -33,16 +33,14 @@ $linkcols : (
 @include flatButton('flat-warning',$col-pumpkin);
 @include flatButton('flat-danger',$col-pomegranate);
 @include flatButton('flat-submit',$col-nephritis);
+@include formsTheme(#333,lighten($col-clouds,5%),$col-primary);
 
 body{
 	
     line-height: 150%;
     background-color : $themeColour;
+    color : $textColour; 
 	@include fontSize(18);
-
-    p{
-        color: $textColour;
-    }
 }
 
 #main-logo{
@@ -86,11 +84,17 @@ h1,h2,h3,h4,h5,h6{
 
 #sidebar{
 
-    $sidebar : #191B1D;
+    $sidebar : #1D2023;
     background-color:$sidebar;
 
     a{
-        color: darken($col-clouds,25%);
+        $side-col:#707D7F;
+        color: $side-col;
+
+        &.group-title{
+
+            color:lighten($side-col,20%);
+        }
 
         &:hover{
             color: white;
@@ -102,6 +106,7 @@ h1,h2,h3,h4,h5,h6{
             color:$mixin-header;
             @include vendorPrefix(box-shadow, inset 5px 0 0 $mixin-header)
         }
+
     }
 
     @include scrollbar($sidebar);
@@ -109,7 +114,7 @@ h1,h2,h3,h4,h5,h6{
 
 #docs{
 
-    $themeColour : darken($col-clouds,8%);
+    $themeColour : $col-clouds;
 
     background-color:$themeColour;
     
@@ -123,7 +128,7 @@ h1,h2,h3,h4,h5,h6{
 
     h1,h3,h4,h5,h6{
 
-        color:#222;
+        color:#44586B;
     }
 
     p{
@@ -199,12 +204,12 @@ h1,h2,h3,h4,h5,h6{
 
     &:nth-of-type(even){
 
-        background-color: darken($themeColour,3%);
+        background-color: darken($themeColour,1.5%);
     }
 
 }
 
-@include formsTheme(#333,$lighter,$col-primary);
+
 @include tabsFlat('flat',contrast($lighter,8%),$lighter);
 
 
@@ -212,16 +217,31 @@ h1,h2,h3,h4,h5,h6{
 
 header.sticky{
 
-    background-color:#111213;
+    background-color:#111113;
 
     $linkcols : (
-        'link'    : #ddd,
-        'visited' : #ddd,
+        'link'    : #999,
+        'visited' : #999,
         'hover'   : #ffffff,
-        'active'  : #1b8898
+        'active'  : $col-river-blue
     );
 
-    @include linkColours($linkcols); 
+    @include linkColours($linkcols);
+
+    nav li{
+
+        border-left:1px solid #000;
+
+        &:last-child{
+
+            border-right:1px solid #000;
+        }
+
+        &.active{
+
+
+        }
+    } 
 
     #search-docs{
 

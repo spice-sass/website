@@ -1,6 +1,6 @@
 <header class="sticky">
 	
-	<div class="container transition main {% if template == 'documentation' %}stretch{% endif %}">
+	<div class="container transition main {% if template == 'documentation' or template == '/examples/cinnamon/cinnamon' %}stretch{% endif %}">
 
 		{% if template != 'index' %}
 		<div id="logo" class="slide-in-right">
@@ -13,8 +13,11 @@
 		<nav class="horizontal main {% if template != 'index' %}shift{% endif %}">
 
 			<ul>
-				<li>
+				<li {% if template == 'documentation' %} class="active" {% endif %}>
 					<a href="/documentation"><i class="line-icon-paper font20"></i> <span>Documentation</span></a>
+				</li>
+				<li {% if template == 'examples' %} class="active" {% endif %}>
+					<a href="/examples"><i class="line-icon-thermometer font20"></i> <span>Examples</span></a>
 				</li>
 			</ul>
 
@@ -24,11 +27,10 @@
 			<i class="line-icon-menu font20" ng-click="toggleDocs()"></i>
 
 			<div class="lined" id="search-docs"></div>
-		{% endif %}
 
-		<div id="theme-switcher">
-			
-		</div>
+		{% else %}
+			<div id="theme-switcher"></div>
+		{% endif %}
 
 	</div>
 

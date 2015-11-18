@@ -1,16 +1,26 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp       = require('gulp');
+var fs         = require('fs');
 var browserify = require('gulp-browserify');
-var babelify = require("babelify");
-var uglify = require('gulp-uglify');
-var compass = require('gulp-compass');
-var minifyCSS = require('gulp-minify-css');
-var server = require('gulp-express');
-var flatten = require('gulp-flatten');
-var swig = require('gulp-swig');
-var data = require('gulp-data');
+var babelify   = require("babelify");
+var uglify     = require('gulp-uglify');
+var sass       = require('gulp-sass');
+var minifyCSS  = require('gulp-minify-css');
+var server     = require('gulp-express');
+var flatten    = require('gulp-flatten');
+var swig       = require('gulp-swig');
+var data       = require('gulp-data');
+
 var stripDebug = require('gulp-strip-debug');
+
+var scripts = [
+  './app/home.js', 
+  './app/docs.js', 
+  './app/examples.js',
+  './app/views/examples/saffron/saffron.js',
+  './app/views/examples/cinnamon/cinnamon.js'
+];
 
 var getJsonData = function(file) {
   return require(file + '.json');
@@ -28,7 +38,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('browserify', function () {
-  gulp.src(['./app/home.js', './app/docs.js'], {entry: true})
+  gulp.src(scripts, {entry: true})
     .pipe(browserify({
       transform: ['babelify']
     }))
@@ -36,7 +46,7 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('jsMin', function () {
-  gulp.src(['./app/home.js', './app/docs.js'], {entry: true})
+  gulp.src(scripts, {entry: true})
     .pipe(browserify({
       transform: ['babelify']
     }))
@@ -50,14 +60,22 @@ gulp.task('static', function() {
   var templates = [
     "index",
     "documentation",
-    "examples",
-    "demos/dash",
-    "demos/punfest"
+    "examples"
   ]
+
+  var examplesPath = './app/views/examples';
+  var exampleList  = fs.readdirSync(examplesPath);
+
+  exampleList.forEach(function(example){
+
+    if(example != '.DS_Store'){
+      templates.push('/examples/'+example+'/'+example);
+    }
+  });
 
   templates.forEach(function(template){
 
-    var dest = (template.indexOf('demos/') > -1) ? './build/demos': './build/';
+    var dest = (template.indexOf('examples/') > -1) ? './build/examples': './build/';
     var obj = {
       "docs" : getJsonData('./build/api/includes'),
       "version" : getJsonData('../spice/package').version, // Requires spice repo to be cloned to the same directory
@@ -74,12 +92,10 @@ gulp.task('static', function() {
 
 });
 
-gulp.task('compass', function() {
-  gulp.src('./src/*.scss')
-    .pipe(compass({
-      css: './build/css',
-      sass: './app'
-    }))
+gulp.task('sass', function () {
+  gulp.src('./app/**/*.scss')
+    .pipe(sass({outputStyle: 'nested'}))
+    .pipe(gulp.dest('./build/css'));
 });
 
 gulp.task('cssMin', function() {
@@ -99,6 +115,6 @@ gulp.task('watch', function () {
   gulp.watch('app/**/*.js', ['frontEnd']);
 });
 
-gulp.task('frontEnd', ['browserify', 'compass', 'static']);
-gulp.task('default', ['browserify', 'compass', 'static', 'watch', 'server']);
+gulp.task('frontEnd', ['browserify', 'sass', 'static']);
+gulp.task('default', ['browserify', 'sass', 'static', 'watch', 'server']);
 gulp.task('publish',['copybuild']);

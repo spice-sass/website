@@ -48,12 +48,20 @@ header.sticky{
 
 		a {
 
+			display: block;
+			padding: 0 10px;
+
 			@include breakPoint(800px){
 				padding: 0 10px!important;
 				span{
 					display: none;
 				}
 			}
+		}
+
+		li{
+
+			display: inline-block;
 		}
 	}
 

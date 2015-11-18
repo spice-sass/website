@@ -1,4 +1,4 @@
-@import "../node_modules/spice-sass/src/spice";
+@import "../../node_modules/spice-sass/src/spice";
 
 
 $type         : "light";
@@ -38,11 +38,9 @@ body{
     
     line-height: 150%;
     background-color : $themeColour;
+    color: $textColour;
     @include fontSize(18);
 
-    p{
-        color: $textColour;
-    }
 }
 
 #main-logo{
@@ -102,7 +100,13 @@ hr{
     background-color:$sidebar;
 
     a{
-        color: darken($col-clouds,25%);
+        $side-col:#707D7F;
+        color: $side-col;
+
+        &.group-title{
+
+            color:lighten($side-col,20%);
+        }
 
         &:hover{
             color: white;
@@ -193,13 +197,23 @@ header.sticky{
     background-color:#212527;
 
     $linkcols : (
-        'link'    : #ddd,
-        'visited' : #ddd,
+        'link'    : #999,
+        'visited' : #999,
         'hover'   : #ffffff,
-        'active'  : #1b8898
+        'active'  : $col-river-blue
     );
 
     @include linkColours($linkcols); 
+
+    nav li{
+
+        border-left:1px solid #000;
+
+        &:last-child{
+
+            border-right:1px solid #000;
+        }
+    } 
 
     #search-docs{
 
