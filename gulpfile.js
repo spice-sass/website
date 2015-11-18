@@ -60,7 +60,7 @@ gulp.task('static', function() {
   var templates = [
     "index",
     "documentation",
-    "examples"
+    "spice-examples"
   ]
 
   var examplesPath = './app/views/examples';
