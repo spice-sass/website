@@ -183,7 +183,7 @@ var Messages = React.createClass({
 		    list = this.state.list,
 		    template = {
 			"user": "Nicolas Cage",
-			"time": "11:51 AM",
+			"time": "11:55 AM",
 			"message": comment,
 			"likes": 0,
 			"shares": 0
@@ -266,11 +266,12 @@ var Message = React.createClass({
 	render: function render() {
 
 		var msg = this.props.msg;
+		var img = msg.user.toLowerCase().replace(" ", "-");
 
 		return React.createElement(
 			"div",
 			{ className: "message slide-in-up" },
-			React.createElement("img", { className: "fade-in", src: "http://placehold.it/60x60" }),
+			React.createElement("img", { className: "fade-in", src: '/img/users/' + img + '.jpg' }),
 			React.createElement(
 				"div",
 				{ className: "copy" },

@@ -33,6 +33,7 @@ $linkcols : (
 @include flatButton('flat-warning',$col-pumpkin);
 @include flatButton('flat-danger',$col-pomegranate);
 @include flatButton('flat-submit',$col-nephritis);
+@include formsTheme(#333,lighten($col-clouds,5%),$col-primary);
 
 body{
 	
@@ -208,7 +209,7 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
-@include formsTheme(#333,$lighter,$col-primary);
+
 @include tabsFlat('flat',contrast($lighter,8%),$lighter);
 
 

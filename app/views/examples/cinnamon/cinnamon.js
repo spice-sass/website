@@ -80,7 +80,7 @@ let Messages = React.createClass({
 			list     = this.state.list,
 			template = {
 				"user" : "Nicolas Cage",
-				"time" : "11:51 AM",
+				"time" : "11:55 AM",
 				"message" : comment,
 				"likes" : 0,
 				"shares" : 0
@@ -142,10 +142,11 @@ let Message = React.createClass({
 	render () {
 
 		var msg = this.props.msg;
+		var img = msg.user.toLowerCase().replace(" ", "-");
 
 		return(
 			<div className="message slide-in-up">
-				<img className="fade-in" src="http://placehold.it/60x60" />
+				<img className="fade-in" src={'/img/users/'+img+'.jpg'} />
 				<div className="copy">
 					<h4 className="slide-in-left">{msg.user} <span className="time">{msg.time}</span></h4>
 					<p className="slide-in-left">{msg.message}</p>

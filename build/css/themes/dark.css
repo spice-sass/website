@@ -904,6 +904,16 @@ button.flat-submit, .button.flat-submit {
       top: 0;
       bottom: 0; }
 
+textarea, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
+  background-color: #fbfcfc;
+  border-color: #dde4e6;
+  color: #333; }
+  textarea:hover, select:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover, input[type=date]:hover, input[type=time]:hover, input[type=number]:hover, input.text:hover, header.sticky #search-docs select:hover, header.sticky #search-docs input[type=text]:hover, header.sticky #search-docs input[type=email]:hover, header.sticky #search-docs input[type=password]:hover, header.sticky #search-docs input[type=url]:hover, header.sticky #search-docs input[type=tel]:hover, header.sticky #search-docs input[type=search]:hover, header.sticky #search-docs input[type=date]:hover, header.sticky #search-docs input[type=time]:hover, header.sticky #search-docs input[type=number]:hover, header.sticky #search-docs input.text:hover {
+    border-color: #c0cdd1; }
+  textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus, input[type=date]:focus, input[type=time]:focus, input[type=number]:focus, input.text:focus, header.sticky #search-docs select:focus, header.sticky #search-docs input[type=text]:focus, header.sticky #search-docs input[type=email]:focus, header.sticky #search-docs input[type=password]:focus, header.sticky #search-docs input[type=url]:focus, header.sticky #search-docs input[type=tel]:focus, header.sticky #search-docs input[type=search]:focus, header.sticky #search-docs input[type=date]:focus, header.sticky #search-docs input[type=time]:focus, header.sticky #search-docs input[type=number]:focus, header.sticky #search-docs input.text:focus {
+    color: black;
+    border-color: #289e83; }
+
 body {
   line-height: 150%;
   background-color: #1E2227;
@@ -1136,16 +1146,6 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #0e1013; }
   .stack:nth-of-type(even) {
     background-color: #1b1e23; }
-
-textarea, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
-  background-color: #292f35;
-  border-color: #3f4852;
-  color: #333; }
-  textarea:hover, select:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover, input[type=date]:hover, input[type=time]:hover, input[type=number]:hover, input.text:hover, header.sticky #search-docs select:hover, header.sticky #search-docs input[type=text]:hover, header.sticky #search-docs input[type=email]:hover, header.sticky #search-docs input[type=password]:hover, header.sticky #search-docs input[type=url]:hover, header.sticky #search-docs input[type=tel]:hover, header.sticky #search-docs input[type=search]:hover, header.sticky #search-docs input[type=date]:hover, header.sticky #search-docs input[type=time]:hover, header.sticky #search-docs input[type=number]:hover, header.sticky #search-docs input.text:hover {
-    border-color: #55616f; }
-  textarea:focus, select:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus, input[type=date]:focus, input[type=time]:focus, input[type=number]:focus, input.text:focus, header.sticky #search-docs select:focus, header.sticky #search-docs input[type=text]:focus, header.sticky #search-docs input[type=email]:focus, header.sticky #search-docs input[type=password]:focus, header.sticky #search-docs input[type=url]:focus, header.sticky #search-docs input[type=tel]:focus, header.sticky #search-docs input[type=search]:focus, header.sticky #search-docs input[type=date]:focus, header.sticky #search-docs input[type=time]:focus, header.sticky #search-docs input[type=number]:focus, header.sticky #search-docs input.text:focus {
-    color: white;
-    border-color: #289e83; }
 
 .tabs.flat header {
   background-color: #3b434c;
