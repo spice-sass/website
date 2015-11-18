@@ -4,19 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	
-	<title></title>
+	<title>Spice | A sass library for tasty web interfaces</title>
 
 	<link rel="stylesheet" type="text/css" media="all" href="/css/styles.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="/css/themes/dark.css" id="theme-stylesheet"/>
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 </head>
   <body>
-    <header class="sticky slide-in-down">
+    <header class="sticky">
 	
 	<div class="container transition main ">
 
 		
-		<div id="logo" class="slide-in-right" ng-if="logoNav">
+		<div id="logo" class="slide-in-right">
 			<a href="/">
 				<img src="/img/spice-logo.svg" width="55" />
 			</a>
@@ -26,138 +26,122 @@
 		<nav class="horizontal main shift">
 
 			<ul>
-				<li class="slide-in-down">
+				<li >
 					<a href="/documentation"><i class="line-icon-paper font20"></i> <span>Documentation</span></a>
+				</li>
+				<li  class="active" >
+					<a href="/examples"><i class="line-icon-thermometer font20"></i> <span>Examples</span></a>
 				</li>
 			</ul>
 
 		</nav>
 
 		
-
-		<div id="theme-switcher">
-			
-		</div>
+			<div id="theme-switcher"></div>
+		
 
 	</div>
 
 </header>
     
 
-<section>
+
+<section class="stack" id="themed-examples">
 
 	<div class="container">
 
-		<h1 class="emph">Typography</h1>
-
-		<hr/>
+		<h1>Themed examples</h1>
 
 		<div class="grid-row">
 
-			<div class="grid-col-5">
-				
-				<h1>h1 Heading</h1>
-
-				<h2>h2 Heading</h2>
-
-				<h3>h3 Heading</h3>
-
-				<h4>h4 Heading</h4>
-
-				<h5>h5 Heading</h5>
-
-				<h6>h6 Heading</h6>
-
-			</div>
 			
-			<div class="grid-col-7">
-
-				<blockquote>
-					<span ng-if="theme == 'light'">The light theme uses Open Sans for it's core typeface.</span>
-					<span ng-if="theme == 'dark'">The Dark theme uses Open Sans Condensed for headings and Open sans for body text.</span>
-					<span ng-if="theme == 'slate'">The Slate theme uses Roboto Slab for headings and Roboto for body text.</span>
-					<span ng-if="theme == 'vanilla'">The Vanilla theme uses Quicksand for headings and Roboto Slab for body text.</span>
-				</blockquote>
+				<div class="example gridded-list">
 				
-				<p>
-					Lorem ipsum dolor sit amet, <a href="#">adipiscing elit.</a> Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. <span class="highlighted">This is a highlight</span> eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-				</p>
+					<div class="image-holer">
+						<img class="max" src="/img/screens/paprika.jpg">
+					</div>
 
-			</div>
+					<div class="text-holder">
+						
+						<h3>Paprika</h3>
+						<p><p>An inspiration website template with a css masonry layout. This is a great example of <code><span class='inc'>@include</span> masonryColumns;</code> in action.</p></p>
+						<a href="/examples/paprika" class="button flat-secondary">View Paprika</a>
+
+					</div>
+					
+				</div>
+			
+				<div class="example gridded-list">
+				
+					<div class="image-holer">
+						<img class="max" src="/img/screens/saffron.jpg">
+					</div>
+
+					<div class="text-holder">
+						
+						<h3>Saffron</h3>
+						<p>A modern animated login form template built using animation presets and the <code><span class='inc'>@include</span> transfromKeyframes;</code> mixin.</p>
+						<a href="/examples/saffron" class="button flat-secondary">View Saffron</a>
+
+					</div>
+					
+				</div>
+			
+				<div class="example gridded-list">
+				
+					<div class="image-holer">
+						<img class="max" src="/img/screens/cinnamon.jpg">
+					</div>
+
+					<div class="text-holder">
+						
+						<h3>Cinnamon</h3>
+						<p>A chat application interface built to showcase the power of Spice's layout mixins and available glyphicons.</p>
+						<a href="/examples/cinnamon" class="button flat-secondary">View Cinnamon</a>
+
+					</div>
+					
+				</div>
+			
 
 		</div>
-	
-		<hr/>
-
-		<p class="columns">
-			Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-		</p>
 
 	</div>
 
 </section>
 
-<section>
+<section class="stack" id="icons">
+	
+</section>
 
+<footer id="main-footer">
+	
 	<div class="container">
-
-		<div class="grid-row">
-			<h1><span class="pulse">Animations</span></h1>
-			<p>Css3 keyframe animations and transitions are made simple with several mixins that support vendor prefixes for css3 transforms. A selection of pre-defined animation mixins are available to demonstrate the Spice animation api.</p>
-		</div>
 		
 		<div class="grid-row">
-			
-			<div class="grid-col-7 grid-example text-centre" ng-class="[animation]">
-				<h5 class="red">.<span ng-bind="animation"></span> Transition Example</h5>
-				<p>Click the buttons below to see other examples in action</p>
-			</div>
 
-			<div class="grid-col-5 overflow">
-
-				<nav class="vertical page-nav">
-
-					<ul>
-						<li ng-class="[animation]">
-							<a href="#">Staggered animations</a>
-						</li>
-						<li ng-class="[animation]">
-							<a href="#">are possible too</a>
-						</li>
-						<li ng-class="[animation]">
-							<a href="#">with nth-child selectors</a>
-						</li>
-						<li ng-class="[animation]">
-							<a href="#">Lorem ipsum</a>
-						</li>
-						<li ng-class="[animation]">
-							<a href="#">Lorem ipsum</a>
-						</li>
-					</ul>
-
-				</nav>
-
-			</div>
+			<p class="align-left">Designed and built by Dan Osborne. Code licensed under <a href="https://github.com/spice-sass/spice/blob/master/MIT-LICENSE.txt">MIT</a></p>
+			<p class="align-right"><a href="https://github.com/spice-sass/spice">View on Github</a></p>
 
 		</div>
-
-		<h6>Transitions in</h6>
-
-		<div class="grid-row">
-			<button ng-class="['flat-'+theme]" ng-click="switchAnimation('fade-in')">Fade in</button>
-			<button ng-class="['flat-'+theme]" ng-click="switchAnimation('slide-in-left')">Slide in left</button>
-			<button ng-class="['flat-'+theme]" ng-click="switchAnimation('slide-in-right')">Slide in right</button>
-			<button ng-class="['flat-'+theme]" ng-click="switchAnimation('slide-in-up')">Slide in up</button>
-			<button ng-class="['flat-'+theme]" ng-click="switchAnimation('slide-in-down')">Slide in down</button>
-			<button ng-class="['flat-'+theme]" ng-click="switchAnimation('rotate-in')">Rotate in</button>
-		</div>
-
+		
 	</div>
 
-</section>
-
+</footer>
 
     
-  	
+	<script src="/js/react.min.js"></script>
+	<script src="/js/examples.js"></script>
+
+  	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-70173010-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
   </body>
 </html>

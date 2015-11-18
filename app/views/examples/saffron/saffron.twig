@@ -1,0 +1,46 @@
+{% extends '../../../layouts/demo.twig' %}
+
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="/css/views/examples/saffron/saffron.css">
+{% endblock %}
+{% block title %}
+	<title>{{siteTitle}} | Saffron </title>
+{% endblock %} 
+
+{% block content %}
+
+
+<section id="main">
+
+	 <div id="login">
+
+	 	<h1 class="slide-in-down">Saffron</h1>
+		<p class="strap slide-in-down">Example login form</p>
+
+		<div class="lined" id="saffron-form">
+
+			<form class="lined">
+			
+				<label class="slide-in-up">Username</label>
+				<input class="slide-in-up" type="text" />
+
+				<label class="slide-in-up">Password</label>
+				<input class="slide-in-up" type="password" />
+
+				<button class="flat-submit block-icon-check slide-in-up">Login</button>
+
+			</form>
+			
+		</div>
+
+	 </div>
+
+</section>
+
+{% endblock %}
+
+{% block footerScript %}
+	<script src="/js/react.min.js"></script>
+	<script src="/js/saffron.js"></script>
+{% endblock %}

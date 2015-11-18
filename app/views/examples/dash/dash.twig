@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	
-		<title>Default title</title>
-	
-	
-	<link rel="stylesheet" type="text/css" href="/css/views/demos/dash.css">
+{% extends '../../../layouts/demo.twig' %}
 
-</head>
-  <body>
-    
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="/css/views/examples/dash/dash.css">
+{% endblock %} 
+
+{% block content %}
 <section id="dashboard">
 	
 	<div id="side-bar">
@@ -145,6 +139,4 @@
 	</div>
 
 </section>
-
-  </body>
-</html>
+{% endblock %}

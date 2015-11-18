@@ -1,5 +1,5 @@
 //DEv 
-// #intro-pane, #installation{
+// #intro-pane, #installation, #features{
 
 // 	opacity:0;
 // }
@@ -59,6 +59,7 @@
 	}
 
 	@include breakPoint(650px){
+
 		h2{
 			@include fontSize(26px);
 		}
@@ -69,9 +70,36 @@
 	}
 }
 
-.feature{
+#features{
 
-	padding:20px;
+	padding:100px 0;
+
+	h2{	
+		text-align:center;
+	}
+
+	@include griddedList(4,12,5%);
+
+	.feature{
+
+		h3{
+
+			text-align: center;
+			@include fontSize(22px);
+		}
+
+		p{
+			text-align: justify;
+			@include fontSize(16px);
+		}
+
+	}
+
+	@include breakPoint(850px){
+	
+		@include griddedList(2,12,5%);
+	}
 }
 
 @import "preview";
+@import "animations";
