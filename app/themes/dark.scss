@@ -41,6 +41,7 @@ body{
     background-color : $themeColour;
     color : $textColour; 
 	@include fontSize(18);
+    @include scrollbar($themeColour);
 }
 
 strong{
@@ -90,6 +91,7 @@ h2.centred span{
 
 @include googleFont('source-sans',body textarea input button);
 @include googleFont('roboto-slab', h1 h2 h3 h4 h5 h6);
+@include googleFont('leckerli-one');
 
 h1,h2,h3,h4,h5,h6{
 
@@ -276,7 +278,8 @@ header.sticky{
 
         &.active{
 
-
+            background-color:enhance(#111113,5%);
+            @include vendorPrefix(box-shadow,inset 0 -2px 0 $col-alizarin);
         }
     } 
 
