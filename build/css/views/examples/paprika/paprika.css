@@ -40,6 +40,7 @@ header.sticky {
           header.sticky nav a span {
             display: none; } }
     header.sticky nav li {
+      float: left;
       display: inline-block; }
   header.sticky #version {
     line-height: 50px;
