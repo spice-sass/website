@@ -4,6 +4,31 @@
 // 	opacity:0;
 // }
 
+h2.centred span{
+
+	$width : 150px;
+
+    position:relative;
+
+    &:before{
+        
+        content: "";
+        width:$width;
+        left:-($width + 20px);
+        height: 1px;
+        @include centre(y);
+    }
+
+    &:after{
+        
+        content: "";
+        width:$width;
+        right:-($width + 20px);
+        height: 1px;
+        @include centre(y);
+    }
+}
+
 #intro-pane{
 
 	.centre-y{

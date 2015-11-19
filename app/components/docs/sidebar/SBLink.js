@@ -5,22 +5,6 @@ import AppActions from '../../../flux/appActions';
 
 var SBLink = React.createClass({
 
-	getInitialState () {
-		return{
-			filterTerm : ""
-		}
-	},
-
-	componentDidMount () {
-		AppStore.addChangeListener('filter',this.filterHandler);
-	},
-
-	filterHandler (term) {
-		this.setState({
-			filterTerm : term.toLowerCase()
-		});
-	},
-
 	render() {
 
 		var ord       = this.props.ord,
@@ -31,7 +15,7 @@ var SBLink = React.createClass({
 		
 		return (
 			<li>
-				{inc[ord].searchTerms.toLowerCase().indexOf(this.state.filterTerm) >-1 &&
+				{inc[ord].searchTerms.toLowerCase().indexOf(this.props.filterTerm) >-1 &&
 					<div>
 						<a className="group-title" onClick={goToMixin.bind(this,ord)}>{inc[ord].title}</a>
 						<ul className="subnav">

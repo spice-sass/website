@@ -921,6 +921,13 @@ body {
   font-size: 18px;
   font-size: 1.125rem; }
 
+strong {
+  font-weight: 600;
+  color: #c7c9ca; }
+
+h2.centred span:before, h2.centred span:after {
+  background-color: #343b44; }
+
 #main-logo path.light-red {
   fill: #BE2126; }
 
@@ -1033,6 +1040,13 @@ h1, h2, h3, h4, h5, h6 {
 #docs {
   background-color: #ECF0F1;
   overflow: auto; }
+  #docs #group-wrapper {
+    background-color: #ECF0F1; }
+  #docs #no-results h5 {
+    color: #a3b6bb; }
+  #docs #no-results .term {
+    color: #E74C3C;
+    font-style: italic; }
   #docs a {
     text-decoration: none; }
     #docs a:link {
@@ -1059,6 +1073,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #44586B; }
   #docs p {
     color: #666; }
+  #docs strong {
+    color: #333; }
   #docs hr {
     display: block;
     margin: 20px 20px 40px 20px;

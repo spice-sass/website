@@ -29,16 +29,26 @@ var List = React.createClass({
 
 	render() {
 		
-		var inc       = this.props.includes,
-			active    = this.props.active,
-			scroll    = this.state.scrollPos,
-			goToMixin = this.props.goToMixin;
+		var inc        = this.props.includes,
+			active     = this.props.active,
+			scroll     = this.state.scrollPos,
+			goToMixin  = this.props.goToMixin,
+			filterTerm = this.props.filterTerm;
 
 		return (
 			<div id="docs" ref={(ref) => this.docs = ref}>
-				{this.props.order.map(function(ord){
-					return <MixinGroup ord={ord} includes={inc} active={active} scroll={scroll} goToMixin={goToMixin}/>
-				})}
+				<div id="group-wrapper">
+					{this.props.order.map(function(ord){
+						return <MixinGroup ord={ord} includes={inc} active={active} scroll={scroll} goToMixin={goToMixin} filterTerm={filterTerm}/>
+					})}
+				</div>
+				{filterTerm != "" &&
+					<div id="no-results">
+						<h5>Not found!</h5>
+						<p>No results were found for <span className="term">{filterTerm}&hellip;</span></p>
+						<p>Please try filering by another search term.</p>
+					</div>
+				}
 			</div>
 		)
 	}

@@ -35,7 +35,8 @@ var Docs = React.createClass({
 			includes: {},
 			order: [],
 			stylePages: [],
-			activeMix: _fluxAppStore2['default'].getActive()
+			activeMix: _fluxAppStore2['default'].getActive(),
+			filterTerm: ""
 		};
 	},
 
@@ -61,6 +62,7 @@ var Docs = React.createClass({
 	componentDidMount: function componentDidMount() {
 
 		_fluxAppStore2['default'].addChangeListener('active', this.activeHandler);
+		_fluxAppStore2['default'].addChangeListener('filter', this.filterHandler);
 
 		this.api = new _servicesApiService2['default']();
 		this.api.request('/api/includes.json').end((function (err, response) {
@@ -73,19 +75,26 @@ var Docs = React.createClass({
 		}).bind(this));
 	},
 
+	filterHandler: function filterHandler(term) {
+		this.setState({
+			filterTerm: term.toLowerCase()
+		});
+	},
+
 	render: function render() {
 
 		var order = this.state.order,
 		    includes = this.state.includes,
 		    active = this.state.activeMix,
 		    activeP = this.state.activePosition,
-		    goToMixin = this.goToMixin;
+		    goToMixin = this.goToMixin,
+		    filterTerm = this.state.filterTerm;
 
 		return React.createElement(
 			'div',
 			{ id: 'docs-wrapper' },
-			React.createElement(_sidebarSidebar2['default'], { order: order, includes: includes, active: active, activeP: activeP, goToMixin: goToMixin }),
-			React.createElement(_mainList2['default'], { order: order, includes: includes, active: active, goToMixin: goToMixin })
+			React.createElement(_sidebarSidebar2['default'], { order: order, includes: includes, active: active, activeP: activeP, goToMixin: goToMixin, filterTerm: filterTerm }),
+			React.createElement(_mainList2['default'], { order: order, includes: includes, active: active, goToMixin: goToMixin, filterTerm: filterTerm })
 		);
 	}
 
@@ -147,16 +156,46 @@ var List = React.createClass({
 		var inc = this.props.includes,
 		    active = this.props.active,
 		    scroll = this.state.scrollPos,
-		    goToMixin = this.props.goToMixin;
+		    goToMixin = this.props.goToMixin,
+		    filterTerm = this.props.filterTerm;
 
 		return React.createElement(
 			'div',
 			{ id: 'docs', ref: function (ref) {
 					return _this.docs = ref;
 				} },
-			this.props.order.map(function (ord) {
-				return React.createElement(_MixinGroup2['default'], { ord: ord, includes: inc, active: active, scroll: scroll, goToMixin: goToMixin });
-			})
+			React.createElement(
+				'div',
+				{ id: 'group-wrapper' },
+				this.props.order.map(function (ord) {
+					return React.createElement(_MixinGroup2['default'], { ord: ord, includes: inc, active: active, scroll: scroll, goToMixin: goToMixin, filterTerm: filterTerm });
+				})
+			),
+			filterTerm != "" && React.createElement(
+				'div',
+				{ id: 'no-results' },
+				React.createElement(
+					'h5',
+					null,
+					'Not found!'
+				),
+				React.createElement(
+					'p',
+					null,
+					'No results were found for ',
+					React.createElement(
+						'span',
+						{ className: 'term' },
+						filterTerm,
+						'…'
+					)
+				),
+				React.createElement(
+					'p',
+					null,
+					'Please try filering by another search term.'
+				)
+			)
 		);
 	}
 
@@ -182,31 +221,11 @@ var _MixinItem = require("./MixinItem");
 
 var _MixinItem2 = _interopRequireDefault(_MixinItem);
 
-var _fluxAppStore = require('../../../flux/appStore');
-
-var _fluxAppStore2 = _interopRequireDefault(_fluxAppStore);
-
 // Ancestors - List > Docs
 // Children - MixinItem > MixinTabs
 
 var MixinGroup = React.createClass({
 	displayName: "MixinGroup",
-
-	getInitialState: function getInitialState() {
-		return {
-			filterTerm: ""
-		};
-	},
-
-	componentDidMount: function componentDidMount() {
-		_fluxAppStore2["default"].addChangeListener('filter', this.filterHandler);
-	},
-
-	filterHandler: function filterHandler(term) {
-		this.setState({
-			filterTerm: term.toLowerCase()
-		});
-	},
 
 	render: function render() {
 
@@ -224,7 +243,7 @@ var MixinGroup = React.createClass({
 		return React.createElement(
 			"div",
 			null,
-			search.toLowerCase().indexOf(this.state.filterTerm) > -1 && React.createElement(
+			search.toLowerCase().indexOf(this.props.filterTerm) > -1 && React.createElement(
 				"div",
 				{ className: "include-block", id: group },
 				React.createElement(
@@ -248,7 +267,7 @@ var MixinGroup = React.createClass({
 exports["default"] = MixinGroup;
 module.exports = exports["default"];
 
-},{"../../../flux/appStore":13,"./MixinItem":4,"./MixinTabs":5}],4:[function(require,module,exports){
+},{"./MixinItem":4,"./MixinTabs":5}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -526,22 +545,6 @@ var AppStore = require('../../../flux/appStore');
 var SBLink = React.createClass({
 	displayName: 'SBLink',
 
-	getInitialState: function getInitialState() {
-		return {
-			filterTerm: ""
-		};
-	},
-
-	componentDidMount: function componentDidMount() {
-		AppStore.addChangeListener('filter', this.filterHandler);
-	},
-
-	filterHandler: function filterHandler(term) {
-		this.setState({
-			filterTerm: term.toLowerCase()
-		});
-	},
-
 	render: function render() {
 
 		var ord = this.props.ord,
@@ -553,7 +556,7 @@ var SBLink = React.createClass({
 		return React.createElement(
 			'li',
 			null,
-			inc[ord].searchTerms.toLowerCase().indexOf(this.state.filterTerm) > -1 && React.createElement(
+			inc[ord].searchTerms.toLowerCase().indexOf(this.props.filterTerm) > -1 && React.createElement(
 				'div',
 				null,
 				React.createElement(
@@ -655,7 +658,8 @@ var Sidebar = React.createClass({
 
 		var inc = this.props.includes,
 		    goToMixin = this.props.goToMixin,
-		    active = this.props.active;
+		    active = this.props.active,
+		    filterTerm = this.props.filterTerm;
 
 		return React.createElement(
 			'nav',
@@ -666,7 +670,7 @@ var Sidebar = React.createClass({
 				'ul',
 				{ className: 'vertical-nav' },
 				this.props.order.map(function (ord) {
-					return React.createElement(_SBLink2['default'], { ord: ord, includes: inc, active: active, goToMixin: goToMixin });
+					return React.createElement(_SBLink2['default'], { ord: ord, includes: inc, active: active, goToMixin: goToMixin, filterTerm: filterTerm });
 				})
 			)
 		);

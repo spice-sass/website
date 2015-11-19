@@ -43,6 +43,20 @@ body{
 
 }
 
+strong{
+
+    font-weight: 600;
+    color:enhance($textColour,25%);
+}
+
+h2.centred span{
+
+    &:before,&:after{
+
+        background-color:contrast($themeColour,10%);
+    }
+}
+
 #main-logo{
 
     path{
@@ -124,6 +138,10 @@ hr{
 }
 
 #docs{
+
+    #group-wrapper{
+        background-color:$themeColour;
+    }
     
     @include linkColours($linkcols);
     @include scrollbar($themeColour);

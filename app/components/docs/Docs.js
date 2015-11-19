@@ -11,7 +11,8 @@ var Docs = React.createClass({
 			includes   : {},
 			order      : [],
 			stylePages : [],
-			activeMix  : AppStore.getActive()
+			activeMix  : AppStore.getActive(),
+			filterTerm : ""
 		}
 	},
 
@@ -37,6 +38,7 @@ var Docs = React.createClass({
 	componentDidMount () {
 
 		AppStore.addChangeListener('active',this.activeHandler);
+		AppStore.addChangeListener('filter',this.filterHandler);
 
 		this.api = new apiService();
 		this.api.request('/api/includes.json')
@@ -52,18 +54,25 @@ var Docs = React.createClass({
 
 	},
 
+	filterHandler (term) {
+		this.setState({
+			filterTerm : term.toLowerCase()
+		});
+	},
+
 	render (){
 
-		var order     = this.state.order,
-			includes  = this.state.includes,
-			active    = this.state.activeMix,
-			activeP   = this.state.activePosition,
-			goToMixin = this.goToMixin;
+		var order      = this.state.order,
+			includes   = this.state.includes,
+			active     = this.state.activeMix,
+			activeP    = this.state.activePosition,
+			goToMixin  = this.goToMixin,
+			filterTerm = this.state.filterTerm;
 
 		return (
 			<div id="docs-wrapper">
-				<Sidebar order={order} includes={includes} active={active} activeP={activeP} goToMixin={goToMixin}/>
-				<List order={order} includes={includes} active={active} goToMixin={goToMixin}/>
+				<Sidebar order={order} includes={includes} active={active} activeP={activeP} goToMixin={goToMixin} filterTerm={filterTerm}/>
+				<List order={order} includes={includes} active={active} goToMixin={goToMixin} filterTerm={filterTerm}/>
 			</div>
 		)
 	}

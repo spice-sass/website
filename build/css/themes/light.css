@@ -911,6 +911,13 @@ body {
   font-size: 18px;
   font-size: 1.125rem; }
 
+strong {
+  font-weight: 600;
+  color: #121212; }
+
+h2.centred span:before, h2.centred span:after {
+  background-color: #cfd9db; }
+
 #main-logo path.light-red {
   fill: #BE2126; }
 
@@ -1032,6 +1039,8 @@ hr {
 
 #docs {
   overflow: auto; }
+  #docs #group-wrapper {
+    background-color: #ECF0F1; }
   #docs a {
     text-decoration: none; }
     #docs a:link {
