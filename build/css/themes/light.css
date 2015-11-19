@@ -1031,11 +1031,11 @@ hr {
     height: 10px;
     padding: 10px; }
   #sidebar::-webkit-scrollbar-track {
-    background: #54656f; }
+    background: #121618; }
   #sidebar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #121618;
-    border: 2px solid #54656f; }
+    background: #3e4a52;
+    border: 2px solid #121618; }
 
 #docs {
   overflow: auto; }
@@ -1263,11 +1263,11 @@ header.sticky {
     height: 10px;
     padding: 10px; }
   #docs .code .scrollbar::-webkit-scrollbar-track {
-    background: #3d4952; }
+    background: black; }
   #docs .code .scrollbar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: black;
-    border: 2px solid #3d4952; }
+    background: #272f35;
+    border: 2px solid black; }
 
 #docs .code .code-body {
   background-color: #272F35;

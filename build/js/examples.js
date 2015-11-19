@@ -4,6 +4,77 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+var Animations = React.createClass({
+	displayName: "Animations",
+
+	getInitialState: function getInitialState() {
+		return {
+			currentClass: "fade-in",
+			classes: ["fade-in", "slide-in-left", "slide-in-right"]
+		};
+	},
+
+	switchClass: function switchClass(anim) {
+
+		var self = this;
+
+		if (anim != this.state.currentClass) {
+			this.setState({
+				currentClass: anim
+			});
+		} else {
+			this.setState({
+				currentClass: ""
+			});
+
+			setTimeout(function () {
+				self.setState({
+					currentClass: anim
+				});
+			}, 10);
+		}
+	},
+
+	render: function render() {
+
+		var classList = this.state.classes.map(function (anim) {
+			return React.createElement(
+				"button",
+				{ onClick: this.switchClass.bind(this, anim) },
+				anim
+			);
+		}, this);
+
+		return React.createElement(
+			"div",
+			{ className: "container" },
+			React.createElement(
+				"div",
+				{ className: "grid-row" },
+				React.createElement(
+					"div",
+					{ className: "grid-col-8" },
+					React.createElement("img", { className: this.state.currentClass, src: "/img/spice-logo.svg" })
+				)
+			),
+			React.createElement(
+				"div",
+				{ className: "grid-row" },
+				classList
+			)
+		);
+	}
+});
+
+exports["default"] = Animations;
+module.exports = exports["default"];
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 var Icons = React.createClass({
 	displayName: "Icons",
 
@@ -63,7 +134,7 @@ var Icons = React.createClass({
 exports["default"] = Icons;
 module.exports = exports["default"];
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -115,7 +186,7 @@ var ThemeSwitch = React.createClass({
 exports["default"] = ThemeSwitch;
 module.exports = exports["default"];
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -128,8 +199,14 @@ var _componentsExamplesIcons = require('./components/examples/Icons');
 
 var _componentsExamplesIcons2 = _interopRequireDefault(_componentsExamplesIcons);
 
+var _componentsExamplesAnimations = require('./components/examples/Animations');
+
+var _componentsExamplesAnimations2 = _interopRequireDefault(_componentsExamplesAnimations);
+
 React.render(React.createElement(_componentsHeaderThemeSwitch2['default'], null), document.getElementById('theme-switcher'));
+
+React.render(React.createElement(_componentsExamplesAnimations2['default'], null), document.getElementById('animations'));
 
 React.render(React.createElement(_componentsExamplesIcons2['default'], null), document.getElementById('icons'));
 
-},{"./components/examples/Icons":1,"./components/header/themeSwitch":2}]},{},[3])
+},{"./components/examples/Animations":1,"./components/examples/Icons":2,"./components/header/themeSwitch":3}]},{},[4])

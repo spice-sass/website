@@ -1031,11 +1031,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 10px;
     padding: 10px; }
   #sidebar::-webkit-scrollbar-track {
-    background: #4b535b; }
+    background: #060707; }
   #sidebar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #060707;
-    border: 2px solid #4b535b; }
+    background: #343a3f;
+    border: 2px solid #060707; }
 
 #docs {
   background-color: #ECF0F1;
@@ -1275,11 +1275,11 @@ header.sticky {
     height: 10px;
     padding: 10px; }
   #docs .code .scrollbar::-webkit-scrollbar-track {
-    background: #3d4952; }
+    background: black; }
   #docs .code .scrollbar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: black;
-    border: 2px solid #3d4952; }
+    background: #272f35;
+    border: 2px solid black; }
 
 #docs .code .code-body {
   background-color: #272F35;

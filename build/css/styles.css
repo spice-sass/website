@@ -463,11 +463,11 @@ h2.centred span {
         height: 10px;
         padding: 10px; }
       #preview .code-wrapper .sass-block::-webkit-scrollbar-track, #preview .code-wrapper .css-block::-webkit-scrollbar-track {
-        background: #475662; }
+        background: #070809; }
       #preview .code-wrapper .sass-block::-webkit-scrollbar-thumb, #preview .code-wrapper .css-block::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background: #070809;
-        border: 2px solid #475662; }
+        background: #313c45;
+        border: 2px solid #070809; }
 
 body.animations header.sticky {
   -webkit-animation-name: "header-slide";
