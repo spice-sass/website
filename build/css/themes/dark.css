@@ -904,6 +904,38 @@ button.flat-submit, .button.flat-submit {
       top: 0;
       bottom: 0; }
 
+.button-group.animations {
+  min-height: 1%; }
+  .button-group.animations:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .button-group.animations button {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 10px 15px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    background-color: #283949;
+    color: #93acc4;
+    outline: none;
+    border-bottom: 4px solid #1c2732;
+    cursor: pointer;
+    font-size: 14px;
+    font-size: 0.875rem; }
+    .button-group.animations button:hover {
+      color: white;
+      background-color: #2e4153; }
+    .button-group.animations button.active {
+      color: white;
+      background-color: #1f2c39; }
+    .button-group.animations button:first-child {
+      border-radius: 5px 0 0 5px; }
+    .button-group.animations button:last-child {
+      border-radius: 0 5px 5px 0; }
+
 textarea, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
   background-color: #fbfcfc;
   border-color: #dde4e6;
@@ -1183,6 +1215,10 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #0e1013; }
   .stack:nth-of-type(even) {
     background-color: #1b1e23; }
+
+#animations #main-logo {
+  background-color: #171a1e;
+  border: 1px solid #08090a; }
 
 .tabs.flat header {
   background-color: #3b434c;
