@@ -43,6 +43,20 @@ body{
 	@include fontSize(18);
 }
 
+strong{
+
+    font-weight: 600;
+    color:enhance($textColour,25%);
+}
+
+h2.centred span{
+
+    &:before,&:after{
+
+        background-color:contrast($themeColour,10%);
+    }
+}
+
 #main-logo{
 
     path{
