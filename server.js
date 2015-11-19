@@ -34,8 +34,8 @@ var routeData = {
 		"view" : "documentation",
 		"title" : "Documentation"
 	},{
-		"path" : "/examples",
-		"view" : "examples",
+		"path" : "/spice-examples",
+		"view" : "spice-examples",
 		"title" : "Examples"	
 	}]
 };

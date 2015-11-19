@@ -1,27 +1,11 @@
 import MixinTabs from "./MixinTabs";
 import MixinItem from "./MixinItem";
-import AppStore from '../../../flux/appStore';
+
 
 // Ancestors - List > Docs
 // Children - MixinItem > MixinTabs
 
 var MixinGroup = React.createClass({
-
-	getInitialState () {
-		return{
-			filterTerm : ""
-		}
-	},
-
-	componentDidMount () {
-		AppStore.addChangeListener('filter',this.filterHandler);
-	},
-
-	filterHandler (term) {
-		this.setState({
-			filterTerm : term.toLowerCase()
-		});
-	},
 
 	render() {
 
@@ -38,7 +22,7 @@ var MixinGroup = React.createClass({
 
 		return (
 			<div>
-				{search.toLowerCase().indexOf(this.state.filterTerm) > -1 &&
+				{search.toLowerCase().indexOf(this.props.filterTerm) > -1 &&
 					<div className="include-block" id={group} >
 						<h1>{{title}}</h1>
 						{intro && <div dangerouslySetInnerHTML={{__html: intro}} />}	

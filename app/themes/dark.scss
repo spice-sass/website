@@ -117,6 +117,24 @@ h1,h2,h3,h4,h5,h6{
     $themeColour : $col-clouds;
 
     background-color:$themeColour;
+
+    #group-wrapper{
+        background-color:$themeColour;
+    }
+
+    #no-results{
+
+        h5{
+
+            color: contrast($themeColour,25%);
+        }
+
+        .term{
+
+            color:$col-alizarin;
+            font-style: italic;
+        }
+    }
     
     
     @include linkColours($linkcols);

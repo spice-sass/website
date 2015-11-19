@@ -11,15 +11,16 @@ var Sidebar = React.createClass({
 	},
 
 	render() {
-		var inc       = this.props.includes,
-			goToMixin = this.props.goToMixin,
-			active    = this.props.active;
+		var inc        = this.props.includes,
+			goToMixin  = this.props.goToMixin,
+			active     = this.props.active,
+			filterTerm = this.props.filterTerm;
 
 		return (
 			<nav className="page-nav scrollbar" id="sidebar" ref={(ref) => this.sideBar = ref}>
 				<ul className="vertical-nav">
 					{this.props.order.map(function(ord){
-						return <SBLink ord={ord} includes={inc} active={active} goToMixin={goToMixin}/>
+						return <SBLink ord={ord} includes={inc} active={active} goToMixin={goToMixin} filterTerm={filterTerm}/>
 					})}
 				</ul>
 			</nav>
