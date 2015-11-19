@@ -43,6 +43,20 @@ body{
 	@include fontSize(18);
 }
 
+strong{
+
+    font-weight: 600;
+    color:enhance($textColour,25%);
+}
+
+h2.centred span{
+
+    &:before,&:after{
+
+        background-color:contrast($themeColour,10%);
+    }
+}
+
 #main-logo{
 
     path{
@@ -151,6 +165,11 @@ h1,h2,h3,h4,h5,h6{
 
     p{
         color: #666;
+    }
+
+    strong{
+
+        color:#333;
     }
 
     hr{
