@@ -24,10 +24,10 @@
 @include formLined(6px,15px 20px,18);
 @include rangeInput;
 
-@include toolTip('top',20px);
-@include toolTip('bottom',20px);
-@include toolTip('left');
-@include toolTip('right');
+@include tooltip('top',20px);
+@include tooltip('bottom',20px);
+@include tooltip('left');
+@include tooltip('right');
 
 @include gradientButtonGroup('gradient',#2671A2);
 @include flatButtonGroup('flat',#2671A2);
