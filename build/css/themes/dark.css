@@ -919,7 +919,18 @@ body {
   background-color: #1E2227;
   color: #858B8C;
   font-size: 18px;
-  font-size: 1.125rem; }
+  font-size: 1.125rem;
+  overflow: auto; }
+  body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    padding: 10px; }
+  body::-webkit-scrollbar-track {
+    background: #08090a; }
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #343b44;
+    border: 2px solid #08090a; }
 
 strong {
   font-weight: 600;
@@ -1008,6 +1019,16 @@ h2.centred span:before, h2.centred span:after {
 .roboto-slab, h1, h2, h3, h4, h5, h6 {
   font-family: Roboto Slab, arial, sans-serif; }
 
+@font-face {
+  font-family: "Leckerli One";
+  font-style: normal;
+  font-weight: 300;
+  src: local(Leckerli One), local(LeckerliOne-Regular), url(http://fonts.gstatic.com/s/leckerlione/v7/S2Y_iLrItTu8kIJTkS7DrOgdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+.leckerli-one {
+  font-family: "Leckerli One", arial, sans-serif; }
+
 h1, h2, h3, h4, h5, h6 {
   color: #EEF2F3; }
 
@@ -1031,11 +1052,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 10px;
     padding: 10px; }
   #sidebar::-webkit-scrollbar-track {
-    background: #4b535b; }
+    background: #060707; }
   #sidebar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #060707;
-    border: 2px solid #4b535b; }
+    background: #343a3f;
+    border: 2px solid #060707; }
 
 #docs {
   background-color: #ECF0F1;
@@ -1280,11 +1301,11 @@ header.sticky {
     height: 10px;
     padding: 10px; }
   #docs .code .scrollbar::-webkit-scrollbar-track {
-    background: #3d4952; }
+    background: black; }
   #docs .code .scrollbar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: black;
-    border: 2px solid #3d4952; }
+    background: #272f35;
+    border: 2px solid black; }
 
 #docs .code .code-body {
   background-color: #272F35;

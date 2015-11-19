@@ -212,11 +212,11 @@ body {
     height: 10px;
     padding: 10px; }
   #side-bar::-webkit-scrollbar-track {
-    background: #475662; }
+    background: #070809; }
   #side-bar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #070809;
-    border: 2px solid #475662; }
+    background: #313c45;
+    border: 2px solid #070809; }
   #side-bar ul.vertical-nav li {
     display: block;
     position: relative; }
@@ -303,11 +303,11 @@ body {
     height: 10px;
     padding: 10px; }
   #main::-webkit-scrollbar-track {
-    background: #56657c; }
+    background: #171b22; }
   #main::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #171b22;
-    border: 2px solid #56657c; }
+    background: #414d5e;
+    border: 2px solid #171b22; }
   #main svg.blue {
     position: relative; }
     #main svg.blue circle {
