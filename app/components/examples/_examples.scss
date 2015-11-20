@@ -33,6 +33,25 @@
 	}
 }
 
+#animations{
+
+	padding:100px 0;
+
+	#main-logo{
+
+		text-align: center;
+		padding:40px;
+		border-radius:10px;
+		margin-bottom: 30px;
+
+		svg{
+
+			max-width: 350px;
+			margin: 0 auto;
+		}
+	}
+}
+
 #icons{
 
 	padding:100px 0;
