@@ -13,6 +13,10 @@
 @include slideIn("right",100,$rush,1s);
 @include slideIn("up",50,$rush,1s);
 @include slideIn("down",50,$rush,1s);
+@include slideOut("left",100,$rush,1s);
+@include slideOut("right",100,$rush,1s);
+@include slideOut("up",50,$rush,1s);
+@include slideOut("down",50,$rush,1s);
 @include rotateIn(10);
 @include flipClass(y);
 

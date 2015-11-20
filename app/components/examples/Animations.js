@@ -3,13 +3,19 @@ let Animations = React.createClass({
 	getInitialState () {
 		return{
 			currentClass : "fade-in",
-			classes : [
+			enters : [
 				"fade-in",
 				"slide-in-up",
 				"slide-in-down",
 				"slide-in-left",
 				"slide-in-right",
 				"rotate-in"
+			],
+			exits : [
+				"slide-out-up",
+				"slide-out-down",
+				"slide-out-left",
+				"slide-out-right"
 			]
 		}
 	},
@@ -42,7 +48,11 @@ let Animations = React.createClass({
 			return newStr
 		}
 
-		var classList = this.state.classes.map(function(anim){
+		var enterList = this.state.enters.map(function(anim){
+			return <button className={this.state.currentClass == anim ? "active" : ""} onClick={this.switchClass.bind(this,anim)}>{niceName(anim)}</button>
+		},this);
+
+		var exitList = this.state.exits.map(function(anim){
 			return <button className={this.state.currentClass == anim ? "active" : ""} onClick={this.switchClass.bind(this,anim)}>{niceName(anim)}</button>
 		},this);
 
@@ -92,8 +102,13 @@ let Animations = React.createClass({
 					</div>
 				</div>
 				<div className="grid-row">
+					<h6>Entrances</h6>
 					<div className="button-group animations">
-						{classList}
+						{enterList}
+					</div>
+					<h6>Exits</h6>
+					<div className="button-group animations">
+						{exitList}
 					</div>
 				</div>
 			</div>
