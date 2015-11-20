@@ -11,8 +11,7 @@ var Animations = React.createClass({
 		return {
 			currentClass: "fade-in",
 			enters: ["fade-in", "slide-in-up", "slide-in-down", "slide-in-left", "slide-in-right", "rotate-in"],
-			exits: ["slide-out-up", "slide-out-down", "slide-out-left", "slide-out-right"],
-			grabbers: ["pulse", "magic", "elastic"]
+			exits: ["slide-out-up", "slide-out-down", "slide-out-left", "slide-out-right"]
 		};
 	},
 
@@ -53,14 +52,6 @@ var Animations = React.createClass({
 		}, this);
 
 		var exitList = this.state.exits.map(function (anim) {
-			return React.createElement(
-				"button",
-				{ className: this.state.currentClass == anim ? "active" : "", onClick: this.switchClass.bind(this, anim) },
-				niceName(anim)
-			);
-		}, this);
-
-		var grabberList = this.state.grabbers.map(function (anim) {
 			return React.createElement(
 				"button",
 				{ className: this.state.currentClass == anim ? "active" : "", onClick: this.switchClass.bind(this, anim) },
@@ -170,8 +161,22 @@ var Animations = React.createClass({
 				),
 				React.createElement(
 					"div",
-					{ className: "button-group animations" },
-					grabberList
+					{ className: "grid-row" },
+					React.createElement(
+						"button",
+						{ className: "grabber magic flat-secondary" },
+						"Magic"
+					),
+					React.createElement(
+						"button",
+						{ className: "grabber elastic flat-secondary" },
+						"Elastic"
+					),
+					React.createElement(
+						"button",
+						{ className: "grabber pulse flat-secondary" },
+						"Pulse"
+					)
 				)
 			)
 		);
