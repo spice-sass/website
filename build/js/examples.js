@@ -11,7 +11,8 @@ var Animations = React.createClass({
 		return {
 			currentClass: "fade-in",
 			enters: ["fade-in", "slide-in-up", "slide-in-down", "slide-in-left", "slide-in-right", "rotate-in"],
-			exits: ["slide-out-up", "slide-out-down", "slide-out-left", "slide-out-right"]
+			exits: ["slide-out-up", "slide-out-down", "slide-out-left", "slide-out-right"],
+			grabbers: ["pulse", "magic", "elastic"]
 		};
 	},
 
@@ -52,6 +53,14 @@ var Animations = React.createClass({
 		}, this);
 
 		var exitList = this.state.exits.map(function (anim) {
+			return React.createElement(
+				"button",
+				{ className: this.state.currentClass == anim ? "active" : "", onClick: this.switchClass.bind(this, anim) },
+				niceName(anim)
+			);
+		}, this);
+
+		var grabberList = this.state.grabbers.map(function (anim) {
 			return React.createElement(
 				"button",
 				{ className: this.state.currentClass == anim ? "active" : "", onClick: this.switchClass.bind(this, anim) },
@@ -153,6 +162,16 @@ var Animations = React.createClass({
 					"div",
 					{ className: "button-group animations" },
 					exitList
+				),
+				React.createElement(
+					"h6",
+					null,
+					"Attention grabbers"
+				),
+				React.createElement(
+					"div",
+					{ className: "button-group animations" },
+					grabberList
 				)
 			)
 		);

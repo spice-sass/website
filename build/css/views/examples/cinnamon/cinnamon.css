@@ -284,21 +284,18 @@ blockquote {
   animation-timing-function: cubic-bezier(0.39, -0.35, 0.4, 1.36);
   -webkit-animation-duration: 0.6s;
   animation-duration: 0.6s; }
-  .slide-in-left:nth-child(1) {
+  .slide-in-left:nth-child(2) {
     -webkit-animation-delay: 0.08s;
     animation-delay: 0.08s; }
-  .slide-in-left:nth-child(2) {
+  .slide-in-left:nth-child(3) {
     -webkit-animation-delay: 0.16s;
     animation-delay: 0.16s; }
-  .slide-in-left:nth-child(3) {
+  .slide-in-left:nth-child(4) {
     -webkit-animation-delay: 0.24s;
     animation-delay: 0.24s; }
-  .slide-in-left:nth-child(4) {
+  .slide-in-left:nth-child(5) {
     -webkit-animation-delay: 0.32s;
     animation-delay: 0.32s; }
-  .slide-in-left:nth-child(5) {
-    -webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s; }
 
 @-webkit-keyframes slideIn-left {
   0% {
@@ -341,36 +338,33 @@ blockquote {
   animation-timing-function: ease;
   -webkit-animation-duration: 0.6s;
   animation-duration: 0.6s; }
-  .fade-in:nth-child(1) {
+  .fade-in:nth-child(2) {
     -webkit-animation-delay: 0.08s;
     animation-delay: 0.08s; }
-  .fade-in:nth-child(2) {
+  .fade-in:nth-child(3) {
     -webkit-animation-delay: 0.16s;
     animation-delay: 0.16s; }
-  .fade-in:nth-child(3) {
+  .fade-in:nth-child(4) {
     -webkit-animation-delay: 0.24s;
     animation-delay: 0.24s; }
-  .fade-in:nth-child(4) {
+  .fade-in:nth-child(5) {
     -webkit-animation-delay: 0.32s;
     animation-delay: 0.32s; }
-  .fade-in:nth-child(5) {
+  .fade-in:nth-child(6) {
     -webkit-animation-delay: 0.4s;
     animation-delay: 0.4s; }
-  .fade-in:nth-child(6) {
+  .fade-in:nth-child(7) {
     -webkit-animation-delay: 0.48s;
     animation-delay: 0.48s; }
-  .fade-in:nth-child(7) {
+  .fade-in:nth-child(8) {
     -webkit-animation-delay: 0.56s;
     animation-delay: 0.56s; }
-  .fade-in:nth-child(8) {
+  .fade-in:nth-child(9) {
     -webkit-animation-delay: 0.64s;
     animation-delay: 0.64s; }
-  .fade-in:nth-child(9) {
+  .fade-in:nth-child(10) {
     -webkit-animation-delay: 0.72s;
     animation-delay: 0.72s; }
-  .fade-in:nth-child(10) {
-    -webkit-animation-delay: 0.8s;
-    animation-delay: 0.8s; }
 
 @-webkit-keyframes fadeIn {
   0% {

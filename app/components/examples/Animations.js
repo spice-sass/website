@@ -16,6 +16,11 @@ let Animations = React.createClass({
 				"slide-out-down",
 				"slide-out-left",
 				"slide-out-right"
+			],
+			grabbers : [
+				"pulse",
+				"magic",
+				"elastic"
 			]
 		}
 	},
@@ -53,6 +58,10 @@ let Animations = React.createClass({
 		},this);
 
 		var exitList = this.state.exits.map(function(anim){
+			return <button className={this.state.currentClass == anim ? "active" : ""} onClick={this.switchClass.bind(this,anim)}>{niceName(anim)}</button>
+		},this);
+
+		var grabberList = this.state.grabbers.map(function(anim){
 			return <button className={this.state.currentClass == anim ? "active" : ""} onClick={this.switchClass.bind(this,anim)}>{niceName(anim)}</button>
 		},this);
 
@@ -109,6 +118,10 @@ let Animations = React.createClass({
 					<h6>Exits</h6>
 					<div className="button-group animations">
 						{exitList}
+					</div>
+					<h6>Attention grabbers</h6>
+					<div className="button-group animations">
+						{grabberList}
 					</div>
 				</div>
 			</div>
