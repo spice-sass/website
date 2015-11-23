@@ -8,12 +8,21 @@
 @include paginationFlat('flat',#f3f3f3);
 
 @include fadeIn($rush,1s);
-@include pulse;
 @include slideIn("left",100,$rush,1s);
 @include slideIn("right",100,$rush,1s);
 @include slideIn("up",50,$rush,1s);
 @include slideIn("down",50,$rush,1s);
+
+@include slideOut("left",100,$rush,1s);
+@include slideOut("right",100,$rush,1s);
+@include slideOut("up",50,$rush,1s);
+@include slideOut("down",50,$rush,1s);
 @include rotateIn(10);
+
+@include pulse;
+@include magic;
+@include elastic;
+
 @include flipClass(y);
 
 @include switch('green',$col-success);

@@ -10,7 +10,8 @@ var Animations = React.createClass({
 	getInitialState: function getInitialState() {
 		return {
 			currentClass: "fade-in",
-			classes: ["fade-in", "slide-in-up", "slide-in-down", "slide-in-left", "slide-in-right", "rotate-in"]
+			enters: ["fade-in", "slide-in-up", "slide-in-down", "slide-in-left", "slide-in-right", "rotate-in"],
+			exits: ["slide-out-up", "slide-out-down", "slide-out-left", "slide-out-right"]
 		};
 	},
 
@@ -42,7 +43,15 @@ var Animations = React.createClass({
 			return newStr;
 		}
 
-		var classList = this.state.classes.map(function (anim) {
+		var enterList = this.state.enters.map(function (anim) {
+			return React.createElement(
+				"button",
+				{ className: this.state.currentClass == anim ? "active" : "", onClick: this.switchClass.bind(this, anim) },
+				niceName(anim)
+			);
+		}, this);
+
+		var exitList = this.state.exits.map(function (anim) {
 			return React.createElement(
 				"button",
 				{ className: this.state.currentClass == anim ? "active" : "", onClick: this.switchClass.bind(this, anim) },
@@ -94,7 +103,7 @@ var Animations = React.createClass({
 				),
 				React.createElement(
 					"div",
-					{ className: "grid-col-3 grid-col-indent-1" },
+					{ className: "grid-col-3 grid-col-indent-1", id: "anim-list" },
 					React.createElement(
 						"p",
 						{ className: this.state.currentClass },
@@ -126,9 +135,48 @@ var Animations = React.createClass({
 				"div",
 				{ className: "grid-row" },
 				React.createElement(
+					"h6",
+					null,
+					"Entrances"
+				),
+				React.createElement(
 					"div",
 					{ className: "button-group animations" },
-					classList
+					enterList
+				),
+				React.createElement(
+					"h6",
+					null,
+					"Exits"
+				),
+				React.createElement(
+					"div",
+					{ className: "button-group animations" },
+					exitList
+				),
+				React.createElement(
+					"h6",
+					null,
+					"Attention grabbers"
+				),
+				React.createElement(
+					"div",
+					{ className: "grid-row" },
+					React.createElement(
+						"button",
+						{ className: "grabber magic flat-secondary" },
+						"Magic"
+					),
+					React.createElement(
+						"button",
+						{ className: "grabber elastic flat-secondary" },
+						"Elastic"
+					),
+					React.createElement(
+						"button",
+						{ className: "grabber pulse flat-secondary" },
+						"Pulse"
+					)
 				)
 			)
 		);
