@@ -2475,6 +2475,11 @@ input[type=range] {
     margin-bottom: 30px; }
   #animations .grabber {
     margin-right: 20px; }
+  #animations #anim-list {
+    display: none; }
+    @media (min-width: 810px) {
+      #animations #anim-list {
+        display: block; } }
 
 #icons {
   padding: 100px 0; }

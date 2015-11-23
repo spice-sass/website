@@ -93,7 +93,7 @@ let Animations = React.createClass({
 							</g>
 						</svg>
 					</div>
-					<div className="grid-col-3 grid-col-indent-1">
+					<div className="grid-col-3 grid-col-indent-1" id="anim-list">
 						<p className={this.state.currentClass}>Spice animation mixins</p>
 						<p className={this.state.currentClass}>are a great way to add</p>
 						<p className={this.state.currentClass}>a little more finesse</p>

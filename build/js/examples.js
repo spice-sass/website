@@ -103,7 +103,7 @@ var Animations = React.createClass({
 				),
 				React.createElement(
 					"div",
-					{ className: "grid-col-3 grid-col-indent-1" },
+					{ className: "grid-col-3 grid-col-indent-1", id: "anim-list" },
 					React.createElement(
 						"p",
 						{ className: this.state.currentClass },
