@@ -18,7 +18,7 @@ $linkcols : (
 @include switch('theme', $col-midnight-blue,$col-midnight-blue,80px,14px);
 
 @include normalise;
-@include headerSizes(45,20);
+@include verticalRhythm(16px,24px,40px);
 
 @include gradientButton('grad-primary',$col-belize-hole);
 @include gradientButton('grad-secondary',$col-midnight-blue);

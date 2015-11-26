@@ -29,6 +29,7 @@ $footerHeight   : 70px;
 $messagesColour : $col-clouds;
 
 @include normalise;
+@include verticalRhythm(14px,22px,20px);
 @include containerClass(1100px);
 @include googleFont('satisfy',h1);
 @include googleFont('roboto',h2 h3 h4 h5 h6);

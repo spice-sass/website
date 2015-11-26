@@ -20,7 +20,7 @@ $headerHeight : 50px;
 $bgColour     : #e9e9e9;
 
 @include normalise;
-@include headerSizes(40,20);
+@include verticalRhythm(16px,20px,30px);
 @include containerClass(2500px);
 @include googleFont('leckerli-one',h1,300);
 @include googleFont('source-sans',body textarea button,100);
