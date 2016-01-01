@@ -29,8 +29,12 @@
 
 @include masonryColumns(500px);
 
-@include formRounded(12px);
-@include formLined(6px,15px 20px,18);
+form.rounded{
+	@include formRounded(12px);
+}
+form.lined{
+	@include formLined(6px,15px 20px,18);
+}
 @include rangeInput;
 
 @include tooltip('top',20px);
