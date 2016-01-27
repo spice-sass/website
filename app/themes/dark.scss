@@ -18,7 +18,7 @@ $linkcols : (
 @include switch('theme', $col-pomegranate,$col-pomegranate,80px,14px);
 
 @include normalise;
-@include headerSizes(45,20);
+@include verticalRhythm(16px,24px,40px);
 
 @include gradientButton('grad-primary',$col-orange);
 @include gradientButton('grad-secondary',$col-pomegranate);
@@ -33,6 +33,8 @@ $linkcols : (
 @include flatButton('flat-warning',$col-pumpkin);
 @include flatButton('flat-danger',$col-pomegranate);
 @include flatButton('flat-submit',$col-nephritis);
+@include flatButtonGroup('animations',darken($col-midnight-blue,2%));
+
 @include formsTheme(#333,lighten($col-clouds,5%),$col-primary);
 
 body{
@@ -246,6 +248,11 @@ h1,h2,h3,h4,h5,h6{
         background-color: darken($themeColour,1.5%);
     }
 
+}
+
+#animations #main-logo{
+    background-color:enhance($themeColour,3%);
+    border:1px solid enhance($themeColour,10%);
 }
 
 

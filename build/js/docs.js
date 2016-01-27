@@ -140,7 +140,7 @@ var List = React.createClass({
 		var docs = this.docs.getDOMNode();
 		docs.onscroll = (function (e) {
 			this.setState({
-				scrollPos: e.srcElement.scrollTop
+				scrollPos: docs.scrollTop
 			});
 		}).bind(this);
 	},

@@ -147,29 +147,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   margin: 0 auto; }
 
+body {
+  line-height: 20px;
+  line-height: 1.25rem;
+  font-size: 16px;
+  font-size: 1rem; }
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
 h1 {
-  font-size: 40px;
-  font-size: 2.5rem; }
+  line-height: 40px;
+  line-height: 2.5rem;
+  font-size: 28px;
+  font-size: 1.75rem; }
 
 h2 {
-  font-size: 36.66667px;
-  font-size: 2.29167rem; }
+  line-height: 40px;
+  line-height: 2.5rem;
+  font-size: 26px;
+  font-size: 1.625rem; }
 
 h3 {
-  font-size: 33.33333px;
-  font-size: 2.08333rem; }
+  line-height: 40px;
+  line-height: 2.5rem;
+  font-size: 24px;
+  font-size: 1.5rem; }
 
 h4 {
-  font-size: 30px;
-  font-size: 1.875rem; }
+  line-height: 40px;
+  line-height: 2.5rem;
+  font-size: 22px;
+  font-size: 1.375rem; }
 
 h5 {
-  font-size: 26.66667px;
-  font-size: 1.66667rem; }
-
-h6 {
+  line-height: 20px;
+  line-height: 1.25rem;
   font-size: 20px;
   font-size: 1.25rem; }
+
+h6 {
+  line-height: 20px;
+  line-height: 1.25rem;
+  font-size: 18px;
+  font-size: 1.125rem; }
 
 .container {
   margin: 0 auto;

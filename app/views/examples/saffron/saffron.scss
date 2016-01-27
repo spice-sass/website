@@ -31,7 +31,10 @@ $slideFrames : (
 @include containerClass(1100px);
 @include googleFont('pacifico',h1);
 @include googleFont('source-sans',body textarea button);
-@include formLined(5px,15px 20px,16px);
+
+form.lined{
+	@include formLined(5px,15px 20px,16px);
+}
 @include formsTheme(contrast($bgCol,55%),white,$col-alizarin);
 @include flatButton('flat-submit',#54A03A);
 @include blockIcons;

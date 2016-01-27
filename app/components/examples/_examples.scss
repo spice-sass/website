@@ -33,6 +33,49 @@
 	}
 }
 
+#animations{
+
+	padding:100px 0;
+
+	#main-logo{
+
+		text-align: center;
+		padding:40px;
+		border-radius:10px;
+		margin-bottom: 30px;
+
+		svg{
+
+			max-width: 350px;
+			margin: 0 auto;
+		}
+	}
+
+	h6{
+
+		margin-bottom: 10px;
+	}
+
+	.button-group{
+
+		margin-bottom: 30px;
+	}
+
+	.grabber{
+
+		margin-right: 20px;
+	}
+
+	#anim-list{
+
+		display: none;
+
+		@include breakPoint(810px,'min'){
+			display: block;
+		}
+	}
+}
+
 #icons{
 
 	padding:100px 0;

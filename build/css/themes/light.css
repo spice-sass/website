@@ -129,27 +129,49 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   margin: 0 auto; }
 
+body {
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-size: 16px;
+  font-size: 1rem; }
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
 h1 {
-  font-size: 45px;
-  font-size: 2.8125rem; }
+  line-height: 48px;
+  line-height: 3rem;
+  font-size: 40px;
+  font-size: 2.5rem; }
 
 h2 {
-  font-size: 40.83333px;
-  font-size: 2.55208rem; }
+  line-height: 48px;
+  line-height: 3rem;
+  font-size: 36px;
+  font-size: 2.25rem; }
 
 h3 {
-  font-size: 36.66667px;
-  font-size: 2.29167rem; }
+  line-height: 48px;
+  line-height: 3rem;
+  font-size: 32px;
+  font-size: 2rem; }
 
 h4 {
-  font-size: 32.5px;
-  font-size: 2.03125rem; }
+  line-height: 48px;
+  line-height: 3rem;
+  font-size: 28px;
+  font-size: 1.75rem; }
 
 h5 {
-  font-size: 28.33333px;
-  font-size: 1.77083rem; }
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-size: 24px;
+  font-size: 1.5rem; }
 
 h6 {
+  line-height: 24px;
+  line-height: 1.5rem;
   font-size: 20px;
   font-size: 1.25rem; }
 
@@ -891,6 +913,38 @@ button.flat-submit, .button.flat-submit {
       top: 0;
       bottom: 0; }
 
+.button-group.animations {
+  min-height: 1%; }
+  .button-group.animations:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .button-group.animations button {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 10px 15px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    background-color: #2980B9;
+    color: #d2e7f5;
+    outline: none;
+    border-bottom: 4px solid #236c9c;
+    cursor: pointer;
+    font-size: 14px;
+    font-size: 0.875rem; }
+    .button-group.animations button:hover {
+      color: white;
+      background-color: #2c89c6; }
+    .button-group.animations button.active {
+      color: white;
+      background-color: #2472a4; }
+    .button-group.animations button:first-child {
+      border-radius: 5px 0 0 5px; }
+    .button-group.animations button:last-child {
+      border-radius: 0 5px 5px 0; }
+
 body {
   line-height: 150%;
   background-color: #ECF0F1;
@@ -1107,6 +1161,10 @@ hr {
   border-bottom: 1px solid #d7e0e2; }
   .stack:nth-of-type(even) {
     background-color: #e3e9eb; }
+
+#animations #main-logo {
+  background-color: #f5f7f7;
+  border: 1px solid #cfd9db; }
 
 textarea, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text, header.sticky #search-docs select, header.sticky #search-docs input[type=text], header.sticky #search-docs input[type=email], header.sticky #search-docs input[type=password], header.sticky #search-docs input[type=url], header.sticky #search-docs input[type=tel], header.sticky #search-docs input[type=search], header.sticky #search-docs input[type=date], header.sticky #search-docs input[type=time], header.sticky #search-docs input[type=number], header.sticky #search-docs input.text {
   background-color: #fbfcfc;

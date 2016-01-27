@@ -18,7 +18,7 @@ $linkcols : (
 @include switch('theme', $col-midnight-blue,$col-midnight-blue,80px,14px);
 
 @include normalise;
-@include headerSizes(45,20);
+@include verticalRhythm(16px,24px,40px);
 
 @include gradientButton('grad-primary',$col-belize-hole);
 @include gradientButton('grad-secondary',$col-midnight-blue);
@@ -33,6 +33,7 @@ $linkcols : (
 @include flatButton('flat-warning',$col-warning);
 @include flatButton('flat-danger',$col-danger);
 @include flatButton('flat-submit',$col-success);
+@include flatButtonGroup('animations',$col-belize-hole);
 
 body{
     
@@ -204,6 +205,11 @@ hr{
         background-color: darken($themeColour,3%);
     }
 
+}
+
+#animations #main-logo{
+    background-color:enhance($themeColour,3%);
+    border:1px solid contrast($themeColour,10%);
 }
 
 @include formsTheme(#333,$lighter,$col-primary);

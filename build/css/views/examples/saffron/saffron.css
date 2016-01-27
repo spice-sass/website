@@ -204,16 +204,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: local(Source Sans Pro Bold), local(SourceSansPro-Bold), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGEo0As1BFRXtCDhS66znb_k.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 
-.source-sans, body, textarea, input.text, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], button {
+.source-sans, body, textarea, form.lined form.lined input[type=text], form.lined form.lined input[type=email], form.lined form.lined input[type=password], form.lined form.lined input[type=url], form.lined form.lined input[type=tel], form.lined form.lined input[type=search], form.lined form.lined input[type=date], form.lined form.lined input[type=time], form.lined form.lined input[type=number], form.lined form.lined input.text, form.lined form.lined select, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text, button {
   font-family: Source Sans Pro, arial, sans-serif; }
 
-label {
+form.lined form.lined label {
   display: block;
   margin: 0 0 15px 0;
   font-size: 16px;
   font-size: 1rem; }
 
-textarea, input.text, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number] {
+form.lined form.lined textarea, form.lined form.lined select, form.lined form.lined input[type=text], form.lined form.lined input[type=email], form.lined form.lined input[type=password], form.lined form.lined input[type=url], form.lined form.lined input[type=tel], form.lined form.lined input[type=search], form.lined form.lined input[type=date], form.lined form.lined input[type=time], form.lined form.lined input[type=number], form.lined form.lined input.text {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -228,19 +228,19 @@ textarea, input.text, select, input[type=text], input[type=email], input[type=pa
   font-size: 16px;
   font-size: 1rem; }
 
-input:focus {
+form.lined form.lined input:focus {
   outline: none; }
 
-fieldset {
+form.lined form.lined fieldset {
   width: 100%; }
 
-textarea, input.text, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number] {
+textarea, form.lined form.lined input[type=text], form.lined form.lined input[type=email], form.lined form.lined input[type=password], form.lined form.lined input[type=url], form.lined form.lined input[type=tel], form.lined form.lined input[type=search], form.lined form.lined input[type=date], form.lined form.lined input[type=time], form.lined form.lined input[type=number], form.lined form.lined input.text, form.lined form.lined select, select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel], input[type=search], input[type=date], input[type=time], input[type=number], input.text {
   background-color: white;
   border-color: #e6e6e6;
   color: #536b71; }
-  textarea:hover, input.text:hover, select:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover, input[type=date]:hover, input[type=time]:hover, input[type=number]:hover {
+  textarea:hover, form.lined form.lined input[type=text]:hover, form.lined form.lined input[type=email]:hover, form.lined form.lined input[type=password]:hover, form.lined form.lined input[type=url]:hover, form.lined form.lined input[type=tel]:hover, form.lined form.lined input[type=search]:hover, form.lined form.lined input[type=date]:hover, form.lined form.lined input[type=time]:hover, form.lined form.lined input[type=number]:hover, form.lined form.lined input.text:hover, form.lined form.lined select:hover, select:hover, input[type=text]:hover, input[type=email]:hover, input[type=password]:hover, input[type=url]:hover, input[type=tel]:hover, input[type=search]:hover, input[type=date]:hover, input[type=time]:hover, input[type=number]:hover, input.text:hover {
     border-color: #cccccc; }
-  textarea:focus, input.text:focus, select:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus, input[type=date]:focus, input[type=time]:focus, input[type=number]:focus {
+  textarea:focus, form.lined form.lined input[type=text]:focus, form.lined form.lined input[type=email]:focus, form.lined form.lined input[type=password]:focus, form.lined form.lined input[type=url]:focus, form.lined form.lined input[type=tel]:focus, form.lined form.lined input[type=search]:focus, form.lined form.lined input[type=date]:focus, form.lined form.lined input[type=time]:focus, form.lined form.lined input[type=number]:focus, form.lined form.lined input.text:focus, form.lined form.lined select:focus, select:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=search]:focus, input[type=date]:focus, input[type=time]:focus, input[type=number]:focus, input.text:focus {
     color: black;
     border-color: #E74C3C; }
 
