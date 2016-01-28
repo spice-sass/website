@@ -209,9 +209,11 @@ button.grad-primary, .button.grad-primary {
     background-image: -webkit-linear-gradient(#2e8ece, #1b557a);
     background-image: linear-gradient(#2e8ece #1b557a); }
   button.grad-primary:active, .button.grad-primary:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2b86c1), color-stop(100%, #184c6e));
+    background-image: -moz-linear-gradient(#2b86c1, #184c6e);
+    background-image: -webkit-linear-gradient(#2b86c1, #184c6e);
+    background-image: linear-gradient(#2b86c1 #184c6e); }
   button.grad-primary[class^="block-icon-"]:before, button.grad-primary[class*=" block-icon-"]:before, .button.grad-primary[class^="block-icon-"]:before, .button.grad-primary[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.grad-primary[class^="line-icon-"]:before, button.grad-primary[class*=" line-icon-"]:before, .button.grad-primary[class^="line-icon-"]:before, .button.grad-primary[class*=" line-icon-"]:before {
@@ -271,9 +273,11 @@ button.grad-secondary, .button.grad-secondary {
     background-image: -webkit-linear-gradient(#354b60, #11181f);
     background-image: linear-gradient(#354b60 #11181f); }
   button.grad-secondary:active, .button.grad-secondary:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: #e4eaf0;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #304357), color-stop(100%, #0b1015));
+    background-image: -moz-linear-gradient(#304357, #0b1015);
+    background-image: -webkit-linear-gradient(#304357, #0b1015);
+    background-image: linear-gradient(#304357 #0b1015); }
   button.grad-secondary[class^="block-icon-"]:before, button.grad-secondary[class*=" block-icon-"]:before, .button.grad-secondary[class^="block-icon-"]:before, .button.grad-secondary[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.grad-secondary[class^="line-icon-"]:before, button.grad-secondary[class*=" line-icon-"]:before, .button.grad-secondary[class^="line-icon-"]:before, .button.grad-secondary[class*=" line-icon-"]:before {
@@ -333,9 +337,11 @@ button.grad-info, .button.grad-info {
     background-image: -webkit-linear-gradient(#2e8ece, #1b557a);
     background-image: linear-gradient(#2e8ece #1b557a); }
   button.grad-info:active, .button.grad-info:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2b86c1), color-stop(100%, #184c6e));
+    background-image: -moz-linear-gradient(#2b86c1, #184c6e);
+    background-image: -webkit-linear-gradient(#2b86c1, #184c6e);
+    background-image: linear-gradient(#2b86c1 #184c6e); }
   button.grad-info[class^="block-icon-"]:before, button.grad-info[class*=" block-icon-"]:before, .button.grad-info[class^="block-icon-"]:before, .button.grad-info[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.grad-info[class^="line-icon-"]:before, button.grad-info[class*=" line-icon-"]:before, .button.grad-info[class^="line-icon-"]:before, .button.grad-info[class*=" line-icon-"]:before {
@@ -395,9 +401,11 @@ button.grad-warning, .button.grad-warning {
     background-image: -webkit-linear-gradient(#e2922d, #945c15);
     background-image: linear-gradient(#e2922d #945c15); }
   button.grad-warning:active, .button.grad-warning:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e08c1f), color-stop(100%, #865413));
+    background-image: -moz-linear-gradient(#e08c1f, #865413);
+    background-image: -webkit-linear-gradient(#e08c1f, #865413);
+    background-image: linear-gradient(#e08c1f #865413); }
   button.grad-warning[class^="block-icon-"]:before, button.grad-warning[class*=" block-icon-"]:before, .button.grad-warning[class^="block-icon-"]:before, .button.grad-warning[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.grad-warning[class^="line-icon-"]:before, button.grad-warning[class*=" line-icon-"]:before, .button.grad-warning[class^="line-icon-"]:before, .button.grad-warning[class*=" line-icon-"]:before {
@@ -457,9 +465,11 @@ button.grad-danger, .button.grad-danger {
     background-image: -webkit-linear-gradient(#c12d2d, #6e1a1a);
     background-image: linear-gradient(#c12d2d #6e1a1a); }
   button.grad-danger:active, .button.grad-danger:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b42a2a), color-stop(100%, #621717));
+    background-image: -moz-linear-gradient(#b42a2a, #621717);
+    background-image: -webkit-linear-gradient(#b42a2a, #621717);
+    background-image: linear-gradient(#b42a2a #621717); }
   button.grad-danger[class^="block-icon-"]:before, button.grad-danger[class*=" block-icon-"]:before, .button.grad-danger[class^="block-icon-"]:before, .button.grad-danger[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.grad-danger[class^="line-icon-"]:before, button.grad-danger[class*=" line-icon-"]:before, .button.grad-danger[class^="line-icon-"]:before, .button.grad-danger[class*=" line-icon-"]:before {
@@ -519,9 +529,11 @@ button.grad-submit, .button.grad-submit {
     background-image: -webkit-linear-gradient(#5eb341, #376826);
     background-image: linear-gradient(#5eb341 #376826); }
   button.grad-submit:active, .button.grad-submit:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #58a73d), color-stop(100%, #315d22));
+    background-image: -moz-linear-gradient(#58a73d, #315d22);
+    background-image: -webkit-linear-gradient(#58a73d, #315d22);
+    background-image: linear-gradient(#58a73d #315d22); }
   button.grad-submit[class^="block-icon-"]:before, button.grad-submit[class*=" block-icon-"]:before, .button.grad-submit[class^="block-icon-"]:before, .button.grad-submit[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.grad-submit[class^="line-icon-"]:before, button.grad-submit[class*=" line-icon-"]:before, .button.grad-submit[class^="line-icon-"]:before, .button.grad-submit[class*=" line-icon-"]:before {
@@ -580,9 +592,8 @@ button.flat-primary, .button.flat-primary {
     color: white;
     background-color: #2472a4; }
   button.flat-primary:active, .button.flat-primary:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-color: #20638f; }
   button.flat-primary[class^="block-icon-"]:before, button.flat-primary[class*=" block-icon-"]:before, .button.flat-primary[class^="block-icon-"]:before, .button.flat-primary[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.flat-primary[class^="line-icon-"]:before, button.flat-primary[class*=" line-icon-"]:before, .button.flat-primary[class^="line-icon-"]:before, .button.flat-primary[class*=" line-icon-"]:before {
@@ -641,9 +652,8 @@ button.flat-secondary, .button.flat-secondary {
     color: #c6d3e0;
     background-color: #233140; }
   button.flat-secondary:active, .button.flat-secondary:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: #e4eaf0;
+    background-color: #1a252f; }
   button.flat-secondary[class^="block-icon-"]:before, button.flat-secondary[class*=" block-icon-"]:before, .button.flat-secondary[class^="block-icon-"]:before, .button.flat-secondary[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.flat-secondary[class^="line-icon-"]:before, button.flat-secondary[class*=" line-icon-"]:before, .button.flat-secondary[class^="line-icon-"]:before, .button.flat-secondary[class*=" line-icon-"]:before {
@@ -702,9 +712,8 @@ button.flat-info, .button.flat-info {
     color: white;
     background-color: #2472a4; }
   button.flat-info:active, .button.flat-info:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-color: #20638f; }
   button.flat-info[class^="block-icon-"]:before, button.flat-info[class*=" block-icon-"]:before, .button.flat-info[class^="block-icon-"]:before, .button.flat-info[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.flat-info[class^="line-icon-"]:before, button.flat-info[class*=" line-icon-"]:before, .button.flat-info[class^="line-icon-"]:before, .button.flat-info[class*=" line-icon-"]:before {
@@ -763,9 +772,8 @@ button.flat-warning, .button.flat-warning {
     color: white;
     background-color: #c1781b; }
   button.flat-warning:active, .button.flat-warning:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-color: #aa6a18; }
   button.flat-warning[class^="block-icon-"]:before, button.flat-warning[class*=" block-icon-"]:before, .button.flat-warning[class^="block-icon-"]:before, .button.flat-warning[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.flat-warning[class^="line-icon-"]:before, button.flat-warning[class*=" line-icon-"]:before, .button.flat-warning[class^="line-icon-"]:before, .button.flat-warning[class*=" line-icon-"]:before {
@@ -824,9 +832,8 @@ button.flat-danger, .button.flat-danger {
     color: white;
     background-color: #972323; }
   button.flat-danger:active, .button.flat-danger:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-color: #831e1e; }
   button.flat-danger[class^="block-icon-"]:before, button.flat-danger[class*=" block-icon-"]:before, .button.flat-danger[class^="block-icon-"]:before, .button.flat-danger[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.flat-danger[class^="line-icon-"]:before, button.flat-danger[class*=" line-icon-"]:before, .button.flat-danger[class^="line-icon-"]:before, .button.flat-danger[class*=" line-icon-"]:before {
@@ -885,9 +892,8 @@ button.flat-submit, .button.flat-submit {
     color: white;
     background-color: #4a8d33; }
   button.flat-submit:active, .button.flat-submit:active {
-    border-bottom-width: 1px;
-    margin-bottom: 2px;
-    top: 3px; }
+    color: white;
+    background-color: #407b2c; }
   button.flat-submit[class^="block-icon-"]:before, button.flat-submit[class*=" block-icon-"]:before, .button.flat-submit[class^="block-icon-"]:before, .button.flat-submit[class*=" block-icon-"]:before {
     font-family: 'block-icon-set'; }
   button.flat-submit[class^="line-icon-"]:before, button.flat-submit[class*=" line-icon-"]:before, .button.flat-submit[class^="line-icon-"]:before, .button.flat-submit[class*=" line-icon-"]:before {

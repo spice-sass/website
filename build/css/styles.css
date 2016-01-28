@@ -2344,13 +2344,13 @@ ul.pagination.flat {
     -moz-column-count: 8;
     column-count: 8; } }
 
-form.rounded form.rounded label {
+form.rounded label {
   display: block;
   margin: 0 0 15px 5px;
   font-size: 18px;
   font-size: 1.125rem; }
 
-form.rounded form.rounded textarea, form.rounded form.rounded input[type=text], form.rounded form.rounded input[type=email], form.rounded form.rounded input[type=password], form.rounded form.rounded input[type=url], form.rounded form.rounded input[type=tel], form.rounded form.rounded input[type=search], form.rounded form.rounded input[type=date], form.rounded form.rounded input[type=time], form.rounded form.rounded input[type=number], form.rounded form.rounded input.text, form.rounded form.rounded select {
+form.rounded textarea, form.rounded input[type=text], form.rounded input[type=email], form.rounded input[type=password], form.rounded input[type=url], form.rounded input[type=tel], form.rounded input[type=search], form.rounded input[type=date], form.rounded input[type=time], form.rounded input[type=number], form.rounded input.text, form.rounded select {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -2363,19 +2363,19 @@ form.rounded form.rounded textarea, form.rounded form.rounded input[type=text], 
   font-size: 1.125rem;
   border-radius: 12px; }
 
-form.rounded form.rounded input:focus {
+form.rounded input:focus {
   outline: none; }
 
-form.rounded form.rounded fieldset {
+form.rounded fieldset {
   width: 100%; }
 
-form.lined form.lined label {
+form.lined label {
   display: block;
   margin: 0 0 15px 0;
   font-size: 18px;
   font-size: 1.125rem; }
 
-form.lined form.lined textarea, form.lined form.lined input[type=text], form.lined form.lined input[type=email], form.lined form.lined input[type=password], form.lined form.lined input[type=url], form.lined form.lined input[type=tel], form.lined form.lined input[type=search], form.lined form.lined input[type=date], form.lined form.lined input[type=time], form.lined form.lined input[type=number], form.lined form.lined input.text, form.lined form.lined select {
+form.lined textarea, form.lined input[type=text], form.lined input[type=email], form.lined input[type=password], form.lined input[type=url], form.lined input[type=tel], form.lined input[type=search], form.lined input[type=date], form.lined input[type=time], form.lined input[type=number], form.lined input.text, form.lined select {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -2390,10 +2390,10 @@ form.lined form.lined textarea, form.lined form.lined input[type=text], form.lin
   font-size: 18px;
   font-size: 1.125rem; }
 
-form.lined form.lined input:focus {
+form.lined input:focus {
   outline: none; }
 
-form.lined form.lined fieldset {
+form.lined fieldset {
   width: 100%; }
 
 input[type=range] {
