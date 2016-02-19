@@ -109,6 +109,11 @@ gulp.task('copybuild', ['static','jsMin','cssMin'], function(){
     .pipe(gulp.dest('../spice-sass.github.io'))
 });
 
+gulp.task('copyIndex',function(){
+  gulp.src('./build/index.html')
+    .pipe(gulp.dest('../spice-sass.github.io'));
+});
+
 gulp.task('watch', function () {
   gulp.watch('app/**/*.html', ['frontEnd']);
   gulp.watch('app/**/*.scss', ['frontEnd']);
