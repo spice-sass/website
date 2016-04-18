@@ -11,6 +11,7 @@ var server     = require('gulp-express');
 var flatten    = require('gulp-flatten');
 var swig       = require('gulp-swig');
 var data       = require('gulp-data');
+var clean      = require('gulp-clean');
 
 var stripDebug = require('gulp-strip-debug');
 
@@ -96,6 +97,11 @@ gulp.task('sass', function () {
   gulp.src('./app/**/*.scss')
     .pipe(sass({outputStyle: 'nested'}))
     .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('cleanBuild',function(){
+  return gulp.src('../spice-sass.github.io/**/*.*', {read: false})
+    .pipe(clean({force: true}));
 });
 
 gulp.task('cssMin', function() {
