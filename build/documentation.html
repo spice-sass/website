@@ -59,6 +59,10 @@
 			  			<ul class="subnav">
 			  				
 								<li>
+									<a href="#flexGrid"><span>@include</span> flexGrid;</a>
+								</li>
+							
+								<li>
 									<a href="#gridClasses"><span>@include</span> gridClasses;</a>
 								</li>
 							
@@ -405,6 +409,12 @@
 						<h1>Grid</h1>
 						<hr />
 						
+						
+						<div class="mixin">
+							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> flexGrid;</h2>
+							<div><p>This mixin genrates classes for a flex-box grid system. Arguments allow you to define the amount of columns you want, the guttering, the screen width at which you want elements to stack and optional outdent/indent classes. Default settings can be overwritten to suit your template.</p><p><strong>Default Settings:</strong></p><ul><li>$grid-col-count : 12;</li><li>$grid-gutter-width : 2%;</li><li>$grid-stack-point : 550px;</li><li>$grid-shift-classes : true;</li></ul></div>
+							<hr />
+						</div>
 						
 						<div class="mixin">
 							<h2 class="red"><span class="leckerli-one" style="text-transform:none;font-weight:300;letter-spacing:0;">@include</span> gridClasses;</h2>

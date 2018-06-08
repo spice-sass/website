@@ -44,9 +44,14 @@
 
 @include centreClasses;
 @include gridClasses;
+@include flexGrid;
 @include griddedList(3);
 @include cardClass;
 @include paddedClass;
+
+body{
+    @include verticalRhythm;
+}
 
 @import "components/header/header";
 @import "components/home/home";
